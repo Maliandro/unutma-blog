@@ -1,0 +1,31 @@
+---
+const year = new Date().getFullYear();
+const playStoreUrl =
+  import.meta.env.PUBLIC_PLAY_STORE_URL ??
+  'https://play.google.com/store/apps/details?id=com.mehmet.unutma';
+const appStoreUrl =
+  import.meta.env.PUBLIC_APP_STORE_URL ??
+  'https://apps.apple.com/app/unutma/id674480934';
+---
+
+<footer class="mt-16 border-t border-gray-100 bg-gray-50">
+  <div class="mx-auto max-w-5xl px-4 py-12">
+    <div class="flex flex-col gap-8 md:flex-row md:justify-between">
+      <div>
+        <p class="brand-wordmark brand-wordmark-sm text-left">Unutma</p>
+        <p class="mt-1 max-w-sm text-sm text-gray-600">
+          Privacy-first organization: lists, journal, routines, and more — on
+          your device.
+        </p>
+      </div>
+      <div class="flex flex-col gap-4 text-sm">
+        <a href="/privacy" class="text-gray-600 hover:text-brand">Privacy policy</a>
+        <a href={playStoreUrl} class="text-gray-600 hover:text-brand" target="_blank" rel="noopener noreferrer">Google Play</a>
+        <a href={appStoreUrl} class="text-gray-600 hover:text-brand" target="_blank" rel="noopener noreferrer">App Store</a>
+      </div>
+    </div>
+    <p class="mt-8 text-center text-xs text-gray-500">
+      © {year} Unutma. All rights reserved.
+    </p>
+  </div>
+</footer>

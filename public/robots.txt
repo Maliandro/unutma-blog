@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://unutmaapp.com/sitemap-index.xml

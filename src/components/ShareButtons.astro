@@ -1,0 +1,37 @@
+---
+interface Props {
+  title: string;
+  url: string;
+  description: string;
+}
+
+const { title, url } = Astro.props;
+const fullUrl = new URL(url, Astro.site).toString();
+---
+
+<div class="my-6 flex flex-wrap gap-3">
+  <a
+    href={`https://pinterest.com/pin/create/button/?url=${encodeURIComponent(fullUrl)}&description=${encodeURIComponent(title)}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="rounded-lg bg-red-600 px-4 py-2 text-sm text-white transition hover:bg-red-700"
+  >
+    📌 Pin It
+  </a>
+  <a
+    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(fullUrl)}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="rounded-lg bg-sky-500 px-4 py-2 text-sm text-white transition hover:bg-sky-600"
+  >
+    🐦 Tweet
+  </a>
+  <a
+    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(fullUrl)}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="rounded-lg bg-blue-800 px-4 py-2 text-sm text-white transition hover:bg-blue-900"
+  >
+    💼 Share
+  </a>
+</div>

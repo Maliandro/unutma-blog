@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEOHead from '../components/SEOHead.astro';
+import BlogCard from '../components/BlogCard.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import StoreBadgeRow from '../components/StoreBadgeRow.astro';
+import { getCollection } from 'astro:content';
+
+const all = await getCollection('blog', ({ data }) => !data.draft);
+const sorted = all.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+const latest = sorted.slice(0, 6);
+
+---
+
+<BaseLayout>
+  <SEOHead
+    slot="head"
+    title="Organize Your Life, Your Way"
+    description="Unutma Blog — practical guides on productivity, privacy-first apps, journaling, and routines. Download Unutma: offline, private, free."
+  />
+
+  <section
+    class="relative overflow-hidden border-b border-indigo-100/80 bg-gradient-to-b from-indigo-50/95 via-emerald-50/30 to-white"
+  >
+    <div
+      class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(99,102,241,0.12),transparent)]"
+      aria-hidden="true"
+    />
+    <div class="relative mx-auto max-w-5xl px-4 py-16 md:py-24">
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-start">
+        <img
+          src="/unutma-icon.png"
+          width="96"
+          height="96"
+          alt="Unutma"
+          class="h-20 w-20 shrink-0 rounded-[22%] shadow-brand ring-1 ring-black/[0.07] sm:h-24 sm:w-24"
+          decoding="async"
+        />
+        <div class="min-w-0 flex-1">
+          <p class="brand-wordmark brand-wordmark-lg">Unutma</p>
+          <p class="brand-peace mt-2 text-base md:text-lg">
+            Peace of mind, on your phone
+          </p>
+          <h1 class="brand-hero-title mt-5 max-w-3xl text-4xl md:text-5xl lg:text-[3.15rem]">
+            Organize your life, your way
+          </h1>
+          <p class="mt-4 max-w-2xl text-lg font-normal leading-relaxed text-gray-600">
+            Offline-first lists, journal, routines, vault, and more — all on your
+            phone. No account required. This blog shares tips that pair perfectly
+            with a calmer digital life.
+          </p>
+        </div>
+      </div>
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <StoreBadgeRow />
+        <a
+          href="/blog"
+          class="inline-flex items-center rounded-lg px-4 py-3 font-medium text-brand hover:underline"
+        >
+          Read the blog →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-4 py-16">
+    <h2 class="section-title text-3xl md:text-[2rem]">Latest articles</h2>
+    <p class="mt-1 text-gray-600">
+      Ideas for productivity, privacy, and habits — updated as we publish.
+    </p>
+    <div class="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {
+        latest.length ? (
+          latest.map((post) => <BlogCard post={post} />)
+        ) : (
+          <p class="text-gray-500 md:col-span-2">
+            No posts yet — add Markdown files under{' '}
+            <code class="rounded bg-gray-100 px-1 text-sm">src/content/blog/</code>
+            {' '}or run the Python generator.
+          </p>
+        )
+      }
+    </div>
+    <p class="mt-10 text-center">
+      <a href="/blog" class="font-medium text-brand hover:underline"
+        >View all posts</a
+      >
+    </p>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-4 pb-16">
+    <h2 class="section-title text-3xl md:text-[2rem]">Why Unutma?</h2>
+    <div class="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div class="rounded-xl border border-gray-100 p-6">
+        <h3 class="font-display text-lg font-semibold text-gray-900">Offline-first</h3>
+        <p class="mt-2 text-sm text-gray-600">
+          Core features work without a constant internet connection.
+        </p>
+      </div>
+      <div class="rounded-xl border border-gray-100 p-6">
+        <h3 class="font-display text-lg font-semibold text-gray-900">Private</h3>
+        <p class="mt-2 text-sm text-gray-600">
+          Your notes and lists stay on your device — not on our servers.
+        </p>
+      </div>
+      <div class="rounded-xl border border-gray-100 p-6">
+        <h3 class="font-display text-lg font-semibold text-gray-900">Free to start</h3>
+        <p class="mt-2 text-sm text-gray-600">
+          Get organized without a subscription wall for the essentials.
+        </p>
+      </div>
+      <div class="rounded-xl border border-gray-100 p-6">
+        <h3 class="font-display text-lg font-semibold text-gray-900">Multi-language</h3>
+        <p class="mt-2 text-sm text-gray-600">
+          Use the app in the language that fits your day.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-4 pb-20">
+    <NewsletterForm />
+  </section>
+</BaseLayout>

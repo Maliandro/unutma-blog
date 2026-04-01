@@ -1,0 +1,28 @@
+---
+/** Google Play product icon (four-color mark). */
+interface Props {
+  class?: string;
+}
+const { class: className = 'h-5 w-5 shrink-0' } = Astro.props;
+---
+
+<svg
+  class={className}
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 512 512"
+  aria-hidden="true"
+>
+  <path
+    fill="#00D9FF"
+    d="M99.617 1.814L1.815 99.617c-2.421 2.421-2.421 6.35 0 8.771l116.364 116.364L256 256 99.617 99.617z"
+  />
+  <path fill="#00F076" d="M256 256 394.219 394.219 512 256 394.219 117.781 256 256z" />
+  <path
+    fill="#FFE500"
+    d="M256 256 117.781 117.781 1.417 234.145c-2.421 2.421-2.421 6.35 0 8.771L99.617 341.383 256 256z"
+  />
+  <path
+    fill="#FF3A44"
+    d="M99.617 341.383 1.815 439.185c-2.421 2.421-2.421 6.35 0 8.771l98.802 98.802L256 256 99.617 341.383z"
+  />
+</svg>

@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth text-gray-800 antialiased;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  @media (min-width: 768px) {
+    html {
+      font-size: 18px;
+    }
+  }
+}
+
+@layer components {
+  /**
+   * Brand wordmark — gradient fill + soft glow (header & hero).
+   */
+  .brand-wordmark {
+    font-family: Fraunces, Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    background: linear-gradient(
+      125deg,
+      #1e1b4b 0%,
+      #4f46e5 28%,
+      #6366f1 52%,
+      #0d6636 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 2px 14px rgba(79, 70, 229, 0.22))
+      drop-shadow(0 1px 2px rgba(255, 255, 255, 0.5));
+  }
+
+  .brand-wordmark-sm {
+    font-size: 1.25rem;
+  }
+
+  .brand-wordmark-lg {
+    font-size: clamp(2rem, 5vw, 2.75rem);
+  }
+
+  /**
+   * “Peace of mind” — editorial italic + depth.
+   */
+  .brand-peace {
+    font-family: Fraunces, Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    font-optical-sizing: auto;
+    letter-spacing: 0.04em;
+    color: #0a5230;
+    text-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.85),
+      0 2px 20px rgba(13, 102, 54, 0.12),
+      0 1px 3px rgba(13, 102, 54, 0.08);
+  }
+
+  .brand-peace-muted {
+    @apply text-sm md:text-base;
+    opacity: 0.92;
+  }
+
+  /** Hero main headline */
+  .brand-hero-title {
+    font-family: Fraunces, Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1.12;
+    color: #111827;
+    text-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.9),
+      0 12px 40px rgba(15, 23, 42, 0.06);
+  }
+
+  /** Section titles on marketing pages */
+  .section-title {
+    font-family: Fraunces, Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    @apply text-gray-900;
+  }
+}

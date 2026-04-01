@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEOHead from '../components/SEOHead.astro';
+
+const officialPolicyUrl =
+  'https://sites.google.com/view/unutma-privacy/ana-sayfa';
+---
+
+<BaseLayout>
+  <SEOHead
+    slot="head"
+    title="Privacy Policy"
+    description="Official Unutma privacy policy (Google Sites) — app data practices, your rights, and contact. Plus notes on this marketing website."
+  />
+
+  <article
+    class="prose prose-lg mx-auto max-w-3xl px-4 py-12 prose-a:text-brand prose-strong:text-gray-900"
+  >
+    <h1>Privacy policy</h1>
+
+    <p>
+      The <strong>canonical privacy policy for the Unutma app</strong> is
+      maintained on Google Sites and updated there (including all languages).
+      Please read the full text at the link below — it is the binding document
+      for how Unutma handles app-related data.
+    </p>
+
+    <p>
+      <a
+        href={officialPolicyUrl}
+        class="inline-flex items-center justify-center rounded-lg bg-brand px-6 py-3 font-semibold text-white no-underline hover:bg-brand-dark"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Open official Unutma Privacy Policy →
+      </a>
+    </p>
+
+    <p class="text-sm text-gray-600">
+      Direct URL:
+      <a href={officialPolicyUrl} target="_blank" rel="noopener noreferrer"
+        >{officialPolicyUrl}</a
+      >
+    </p>
+
+    <h2>This website (blog)</h2>
+    <p>
+      This site is a static marketing blog: your host (for example Vercel) may
+      keep ordinary server or CDN logs. We do <strong>not</strong> run ads in
+      the Unutma app, and this blog does not show third-party ad banners unless
+      we explicitly enable that later and update this notice.
+    </p>
+
+    <h2>Contact (app policy)</h2>
+    <p>
+      For questions about the policy published on Google Sites, use the contact
+      channel listed there — for example{' '}
+      <a href="mailto:unutma.app1.0@gmail.com">unutma.app1.0@gmail.com</a> as
+      referenced in the official document.
+    </p>
+
+    <p><a href="/">← Home</a></p>
+  </article>
+</BaseLayout>

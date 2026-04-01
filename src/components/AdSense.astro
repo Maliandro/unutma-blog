@@ -1,0 +1,36 @@
+---
+/** Optional AdSense — off by default; set PUBLIC_ADSENSE_ENABLED=true to show. */
+interface Props {
+  placement: 'header' | 'in-article' | 'sidebar' | 'footer';
+}
+
+const { placement } = Astro.props;
+
+const adClient =
+  import.meta.env.PUBLIC_ADSENSE_CLIENT ?? 'ca-pub-XXXXXXXXXXXXXXXX';
+
+const adSlots: Record<string, string> = {
+  header: import.meta.env.PUBLIC_ADSENSE_SLOT_HEADER ?? 'XXXXXXXXXX',
+  'in-article': import.meta.env.PUBLIC_ADSENSE_SLOT_IN_ARTICLE ?? 'XXXXXXXXXX',
+  sidebar: import.meta.env.PUBLIC_ADSENSE_SLOT_SIDEBAR ?? 'XXXXXXXXXX',
+  footer: import.meta.env.PUBLIC_ADSENSE_SLOT_FOOTER ?? 'XXXXXXXXXX',
+};
+
+const slotId = adSlots[placement] ?? adSlots['in-article'];
+const showAds = import.meta.env.PUBLIC_ADSENSE_ENABLED === 'true';
+---
+
+{
+  showAds && (
+    <div class="adsense-container my-4" data-placement={placement}>
+      <ins
+        class="adsbygoogle"
+        style="display:block"
+        data-ad-client={adClient}
+        data-ad-slot={slotId}
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      />
+    </div>
+  )
+}
