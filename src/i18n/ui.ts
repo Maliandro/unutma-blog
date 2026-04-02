@@ -24,8 +24,10 @@ export type UIStrings = {
     peace: string;
     heroTitle: string;
     heroBody: string;
-    /** Primary hero button (filled) */
+    /** Primary hero CTA (e.g. try app — stores) */
     heroCtaPrimary: string;
+    /** Secondary (e.g. product walkthrough) */
+    heroCtaSecondary: string;
     getApp: string;
     readBlog: string;
     latest: string;
@@ -125,19 +127,20 @@ const ui: UIStrings = {
     rights: 'All rights reserved.',
   },
   home: {
-    seoTitle: 'Organize Your Life, Your Way',
+    seoTitle: 'Unutma — A Calm System for Habits, Tasks, and Life (Offline-First)',
     seoDesc:
-      'Unutma Blog — practical guides on productivity, privacy-first apps, journaling, and routines. Download Unutma: offline, private, free.',
-    peace: 'Peace of mind, on your phone',
-    heroTitle: 'Organize your life, your way',
+      'Not forgetful — missing a system. Unutma: minimal organization for habits, lists, money, and notes on your device. Free to start. Blog: practical fixes for real problems.',
+    peace: 'Your problem is not “bad memory.” It is missing structure.',
+    heroTitle: 'You are not forgetful. You just do not have a system yet.',
     heroBody:
-      'Offline-first lists, journal, routines, vault, and more — all on your phone. No account required. This blog shares tips that pair perfectly with a calmer digital life.',
-    heroCtaPrimary: 'Go to blog',
+      'Unutma is a minimal personal system — track habits, organize tasks and money, and keep notes and secrets in one offline-first app. No account required for your content.',
+    heroCtaPrimary: 'Try for free',
+    heroCtaSecondary: 'See how it works',
     getApp: 'Get the app',
     readBlog: 'Read the blog',
-    latest: 'Latest articles',
+    latest: 'From the blog: real problems, practical fixes',
     latestSub:
-      'Ideas for productivity, privacy, and habits — updated as we publish.',
+      'Short reads on habits, focus, and planning — written so you get value even before you download anything.',
     viewAll: 'View all posts',
     why: 'Why Unutma?',
     f1t: 'Offline-first',

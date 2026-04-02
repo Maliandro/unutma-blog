@@ -81,31 +81,48 @@ const whyCards = [
         </div>
       </div>
 
-      <div class="mt-10 flex max-w-xl flex-col gap-6">
-        <a
-          href="/blog/"
-          class="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-brand/25 ring-1 ring-brand/20 transition motion-safe:transition-transform motion-safe:hover:-translate-y-0.5 focus-visible:outline focus-visible:ring-2 focus-visible:ring-brand/50 focus-visible:ring-offset-2 dark:ring-offset-gray-950 sm:w-auto sm:justify-center"
-        >
-          <svg class="h-5 w-5 shrink-0 opacity-95" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M4 19.5A2.5 2.5 0 016.5 17H20"
-            />
-            <path
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"
-            />
-            <path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M8 7h8M8 11h5" />
-          </svg>
-          {u.heroCtaPrimary}
-        </a>
-        <div class="flex flex-col gap-3 border-t border-gray-200/80 pt-6 dark:border-gray-700/80">
+      <div class="mt-10 flex max-w-2xl flex-col gap-6">
+        <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+          <a
+            href="#get-app"
+            class="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-brand/25 ring-1 ring-brand/20 transition motion-safe:transition-transform motion-safe:hover:-translate-y-0.5 focus-visible:outline focus-visible:ring-2 focus-visible:ring-brand/50 focus-visible:ring-offset-2 dark:ring-offset-gray-950 sm:w-auto sm:justify-center"
+          >
+            <svg class="h-5 w-5 shrink-0 opacity-95" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+              />
+            </svg>
+            {u.heroCtaPrimary}
+          </a>
+          <a
+            href="/blog/unutma-app-complete-feature-guide/"
+            class="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-6 py-3.5 text-base font-semibold text-gray-900 shadow-sm ring-1 ring-black/5 transition hover:bg-gray-50 focus-visible:outline focus-visible:ring-2 focus-visible:ring-brand/40 focus-visible:ring-offset-2 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100 dark:ring-white/10 dark:hover:bg-gray-800 sm:w-auto sm:justify-center"
+          >
+            <svg class="h-5 w-5 shrink-0 opacity-90" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"
+              />
+              <path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M14 2v6h6M8 13h8M8 17h8" />
+            </svg>
+            {u.heroCtaSecondary}
+          </a>
+        </div>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          <a
+            href="/blog/"
+            class="font-medium text-brand underline-offset-4 hover:underline dark:text-indigo-400"
+            >{u.readBlog}</a
+          >
+        </p>
+        <div id="get-app" class="flex scroll-mt-24 flex-col gap-3 border-t border-gray-200/80 pt-6 dark:border-gray-700/80">
           <p
             class="text-xs font-semibold uppercase tracking-[0.12em] text-gray-500 dark:text-gray-400"
           >
