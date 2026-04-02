@@ -41,6 +41,9 @@ vision board alternative digital
 # habit tracker apps 2026 simple logging vs analytics
 # unutma vs todoist 2026
 # unutma vs notion 2026
+# problem-first series (Apr 2026): why you quit habits after three days; discipline wrong system;
+# phone steals focus; Monday planning loop; motivation fails; visibility trap; Wednesday planning;
+# habit trackers wrong metric; streaks help vs hurt; calendar full chaos
 
 # ── Routine & habits ──
 how to build habits that stick
