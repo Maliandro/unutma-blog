@@ -1,16 +1,17 @@
 ---
 /**
- * Official-style store badges (local SVGs). Links use env with sensible defaults.
+ * Store links as plain text (no badge graphics).
  */
+import { t } from '../i18n/ui';
+
 interface Props {
   class?: string;
-  /** Slightly smaller on narrow CTAs */
-  compact?: boolean;
-  /** default = full prominence; secondary = lighter weight under a primary CTA */
+  /** Slightly quieter under a primary CTA */
   emphasis?: 'default' | 'secondary';
 }
 
-const { class: className, compact = false, emphasis = 'default' } = Astro.props;
+const { class: className, emphasis = 'default' } = Astro.props;
+const u = t();
 
 const playStoreUrl =
   import.meta.env.PUBLIC_PLAY_STORE_URL ??
@@ -19,54 +20,27 @@ const appStoreUrl =
   import.meta.env.PUBLIC_APP_STORE_URL ??
   'https://apps.apple.com/us/app/unutma-peace-of-mind/id6758889495';
 
-const h = compact ? 'h-9 sm:h-10' : 'h-10 sm:h-11';
-const wrap =
+const linkClass =
   emphasis === 'secondary'
-    ? 'opacity-[0.92] saturate-[0.95] contrast-[0.98]'
-    : '';
+    ? 'text-sm font-semibold text-brand hover:underline dark:text-indigo-400'
+    : 'text-base font-semibold text-brand hover:underline dark:text-indigo-400';
 ---
 
-<div class:list={['flex flex-wrap items-center gap-3', wrap, className]}>
+<div class:list={['flex flex-wrap items-center gap-x-6 gap-y-2', className]}>
   <a
     href={playStoreUrl}
     target="_blank"
     rel="noopener noreferrer"
-    class:list={[
-      'inline-block leading-none rounded-md focus:outline-none focus:ring-2 focus:ring-brand/40',
-      emphasis === 'secondary'
-        ? 'ring-1 ring-gray-200/80 bg-white/50 dark:ring-gray-600/80 dark:bg-gray-900/40'
-        : 'transition motion-safe:transition-opacity hover:opacity-90',
-    ]}
+    class:list={[linkClass, 'rounded-md py-1 focus:outline-none focus:ring-2 focus:ring-brand/40']}
   >
-    <img
-      src="/badges/google-play-badge.svg"
-      alt="Get it on Google Play"
-      width="200"
-      height="59"
-      class:list={[h, 'w-auto rounded-md ring-1 ring-black/10 dark:ring-white/15']}
-      loading="lazy"
-      decoding="async"
-    />
+    {u.footer.googlePlay}
   </a>
   <a
     href={appStoreUrl}
     target="_blank"
     rel="noopener noreferrer"
-    class:list={[
-      'inline-block leading-none rounded-md focus:outline-none focus:ring-2 focus:ring-brand/40',
-      emphasis === 'secondary'
-        ? 'ring-1 ring-gray-700/30 bg-gray-900/10 dark:ring-white/20'
-        : 'transition motion-safe:transition-opacity hover:opacity-90',
-    ]}
+    class:list={[linkClass, 'rounded-md py-1 focus:outline-none focus:ring-2 focus:ring-brand/40']}
   >
-    <img
-      src="/badges/app-store-badge.svg"
-      alt="Download on the App Store"
-      width="140"
-      height="42"
-      class:list={[h, 'w-auto rounded-md ring-1 ring-white/20']}
-      loading="lazy"
-      decoding="async"
-    />
+    {u.footer.appStore}
   </a>
 </div>
