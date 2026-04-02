@@ -20,7 +20,7 @@ Each tab answers a different question:
 
 | Tab | Question it answers |
 | --- | --- |
-| **Actions** | “What did I do today — in one tap?” |
+| **Actions** | “Did I do that small real-world check — in one tap?” |
 | **Lists** | “What do I need to buy, do, or wish for?” |
 | **Vault** | “Where do I keep sensitive info, locked away?” |
 | **Economy** | “Where did my money go — and what’s coming?” |
@@ -30,15 +30,15 @@ Across the top, you also get **Notes** (quick capture), **Calendar** (events and
 
 ---
 
-## Actions: your “today I did this” dashboard
+## Actions: checklist taps, not a diary of your day
 
-The **Actions** screen is built around **custom buttons** you define yourself — for example “Water”, “Walk”, “Read”, “Deep work”. Tap a button and Unutma **logs that action with a timestamp**. That sounds simple; the payoff is huge:
+The **Actions** screen is for **small, real-world checks** you want to remember — the kind of thing you’d ask on the way out the door: **“Did I unplug the iron?”**, **“Did I lock the door?”**, **“Is the stove off?”**, **“Did I take my meds?”** You define **custom buttons** in your own words; tap once and Unutma **logs it with a timestamp**. That is the whole mechanic — proof you did the thing, without turning the tab into a “what I did today” essay.
 
-- You build a **honest picture of your day** without writing paragraphs.
-- The app can show **recent activity**, **streaks**, and **achievements** when you stay consistent.
-- A **“On this day last year”** style card can surface what you logged a year ago — a gentle nudge to see progress, not guilt.
+- You get **evidence for mundane but important habits**, not a performance review.
+- The app can show **recent activity**, **streaks**, and **statistics** when you stay consistent.
+- A **“On this day last year”** style card can surface what you logged a year ago — continuity, not guilt.
 
-**How to use it well:** Add **3–7 actions** that matter to *you*, not a generic list from the internet. Tap through the day. If you miss a day, the world does not end; you still have a signal when you return. Pair this tab with **Journal** when you want story, not just signal.
+**How to use it well:** Add **3–7 buttons** that match *your* life (safety, health, shutdown rituals — whatever you actually need to verify). If you want narrative or feelings, use **Journal**; Actions stay **short and checkable**.
 
 ---
 
@@ -115,7 +115,7 @@ When you want portability, you look at **export / backup** flows the app offers 
 3. **Day 5:** Try **Economy** for subscriptions or a week of expenses — whichever hurts more to ignore.
 4. **Day 6–7:** Open **Journal** once per day, even for thirty seconds.
 
-Then revisit [our welcome post](/en/blog/welcome-to-unutma-blog/) for the bigger “why” behind this blog — and keep the app as **tight or as full** as your life needs.
+Then revisit [our welcome post](/blog/welcome-to-unutma-blog/) for the bigger “why” behind this blog — and keep the app as **tight or as full** as your life needs.
 
 ---
 
@@ -129,10 +129,10 @@ Then revisit [our welcome post](/en/blog/welcome-to-unutma-blog/) for the bigger
 
 ## Deep dives on the blog (long reads)
 
-- [Quick Actions, streaks, heatmaps & Statistics](/en/blog/unutma-quick-actions-streaks-heatmap-statistics/)
-- [Lists: Todo, Shopping & Wishlist workflows](/en/blog/unutma-lists-todo-shopping-wishlist-workflow/)
-- [Vault: passwords, Face ID & privacy habits](/en/blog/unutma-vault-passwords-face-id-privacy/)
-- [Economy: expenses, subscriptions, budgets & assets](/en/blog/unutma-economy-expenses-budgets-assets/)
-- [Journal: mood, voice & reflection](/en/blog/unutma-journal-mood-voice-reflection/)
-- [Routines, Calendar & widgets](/en/blog/unutma-routines-calendar-widgets-time/)
-- [Themes, mini games, languages & backup](/en/blog/unutma-themes-games-languages-backup/)
+- [Quick Actions, streaks, heatmaps & Statistics](/blog/unutma-quick-actions-streaks-heatmap-statistics/)
+- [Lists: Todo, Shopping & Wishlist workflows](/blog/unutma-lists-todo-shopping-wishlist-workflow/)
+- [Vault: passwords, Face ID & privacy habits](/blog/unutma-vault-passwords-face-id-privacy/)
+- [Economy: expenses, subscriptions, budgets & assets](/blog/unutma-economy-expenses-budgets-assets/)
+- [Journal: mood, voice & reflection](/blog/unutma-journal-mood-voice-reflection/)
+- [Routines, Calendar & widgets](/blog/unutma-routines-calendar-widgets-time/)
+- [Themes, mini games, languages & backup](/blog/unutma-themes-games-languages-backup/)

@@ -16,7 +16,7 @@ Design cues: put tools where your eyes already go. Remove cues for habits you ar
 
 ## Related reading
 
-Connect with [benefits of daily journaling](/en/blog/benefits-of-daily-journaling/) for reflection loops, and [weekly planning tips](/en/blog/weekly-planning-tips/) for structure.
+Connect with [benefits of daily journaling](/blog/benefits-of-daily-journaling/) for reflection loops, and [weekly planning tips](/blog/weekly-planning-tips/) for structure.
 
 ## Key takeaways
 

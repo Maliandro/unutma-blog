@@ -5,8 +5,18 @@
   "outputDirectory": "dist",
   "redirects": [
     {
-      "source": "/blog/:path*",
-      "destination": "/en/blog/:path*",
+      "source": "/en",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/:path*",
+      "destination": "/:path*",
       "permanent": true
     }
   ]

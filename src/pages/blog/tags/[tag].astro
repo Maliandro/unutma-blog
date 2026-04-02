@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import SEOHead from '../../../components/SEOHead.astro';
+import BlogCard from '../../../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+import { t } from '../../../i18n/ui';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const all = await getCollection('blog', ({ data }) => !data.draft);
+  const tagSet = new Set<string>();
+  for (const post of all) {
+    for (const t of post.data.tags ?? []) {
+      tagSet.add(t);
+    }
+  }
+
+  return [...tagSet].map((tag) => {
+    const posts = all
+      .filter((p) => (p.data.tags ?? []).includes(tag))
+      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+    return {
+      params: { tag },
+      props: { tag, posts },
+    };
+  });
+}
+
+interface Props {
+  tag: string;
+  posts: Awaited<ReturnType<typeof getCollection<'blog'>>>;
+}
+
+const u = t().blog;
+
+const { tag, posts } = Astro.props;
+---
+
+<BaseLayout>
+  <SEOHead
+    slot="head"
+    title={`${u.tagSeo}: ${tag}`}
+    description={`${u.tagSeo} “${tag}”.`}
+  />
+
+  <div class="mx-auto max-w-5xl px-4 py-12">
+    <a
+      href="/blog/"
+      class="text-sm font-medium text-brand hover:underline dark:text-indigo-400"
+      >{u.tagAll}</a
+    >
+    <h1 class="section-title mt-4 text-3xl md:text-[2.35rem]">
+      {tag}
+    </h1>
+    <p class="mt-2 text-gray-600 dark:text-gray-400">
+      {posts.length} {u.tagCount}
+    </p>
+
+    <div class="mt-10 grid gap-8 md:grid-cols-2">
+      {posts.map((post) => <BlogCard post={post} />)}
+    </div>
+  </div>
+</BaseLayout>

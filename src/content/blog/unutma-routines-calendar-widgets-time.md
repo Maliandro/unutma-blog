@@ -1,4 +1,4 @@
----
+﻿---
 title: "Routines, Calendar, and Widgets: Time-Based Calm in Unutma"
 description: "How Unutma helps you shape mornings, evenings, and scheduled events — plus home screen widgets — so reminders support your life instead of hijacking it."
 pubDate: 2026-04-07
@@ -10,7 +10,7 @@ imageAlt: "Calendar grid and routine blocks suggesting structured days"
 
 Notifications are not neutral — they are **tiny landlords** that charge rent in attention. **Unutma’s time-based tools** — **Routines**, **Calendar**, and (where supported) **home screen widgets** — try to earn that rent: **structure without surveillance**, **reminders without shame**, and **quick access** to what matters when you are already holding the phone for the hundredth time.
 
-This guide explains how to **design routines that survive real life**, how **Calendar** holds events alongside your logged life, and how **widgets** shrink friction for repeated actions. For the full architecture of the app, see the [complete feature guide](/en/blog/unutma-app-complete-feature-guide/).
+This guide explains how to **design routines that survive real life**, how **Calendar** holds events alongside your logged life, and how **widgets** shrink friction for repeated actions. For the full architecture of the app, see the [complete feature guide](/blog/unutma-app-complete-feature-guide/).
 
 ## Routines: rhythm, not rigidity
 
@@ -22,7 +22,7 @@ This guide explains how to **design routines that survive real life**, how **Cal
 - **Keep steps small** — if a routine is twenty steps, it is a project, not a rhythm.
 - **Use reminders** as **nudges**, not **alarms of shame** — rename notifications in plain language: “Gentle: wind down” instead of “FAILURE IMMINENT.”
 
-Pair routines with [how to build a morning routine](/en/blog/how-to-build-a-morning-routine/) for philosophical framing — Unutma supplies the **container**.
+Pair routines with [how to build a morning routine](/blog/how-to-build-a-morning-routine/) for philosophical framing — Unutma supplies the **container**.
 
 ## Calendar: events in the world, not just tasks in a list
 
@@ -62,7 +62,7 @@ Put **subscription renewal dates** and **bill due windows** into Calendar if tha
 
 ## Weekly planning tie-in
 
-Connect routines to [weekly planning tips](/en/blog/weekly-planning-tips/) — **Sunday** (or any review day) is when you adjust routine length to match reality, not fantasy.
+Connect routines to [weekly planning tips](/blog/weekly-planning-tips/) — **Sunday** (or any review day) is when you adjust routine length to match reality, not fantasy.
 
 ## Failure modes
 
@@ -74,4 +74,4 @@ Connect routines to [weekly planning tips](/en/blog/weekly-planning-tips/) — *
 
 ## Closing
 
-Time-based tools should make life **more legible**, not more loud. Next: **themes, games, languages, and backup** — the “human layer” of Unutma — or revisit [weekly planning tips](/en/blog/weekly-planning-tips/) if your schedule still feels tighter than your values.
+Time-based tools should make life **more legible**, not more loud. Next: **themes, games, languages, and backup** — the “human layer” of Unutma — or revisit [weekly planning tips](/blog/weekly-planning-tips/) if your schedule still feels tighter than your values.

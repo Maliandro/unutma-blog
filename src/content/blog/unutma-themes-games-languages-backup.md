@@ -1,4 +1,4 @@
----
+﻿---
 title: "Themes, Mini Games, Languages, and Backup: The Human Layer of Unutma"
 description: "Beyond tasks and money — how Unutma’s eight themes, brain-break games, multilingual UI, and export/backup choices keep the app livable for real humans."
 pubDate: 2026-04-08
@@ -10,7 +10,7 @@ imageAlt: "Color gradient suggesting multiple themes and global languages"
 
 An app that only optimizes you is an app you **eventually uninstall** — because humans are not spreadsheets with legs. **Unutma’s “human layer”** is everything that makes the serious stuff **sustainable**: **eight visual themes**, **mini games** for mental breaks, **multiple interface languages**, **accessibility choices** like font sizing, and **export / backup** flows that keep **you** in charge of where data lives.
 
-This article ties those pieces together — not as marketing fluff, but as **design decisions that affect daily friction**. For the core tabs (Actions, Lists, Vault, Economy, Journal), start with the [complete feature guide](/en/blog/unutma-app-complete-feature-guide/).
+This article ties those pieces together — not as marketing fluff, but as **design decisions that affect daily friction**. For the core tabs (Actions, Lists, Vault, Economy, Journal), start with the [complete feature guide](/blog/unutma-app-complete-feature-guide/).
 
 ## Eight themes: aesthetics as emotional regulation
 
@@ -43,7 +43,7 @@ Unutma supports **multiple interface languages** — English, Turkish, German, S
 ## Notes and Statistics (quick pointers)
 
 - **Notes** (quick capture) belong to **fleeting** thoughts — not your long-form Journal. Rotate Notes into Journal or Todo when ideas mature.
-- **Statistics** reward **longitudinal honesty** — see the Actions article on [streaks and heatmaps](/en/blog/unutma-quick-actions-streaks-heatmap-statistics/) for interpretation tips.
+- **Statistics** reward **longitudinal honesty** — see the Actions article on [streaks and heatmaps](/blog/unutma-quick-actions-streaks-heatmap-statistics/) for interpretation tips.
 
 ## Backup and export: portability without surrender
 
@@ -65,12 +65,12 @@ Once a quarter, spend **fifteen minutes** in Settings:
 
 ## Connection to privacy culture
 
-This “human layer” still sits on the same foundation we discuss in [privacy-first productivity apps](/en/blog/privacy-first-productivity-apps/) — tools should not need to **extract** your attention to fund themselves.
+This “human layer” still sits on the same foundation we discuss in [privacy-first productivity apps](/blog/privacy-first-productivity-apps/) — tools should not need to **extract** your attention to fund themselves.
 
 ## Where to go next
 
-- [Vault deep dive](/en/blog/unutma-vault-passwords-face-id-privacy/) — credentials without chaos.
-- [Economy deep dive](/en/blog/unutma-economy-expenses-budgets-assets/) — numbers without shame.
-- [Welcome post](/en/blog/welcome-to-unutma-blog/) — why this blog exists.
+- [Vault deep dive](/blog/unutma-vault-passwords-face-id-privacy/) — credentials without chaos.
+- [Economy deep dive](/blog/unutma-economy-expenses-budgets-assets/) — numbers without shame.
+- [Welcome post](/blog/welcome-to-unutma-blog/) — why this blog exists.
 
 **Bottom line:** Unutma’s serious features only work if the **soft** features keep you inside the app **without** trapping you there — themes for comfort, games for breath, languages for belonging, backup for agency.

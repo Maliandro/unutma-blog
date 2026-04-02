@@ -1,20 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SEOHead from '../components/SEOHead.astro';
-import { href } from '../i18n/paths';
 import { t } from '../i18n/ui';
 
-const locale = 'en';
-const u = t(locale).notFound;
+const u = t().notFound;
 ---
 
-<BaseLayout locale={locale}>
-  <SEOHead
-    slot="head"
-    title={u.seoTitle}
-    description={u.seoDesc}
-    locale={locale}
-  />
+<BaseLayout>
+  <SEOHead slot="head" title={u.seoTitle} description={u.seoDesc} />
 
   <div class="mx-auto max-w-lg px-4 py-24 text-center">
     <p class="text-6xl font-bold text-gray-200 dark:text-gray-800">404</p>
@@ -23,7 +16,7 @@ const u = t(locale).notFound;
       {u.body}
     </p>
     <a
-      href={href(locale, '/')}
+      href="/"
       class="mt-8 inline-block rounded-lg bg-brand px-6 py-3 font-medium text-white hover:bg-brand-dark"
     >
       {u.home}

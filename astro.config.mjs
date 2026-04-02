@@ -5,11 +5,6 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://unutma-blog.vercel.app',
   trailingSlash: 'always',
-  redirects: {
-    '/about/': '/en/about/',
-    '/privacy/': '/en/privacy/',
-    '/blog/': '/en/blog/',
-  },
   integrations: [tailwind(), sitemap()],
   markdown: {
     shikiConfig: {

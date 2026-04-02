@@ -1,4 +1,4 @@
----
+﻿---
 title: "Money Clarity in Unutma: Expenses, Subscriptions, Budgets, and Assets"
 description: "A practical tour of Unutma’s Economy tab — from daily spending and bills to subscriptions, budgets, charts, and optional asset tracking — without turning finance into shame."
 pubDate: 2026-04-05
@@ -10,7 +10,7 @@ imageAlt: "Abstract trend line and chart suggesting money flow over time"
 
 Money stress rarely comes from “not having a spreadsheet.” It comes from **not seeing patterns soon enough** — the subscription that renewed quietly, the category that ballooned while you were busy, the gap between **what you feel** and **what the numbers say**. **Unutma’s Economy tab** exists to shrink that gap: **expenses**, **income**, **subscriptions**, **budgets**, **trends**, and optional **assets** tracking — all in an app that keeps **your data oriented around your device**, not an ad-powered finance feed.
 
-This is a long, practical walkthrough: what to track first, how to avoid “finance cosplay,” and how Economy connects to **Lists** and **Vault**. New to the app? Start with the [complete feature guide](/en/blog/unutma-app-complete-feature-guide/).
+This is a long, practical walkthrough: what to track first, how to avoid “finance cosplay,” and how Economy connects to **Lists** and **Vault**. New to the app? Start with the [complete feature guide](/blog/unutma-app-complete-feature-guide/).
 
 ## The Economy tab in one sentence
 
@@ -38,7 +38,7 @@ Subscriptions are psychologically small and financially large. Unutma can help y
 - For each, ask: **“Would I subscribe again today at full price?”**
 - Cancel **one** with relief, not five with regret — momentum beats theater.
 
-Pair this with ideas from [how to track personal expenses](/en/blog/how-to-track-personal-expenses/) if you want category discipline without misery.
+Pair this with ideas from [how to track personal expenses](/blog/how-to-track-personal-expenses/) if you want category discipline without misery.
 
 ## Layer 3: budgets (guardrails, not handcuffs)
 
@@ -90,4 +90,4 @@ If spending is emotional — stress shopping, revenge spending — **numbers alo
 
 ## Closing
 
-Economy in Unutma is built for **clarity under your control** — aligned with the same privacy posture we describe across the blog. Next in the series: **Journal** — mood, memory, and voice — or revisit [digital minimalism tips](/en/blog/digital-minimalism-tips/) if you want fewer money triggers from your phone overall.
+Economy in Unutma is built for **clarity under your control** — aligned with the same privacy posture we describe across the blog. Next in the series: **Journal** — mood, memory, and voice — or revisit [digital minimalism tips](/blog/digital-minimalism-tips/) if you want fewer money triggers from your phone overall.

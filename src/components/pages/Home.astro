@@ -5,16 +5,9 @@ import BlogCard from '../../components/BlogCard.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
 import StoreBadgeRow from '../../components/StoreBadgeRow.astro';
 import { getCollection } from 'astro:content';
-import type { Locale } from '../../i18n/locales';
-import { href } from '../../i18n/paths';
 import { t } from '../../i18n/ui';
 
-interface Props {
-  locale: Locale;
-}
-
-const { locale } = Astro.props;
-const u = t(locale).home;
+const u = t().home;
 
 const all = await getCollection('blog', ({ data }) => !data.draft);
 const sorted = all.sort(
@@ -23,13 +16,8 @@ const sorted = all.sort(
 const latest = sorted.slice(0, 6);
 ---
 
-<BaseLayout locale={locale}>
-  <SEOHead
-    slot="head"
-    title={u.seoTitle}
-    description={u.seoDesc}
-    locale={locale}
-  />
+<BaseLayout>
+  <SEOHead slot="head" title={u.seoTitle} description={u.seoDesc} />
 
   <section
     class="relative overflow-hidden border-b border-indigo-100/80 bg-gradient-to-b from-indigo-50/95 via-emerald-50/30 to-white dark:border-indigo-900/40 dark:from-indigo-950/40 dark:via-emerald-950/20 dark:to-gray-950"
@@ -64,7 +52,7 @@ const latest = sorted.slice(0, 6);
       <div class="mt-8 flex flex-wrap items-center gap-4">
         <StoreBadgeRow />
         <a
-          href={href(locale, '/blog')}
+          href="/blog/"
           class="inline-flex items-center rounded-lg px-4 py-3 font-medium text-brand hover:underline dark:text-indigo-400"
         >
           {u.readBlog} →
@@ -81,7 +69,7 @@ const latest = sorted.slice(0, 6);
     <div class="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {
         latest.length ? (
-          latest.map((post) => <BlogCard post={post} locale={locale} />)
+          latest.map((post) => <BlogCard post={post} />)
         ) : (
           <p class="text-gray-500 md:col-span-2 dark:text-gray-400">
             {u.noPosts}{' '}
@@ -93,7 +81,7 @@ const latest = sorted.slice(0, 6);
     </div>
     <p class="mt-10 text-center">
       <a
-        href={href(locale, '/blog')}
+        href="/blog/"
         class="font-medium text-brand hover:underline dark:text-indigo-400">{u.viewAll}</a
       >
     </p>
@@ -122,6 +110,6 @@ const latest = sorted.slice(0, 6);
   </section>
 
   <section class="mx-auto max-w-5xl px-4 pb-20">
-    <NewsletterForm locale={locale} />
+    <NewsletterForm />
   </section>
 </BaseLayout>

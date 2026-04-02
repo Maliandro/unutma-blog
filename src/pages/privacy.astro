@@ -1,32 +1,19 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import SEOHead from '../../components/SEOHead.astro';
-import { LOCALES, type Locale } from '../../i18n/locales';
-import { href } from '../../i18n/paths';
-import { t } from '../../i18n/ui';
-
-export function getStaticPaths() {
-  return LOCALES.map((lang) => ({ params: { lang } }));
-}
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEOHead from '../components/SEOHead.astro';
+import { t } from '../i18n/ui';
 
 const officialPolicyUrl =
   'https://sites.google.com/view/unutma-privacy/ana-sayfa';
 
-const { lang } = Astro.params;
-const locale = lang as Locale;
-const u = t(locale).privacy;
+const u = t().privacy;
 ---
 
-<BaseLayout locale={locale}>
-  <SEOHead
-    slot="head"
-    title={u.seoTitle}
-    description={u.seoDesc}
-    locale={locale}
-  />
+<BaseLayout>
+  <SEOHead slot="head" title={u.seoTitle} description={u.seoDesc} />
 
   <article
-    class="prose prose-lg mx-auto max-w-3xl px-4 py-12 dark:prose-invert prose-a:text-brand prose-strong:text-gray-900 dark:prose-strong:text-gray-100"
+    class="prose prose-lg mx-auto max-w-3xl px-4 py-12 dark:prose-invert prose-headings:font-display prose-headings:text-gray-900 dark:prose-headings:text-gray-50 prose-a:text-brand prose-strong:text-gray-900 dark:prose-strong:text-gray-100"
   >
     <h1>{u.h1}</h1>
 
@@ -59,6 +46,6 @@ const u = t(locale).privacy;
       <a href="mailto:unutma.app1.0@gmail.com">unutma.app1.0@gmail.com</a>
     </p>
 
-    <p><a href={href(locale, '/')}>{u.back}</a></p>
+    <p><a href="/">{u.back}</a></p>
   </article>
 </BaseLayout>

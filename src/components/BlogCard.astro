@@ -1,23 +1,19 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import type { Locale } from '../i18n/locales';
 import { DATE_LOCALE } from '../i18n/locales';
-import { href } from '../i18n/paths';
 import { coverForSlug } from '../utils/covers';
 import { t } from '../i18n/ui';
 
 interface Props {
   post: CollectionEntry<'blog'>;
-  locale: Locale;
 }
 
-const { post, locale } = Astro.props;
+const { post } = Astro.props;
 const date = post.data.pubDate;
 const coverSrc = post.data.image ?? coverForSlug(post.slug);
 const coverAlt = post.data.imageAlt ?? post.data.title;
-const u = t(locale);
-const postHref = href(locale, `/blog/${post.slug}`);
-const dateLoc = DATE_LOCALE[locale];
+const u = t();
+const postHref = `/blog/${post.slug}/`;
 ---
 
 <article
@@ -25,7 +21,7 @@ const dateLoc = DATE_LOCALE[locale];
 >
   <a
     href={postHref}
-    class="relative aspect-[1200/630] w-full shrink-0 overflow-hidden bg-gray-100 dark:bg-gray-800"
+    class="relative aspect-[1200/630] w-full shrink-0 overflow-hidden bg-gray-100 dark:bg-gray-800/90"
   >
     <img
       src={coverSrc}
@@ -34,7 +30,7 @@ const dateLoc = DATE_LOCALE[locale];
       height="630"
       loading="lazy"
       decoding="async"
-      class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+      class="h-full w-full object-cover object-center transition duration-300 group-hover:scale-[1.02] ring-1 ring-inset ring-black/[0.06] dark:ring-white/10"
     />
   </a>
   <div class="flex flex-1 flex-col p-6">
@@ -43,7 +39,7 @@ const dateLoc = DATE_LOCALE[locale];
       datetime={date.toISOString()}
     >
       {
-        date.toLocaleDateString(dateLoc, {
+        date.toLocaleDateString(DATE_LOCALE, {
           year: 'numeric',
           month: 'long',
           day: 'numeric',
@@ -63,7 +59,7 @@ const dateLoc = DATE_LOCALE[locale];
         <div class="mt-4 flex flex-wrap gap-2">
           {post.data.tags.slice(0, 4).map((tag) => (
             <a
-              href={href(locale, `/blog/tags/${encodeURIComponent(tag)}`)}
+              href={`/blog/tags/${encodeURIComponent(tag)}/`}
               class="rounded-full bg-indigo-50 px-2 py-0.5 text-xs text-indigo-700 hover:bg-indigo-100 dark:bg-indigo-950/80 dark:text-indigo-300 dark:hover:bg-indigo-900"
             >
               {tag}

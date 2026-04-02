@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEOHead from '../components/SEOHead.astro';
+import { t } from '../i18n/ui';
+
+const u = t().about;
+const nav = t().nav;
+const footer = t().footer;
+---
+
+<BaseLayout>
+  <SEOHead slot="head" title={u.seoTitle} description={u.seoDesc} />
+
+  <article
+    class="prose prose-lg mx-auto max-w-3xl px-4 py-12 dark:prose-invert prose-headings:font-display prose-headings:text-gray-900 dark:prose-headings:text-gray-50 prose-a:text-brand prose-strong:text-gray-900 dark:prose-strong:text-gray-100"
+  >
+    <h1>{u.h1}</h1>
+    <p>{u.p1}</p>
+    <h2>{u.h2}</h2>
+    <p>{u.p2}</p>
+    <p>{u.p3}</p>
+    <p>
+      <a href="/">{nav.home}</a>
+      {' · '}
+      <a href="/blog/">{nav.blog}</a>
+      {' · '}
+      <a href="/privacy/">{footer.privacy}</a>
+    </p>
+  </article>
+</BaseLayout>

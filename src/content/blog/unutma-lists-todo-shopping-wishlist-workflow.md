@@ -1,4 +1,4 @@
----
+﻿---
 title: "Todo, Shopping, and Wishlist in Unutma: One Tab, Three Mental Modes"
 description: "Why Unutma separates work tasks, grocery runs, and long-term wishes — and how to move items between them without turning your phone into a second job."
 pubDate: 2026-04-03
@@ -10,7 +10,7 @@ imageAlt: "Stylized checklist rows representing todo, shopping, and wishlist mod
 
 If your task app and your grocery list ever had a baby — and that baby also kept a birthday wishlist for headphones — you would get something close to the cognitive mess most people carry in a single “misc” list. **Unutma’s Lists tab refuses that mess.** It gives you **three modes** behind one roof: **Todo**, **Shopping**, and **Wishlist** — because your brain already treats those as different animals, even when your old app did not.
 
-This article is a full workflow guide: when to use each mode, how to avoid duplicate entries, how Lists talks to **Actions** and **Economy**, and how to keep lists short enough to actually finish. For the full app tour, see the [complete feature guide](/en/blog/unutma-app-complete-feature-guide/).
+This article is a full workflow guide: when to use each mode, how to avoid duplicate entries, how Lists talks to **Actions** and **Economy**, and how to keep lists short enough to actually finish. For the full app tour, see the [complete feature guide](/blog/unutma-app-complete-feature-guide/).
 
 ## Why three modes exist (the psychology)
 
@@ -26,7 +26,7 @@ Use **Todo** for items that have a meaningful **done** state: call the dentist, 
 - **One “inbox” is enough.** If you need GTD-level projects, pair Unutma with a paper notebook for mapping — keep Unutma as the **execution layer** on the go.
 - **Archive ruthlessly.** A done item you hide teaches you that finishing is normal.
 
-Pair Todo with **weekly planning** habits from [weekly planning tips](/en/blog/weekly-planning-tips/) — the list stays aligned with a calendar you actually trust.
+Pair Todo with **weekly planning** habits from [weekly planning tips](/blog/weekly-planning-tips/) — the list stays aligned with a calendar you actually trust.
 
 ## Shopping mode: protect your attention in the aisle
 
@@ -42,7 +42,7 @@ Pair Todo with **weekly planning** habits from [weekly planning tips](/en/blog/w
 **Wishlist** holds **non-urgent desires**: books, gear, trips, the fancy water bottle you do not need this week. The point is **deprioritization without forgetting**.
 
 - Move items **out** when you buy or when you realize you do not want them anymore — wishes change; the list should too.
-- Cross-check with **Economy** before big purchases — if the wishlist item becomes real, your budget should know (see our [economy deep dive](/en/blog/unutma-economy-expenses-budgets-assets/)).
+- Cross-check with **Economy** before big purchases — if the wishlist item becomes real, your budget should know (see our [economy deep dive](/blog/unutma-economy-expenses-budgets-assets/)).
 
 ## Moving between modes without chaos
 
@@ -83,4 +83,4 @@ Once a month, **audit** each mode in under ten minutes:
 
 ## Closing
 
-Unutma’s Lists tab works because it respects **how attention actually works** — not how productivity influencers pretend it works. Next up: **Vault** — how sensitive data stays yours behind biometrics — or revisit [how to organize your life](/en/blog/how-to-organize-your-life/) for the bigger picture.
+Unutma’s Lists tab works because it respects **how attention actually works** — not how productivity influencers pretend it works. Next up: **Vault** — how sensitive data stays yours behind biometrics — or revisit [how to organize your life](/blog/how-to-organize-your-life/) for the bigger picture.

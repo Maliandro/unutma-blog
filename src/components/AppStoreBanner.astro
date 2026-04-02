@@ -1,14 +1,8 @@
 ---
-import type { Locale } from '../i18n/locales';
 import { t } from '../i18n/ui';
 import StoreBadgeRow from './StoreBadgeRow.astro';
 
-interface Props {
-  locale: Locale;
-}
-
-const { locale } = Astro.props;
-const u = t(locale).appBanner;
+const u = t().appBanner;
 ---
 
 <aside

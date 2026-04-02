@@ -16,7 +16,7 @@ Try **prompts**: one win, one tension, one intention for tomorrow. Rotate prompt
 
 ## Cross-links
 
-For more on building sustainable habits, see [how to organize your life](/en/blog/how-to-organize-your-life/) and our [welcome article](/en/blog/welcome-to-unutma-blog/).
+For more on building sustainable habits, see [how to organize your life](/blog/how-to-organize-your-life/) and our [welcome article](/blog/welcome-to-unutma-blog/).
 
 ## Key takeaways
 

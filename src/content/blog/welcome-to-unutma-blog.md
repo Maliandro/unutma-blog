@@ -1,4 +1,4 @@
----
+﻿---
 title: "Welcome to the Unutma Blog"
 description: "Why we started this blog, what you will find here, and how it connects to the Unutma app — offline, private organization."
 pubDate: 2026-03-15
@@ -16,7 +16,7 @@ Unutma is an app for lists, notes, routines, a vault, and more — with your dat
 
 ## What is next
 
-Browse the [blog index](/en/blog/), read [about us](/en/about/), and when you are ready, try Unutma on [Google Play](https://play.google.com/store/apps/details?id=com.mehmet.unutma) or the [App Store](https://apps.apple.com/us/app/unutma-peace-of-mind/id6758889495).
+Browse the [blog index](/blog/), read [about us](/about/), and when you are ready, try Unutma on [Google Play](https://play.google.com/store/apps/details?id=com.mehmet.unutma) or the [App Store](https://apps.apple.com/us/app/unutma-peace-of-mind/id6758889495).
 
 ### Quick tips
 

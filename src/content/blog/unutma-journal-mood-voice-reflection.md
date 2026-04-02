@@ -1,4 +1,4 @@
----
+﻿---
 title: "Journaling in Unutma: Mood, Memory, and Showing Up Without Performance"
 description: "How Unutma’s Journal blends mood tracking with writing — including voice-friendly capture — so reflection stays private, small, and sustainable."
 pubDate: 2026-04-06
@@ -10,7 +10,7 @@ imageAlt: "Notebook lines and soft mood dots suggesting a private journal"
 
 You do not need another blank page staring back at you like a judgmental mirror — yet most “journaling apps” still behave like **Medium for your trauma**: rich text, prompts, streaks, and subtle pressure to **produce**. **Unutma’s Journal** takes a different stance: **continuity beats eloquence**, **privacy beats performance**, and **mood plus words** beat either one alone when you are trying to understand a week, not win a literary prize.
 
-This article explores **mood levels**, **writing habits**, **voice capture** (where available in your build), and how Journal connects to **Actions** and **Routines**. For the full product map, see the [complete feature guide](/en/blog/unutma-app-complete-feature-guide/).
+This article explores **mood levels**, **writing habits**, **voice capture** (where available in your build), and how Journal connects to **Actions** and **Routines**. For the full product map, see the [complete feature guide](/blog/unutma-app-complete-feature-guide/).
 
 ## Why mood + text belong together
 
@@ -36,7 +36,7 @@ If your app build includes **voice capture** for journaling, treat it as **dicta
 - Speak in **short paragraphs** — easier to reread.
 - Name emotions explicitly — “I am anxious about money” beats vague ranting for later pattern recognition.
 
-Voice pairs beautifully with [benefits of daily journaling](/en/blog/benefits-of-daily-journaling/) — especially on days when typing feels impossible.
+Voice pairs beautifully with [benefits of daily journaling](/blog/benefits-of-daily-journaling/) — especially on days when typing feels impossible.
 
 ## Journal + Actions: story after signal
 
@@ -52,7 +52,7 @@ If you review money weekly, add **one Journal line** about **how finance felt**,
 - “Reviewed subscriptions — relieved to cancel one.”
 - “Numbers fine; mood heavy — worth noticing.”
 
-Cross-read [money clarity in Unutma](/en/blog/unutma-economy-expenses-budgets-assets/) for the numbers side.
+Cross-read [money clarity in Unutma](/blog/unutma-economy-expenses-budgets-assets/) for the numbers side.
 
 ## Journal + Routines: bookends for the day
 
@@ -81,7 +81,7 @@ If you are in acute crisis, **human help** beats any UI — Unutma is a tool, no
 
 ## What to read next
 
-- [How to build habits that stick](/en/blog/how-to-build-habits-that-stick/) — rhythm without rigidity.
-- [Morning routine ideas](/en/blog/how-to-build-a-morning-routine/) — gentle structure.
+- [How to build habits that stick](/blog/how-to-build-habits-that-stick/) — rhythm without rigidity.
+- [Morning routine ideas](/blog/how-to-build-a-morning-routine/) — gentle structure.
 
 **Bottom line:** Unutma’s Journal wins when you treat it as **a private conversation** — small enough to continue, deep enough to matter.

@@ -1,41 +1,24 @@
 ---
-import type { Locale } from '../i18n/locales';
-import { LOCALES } from '../i18n/locales';
-import { href, switchLocale } from '../i18n/paths';
 import { t } from '../i18n/ui';
 
-interface Props {
-  locale: Locale;
-}
-
-const { locale } = Astro.props;
 const pathname = Astro.url.pathname;
-const u = t(locale);
-
-const langLabel: Record<Locale, string> = {
-  en: 'English',
-  de: 'Deutsch',
-  es: 'Español',
-  it: 'Italiano',
-  fr: 'Français',
-  tr: 'Türkçe',
-};
+const u = t();
 
 const nav = [
-  { href: href(locale, '/'), label: u.nav.home, key: 'home' },
-  { href: href(locale, '/blog'), label: u.nav.blog, key: 'blog' },
-  { href: href(locale, '/about'), label: u.nav.about, key: 'about' },
+  { href: '/', label: u.nav.home, key: 'home' },
+  { href: '/blog/', label: u.nav.blog, key: 'blog' },
+  { href: '/about/', label: u.nav.about, key: 'about' },
 ];
 
 function isActive(key: string): boolean {
   if (key === 'home') {
-    return pathname === `/${locale}/` || pathname === `/${locale}`;
+    return pathname === '/' || pathname === '';
   }
   if (key === 'blog') {
-    return pathname.includes(`/${locale}/blog`);
+    return pathname.startsWith('/blog');
   }
   if (key === 'about') {
-    return pathname.includes(`/${locale}/about`);
+    return pathname.startsWith('/about');
   }
   return false;
 }
@@ -46,7 +29,7 @@ function isActive(key: string): boolean {
 >
   <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-3 px-4 py-4">
     <a
-      href={href(locale, '/')}
+      href="/"
       class="group flex items-center gap-3 rounded-lg outline-none ring-brand/0 transition hover:ring-2 focus-visible:ring-2 focus-visible:ring-brand/30"
     >
       <img
@@ -72,19 +55,6 @@ function isActive(key: string): boolean {
       </span>
     </a>
     <div class="flex flex-wrap items-center justify-end gap-3 sm:gap-4">
-      <label class="sr-only" for="lang-select">{u.lang.label}</label>
-      <select
-        id="lang-select"
-        class="rounded-lg border border-gray-200 bg-white px-2 py-1.5 text-xs font-medium text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200"
-      >
-        {
-          LOCALES.map((l) => (
-            <option value={switchLocale(pathname, l)} selected={l === locale}>
-              {langLabel[l]}
-            </option>
-          ))
-        }
-      </select>
       <button
         type="button"
         id="theme-toggle"
@@ -98,9 +68,7 @@ function isActive(key: string): boolean {
           />
         </svg>
         <svg class="h-5 w-5 dark:hidden" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path
-            d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"
-          />
+          <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
         </svg>
       </button>
       <nav class="flex w-full basis-full gap-4 sm:w-auto sm:basis-auto sm:gap-6" aria-label="Main">
@@ -121,13 +89,3 @@ function isActive(key: string): boolean {
     </div>
   </div>
 </header>
-
-<script is:inline>
-  (function () {
-    var sel = document.getElementById('lang-select');
-    if (!sel) return;
-    sel.addEventListener('change', function () {
-      window.location.href = sel.value;
-    });
-  })();
-</script>

@@ -16,7 +16,7 @@ Before email, move one project forward for 25 minutes. Protect it like a meeting
 
 ## Read next
 
-Pair with [digital minimalism tips](/en/blog/digital-minimalism-tips/) to keep mornings calm, and [weekly planning tips](/en/blog/weekly-planning-tips/) so your week reflects your values.
+Pair with [digital minimalism tips](/blog/digital-minimalism-tips/) to keep mornings calm, and [weekly planning tips](/blog/weekly-planning-tips/) so your week reflects your values.
 
 ## Key takeaways
 

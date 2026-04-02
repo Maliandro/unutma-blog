@@ -18,7 +18,7 @@ draft: false
 
 ## Connect the dots
 
-If you liked our [introduction to the blog](/en/blog/welcome-to-unutma-blog/), you will enjoy pairing these habits with offline-capable tools so your data is not scattered across dashboards.
+If you liked our [introduction to the blog](/blog/welcome-to-unutma-blog/), you will enjoy pairing these habits with offline-capable tools so your data is not scattered across dashboards.
 
 ## Key takeaways
 

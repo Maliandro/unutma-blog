@@ -1,11 +1,10 @@
 ---
-import BaseLayout from '../../../../layouts/BaseLayout.astro';
-import SEOHead from '../../../../components/SEOHead.astro';
-import BlogCard from '../../../../components/BlogCard.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import SEOHead from '../../../components/SEOHead.astro';
+import BlogCard from '../../../components/BlogCard.astro';
 import { getCollection } from 'astro:content';
-import { LOCALES, type Locale } from '../../../../i18n/locales';
-import { href, postsPerPage } from '../../../../i18n/paths';
-import { t } from '../../../../i18n/ui';
+import { postsPerPage } from '../../../i18n/paths';
+import { t } from '../../../i18n/ui';
 
 export const prerender = true;
 
@@ -19,7 +18,7 @@ export async function getStaticPaths() {
   if (totalPages <= 1) return [];
 
   const paths: {
-    params: { lang: string; page: string };
+    params: { page: string };
     props: {
       posts: typeof sorted;
       currentPage: number;
@@ -27,18 +26,16 @@ export async function getStaticPaths() {
     };
   }[] = [];
 
-  for (const locale of LOCALES) {
-    for (let p = 2; p <= totalPages; p++) {
-      const start = (p - 1) * POSTS_PER_PAGE;
-      paths.push({
-        params: { lang: locale, page: String(p) },
-        props: {
-          posts: sorted.slice(start, start + POSTS_PER_PAGE),
-          currentPage: p,
-          totalPages,
-        },
-      });
-    }
+  for (let p = 2; p <= totalPages; p++) {
+    const start = (p - 1) * POSTS_PER_PAGE;
+    paths.push({
+      params: { page: String(p) },
+      props: {
+        posts: sorted.slice(start, start + POSTS_PER_PAGE),
+        currentPage: p,
+        totalPages,
+      },
+    });
   }
   return paths;
 }
@@ -49,24 +46,21 @@ interface Props {
   totalPages: number;
 }
 
-const { lang } = Astro.params;
-const locale = lang as Locale;
-const u = t(locale).blog;
+const u = t().blog;
 
 const { posts, currentPage, totalPages } = Astro.props;
 const title = `${u.pageTitle} ${currentPage}`;
 ---
 
-<BaseLayout locale={locale}>
+<BaseLayout>
   <SEOHead
     slot="head"
     title={title}
     description={`Unutma Blog — ${u.pageOf} ${currentPage} / ${totalPages}`}
-    locale={locale}
   />
 
   <div class="mx-auto max-w-5xl px-4 py-12">
-    <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100">
+    <h1 class="section-title text-3xl md:text-[2.35rem]">
       {u.pageTitle}
       {' '}
       {currentPage}
@@ -74,7 +68,7 @@ const title = `${u.pageTitle} ${currentPage}`;
     <p class="mt-2 text-gray-600 dark:text-gray-400">{u.older}</p>
 
     <div class="mt-10 grid gap-8 md:grid-cols-2">
-      {posts.map((post) => <BlogCard post={post} locale={locale} />)}
+      {posts.map((post) => <BlogCard post={post} />)}
     </div>
 
     <nav
@@ -84,14 +78,14 @@ const title = `${u.pageTitle} ${currentPage}`;
       {
         currentPage > 2 ? (
           <a
-            href={href(locale, `/blog/page/${currentPage - 1}`)}
+            href={`/blog/page/${currentPage - 1}/`}
             class="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-800"
           >
             {u.prev}
           </a>
         ) : currentPage === 2 ? (
           <a
-            href={href(locale, '/blog')}
+            href="/blog/"
             class="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-800"
           >
             {u.prev}
@@ -104,7 +98,7 @@ const title = `${u.pageTitle} ${currentPage}`;
       {
         currentPage < totalPages && (
           <a
-            href={href(locale, `/blog/page/${currentPage + 1}`)}
+            href={`/blog/page/${currentPage + 1}/`}
             class="rounded-lg bg-brand px-4 py-2 text-sm font-medium text-white hover:bg-brand-dark"
           >
             {u.next}

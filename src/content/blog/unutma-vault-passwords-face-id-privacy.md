@@ -1,4 +1,4 @@
----
+﻿---
 title: "The Unutma Vault: Passwords, PINs, and Calm Behind Face ID"
 description: "How Unutma’s Vault keeps bank logins, IDs, and secrets encrypted on your device — with biometric locks and habits that keep the vault usable, not overflowing."
 pubDate: 2026-04-04
@@ -10,7 +10,7 @@ imageAlt: "Stylized padlock and vault door on a dark background"
 
 The worst password manager is the one you **stopped using** because it felt like another job — so you went back to **reusing three passwords** and hoping for the best. **Unutma’s Vault** is designed for a narrower promise: **sensitive items live in one place**, gated by **Face ID, Touch ID, or your device PIN**, with categories that match real life — not a spreadsheet fantasy.
 
-This guide covers **what belongs in Vault**, **how to avoid dumping everything on day one**, **how Vault fits Unutma’s offline-first privacy story**, and **what Vault is not** (it is not a replacement for a dedicated team enterprise password system — it is **your** pocket vault). For the full app overview, read the [complete feature guide](/en/blog/unutma-app-complete-feature-guide/).
+This guide covers **what belongs in Vault**, **how to avoid dumping everything on day one**, **how Vault fits Unutma’s offline-first privacy story**, and **what Vault is not** (it is not a replacement for a dedicated team enterprise password system — it is **your** pocket vault). For the full app overview, read the [complete feature guide](/blog/unutma-app-complete-feature-guide/).
 
 ## What the Vault is for
 
@@ -56,7 +56,7 @@ Keep **Shopping lists** human and boring. Keep **Vault** for secrets. The cognit
 
 ## Threat model (honest)
 
-Unutma’s pitch is **on-device storage** and **no mandatory cloud login for your private content** in ordinary use — aligned with what we discuss in [privacy-first productivity apps](/en/blog/privacy-first-productivity-apps/). That does not mean your phone is invincible:
+Unutma’s pitch is **on-device storage** and **no mandatory cloud login for your private content** in ordinary use — aligned with what we discuss in [privacy-first productivity apps](/blog/privacy-first-productivity-apps/). That does not mean your phone is invincible:
 
 - **Physical theft** matters — use device encryption + strong PIN + remote wipe options from the OS.
 - **Malware** on a compromised device can still scrape screens — Vault raises the bar; it does not repeal physics.
@@ -77,7 +77,7 @@ If you need **team sharing**, **role-based access**, or **enterprise audit logs*
 
 ## What to read next
 
-- [Unutma quick actions and statistics](/en/blog/unutma-quick-actions-streaks-heatmap-statistics/) — habits around *showing up*.
-- [Economy deep dive](/en/blog/unutma-economy-expenses-budgets-assets/) — where money clarity lives.
+- [Unutma quick actions and statistics](/blog/unutma-quick-actions-streaks-heatmap-statistics/) — habits around *showing up*.
+- [Economy deep dive](/blog/unutma-economy-expenses-budgets-assets/) — where money clarity lives.
 
 **Bottom line:** the Vault works when it is **small, current, and respected** — a door you actually close, not a warehouse you fear opening.

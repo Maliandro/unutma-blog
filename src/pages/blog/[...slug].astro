@@ -1,19 +1,16 @@
 ---
 import { getCollection } from 'astro:content';
-import BlogPost from '../../../layouts/BlogPost.astro';
-import { LOCALES, type Locale } from '../../../i18n/locales';
+import BlogPost from '../../layouts/BlogPost.astro';
 import type { CollectionEntry } from 'astro:content';
 
 export const prerender = true;
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
-  return posts.flatMap((post) =>
-    LOCALES.map((lang) => ({
-      params: { lang, slug: post.slug },
-      props: { post },
-    })),
-  );
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
 }
 
 interface Props {
@@ -21,12 +18,10 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const { lang } = Astro.params;
-const locale = lang as Locale;
 
 const { Content } = await post.render();
 ---
 
-<BlogPost post={post} locale={locale}>
+<BlogPost post={post}>
   <Content />
 </BlogPost>

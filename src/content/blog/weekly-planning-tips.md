@@ -16,7 +16,7 @@ Block two 90-minute windows before the week fills with meetings. Say no with a r
 
 ## Links
 
-Build on [how to organize your life](/en/blog/how-to-organize-your-life/) and [how to build habits that stick](/en/blog/how-to-build-habits-that-stick/).
+Build on [how to organize your life](/blog/how-to-organize-your-life/) and [how to build habits that stick](/blog/how-to-build-habits-that-stick/).
 
 ## Key takeaways
 

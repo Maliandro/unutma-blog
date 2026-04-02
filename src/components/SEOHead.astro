@@ -1,5 +1,4 @@
 ---
-import type { Locale } from '../i18n/locales';
 import { OG_LOCALE } from '../i18n/locales';
 
 interface Props {
@@ -8,7 +7,6 @@ interface Props {
   image?: string;
   article?: boolean;
   publishedDate?: Date | string;
-  locale?: Locale;
 }
 
 const {
@@ -17,9 +15,7 @@ const {
   image = '/unutma-icon.png',
   article = false,
   publishedDate,
-  locale = 'en',
 } = Astro.props;
-const ogLoc = OG_LOCALE[locale];
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const fullTitle = `${title} | Unutma Blog`;
@@ -62,7 +58,7 @@ const jsonLd = {
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={ogImage} />
-<meta property="og:locale" content={ogLoc} />
+<meta property="og:locale" content={OG_LOCALE} />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />

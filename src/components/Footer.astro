@@ -1,15 +1,8 @@
 ---
-import type { Locale } from '../i18n/locales';
-import { href } from '../i18n/paths';
 import { t } from '../i18n/ui';
 
-interface Props {
-  locale: Locale;
-}
-
-const { locale } = Astro.props;
 const year = new Date().getFullYear();
-const u = t(locale);
+const u = t();
 const playStoreUrl =
   import.meta.env.PUBLIC_PLAY_STORE_URL ??
   'https://play.google.com/store/apps/details?id=com.mehmet.unutma';
@@ -29,7 +22,7 @@ const appStoreUrl =
       </div>
       <div class="flex flex-col gap-4 text-sm">
         <a
-          href={href(locale, '/privacy')}
+          href="/privacy/"
           class="text-gray-600 hover:text-brand dark:text-gray-400 dark:hover:text-indigo-400"
           >{u.footer.privacy}</a
         >

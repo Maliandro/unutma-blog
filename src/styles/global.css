@@ -39,6 +39,19 @@
       drop-shadow(0 1px 2px rgba(255, 255, 255, 0.5));
   }
 
+  .dark .brand-wordmark {
+    background: linear-gradient(
+      125deg,
+      #c7d2fe 0%,
+      #a5b4fc 30%,
+      #818cf8 55%,
+      #34d399 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    filter: drop-shadow(0 2px 18px rgba(129, 140, 248, 0.35));
+  }
+
   .brand-wordmark-sm {
     font-size: 1.25rem;
   }
@@ -63,6 +76,13 @@
       0 1px 3px rgba(13, 102, 54, 0.08);
   }
 
+  .dark .brand-peace {
+    color: #6ee7b7;
+    text-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.45),
+      0 0 24px rgba(16, 185, 129, 0.2);
+  }
+
   .brand-peace-muted {
     @apply text-sm md:text-base;
     opacity: 0.92;
@@ -81,10 +101,18 @@
   }
 
   .dark .brand-hero-title {
-    color: #f9fafb;
-    text-shadow:
-      0 1px 0 rgba(0, 0, 0, 0.2),
-      0 12px 40px rgba(0, 0, 0, 0.25);
+    color: transparent;
+    background: linear-gradient(
+      125deg,
+      #e0e7ff 0%,
+      #a5b4fc 35%,
+      #c7d2fe 65%,
+      #6ee7b7 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: none;
+    filter: drop-shadow(0 2px 20px rgba(99, 102, 241, 0.25));
   }
 
   /** Section titles on marketing pages */

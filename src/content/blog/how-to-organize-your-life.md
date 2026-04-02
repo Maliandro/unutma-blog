@@ -12,7 +12,7 @@ If you want to know **how to organize your life**, begin with a single source of
 
 ## Capture, then clarify
 
-Use a lightweight inbox for ideas: a list app, paper, or voice notes. Once a day, move items into projects or delete them. This mirrors the calm cadence we describe in our [welcome post](/en/blog/welcome-to-unutma-blog/).
+Use a lightweight inbox for ideas: a list app, paper, or voice notes. Once a day, move items into projects or delete them. This mirrors the calm cadence we describe in our [welcome post](/blog/welcome-to-unutma-blog/).
 
 ## Quick tips
 
