@@ -22,25 +22,37 @@ function isActive(key: string): boolean {
   }
   return false;
 }
+
+const linkClass = (key: string, large = false) =>
+  [
+    large
+      ? 'rounded-xl px-4 py-3.5 text-base font-semibold min-h-[48px] flex items-center'
+      : 'text-sm font-medium py-2 px-1',
+    'transition hover:text-brand',
+    isActive(key) ? 'text-brand' : 'text-gray-700 dark:text-gray-300',
+    large ? 'active:bg-gray-100 dark:active:bg-gray-800' : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
 ---
 
 <header
-  class="border-b border-gray-100/90 bg-white/85 shadow-brand-sm backdrop-blur-md dark:border-gray-800/90 dark:bg-gray-950/90"
+  class="sticky top-0 z-40 border-b border-gray-100/90 bg-white/90 shadow-brand-sm backdrop-blur-md dark:border-gray-800/90 dark:bg-gray-950/90"
 >
-  <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-3 px-4 py-4">
+  <div class="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3 md:py-4">
     <a
       href="/"
-      class="group flex items-center gap-3 rounded-lg outline-none ring-brand/0 transition hover:ring-2 focus-visible:ring-2 focus-visible:ring-brand/30"
+      class="group flex min-w-0 max-w-[65%] items-center gap-3 rounded-lg outline-none ring-brand/0 transition hover:ring-2 focus-visible:ring-2 focus-visible:ring-brand/30 sm:max-w-none"
     >
       <img
         src="/unutma-icon.png"
         width="40"
         height="40"
         alt=""
-        class="h-9 w-9 rounded-[22%] shadow-md ring-1 ring-black/[0.06] transition group-hover:shadow-brand-sm dark:ring-white/10"
+        class="h-9 w-9 shrink-0 rounded-[22%] shadow-md ring-1 ring-black/[0.06] transition group-hover:shadow-brand-sm dark:ring-white/10"
         decoding="async"
       />
-      <span class="leading-tight">
+      <span class="min-w-0 leading-tight">
         <span class="flex flex-wrap items-baseline gap-x-2 gap-y-0">
           <span class="brand-wordmark brand-wordmark-sm">Unutma</span>
           <span
@@ -49,16 +61,17 @@ function isActive(key: string): boolean {
             {u.header.blog}
           </span>
         </span>
-        <span class="brand-peace brand-peace-muted mt-0.5 block text-[0.68rem] md:text-xs">
+        <span class="brand-peace brand-peace-muted mt-0.5 block truncate text-[0.68rem] md:text-xs">
           {u.header.peace}
         </span>
       </span>
     </a>
-    <div class="flex flex-wrap items-center justify-end gap-3 sm:gap-4">
+
+    <div class="flex shrink-0 items-center gap-2 sm:gap-3">
       <button
         type="button"
         id="theme-toggle"
-        class="rounded-lg border border-gray-200 bg-white p-2 text-gray-600 shadow-sm transition hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:text-amber-200 dark:hover:bg-gray-800"
+        class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-600 shadow-sm transition hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:text-amber-200 dark:hover:bg-gray-800"
         aria-label={u.theme.toggle}
         title={u.theme.toggle}
       >
@@ -71,21 +84,123 @@ function isActive(key: string): boolean {
           <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
         </svg>
       </button>
-      <nav class="flex w-full basis-full gap-4 sm:w-auto sm:basis-auto sm:gap-6" aria-label="Main">
+
+      <nav class="hidden items-center gap-5 md:flex lg:gap-6" aria-label={u.header.navAria}>
         {
           nav.map(({ href: h, label, key }) => (
-            <a
-              href={h}
-              class:list={[
-                'text-sm font-medium transition hover:text-brand',
-                isActive(key) ? 'text-brand' : 'text-gray-600 dark:text-gray-400',
-              ]}
-            >
+            <a href={h} class={linkClass(key, false)}>
               {label}
             </a>
           ))
         }
       </nav>
+
+      <button
+        type="button"
+        id="mobile-menu-btn"
+        class="flex h-11 w-11 items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-700 shadow-sm md:hidden dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200"
+        aria-expanded="false"
+        aria-controls="mobile-drawer"
+        aria-label={u.header.menu}
+      >
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <path
+            class="menu-icon-open"
+            stroke-linecap="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
     </div>
   </div>
 </header>
+
+<!-- Mobile drawer -->
+<div
+  id="mobile-drawer"
+  class="fixed inset-0 z-50 hidden md:hidden"
+  role="dialog"
+  aria-modal="true"
+  aria-label={u.header.navAria}
+>
+  <button
+    type="button"
+    id="mobile-drawer-backdrop"
+    class="absolute inset-0 bg-black/50 motion-safe:transition-opacity"
+    tabindex="-1"
+    aria-label={u.header.menuClose}
+  >
+  </button>
+  <div
+    class="absolute right-0 top-0 flex h-full w-[min(22rem,calc(100vw-1rem))] flex-col border-l border-gray-200 bg-white shadow-2xl motion-safe:transition-transform dark:border-gray-800 dark:bg-gray-950"
+    id="mobile-drawer-panel"
+  >
+    <div class="flex items-center justify-between border-b border-gray-100 px-4 py-3 dark:border-gray-800">
+      <span class="font-display text-lg font-semibold text-gray-900 dark:text-gray-100">Menu</span>
+      <button
+        type="button"
+        id="mobile-menu-close"
+        class="flex h-11 w-11 items-center justify-center rounded-lg text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+        aria-label={u.header.menuClose}
+      >
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <nav class="flex flex-1 flex-col gap-1 overflow-y-auto p-4" aria-label={u.header.navAria}>
+      {
+        nav.map(({ href: h, label, key }) => (
+          <a
+            href={h}
+            data-mobile-nav-link
+            class:list={[linkClass(key, true), isActive(key) && 'bg-indigo-50 text-brand dark:bg-indigo-950/50']}
+          >
+            {label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var drawer = document.getElementById('mobile-drawer');
+    var openBtn = document.getElementById('mobile-menu-btn');
+    var closeBtn = document.getElementById('mobile-menu-close');
+    var backdrop = document.getElementById('mobile-drawer-backdrop');
+    var panel = document.getElementById('mobile-drawer-panel');
+    if (!drawer || !openBtn) return;
+
+    function openMenu() {
+      drawer.classList.remove('hidden');
+      openBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+      try {
+        var first = drawer.querySelector('[data-mobile-nav-link]');
+        if (first) first.focus();
+        else if (closeBtn) closeBtn.focus();
+      } catch (e) {}
+    }
+    function closeMenu() {
+      drawer.classList.add('hidden');
+      openBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      try {
+        openBtn.focus();
+      } catch (e) {}
+    }
+
+    openBtn.addEventListener('click', openMenu);
+    closeBtn && closeBtn.addEventListener('click', closeMenu);
+    backdrop && backdrop.addEventListener('click', closeMenu);
+    drawer.querySelectorAll('[data-mobile-nav-link]').forEach(function (a) {
+      a.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !drawer.classList.contains('hidden')) closeMenu();
+    });
+  })();
+</script>

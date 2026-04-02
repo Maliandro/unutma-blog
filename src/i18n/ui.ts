@@ -1,11 +1,21 @@
 export type UIStrings = {
   nav: { home: string; blog: string; about: string };
-  header: { blog: string; peace: string };
+  skip: { toMain: string };
+  header: {
+    blog: string;
+    peace: string;
+    menu: string;
+    menuClose: string;
+    navAria: string;
+  };
   footer: {
     blurb: string;
+    explore: string;
     privacy: string;
     googlePlay: string;
     appStore: string;
+    allPosts: string;
+    legalApp: string;
     rights: string;
   };
   home: {
@@ -14,6 +24,9 @@ export type UIStrings = {
     peace: string;
     heroTitle: string;
     heroBody: string;
+    /** Primary hero button (filled) */
+    heroCtaPrimary: string;
+    getApp: string;
     readBlog: string;
     latest: string;
     latestSub: string;
@@ -45,6 +58,10 @@ export type UIStrings = {
     tagCount: string;
   };
   blogCard: { readMore: string };
+  blogPost: {
+    tocTitle: string;
+    minRead: string;
+  };
   about: {
     seoTitle: string;
     seoDesc: string;
@@ -88,13 +105,23 @@ export type UIStrings = {
 
 const ui: UIStrings = {
   nav: { home: 'Home', blog: 'Blog', about: 'About' },
-  header: { blog: 'Blog', peace: 'Peace of mind' },
+  skip: { toMain: 'Skip to main content' },
+  header: {
+    blog: 'Blog',
+    peace: 'Peace of mind',
+    menu: 'Open menu',
+    menuClose: 'Close menu',
+    navAria: 'Primary navigation',
+  },
   footer: {
     blurb:
       'Privacy-first organization: lists, journal, routines, and more — on your device.',
+    explore: 'Explore',
     privacy: 'Privacy policy',
     googlePlay: 'Google Play',
     appStore: 'App Store',
+    allPosts: 'All posts',
+    legalApp: 'Legal & app',
     rights: 'All rights reserved.',
   },
   home: {
@@ -105,6 +132,8 @@ const ui: UIStrings = {
     heroTitle: 'Organize your life, your way',
     heroBody:
       'Offline-first lists, journal, routines, vault, and more — all on your phone. No account required. This blog shares tips that pair perfectly with a calmer digital life.',
+    heroCtaPrimary: 'Go to blog',
+    getApp: 'Get the app',
     readBlog: 'Read the blog',
     latest: 'Latest articles',
     latestSub:
@@ -138,6 +167,10 @@ const ui: UIStrings = {
     tagCount: 'article(s)',
   },
   blogCard: { readMore: 'Read more →' },
+  blogPost: {
+    tocTitle: 'On this page',
+    minRead: 'min read',
+  },
   about: {
     seoTitle: 'About',
     seoDesc:
@@ -174,7 +207,7 @@ const ui: UIStrings = {
     email: 'Email',
     placeholder: 'you@example.com',
     btn: 'Coming soon',
-    hint: 'Connect your email provider in NewsletterForm.astro when ready.',
+    hint: 'We will only email when sign-up opens. No spam.',
   },
   appBanner: {
     title: 'Ready to get organized?',

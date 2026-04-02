@@ -9,6 +9,12 @@
     line-height: 1.65;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
   @media (min-width: 768px) {
     html {
       font-size: 18px;
@@ -17,6 +23,16 @@
 }
 
 @layer components {
+  /** Keyboard / screen reader: skip to main landmark */
+  .skip-link {
+    @apply fixed left-4 top-4 z-[100] -translate-y-[200%] rounded-lg bg-brand px-4 py-2.5 text-sm font-semibold text-white shadow-lg ring-2 ring-white/30 transition focus:translate-y-0 focus:outline focus:ring-2 focus:ring-brand/80;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .skip-link {
+      transition: none;
+    }
+  }
   /**
    * Brand wordmark — gradient fill + soft glow (header & hero).
    */

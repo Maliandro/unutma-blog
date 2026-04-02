@@ -6,9 +6,11 @@ interface Props {
   class?: string;
   /** Slightly smaller on narrow CTAs */
   compact?: boolean;
+  /** default = full prominence; secondary = lighter weight under a primary CTA */
+  emphasis?: 'default' | 'secondary';
 }
 
-const { class: className, compact = false } = Astro.props;
+const { class: className, compact = false, emphasis = 'default' } = Astro.props;
 
 const playStoreUrl =
   import.meta.env.PUBLIC_PLAY_STORE_URL ??
@@ -18,14 +20,23 @@ const appStoreUrl =
   'https://apps.apple.com/us/app/unutma-peace-of-mind/id6758889495';
 
 const h = compact ? 'h-9 sm:h-10' : 'h-10 sm:h-11';
+const wrap =
+  emphasis === 'secondary'
+    ? 'opacity-[0.92] saturate-[0.95] contrast-[0.98]'
+    : '';
 ---
 
-<div class:list={['flex flex-wrap items-center gap-3', className]}>
+<div class:list={['flex flex-wrap items-center gap-3', wrap, className]}>
   <a
     href={playStoreUrl}
     target="_blank"
     rel="noopener noreferrer"
-    class="inline-block leading-none transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-brand/40 rounded"
+    class:list={[
+      'inline-block leading-none rounded-md focus:outline-none focus:ring-2 focus:ring-brand/40',
+      emphasis === 'secondary'
+        ? 'ring-1 ring-gray-200/80 bg-white/50 dark:ring-gray-600/80 dark:bg-gray-900/40'
+        : 'transition motion-safe:transition-opacity hover:opacity-90',
+    ]}
   >
     <img
       src="/badges/google-play-badge.svg"
@@ -41,7 +52,12 @@ const h = compact ? 'h-9 sm:h-10' : 'h-10 sm:h-11';
     href={appStoreUrl}
     target="_blank"
     rel="noopener noreferrer"
-    class="inline-block leading-none transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-brand/40 rounded"
+    class:list={[
+      'inline-block leading-none rounded-md focus:outline-none focus:ring-2 focus:ring-brand/40',
+      emphasis === 'secondary'
+        ? 'ring-1 ring-gray-700/30 bg-gray-900/10 dark:ring-white/20'
+        : 'transition motion-safe:transition-opacity hover:opacity-90',
+    ]}
   >
     <img
       src="/badges/app-store-badge.svg"

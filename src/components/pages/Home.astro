@@ -14,6 +14,37 @@ const sorted = all.sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 const latest = sorted.slice(0, 6);
+
+const whyCards = [
+  {
+    border: 'border-l-indigo-500',
+    iconBg: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-950/80 dark:text-indigo-300',
+    title: u.f1t,
+    body: u.f1d,
+    icon: 'offline',
+  },
+  {
+    border: 'border-l-emerald-600',
+    iconBg: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300',
+    title: u.f2t,
+    body: u.f2d,
+    icon: 'shield',
+  },
+  {
+    border: 'border-l-violet-500',
+    iconBg: 'bg-violet-100 text-violet-800 dark:bg-violet-950/60 dark:text-violet-300',
+    title: u.f3t,
+    body: u.f3d,
+    icon: 'gift',
+  },
+  {
+    border: 'border-l-cyan-600',
+    iconBg: 'bg-cyan-100 text-cyan-900 dark:bg-cyan-950/50 dark:text-cyan-300',
+    title: u.f4t,
+    body: u.f4d,
+    icon: 'globe',
+  },
+] as const;
 ---
 
 <BaseLayout>
@@ -49,14 +80,39 @@ const latest = sorted.slice(0, 6);
           </p>
         </div>
       </div>
-      <div class="mt-8 flex flex-wrap items-center gap-4">
-        <StoreBadgeRow />
+
+      <div class="mt-10 flex max-w-xl flex-col gap-6">
         <a
           href="/blog/"
-          class="inline-flex items-center rounded-lg px-4 py-3 font-medium text-brand hover:underline dark:text-indigo-400"
+          class="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-brand/25 ring-1 ring-brand/20 transition motion-safe:transition-transform motion-safe:hover:-translate-y-0.5 focus-visible:outline focus-visible:ring-2 focus-visible:ring-brand/50 focus-visible:ring-offset-2 dark:ring-offset-gray-950 sm:w-auto sm:justify-center"
         >
-          {u.readBlog} →
+          <svg class="h-5 w-5 shrink-0 opacity-95" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 19.5A2.5 2.5 0 016.5 17H20"
+            />
+            <path
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"
+            />
+            <path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M8 7h8M8 11h5" />
+          </svg>
+          {u.heroCtaPrimary}
         </a>
+        <div class="flex flex-col gap-3 border-t border-gray-200/80 pt-6 dark:border-gray-700/80">
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.12em] text-gray-500 dark:text-gray-400"
+          >
+            {u.getApp}
+          </p>
+          <StoreBadgeRow compact emphasis="secondary" />
+        </div>
       </div>
     </div>
   </section>
@@ -89,23 +145,99 @@ const latest = sorted.slice(0, 6);
 
   <section class="mx-auto max-w-5xl px-4 pb-16">
     <h2 class="section-title text-3xl md:text-[2rem]">{u.why}</h2>
-    <div class="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-      <div class="rounded-xl border border-gray-100 p-6 dark:border-gray-800 dark:bg-gray-900/40">
-        <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-gray-100">{u.f1t}</h3>
-        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{u.f1d}</p>
-      </div>
-      <div class="rounded-xl border border-gray-100 p-6 dark:border-gray-800 dark:bg-gray-900/40">
-        <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-gray-100">{u.f2t}</h3>
-        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{u.f2d}</p>
-      </div>
-      <div class="rounded-xl border border-gray-100 p-6 dark:border-gray-800 dark:bg-gray-900/40">
-        <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-gray-100">{u.f3t}</h3>
-        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{u.f3d}</p>
-      </div>
-      <div class="rounded-xl border border-gray-100 p-6 dark:border-gray-800 dark:bg-gray-900/40">
-        <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-gray-100">{u.f4t}</h3>
-        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{u.f4d}</p>
-      </div>
+    <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      {
+        whyCards.map((card, i) => (
+          <div
+            class:list={[
+              'rounded-xl border border-gray-100 bg-white p-5 pl-4 shadow-sm dark:border-gray-800 dark:bg-gray-900/40',
+              'border-l-4',
+              card.border,
+            ]}
+          >
+            <div class="flex gap-4">
+              <span
+                class:list={[
+                  'flex h-11 w-11 shrink-0 items-center justify-center rounded-xl',
+                  card.iconBg,
+                ]}
+              >
+                {card.icon === 'offline' && (
+                  <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path
+                      d="M3 3l18 18M8.5 8.5a4 4 0 016.5 6.5M8 12a4 4 0 014-4m4 4a4 4 0 01-4-4"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M2 12h2m16 0h2M12 2v2m0 16v2"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      opacity="0.35"
+                    />
+                  </svg>
+                )}
+                {card.icon === 'shield' && (
+                  <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path
+                      d="M12 3l8 4v5c0 5-3.5 9-8 10-4.5-1-8-5-8-10V7l8-4z"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M9 12l2 2 4-4"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                )}
+                {card.icon === 'gift' && (
+                  <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path
+                      d="M12 8h9v4H3V8h9zM12 8V5a2 2 0 10-4 0v3M12 8V5a2 2 0 114 0v3"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M7 12v9h10v-9"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                )}
+                {card.icon === 'globe' && (
+                  <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.75" />
+                    <path
+                      d="M3 12h18M12 3a15 15 0 000 18M12 3a15 15 0 010 18"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                )}
+              </span>
+              <div class="min-w-0">
+                <p class="text-[0.65rem] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">
+                  {String(i + 1).padStart(2, '0')}
+                </p>
+                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-gray-100">
+                  {card.title}
+                </h3>
+                <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{card.body}</p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
     </div>
   </section>
 
