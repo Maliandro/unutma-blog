@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SEOHead from '../../components/SEOHead.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import NewsletterForm from '../../components/NewsletterForm.astro';
+import StoreBadgeRow from '../../components/StoreBadgeRow.astro';
+import { getCollection } from 'astro:content';
+import type { Locale } from '../../i18n/locales';
+import { href } from '../../i18n/paths';
+import { t } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const u = t(locale).home;
+
+const all = await getCollection('blog', ({ data }) => !data.draft);
+const sorted = all.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+const latest = sorted.slice(0, 6);
+---
+
+<BaseLayout locale={locale}>
+  <SEOHead
+    slot="head"
+    title={u.seoTitle}
+    description={u.seoDesc}
+    locale={locale}
+  />
+
+  <section
+    class="relative overflow-hidden border-b border-indigo-100/80 bg-gradient-to-b from-indigo-50/95 via-emerald-50/30 to-white dark:border-indigo-900/40 dark:from-indigo-950/40 dark:via-emerald-950/20 dark:to-gray-950"
+  >
+    <div
+      class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(99,102,241,0.12),transparent)] dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(99,102,241,0.18),transparent)]"
+      aria-hidden="true"
+    />
+    <div class="relative mx-auto max-w-5xl px-4 py-16 md:py-24">
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-start">
+        <img
+          src="/unutma-icon.png"
+          width="96"
+          height="96"
+          alt="Unutma"
+          class="h-20 w-20 shrink-0 rounded-[22%] shadow-brand ring-1 ring-black/[0.07] sm:h-24 sm:w-24 dark:ring-white/10"
+          decoding="async"
+        />
+        <div class="min-w-0 flex-1">
+          <p class="brand-wordmark brand-wordmark-lg">Unutma</p>
+          <p class="brand-peace mt-2 text-base md:text-lg">
+            {u.peace}
+          </p>
+          <h1 class="brand-hero-title mt-5 max-w-3xl text-4xl md:text-5xl lg:text-[3.15rem]">
+            {u.heroTitle}
+          </h1>
+          <p class="mt-4 max-w-2xl text-lg font-normal leading-relaxed text-gray-600 dark:text-gray-400">
+            {u.heroBody}
+          </p>
+        </div>
+      </div>
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <StoreBadgeRow />
+        <a
+          href={href(locale, '/blog')}
+          class="inline-flex items-center rounded-lg px-4 py-3 font-medium text-brand hover:underline dark:text-indigo-400"
+        >
+          {u.readBlog} →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-4 py-16">
+    <h2 class="section-title text-3xl md:text-[2rem]">{u.latest}</h2>
+    <p class="mt-1 text-gray-600 dark:text-gray-400">
+      {u.latestSub}
+    </p>
+    <div class="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {
+        latest.length ? (
+          latest.map((post) => <BlogCard post={post} locale={locale} />)
+        ) : (
+          <p class="text-gray-500 md:col-span-2 dark:text-gray-400">
+            {u.noPosts}{' '}
+            <code class="rounded bg-gray-100 px-1 text-sm dark:bg-gray-800">src/content/blog/</code>{' '}
+            {u.noPostsHint}
+          </p>
+        )
+      }
+    </div>
+    <p class="mt-10 text-center">
+      <a
+        href={href(locale, '/blog')}
+        class="font-medium text-brand hover:underline dark:text-indigo-400">{u.viewAll}</a
+      >
+    </p>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-4 pb-16">
+    <h2 class="section-title text-3xl md:text-[2rem]">{u.why}</h2>
+    <div class="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div class="rounded-xl border border-gray-100 p-6 dark:border-gray-800 dark:bg-gray-900/40">
+        <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-gray-100">{u.f1t}</h3>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{u.f1d}</p>
+      </div>
+      <div class="rounded-xl border border-gray-100 p-6 dark:border-gray-800 dark:bg-gray-900/40">
+        <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-gray-100">{u.f2t}</h3>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{u.f2d}</p>
+      </div>
+      <div class="rounded-xl border border-gray-100 p-6 dark:border-gray-800 dark:bg-gray-900/40">
+        <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-gray-100">{u.f3t}</h3>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{u.f3d}</p>
+      </div>
+      <div class="rounded-xl border border-gray-100 p-6 dark:border-gray-800 dark:bg-gray-900/40">
+        <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-gray-100">{u.f4t}</h3>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{u.f4d}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-4 pb-20">
+    <NewsletterForm locale={locale} />
+  </section>
+</BaseLayout>

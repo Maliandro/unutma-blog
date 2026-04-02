@@ -1,4 +1,4 @@
----
+﻿---
 title: "Weekly Planning Tips for People Who Hate Long Meetings"
 description: "A 30-minute weekly reset: review, prioritize, and protect deep work — no corporate jargon required."
 pubDate: 2026-03-22
@@ -16,7 +16,7 @@ Block two 90-minute windows before the week fills with meetings. Say no with a r
 
 ## Links
 
-Build on [how to organize your life](/blog/how-to-organize-your-life/) and [how to build habits that stick](/blog/how-to-build-habits-that-stick/).
+Build on [how to organize your life](/en/blog/how-to-organize-your-life/) and [how to build habits that stick](/en/blog/how-to-build-habits-that-stick/).
 
 ## Key takeaways
 

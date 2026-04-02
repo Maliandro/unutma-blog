@@ -115,7 +115,7 @@ When you want portability, you look at **export / backup** flows the app offers 
 3. **Day 5:** Try **Economy** for subscriptions or a week of expenses — whichever hurts more to ignore.
 4. **Day 6–7:** Open **Journal** once per day, even for thirty seconds.
 
-Then revisit [our welcome post](/blog/welcome-to-unutma-blog/) for the bigger “why” behind this blog — and keep the app as **tight or as full** as your life needs.
+Then revisit [our welcome post](/en/blog/welcome-to-unutma-blog/) for the bigger “why” behind this blog — and keep the app as **tight or as full** as your life needs.
 
 ---
 
@@ -127,4 +127,12 @@ Then revisit [our welcome post](/blog/welcome-to-unutma-blog/) for the bigger �
 - **Notes**, **Calendar**, and **Statistics** support the core loop without forcing every feature on every user.
 - The product philosophy is **offline-first and privacy-respecting** — your data stays with you.
 
-**What feature do you want us to unpack in a dedicated deep-dive next — Vault security, Economy budgets, or the Journal workflow?** Leave a note when you try the app; we read real usage stories.
+## Deep dives on the blog (long reads)
+
+- [Quick Actions, streaks, heatmaps & Statistics](/en/blog/unutma-quick-actions-streaks-heatmap-statistics/)
+- [Lists: Todo, Shopping & Wishlist workflows](/en/blog/unutma-lists-todo-shopping-wishlist-workflow/)
+- [Vault: passwords, Face ID & privacy habits](/en/blog/unutma-vault-passwords-face-id-privacy/)
+- [Economy: expenses, subscriptions, budgets & assets](/en/blog/unutma-economy-expenses-budgets-assets/)
+- [Journal: mood, voice & reflection](/en/blog/unutma-journal-mood-voice-reflection/)
+- [Routines, Calendar & widgets](/en/blog/unutma-routines-calendar-widgets-time/)
+- [Themes, mini games, languages & backup](/en/blog/unutma-themes-games-languages-backup/)

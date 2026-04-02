@@ -34,7 +34,7 @@ UNUTMA_LINKS = {
     ),
     "app_store": os.environ.get(
         "APP_STORE_URL",
-        "https://apps.apple.com/app/unutma/id674480934",
+        "https://apps.apple.com/us/app/unutma-peace-of-mind/id6758889495",
     ),
 }
 

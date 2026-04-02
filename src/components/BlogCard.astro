@@ -1,23 +1,31 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import type { Locale } from '../i18n/locales';
+import { DATE_LOCALE } from '../i18n/locales';
+import { href } from '../i18n/paths';
 import { coverForSlug } from '../utils/covers';
+import { t } from '../i18n/ui';
 
 interface Props {
   post: CollectionEntry<'blog'>;
+  locale: Locale;
 }
 
-const { post } = Astro.props;
+const { post, locale } = Astro.props;
 const date = post.data.pubDate;
 const coverSrc = post.data.image ?? coverForSlug(post.slug);
 const coverAlt = post.data.imageAlt ?? post.data.title;
+const u = t(locale);
+const postHref = href(locale, `/blog/${post.slug}`);
+const dateLoc = DATE_LOCALE[locale];
 ---
 
 <article
-  class="group flex flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition hover:border-indigo-100 hover:shadow-md"
+  class="group flex flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition hover:border-indigo-100 hover:shadow-md dark:border-gray-800 dark:bg-gray-900 dark:hover:border-indigo-900/80"
 >
   <a
-    href={`/blog/${post.slug}/`}
-    class="relative aspect-[1200/630] w-full shrink-0 overflow-hidden bg-gray-100"
+    href={postHref}
+    class="relative aspect-[1200/630] w-full shrink-0 overflow-hidden bg-gray-100 dark:bg-gray-800"
   >
     <img
       src={coverSrc}
@@ -30,45 +38,45 @@ const coverAlt = post.data.imageAlt ?? post.data.title;
     />
   </a>
   <div class="flex flex-1 flex-col p-6">
-  <time
-    class="text-xs font-medium uppercase tracking-wide text-gray-500"
-    datetime={date.toISOString()}
-  >
+    <time
+      class="text-xs font-medium uppercase tracking-wide text-gray-500 dark:text-gray-400"
+      datetime={date.toISOString()}
+    >
+      {
+        date.toLocaleDateString(dateLoc, {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        })
+      }
+    </time>
+    <h2
+      class="font-display mt-2 text-xl font-semibold tracking-tight text-gray-900 group-hover:text-brand dark:text-gray-100 dark:group-hover:text-indigo-400"
+    >
+      <a href={postHref} class="focus:outline-none focus:ring-2 focus:ring-brand/40 rounded">
+        {post.data.title}
+      </a>
+    </h2>
+    <p class="mt-2 flex-1 text-gray-600 line-clamp-3 dark:text-gray-400">{post.data.description}</p>
     {
-      date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      })
+      post.data.tags?.length ? (
+        <div class="mt-4 flex flex-wrap gap-2">
+          {post.data.tags.slice(0, 4).map((tag) => (
+            <a
+              href={href(locale, `/blog/tags/${encodeURIComponent(tag)}`)}
+              class="rounded-full bg-indigo-50 px-2 py-0.5 text-xs text-indigo-700 hover:bg-indigo-100 dark:bg-indigo-950/80 dark:text-indigo-300 dark:hover:bg-indigo-900"
+            >
+              {tag}
+            </a>
+          ))}
+        </div>
+      ) : null
     }
-  </time>
-  <h2
-    class="font-display mt-2 text-xl font-semibold tracking-tight text-gray-900 group-hover:text-brand"
-  >
-    <a href={`/blog/${post.slug}/`} class="focus:outline-none focus:ring-2 focus:ring-brand/40 rounded">
-      {post.data.title}
+    <a
+      href={postHref}
+      class="mt-4 inline-flex text-sm font-medium text-brand hover:underline dark:text-indigo-400"
+    >
+      {u.blogCard.readMore}
     </a>
-  </h2>
-  <p class="mt-2 flex-1 text-gray-600 line-clamp-3">{post.data.description}</p>
-  {
-    post.data.tags?.length ? (
-      <div class="mt-4 flex flex-wrap gap-2">
-        {post.data.tags.slice(0, 4).map((tag) => (
-          <a
-            href={`/blog/tags/${encodeURIComponent(tag)}/`}
-            class="rounded-full bg-indigo-50 px-2 py-0.5 text-xs text-indigo-700 hover:bg-indigo-100"
-          >
-            {tag}
-          </a>
-        ))}
-      </div>
-    ) : null
-  }
-  <a
-    href={`/blog/${post.slug}/`}
-    class="mt-4 inline-flex text-sm font-medium text-brand hover:underline"
-  >
-    Read more →
-  </a>
   </div>
 </article>

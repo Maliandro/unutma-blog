@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply scroll-smooth text-gray-800 antialiased;
+    @apply scroll-smooth text-gray-800 antialiased dark:text-gray-100;
     font-size: 17px;
     line-height: 1.65;
   }
@@ -80,11 +80,18 @@
       0 12px 40px rgba(15, 23, 42, 0.06);
   }
 
+  .dark .brand-hero-title {
+    color: #f9fafb;
+    text-shadow:
+      0 1px 0 rgba(0, 0, 0, 0.2),
+      0 12px 40px rgba(0, 0, 0, 0.25);
+  }
+
   /** Section titles on marketing pages */
   .section-title {
     font-family: Fraunces, Georgia, serif;
     font-weight: 600;
     letter-spacing: -0.025em;
-    @apply text-gray-900;
+    @apply text-gray-900 dark:text-gray-50;
   }
 }

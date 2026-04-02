@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-hidden="true">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <g transform="translate(450,140)">
+    <rect x="0" y="80" width="300" height="260" rx="24" fill="#1e293b" stroke="#4f46e5" stroke-width="4"/>
+    <path d="M120 80 V40 Q120 0 150 0 H150 Q180 0 180 40 V80" fill="none" stroke="#94a3b8" stroke-width="8"/>
+    <circle cx="150" cy="200" r="40" fill="#4f46e5" opacity="0.4"/>
+    <path d="M135 200l10 10 25-28" fill="none" stroke="#34d399" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <text x="80" y="520" fill="#94a3b8" font-family="Georgia,serif" font-size="42" font-weight="600">Vault</text>
+</svg>

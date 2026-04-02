@@ -1,4 +1,4 @@
----
+﻿---
 title: "Privacy-First Productivity Apps: What to Look For"
 description: "A practical checklist: local storage, optional accounts, export, and sensible permissions — before you trust your life to a tool."
 pubDate: 2026-03-21
@@ -19,7 +19,7 @@ draft: false
 
 ## Learn more
 
-See [how to track personal expenses](/blog/how-to-track-personal-expenses/) for money workflows, and [welcome to the blog](/blog/welcome-to-unutma-blog/) for our editorial angle.
+See [how to track personal expenses](/en/blog/how-to-track-personal-expenses/) for money workflows, and [welcome to the blog](/en/blog/welcome-to-unutma-blog/) for our editorial angle.
 
 ## Key takeaways
 

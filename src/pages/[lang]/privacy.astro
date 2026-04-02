@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SEOHead from '../../components/SEOHead.astro';
+import { LOCALES, type Locale } from '../../i18n/locales';
+import { href } from '../../i18n/paths';
+import { t } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  return LOCALES.map((lang) => ({ params: { lang } }));
+}
+
+const officialPolicyUrl =
+  'https://sites.google.com/view/unutma-privacy/ana-sayfa';
+
+const { lang } = Astro.params;
+const locale = lang as Locale;
+const u = t(locale).privacy;
+---
+
+<BaseLayout locale={locale}>
+  <SEOHead
+    slot="head"
+    title={u.seoTitle}
+    description={u.seoDesc}
+    locale={locale}
+  />
+
+  <article
+    class="prose prose-lg mx-auto max-w-3xl px-4 py-12 dark:prose-invert prose-a:text-brand prose-strong:text-gray-900 dark:prose-strong:text-gray-100"
+  >
+    <h1>{u.h1}</h1>
+
+    <p>{u.p1}</p>
+
+    <p>
+      <a
+        href={officialPolicyUrl}
+        class="inline-flex items-center justify-center rounded-lg bg-brand px-6 py-3 font-semibold text-white no-underline hover:bg-brand-dark"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {u.cta}
+      </a>
+    </p>
+
+    <p class="text-sm text-gray-600 dark:text-gray-400">
+      {u.direct}{' '}
+      <a href={officialPolicyUrl} target="_blank" rel="noopener noreferrer"
+        >{officialPolicyUrl}</a
+      >
+    </p>
+
+    <h2>{u.h2web}</h2>
+    <p>{u.pWeb}</p>
+
+    <h2>{u.h2contact}</h2>
+    <p>
+      {u.pContact}{' '}
+      <a href="mailto:unutma.app1.0@gmail.com">unutma.app1.0@gmail.com</a>
+    </p>
+
+    <p><a href={href(locale, '/')}>{u.back}</a></p>
+  </article>
+</BaseLayout>

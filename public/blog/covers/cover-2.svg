@@ -1,12 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
   <defs>
-    <linearGradient id="b" x1="0" y1="1" x2="1" y2="0">
-      <stop offset="0%" stop-color="#0d6636"/>
+    <linearGradient id="g" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="50%" stop-color="#0d6636"/>
       <stop offset="100%" stop-color="#34d399"/>
     </linearGradient>
+    <linearGradient id="leaf" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ecfdf5" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ecfdf5" stop-opacity="0"/>
+    </linearGradient>
   </defs>
-  <rect width="1200" height="630" fill="url(#b)"/>
-  <ellipse cx="600" cy="200" rx="400" ry="120" fill="#fff" opacity="0.06"/>
-  <rect x="80" y="380" width="400" height="8" rx="4" fill="#fff" opacity="0.12"/>
-  <rect x="80" y="420" width="280" height="8" rx="4" fill="#fff" opacity="0.08"/>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <ellipse cx="720" cy="180" rx="420" ry="140" fill="url(#leaf)"/>
+  <path d="M100 480 C280 360 420 520 600 400 C780 280 920 440 1100 320 L1100 630 L100 630Z" fill="#fff" opacity="0.06"/>
+  <path d="M80 200 Q200 120 320 200 T560 180" fill="none" stroke="#ecfdf5" stroke-width="3" opacity="0.15" stroke-linecap="round"/>
+  <path d="M900 420 Q1020 340 1120 400" fill="none" stroke="#6ee7b7" stroke-width="2" opacity="0.25" stroke-linecap="round"/>
 </svg>

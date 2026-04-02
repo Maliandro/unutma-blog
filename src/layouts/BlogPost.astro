@@ -6,18 +6,23 @@ import AppStoreBanner from '../components/AppStoreBanner.astro';
 import ShareButtons from '../components/ShareButtons.astro';
 import { coverForSlug } from '../utils/covers';
 import type { CollectionEntry } from 'astro:content';
+import type { Locale } from '../i18n/locales';
+import { DATE_LOCALE } from '../i18n/locales';
+import { href } from '../i18n/paths';
 
 interface Props {
   post: CollectionEntry<'blog'>;
+  locale: Locale;
 }
 
-const { post } = Astro.props;
+const { post, locale } = Astro.props;
 const { title, description, pubDate, tags, image } = post.data;
 const heroImage = image ?? coverForSlug(post.slug);
 const heroAlt = post.data.imageAlt ?? `${title} — article cover`;
+const dateLoc = DATE_LOCALE[locale];
 ---
 
-<BaseLayout>
+<BaseLayout locale={locale}>
   <SEOHead
     slot="head"
     title={title}
@@ -25,6 +30,7 @@ const heroAlt = post.data.imageAlt ?? `${title} — article cover`;
     image={heroImage}
     article={true}
     publishedDate={pubDate}
+    locale={locale}
   />
 
   <article class="mx-auto max-w-3xl px-4 py-8">
@@ -36,15 +42,15 @@ const heroAlt = post.data.imageAlt ?? `${title} — article cover`;
         height={630}
         loading="eager"
         decoding="async"
-        class="mb-8 w-full rounded-xl object-cover aspect-[1200/630]"
+        class="mb-8 aspect-[1200/630] w-full rounded-xl object-cover"
       />
       <h1 class="brand-hero-title mb-3 text-3xl md:text-4xl lg:text-[2.35rem]">
         {title}
       </h1>
-      <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+      <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
         <time datetime={pubDate.toISOString()}>
           {
-            pubDate.toLocaleDateString('en-US', {
+            pubDate.toLocaleDateString(dateLoc, {
               year: 'numeric',
               month: 'long',
               day: 'numeric',
@@ -56,8 +62,8 @@ const heroAlt = post.data.imageAlt ?? `${title} — article cover`;
             <div class="flex flex-wrap gap-2">
               {tags.map((tag: string) => (
                 <a
-                  href={`/blog/tags/${encodeURIComponent(tag)}/`}
-                  class="rounded bg-indigo-100 px-2 py-0.5 text-xs text-indigo-700 hover:bg-indigo-200"
+                  href={href(locale, `/blog/tags/${encodeURIComponent(tag)}`)}
+                  class="rounded bg-indigo-100 px-2 py-0.5 text-xs text-indigo-700 hover:bg-indigo-200 dark:bg-indigo-950/80 dark:text-indigo-300 dark:hover:bg-indigo-900"
                 >
                   {tag}
                 </a>
@@ -71,14 +77,14 @@ const heroAlt = post.data.imageAlt ?? `${title} — article cover`;
     <AdSense placement="header" />
 
     <div
-      class="prose prose-lg max-w-none prose-a:text-brand prose-strong:text-gray-900"
+      class="prose prose-lg max-w-none dark:prose-invert prose-a:text-brand prose-strong:text-gray-900 dark:prose-strong:text-gray-100"
     >
       <slot />
     </div>
 
     <AdSense placement="in-article" />
 
-    <AppStoreBanner />
+    <AppStoreBanner locale={locale} />
 
     <ShareButtons
       title={title}

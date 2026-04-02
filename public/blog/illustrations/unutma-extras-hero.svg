@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="x" x1="0" y1="0.5" x2="1" y2="0.5">
+      <stop offset="0%" stop-color="#581c87"/>
+      <stop offset="50%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#0d6636"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#x)"/>
+  <g fill="#fff" opacity="0.9" font-family="system-ui,sans-serif" font-size="28" font-weight="600">
+    <text x="120" y="220">8 themes</text>
+    <text x="120" y="280">8 languages</text>
+    <text x="120" y="340">Mini games</text>
+  </g>
+  <circle cx="900" cy="300" r="140" fill="#fff" opacity="0.08"/>
+  <text x="80" y="520" fill="#e9d5ff" font-family="Georgia,serif" font-size="36" font-weight="600">Themes · Games · Languages</text>
+</svg>

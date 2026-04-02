@@ -1,4 +1,4 @@
----
+﻿---
 title: "How to Build a Morning Routine You Will Not Quit by Thursday"
 description: "Hydration, light, movement, and one meaningful task — a gentle template before notifications take over."
 pubDate: 2026-03-24
@@ -16,7 +16,7 @@ Before email, move one project forward for 25 minutes. Protect it like a meeting
 
 ## Read next
 
-Pair with [digital minimalism tips](/blog/digital-minimalism-tips/) to keep mornings calm, and [weekly planning tips](/blog/weekly-planning-tips/) so your week reflects your values.
+Pair with [digital minimalism tips](/en/blog/digital-minimalism-tips/) to keep mornings calm, and [weekly planning tips](/en/blog/weekly-planning-tips/) so your week reflects your values.
 
 ## Key takeaways
 

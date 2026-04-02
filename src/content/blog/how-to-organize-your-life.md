@@ -1,4 +1,4 @@
----
+﻿---
 title: "How to Organize Your Life Without Burning Out"
 description: "A practical framework for calendars, lists, and routines — plus why offline-first tools can reduce noise."
 pubDate: 2026-03-16
@@ -12,7 +12,7 @@ If you want to know **how to organize your life**, begin with a single source of
 
 ## Capture, then clarify
 
-Use a lightweight inbox for ideas: a list app, paper, or voice notes. Once a day, move items into projects or delete them. This mirrors the calm cadence we describe in our [welcome post](/blog/welcome-to-unutma-blog/).
+Use a lightweight inbox for ideas: a list app, paper, or voice notes. Once a day, move items into projects or delete them. This mirrors the calm cadence we describe in our [welcome post](/en/blog/welcome-to-unutma-blog/).
 
 ## Quick tips
 

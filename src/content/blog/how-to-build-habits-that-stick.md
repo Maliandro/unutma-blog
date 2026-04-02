@@ -1,4 +1,4 @@
----
+﻿---
 title: "How to Build Habits That Stick (Even When Motivation Vanishes)"
 description: "Identity-based habits, friction design, and recovery plans — a humane guide without toxic hustle culture."
 pubDate: 2026-03-20
@@ -16,7 +16,7 @@ Design cues: put tools where your eyes already go. Remove cues for habits you ar
 
 ## Related reading
 
-Connect with [benefits of daily journaling](/blog/benefits-of-daily-journaling/) for reflection loops, and [weekly planning tips](/blog/weekly-planning-tips/) for structure.
+Connect with [benefits of daily journaling](/en/blog/benefits-of-daily-journaling/) for reflection loops, and [weekly planning tips](/en/blog/weekly-planning-tips/) for structure.
 
 ## Key takeaways
 

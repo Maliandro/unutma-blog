@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="e" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0e7490"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#e)"/>
+  <g transform="translate(180,120)" fill="none" stroke="#fff" stroke-width="3" opacity="0.85">
+    <path d="M0 320 L120 200 L240 260 L400 80 L560 180 L720 40 L840 140"/>
+    <rect x="0" y="340" width="880" height="8" fill="#fff" stroke="none" opacity="0.3"/>
+  </g>
+  <circle cx="900" cy="200" r="100" fill="#fbbf24" opacity="0.2"/>
+  <text x="80" y="520" fill="#e0f2fe" font-family="Georgia,serif" font-size="38" font-weight="600">Economy &amp; assets</text>
+</svg>

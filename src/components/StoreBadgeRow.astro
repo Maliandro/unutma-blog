@@ -15,7 +15,7 @@ const playStoreUrl =
   'https://play.google.com/store/apps/details?id=com.mehmet.unutma';
 const appStoreUrl =
   import.meta.env.PUBLIC_APP_STORE_URL ??
-  'https://apps.apple.com/app/unutma/id674480934';
+  'https://apps.apple.com/us/app/unutma-peace-of-mind/id6758889495';
 
 const h = compact ? 'h-9 sm:h-10' : 'h-10 sm:h-11';
 ---
@@ -32,7 +32,7 @@ const h = compact ? 'h-9 sm:h-10' : 'h-10 sm:h-11';
       alt="Get it on Google Play"
       width="200"
       height="59"
-      class:list={[h, 'w-auto']}
+      class:list={[h, 'w-auto rounded-md ring-1 ring-black/10 dark:ring-white/15']}
       loading="lazy"
       decoding="async"
     />
@@ -48,7 +48,7 @@ const h = compact ? 'h-9 sm:h-10' : 'h-10 sm:h-11';
       alt="Download on the App Store"
       width="140"
       height="42"
-      class:list={[h, 'w-auto']}
+      class:list={[h, 'w-auto rounded-md ring-1 ring-white/20']}
       loading="lazy"
       decoding="async"
     />

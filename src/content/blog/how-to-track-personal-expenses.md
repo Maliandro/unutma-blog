@@ -1,4 +1,4 @@
----
+﻿---
 title: "How to Track Personal Expenses Without a Spreadsheet Obsession"
 description: "Lightweight expense tracking: categories, weekly reviews, and privacy-friendly workflows."
 pubDate: 2026-03-19
@@ -16,7 +16,7 @@ Check totals weekly. Daily micromanagement helps some people — and burns out o
 
 ## Privacy note
 
-If you prefer **not** syncing bank data to the cloud, manual entry in an offline-friendly app keeps control on-device. Pair this with ideas from [digital minimalism tips](/blog/digital-minimalism-tips/).
+If you prefer **not** syncing bank data to the cloud, manual entry in an offline-friendly app keeps control on-device. Pair this with ideas from [digital minimalism tips](/en/blog/digital-minimalism-tips/).
 
 ## Key takeaways
 

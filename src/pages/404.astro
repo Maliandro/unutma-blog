@@ -1,26 +1,32 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SEOHead from '../components/SEOHead.astro';
+import { href } from '../i18n/paths';
+import { t } from '../i18n/ui';
+
+const locale = 'en';
+const u = t(locale).notFound;
 ---
 
-<BaseLayout>
+<BaseLayout locale={locale}>
   <SEOHead
     slot="head"
-    title="Page not found"
-    description="The page you are looking for does not exist."
+    title={u.seoTitle}
+    description={u.seoDesc}
+    locale={locale}
   />
 
   <div class="mx-auto max-w-lg px-4 py-24 text-center">
-    <p class="text-6xl font-bold text-gray-200">404</p>
-    <h1 class="mt-4 text-2xl font-semibold text-gray-900">Page not found</h1>
-    <p class="mt-2 text-gray-600">
-      That link may be outdated or mistyped.
+    <p class="text-6xl font-bold text-gray-200 dark:text-gray-800">404</p>
+    <h1 class="mt-4 text-2xl font-semibold text-gray-900 dark:text-gray-100">{u.title}</h1>
+    <p class="mt-2 text-gray-600 dark:text-gray-400">
+      {u.body}
     </p>
     <a
-      href="/"
+      href={href(locale, '/')}
       class="mt-8 inline-block rounded-lg bg-brand px-6 py-3 font-medium text-white hover:bg-brand-dark"
     >
-      Back to home
+      {u.home}
     </a>
   </div>
 </BaseLayout>
