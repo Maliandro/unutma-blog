@@ -1,9 +1,11 @@
-﻿---
+---
 title: "How to Organize Your Life Without Burning Out"
 description: "A practical framework for calendars, lists, and routines — plus why offline-first tools can reduce noise."
 pubDate: 2026-03-16
 tags: ["productivity", "organization", "routines"]
 draft: false
+image: "/blog/covers/ai/how-to-organize-your-life.png"
+imageAlt: "Tidy shelf with storage boxes and a small plant"
 ---
 
 ## Start with one layer, not ten

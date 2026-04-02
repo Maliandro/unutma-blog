@@ -1,9 +1,11 @@
-﻿---
+---
 title: "Weekly Planning Tips for People Who Hate Long Meetings"
 description: "A 30-minute weekly reset: review, prioritize, and protect deep work — no corporate jargon required."
 pubDate: 2026-03-22
 tags: ["planning", "productivity", "focus"]
 draft: false
+image: "/blog/covers/ai/weekly-planning-tips.png"
+imageAlt: "Weekly paper planner and pen on a wooden desk"
 ---
 
 ## The three-list method

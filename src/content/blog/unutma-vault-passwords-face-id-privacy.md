@@ -1,11 +1,11 @@
-﻿---
+---
 title: "The Unutma Vault: Passwords, PINs, and Calm Behind Face ID"
 description: "How Unutma’s Vault keeps bank logins, IDs, and secrets encrypted on your device — with biometric locks and habits that keep the vault usable, not overflowing."
 pubDate: 2026-04-04
 tags: ["Unutma", "privacy", "security", "organization"]
 draft: false
-image: "/blog/illustrations/unutma-vault-hero.svg"
-imageAlt: "Stylized padlock and vault door on a dark background"
+image: "/blog/covers/ai/unutma-vault-passwords-face-id-privacy.png"
+imageAlt: "Padlock and laptop on a wooden desk, security and privacy mood"
 ---
 
 The worst password manager is the one you **stopped using** because it felt like another job — so you went back to **reusing three passwords** and hoping for the best. **Unutma’s Vault** is designed for a narrower promise: **sensitive items live in one place**, gated by **Face ID, Touch ID, or your device PIN**, with categories that match real life — not a spreadsheet fantasy.

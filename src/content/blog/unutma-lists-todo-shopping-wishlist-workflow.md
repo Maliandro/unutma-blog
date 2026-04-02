@@ -1,11 +1,11 @@
-﻿---
+---
 title: "Todo, Shopping, and Wishlist in Unutma: One Tab, Three Mental Modes"
 description: "Why Unutma separates work tasks, grocery runs, and long-term wishes — and how to move items between them without turning your phone into a second job."
 pubDate: 2026-04-03
 tags: ["Unutma", "productivity", "tasks", "organization"]
 draft: false
-image: "/blog/illustrations/unutma-lists-hero.svg"
-imageAlt: "Stylized checklist rows representing todo, shopping, and wishlist modes"
+image: "/blog/covers/ai/unutma-lists-todo-shopping-wishlist-workflow.png"
+imageAlt: "Handwritten shopping list and fresh fruit on a kitchen counter"
 ---
 
 If your task app and your grocery list ever had a baby — and that baby also kept a birthday wishlist for headphones — you would get something close to the cognitive mess most people carry in a single “misc” list. **Unutma’s Lists tab refuses that mess.** It gives you **three modes** behind one roof: **Todo**, **Shopping**, and **Wishlist** — because your brain already treats those as different animals, even when your old app did not.

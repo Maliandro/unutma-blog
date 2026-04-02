@@ -1,9 +1,11 @@
-﻿---
+---
 title: "Digital Minimalism Tips That Actually Stick"
 description: "Reduce app overload with boundaries, not guilt — practical steps for calmer screen time in 2026."
 pubDate: 2026-03-17
 tags: ["digital wellbeing", "minimalism", "focus"]
 draft: false
+image: "/blog/covers/ai/digital-minimalism-tips.png"
+imageAlt: "Minimal white desk with a single plant and notebook"
 ---
 
 ## Why less often beats “more productive”

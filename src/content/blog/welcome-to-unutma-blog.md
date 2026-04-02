@@ -1,9 +1,11 @@
-﻿---
+---
 title: "Welcome to the Unutma Blog"
 description: "Why we started this blog, what you will find here, and how it connects to the Unutma app — offline, private organization."
 pubDate: 2026-03-15
 tags: ["Unutma", "productivity", "privacy"]
 draft: false
+image: "/blog/covers/ai/welcome-to-unutma-blog.png"
+imageAlt: "Cozy desk with notebook, pen, and soft morning light by a window"
 ---
 
 ## What you will find here

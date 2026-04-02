@@ -4,6 +4,8 @@ description: "From quick actions and lists to vault, money tracking, and journal
 pubDate: 2026-03-29
 tags: ["Unutma", "productivity", "privacy", "organization"]
 draft: false
+image: "/blog/covers/ai/unutma-app-complete-feature-guide.png"
+imageAlt: "Smartphone and coffee cup on a wooden table, calm lifestyle photo"
 ---
 
 Most productivity apps ask you to **sign up**, **sync everything**, and **live inside their cloud** before you get value. Unutma takes the opposite path: your notes, tasks, money entries, and journal stay **on your phone**, and the interface is built around **five clear “rooms”** you swipe between — plus a few powerful tools tucked in the header and settings.

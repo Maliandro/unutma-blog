@@ -1,9 +1,11 @@
-﻿---
+---
 title: "Privacy-First Productivity Apps: What to Look For"
 description: "A practical checklist: local storage, optional accounts, export, and sensible permissions — before you trust your life to a tool."
 pubDate: 2026-03-21
 tags: ["privacy", "productivity", "security"]
 draft: false
+image: "/blog/covers/ai/privacy-first-productivity-apps.png"
+imageAlt: "Laptop on a home office desk with subtle privacy-focused mood"
 ---
 
 ## Local-first is a feature

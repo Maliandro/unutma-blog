@@ -1,9 +1,11 @@
-﻿---
+---
 title: "Benefits of Daily Journaling (Backed by Simple Habits)"
 description: "Why short daily notes beat rare long essays — clarity, mood, and memory without perfectionism."
 pubDate: 2026-03-18
 tags: ["journaling", "wellness", "habits"]
 draft: false
+image: "/blog/covers/ai/benefits-of-daily-journaling.png"
+imageAlt: "Hands writing in an open journal by a bright window"
 ---
 
 ## Small entries, big compounding

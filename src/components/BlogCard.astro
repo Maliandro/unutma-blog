@@ -47,9 +47,12 @@ const postHref = `/blog/${post.slug}/`;
       }
     </time>
     <h2
-      class="font-display mt-2 text-xl font-semibold tracking-tight text-gray-900 group-hover:text-brand dark:text-gray-100 dark:group-hover:text-indigo-400"
+      class="font-display mt-2 text-xl font-semibold tracking-tight text-gray-900 group-hover:text-brand dark:text-gray-100 dark:group-hover:text-indigo-300"
     >
-      <a href={postHref} class="focus:outline-none focus:ring-2 focus:ring-brand/40 rounded">
+      <a
+        href={postHref}
+        class="rounded text-inherit no-underline visited:text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand/40 dark:visited:text-gray-100"
+      >
         {post.data.title}
       </a>
     </h2>

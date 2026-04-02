@@ -1,11 +1,11 @@
-﻿---
+---
 title: "Themes, Mini Games, Languages, and Backup: The Human Layer of Unutma"
 description: "Beyond tasks and money — how Unutma’s eight themes, brain-break games, multilingual UI, and export/backup choices keep the app livable for real humans."
 pubDate: 2026-04-08
 tags: ["Unutma", "productivity", "wellness", "privacy"]
 draft: false
-image: "/blog/illustrations/unutma-extras-hero.svg"
-imageAlt: "Color gradient suggesting multiple themes and global languages"
+image: "/blog/covers/ai/unutma-themes-games-languages-backup.png"
+imageAlt: "Smartphone on a nightstand with soft colorful glow from the screen"
 ---
 
 An app that only optimizes you is an app you **eventually uninstall** — because humans are not spreadsheets with legs. **Unutma’s “human layer”** is everything that makes the serious stuff **sustainable**: **eight visual themes**, **mini games** for mental breaks, **multiple interface languages**, **accessibility choices** like font sizing, and **export / backup** flows that keep **you** in charge of where data lives.

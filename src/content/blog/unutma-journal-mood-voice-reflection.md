@@ -1,11 +1,11 @@
-﻿---
+---
 title: "Journaling in Unutma: Mood, Memory, and Showing Up Without Performance"
 description: "How Unutma’s Journal blends mood tracking with writing — including voice-friendly capture — so reflection stays private, small, and sustainable."
 pubDate: 2026-04-06
 tags: ["Unutma", "journaling", "wellness", "habits"]
 draft: false
-image: "/blog/illustrations/unutma-journal-hero.svg"
-imageAlt: "Notebook lines and soft mood dots suggesting a private journal"
+image: "/blog/covers/ai/unutma-journal-mood-voice-reflection.png"
+imageAlt: "Open journal with fountain pen in warm lamplight"
 ---
 
 You do not need another blank page staring back at you like a judgmental mirror — yet most “journaling apps” still behave like **Medium for your trauma**: rich text, prompts, streaks, and subtle pressure to **produce**. **Unutma’s Journal** takes a different stance: **continuity beats eloquence**, **privacy beats performance**, and **mood plus words** beat either one alone when you are trying to understand a week, not win a literary prize.

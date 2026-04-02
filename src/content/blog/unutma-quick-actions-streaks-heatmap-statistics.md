@@ -4,8 +4,8 @@ description: "How one-tap checklist logging in Unutma proves you locked the door
 pubDate: 2026-04-02
 tags: ["Unutma", "habits", "productivity", "wellness"]
 draft: false
-image: "/blog/illustrations/unutma-actions-hero.svg"
-imageAlt: "Abstract illustration of a quick action target and an activity trend line"
+image: "/blog/covers/ai/unutma-quick-actions-streaks-heatmap-statistics.png"
+imageAlt: "Hands holding a smartphone in warm indoor light"
 ---
 
 Ever stood in the hallway wondering **whether you actually unplugged the iron**, **locked the back door**, or **turned the stove off**? That is not a “productivity” problem — it is a **trust-your-past-self** problem. **Unutma’s Actions tab is built for that:** not a journal of “what I did today,” but **one tap per check** so your brain can stop replaying the same worry on a loop.

@@ -1,11 +1,11 @@
-﻿---
+---
 title: "Routines, Calendar, and Widgets: Time-Based Calm in Unutma"
 description: "How Unutma helps you shape mornings, evenings, and scheduled events — plus home screen widgets — so reminders support your life instead of hijacking it."
 pubDate: 2026-04-07
 tags: ["Unutma", "routines", "planning", "productivity"]
 draft: false
-image: "/blog/illustrations/unutma-routines-hero.svg"
-imageAlt: "Calendar grid and routine blocks suggesting structured days"
+image: "/blog/covers/ai/unutma-routines-calendar-widgets-time.png"
+imageAlt: "Wall calendar, clock, and morning coffee by a window"
 ---
 
 Notifications are not neutral — they are **tiny landlords** that charge rent in attention. **Unutma’s time-based tools** — **Routines**, **Calendar**, and (where supported) **home screen widgets** — try to earn that rent: **structure without surveillance**, **reminders without shame**, and **quick access** to what matters when you are already holding the phone for the hundredth time.

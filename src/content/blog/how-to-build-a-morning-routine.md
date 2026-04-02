@@ -1,9 +1,11 @@
-﻿---
+---
 title: "How to Build a Morning Routine You Will Not Quit by Thursday"
 description: "Hydration, light, movement, and one meaningful task — a gentle template before notifications take over."
 pubDate: 2026-03-24
 tags: ["routines", "wellness", "habits"]
 draft: false
+image: "/blog/covers/ai/how-to-build-a-morning-routine.png"
+imageAlt: "Sunrise light through a window with water glass and yoga mat"
 ---
 
 ## Anchor habits first

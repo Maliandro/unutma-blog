@@ -1,11 +1,11 @@
-﻿---
+---
 title: "Money Clarity in Unutma: Expenses, Subscriptions, Budgets, and Assets"
 description: "A practical tour of Unutma’s Economy tab — from daily spending and bills to subscriptions, budgets, charts, and optional asset tracking — without turning finance into shame."
 pubDate: 2026-04-05
 tags: ["Unutma", "finance", "budgeting", "productivity"]
 draft: false
-image: "/blog/illustrations/unutma-economy-hero.svg"
-imageAlt: "Abstract trend line and chart suggesting money flow over time"
+image: "/blog/covers/ai/unutma-economy-expenses-budgets-assets.png"
+imageAlt: "Calculator, coins, and receipt on a desk in daylight"
 ---
 
 Money stress rarely comes from “not having a spreadsheet.” It comes from **not seeing patterns soon enough** — the subscription that renewed quietly, the category that ballooned while you were busy, the gap between **what you feel** and **what the numbers say**. **Unutma’s Economy tab** exists to shrink that gap: **expenses**, **income**, **subscriptions**, **budgets**, **trends**, and optional **assets** tracking — all in an app that keeps **your data oriented around your device**, not an ad-powered finance feed.
