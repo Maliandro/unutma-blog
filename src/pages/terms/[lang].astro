@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SEOHead from '../../components/SEOHead.astro';
+import LegalDocument from '../../components/LegalDocument.astro';
+import {
+  getLegal,
+  isLegalLang,
+  LEGAL_LANGUAGES,
+  type LegalLang,
+} from '../../data/legal';
+
+export function getStaticPaths() {
+  return LEGAL_LANGUAGES.filter(({ code }) => code !== 'en').map(({ code }) => ({
+    params: { lang: code },
+  }));
+}
+
+const langParam = Astro.params.lang;
+if (!isLegalLang(langParam)) {
+  return Astro.redirect('/terms');
+}
+const lang = langParam as LegalLang;
+const legal = getLegal(lang);
+---
+
+<BaseLayout>
+  <SEOHead
+    slot="head"
+    title={legal.termsTitle}
+    description={`${legal.termsTitle} — Unutma`}
+  />
+
+  <article
+    class="prose prose-lg mx-auto max-w-3xl px-4 py-12 prose-a:text-brand prose-strong:text-gray-900"
+  >
+    <LegalDocument kind="terms" lang={lang} legal={legal} />
+  </article>
+</BaseLayout>

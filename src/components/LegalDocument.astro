@@ -1,0 +1,95 @@
+---
+import { withBase } from '../utils/site';
+import LegalLanguageSwitcher from './LegalLanguageSwitcher.astro';
+import {
+  BLOG_PRIVACY_NOTICE,
+  CONTACT_EMAIL,
+  PRIVACY_SECTIONS,
+  TERMS_SECTIONS,
+  splitParagraphs,
+  type LegalLang,
+  type LegalBundle,
+} from '../data/legal';
+
+interface Props {
+  kind: 'privacy' | 'terms';
+  lang: LegalLang;
+  legal: LegalBundle;
+}
+
+const { kind, lang, legal } = Astro.props;
+const isPrivacy = kind === 'privacy';
+const content = isPrivacy ? legal.privacyContent : legal.termsContent;
+const sections = isPrivacy ? PRIVACY_SECTIONS : TERMS_SECTIONS;
+const title = isPrivacy ? legal.privacyTitle : legal.termsTitle;
+const lastUpdatedLabel = legal.lastUpdated;
+const lastUpdatedDate = isPrivacy
+  ? legal.lastUpdatedDate
+  : ((legal as { termsLastUpdatedDate?: string }).termsLastUpdatedDate ??
+    legal.lastUpdatedDate);
+const otherPage = isPrivacy ? 'terms' : 'privacy';
+const otherLabel = isPrivacy ? legal.termsOfService : legal.privacyPolicy;
+const blogNotice = BLOG_PRIVACY_NOTICE[lang];
+
+function linkifyContact(text: string) {
+  return text.replace(
+    CONTACT_EMAIL,
+    `<a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>`,
+  );
+}
+
+const contentRecord = content as Record<string, string>;
+const renderedSections = sections
+  .map(({ title: sectionTitle, text: sectionText }) => {
+    const heading = contentRecord[sectionTitle];
+    const body = contentRecord[sectionText];
+    if (!heading || !body) return null;
+    return {
+      heading,
+      paragraphs: splitParagraphs(body).map((paragraph) =>
+        linkifyContact(paragraph),
+      ),
+    };
+  })
+  .filter(Boolean) as { heading: string; paragraphs: string[] }[];
+---
+
+<LegalLanguageSwitcher page={kind} current={lang} />
+
+<h1>{title}</h1>
+<p class="text-sm text-gray-600">
+  <strong>{lastUpdatedLabel}:</strong> {lastUpdatedDate}
+</p>
+
+{
+  isPrivacy && content.intro ? (
+    <p set:html={linkifyContact(content.intro)} />
+  ) : null
+}
+
+{
+  renderedSections.map((section) => (
+    <section>
+      <h2>{section.heading}</h2>
+      {section.paragraphs.map((paragraph) => (
+        <p set:html={paragraph} />
+      ))}
+    </section>
+  ))
+}
+
+{
+  isPrivacy ? (
+    <section>
+      <h2>{blogNotice.title}</h2>
+      <p>{blogNotice.text}</p>
+    </section>
+  ) : null
+}
+
+<p>
+  <a href={withBase('/')}>← Home</a> ·{' '}
+  <a href={withBase(`/${otherPage}${lang === 'en' ? '' : `/${lang}`}`)}>
+    {otherLabel}
+  </a>
+</p>

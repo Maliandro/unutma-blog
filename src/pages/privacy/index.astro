@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SEOHead from '../../components/SEOHead.astro';
+import LegalDocument from '../../components/LegalDocument.astro';
+import { getLegal } from '../../data/legal';
+---
+
+<BaseLayout>
+  <SEOHead
+    slot="head"
+    title="Privacy Policy"
+    description="Unutma app privacy policy — your data stays on your device. Available in multiple languages."
+  />
+
+  <article
+    class="prose prose-lg mx-auto max-w-3xl px-4 py-12 prose-a:text-brand prose-strong:text-gray-900"
+  >
+    <LegalDocument kind="privacy" lang="en" legal={getLegal('en')} />
+  </article>
+</BaseLayout>

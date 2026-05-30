@@ -1,30 +1,42 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SEOHead from '../components/SEOHead.astro';
-import { t } from '../i18n/ui';
-
-const u = t().about;
-const nav = t().nav;
-const footer = t().footer;
+import { withBase } from '../utils/site';
 ---
 
 <BaseLayout>
-  <SEOHead slot="head" title={u.seoTitle} description={u.seoDesc} />
+  <SEOHead
+    slot="head"
+    title="About"
+    description="About Unutma and this blog — privacy-first productivity, offline organization, and practical articles."
+  />
 
   <article
-    class="prose prose-lg mx-auto max-w-3xl px-4 py-12 dark:prose-invert prose-headings:font-display prose-headings:text-gray-900 dark:prose-headings:text-gray-50 prose-a:text-brand prose-strong:text-gray-900 dark:prose-strong:text-gray-100"
+    class="prose prose-lg mx-auto max-w-3xl px-4 py-12 prose-a:text-brand prose-strong:text-gray-900"
   >
-    <h1>{u.h1}</h1>
-    <p>{u.p1}</p>
-    <h2>{u.h2}</h2>
-    <p>{u.p2}</p>
-    <p>{u.p3}</p>
+    <h1>About this blog</h1>
     <p>
-      <a href="/">{nav.home}</a>
-      {' · '}
-      <a href="/blog/">{nav.blog}</a>
-      {' · '}
-      <a href="/privacy/">{footer.privacy}</a>
+      Unutma Blog publishes helpful, SEO-friendly articles on productivity,
+      journaling, routines, privacy-first tools, and personal organization.
+      The goal is simple: help you build calmer habits — and introduce Unutma
+      when it genuinely fits.
+    </p>
+    <h2>About Unutma</h2>
+    <p>
+      <strong>Unutma</strong> is a mobile app for lists, journal, password
+      vault, wishlist, finance tracking, routines, and more — with a focus on
+      offline use and keeping your data on your device. No account is required
+      for your content.
+    </p>
+    <p>
+      We are not a cloud-first service; we believe your notes and tasks belong
+      with you. This blog is independent in tone: you should get value even if
+      you never download the app.
+    </p>
+    <p>
+      <a href={withBase('/')}>Home</a> · <a href={withBase('/blog')}>Blog</a> ·{' '}
+      <a href={withBase('/privacy')}>Privacy policy</a> ·{' '}
+      <a href={withBase('/terms')}>Terms of service</a>
     </p>
   </article>
 </BaseLayout>

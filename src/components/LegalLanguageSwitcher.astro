@@ -1,0 +1,40 @@
+---
+import { withBase } from '../utils/site';
+import { LEGAL_LANGUAGES, type LegalLang } from '../data/legal';
+
+interface Props {
+  page: 'privacy' | 'terms';
+  current: LegalLang;
+}
+
+const { page, current } = Astro.props;
+---
+
+<nav
+  class="not-prose mb-8 flex flex-wrap gap-2 border-b border-gray-200 pb-4"
+  aria-label="Language"
+>
+  {
+    LEGAL_LANGUAGES.map(({ code, native }) => {
+      const href =
+        code === 'en'
+          ? withBase(`/${page}`)
+          : withBase(`/${page}/${code}`);
+      const active = code === current;
+      return (
+        <a
+          href={href}
+          class:list={[
+            'rounded-full px-3 py-1.5 text-sm font-medium no-underline transition-colors',
+            active
+              ? 'bg-brand text-white'
+              : 'bg-gray-100 text-gray-700 hover:bg-brand/10 hover:text-brand',
+          ]}
+          aria-current={active ? 'page' : undefined}
+        >
+          {native}
+        </a>
+      );
+    })
+  }
+</nav>
