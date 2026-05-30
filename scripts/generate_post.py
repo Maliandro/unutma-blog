@@ -34,7 +34,7 @@ UNUTMA_LINKS = {
     ),
     "app_store": os.environ.get(
         "APP_STORE_URL",
-        "https://apps.apple.com/us/app/unutma-peace-of-mind/id6758889495",
+        "https://apps.apple.com/app/id6758889495",
     ),
 }
 
@@ -77,17 +77,26 @@ OUTPUT FORMAT (strict JSON):
 
 Respond ONLY with valid JSON. No markdown fences, no preamble."""
 
+GEMINI_MODEL = os.environ.get("GEMINI_BLOG_MODEL", "gemini-2.0-flash")
 
-def generate_post(keyword: str, extra_context: str = "") -> dict:
-    import anthropic
 
-    api_key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
-    if not api_key:
-        raise ValueError("ANTHROPIC_API_KEY boş")
-    # Baş/son boşluk veya yanlış yapıştırma 401 verir
-    client = anthropic.Anthropic(api_key=api_key)
+def slugify(text: str) -> str:
+    slug = re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
+    return slug[:80] or "unutma-post"
 
-    user_prompt = f"""Write a comprehensive, SEO-optimized blog post targeting this keyword:
+
+def parse_llm_json(response_text: str) -> dict:
+    try:
+        return json.loads(response_text)
+    except json.JSONDecodeError:
+        json_match = re.search(r"\{[\s\S]+\}", response_text)
+        if json_match:
+            return json.loads(json_match.group())
+        raise ValueError(f"Could not parse response as JSON:\n{response_text[:500]}") from None
+
+
+def build_user_prompt(keyword: str, extra_context: str = "") -> str:
+    return f"""Write a comprehensive, SEO-optimized blog post targeting this keyword:
 
 KEYWORD: {keyword}
 
@@ -100,25 +109,116 @@ Remember:
 - Actionable advice
 - Proper heading structure"""
 
+
+def generate_post_claude(keyword: str, extra_context: str = "") -> dict:
+    import anthropic
+
+    api_key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
+    if not api_key:
+        raise ValueError("ANTHROPIC_API_KEY boş")
+    client = anthropic.Anthropic(api_key=api_key)
     message = client.messages.create(
         model=MODEL,
         max_tokens=MAX_TOKENS,
         system=SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": user_prompt}],
+        messages=[{"role": "user", "content": build_user_prompt(keyword, extra_context)}],
     )
+    return parse_llm_json(message.content[0].text)
 
-    response_text = message.content[0].text
 
-    try:
-        post_data = json.loads(response_text)
-    except json.JSONDecodeError:
-        json_match = re.search(r"\{[\s\S]+\}", response_text)
-        if json_match:
-            post_data = json.loads(json_match.group())
-        else:
-            raise ValueError(f"Could not parse response as JSON:\n{response_text[:500]}") from None
+def generate_post_gemini(keyword: str, extra_context: str = "") -> dict:
+    import google.generativeai as genai
 
-    return post_data
+    api_key = os.environ.get("GEMINI_API_KEY", "").strip()
+    if not api_key:
+        raise ValueError("GEMINI_API_KEY boş")
+    genai.configure(api_key=api_key)
+    model = genai.GenerativeModel(
+        GEMINI_MODEL,
+        system_instruction=SYSTEM_PROMPT,
+    )
+    response = model.generate_content(build_user_prompt(keyword, extra_context))
+    return parse_llm_json(response.text)
+
+
+def generate_post_template(keyword: str, extra_context: str = "") -> dict:
+    title = keyword.strip().title()
+    if not title:
+        title = "Organize Your Private Life with Unutma"
+    slug = slugify(keyword or "unutma-private-life-organizer")
+    context_line = extra_context.strip()
+    content = f"""## Why {title} Matters
+
+{context_line or f"Many people search for help with {keyword.lower()} — not because they are lazy, but because modern life is noisy."}
+
+When reminders live in five different apps, it is easy to miss what matters. A calm, offline-first approach keeps your routines private and under your control.
+
+## What Gets in the Way
+
+- Too many notifications from apps that want your attention
+- Cloud accounts and sync friction when you just need a quick log
+- Tools that feel like work instead of relief
+
+## How to Build a Simple System
+
+Start with one habit: capture the thought immediately, review once a day, and celebrate small wins. Pair lists with gentle reminders instead of alarm spam.
+
+## Where Unutma Fits
+
+[Unutma](/blog/welcome-to-unutma-blog/) is a privacy-first organizer — to-dos, journal, password vault, wishlists, routines, and quick-action logging — **on your device**, offline, with no ads.
+
+If {keyword.lower()} is part of your daily stress, try dedicating one screen in Unutma to it for a week.
+
+## Key Takeaways
+
+- One trusted place beats five scattered apps
+- Offline + on-device storage protects your private life
+- Small daily reviews beat perfect systems you never open
+
+## Quick Tips
+
+1. Log quick actions the moment you think of them
+2. Keep lists short and actionable
+3. Review at the same time each evening
+
+## Your Turn
+
+What is the one thing you forget most often — and would a single private app help?
+
+Read more on the [Unutma blog](/blog/welcome-to-unutma-blog/)."""
+    desc = (
+        f"Practical guide to {keyword.lower()} with privacy-first tips. "
+        "Learn how Unutma helps you stay organized offline."
+    )[:160]
+    return {
+        "title": f"{title}: A Calm, Private Way to Stay Organized",
+        "slug": slug,
+        "description": desc,
+        "tags": ["unutma", "productivity", "privacy"],
+        "content": content,
+    }
+
+
+def generate_post_with_fallback(keyword: str, extra_context: str = "") -> tuple[dict, str]:
+    errors: list[str] = []
+    if os.environ.get("ANTHROPIC_API_KEY", "").strip():
+        try:
+            return generate_post_claude(keyword, extra_context), "claude"
+        except Exception as exc:
+            errors.append(f"claude: {exc}")
+    if os.environ.get("GEMINI_API_KEY", "").strip():
+        try:
+            return generate_post_gemini(keyword, extra_context), "gemini"
+        except Exception as exc:
+            errors.append(f"gemini: {exc}")
+    if errors:
+        print("LLM fallback chain:", "; ".join(errors))
+    return generate_post_template(keyword, extra_context), "template"
+
+
+def generate_post(keyword: str, extra_context: str = "") -> dict:
+    post, _provider = generate_post_with_fallback(keyword, extra_context)
+    return post
 
 
 def save_as_astro_md(post_data: dict, content_dir: Path = BLOG_CONTENT_DIR) -> Path:
@@ -169,20 +269,12 @@ def load_keywords(filepath: str | None = None) -> list[str]:
 
 
 def main() -> None:
-    if not os.environ.get("ANTHROPIC_API_KEY", "").strip():
-        env_file = REPO_ROOT / ".env"
-        print("ANTHROPIC_API_KEY bulunamadı (ortam değişkeni boş).\n")
-        if not env_file.exists():
-            print(f"  Beklenen dosya yok: {env_file}")
-            print("  Çözüm: .env.example → .env kopyala, içine şunu ekle:")
-            print("  ANTHROPIC_API_KEY=sk-ant-api03-...\n")
-        else:
-            print(f"  Dosya var: {env_file}")
-            print("  Kontrol: satır ANTHROPIC_API_KEY= ile başlasın, başta/sonda boşluk olmasın.")
-            print("  Not: Anahtarı tırnak içinde yazdıysan bazen sorun çıkar; tırnaksız dene.\n")
-        print("  Alternatif (PowerShell, sadece o oturum için):")
-        print('  $env:ANTHROPIC_API_KEY = "sk-ant-api03-..."\n')
-        sys.exit(1)
+    has_llm = bool(os.environ.get("ANTHROPIC_API_KEY", "").strip()) or bool(
+        os.environ.get("GEMINI_API_KEY", "").strip()
+    )
+    if not has_llm:
+        print("No LLM keys found — template fallback will be used.")
+        print("Optional secrets: ANTHROPIC_API_KEY and/or GEMINI_API_KEY\n")
 
     if len(sys.argv) > 1:
         keyword = " ".join(sys.argv[1:])
@@ -199,9 +291,10 @@ def main() -> None:
     for i, kw in enumerate(keywords, 1):
         print(f"[{i}/{len(keywords)}] Generating: {kw!r}")
         try:
-            post_data = generate_post(kw)
+            post_data, provider = generate_post_with_fallback(kw)
             filepath = save_as_astro_md(post_data)
             print(f"  Saved: {filepath}")
+            print(f"  Provider: {provider}")
             print(f"  Title: {post_data['title']}\n")
         except Exception as e:
             print(f"  Error: {e}\n")

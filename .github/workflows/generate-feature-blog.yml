@@ -1,8 +1,8 @@
-name: Generate Blog Posts
+name: Generate Feature Blog (Sunday)
 
 on:
   schedule:
-    - cron: "0 8 * * *"
+    - cron: "0 13 * * 0"
   workflow_dispatch:
 
 permissions:
@@ -23,9 +23,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r scripts/requirements.txt
 
-      - name: Generate blog posts
+      - name: Generate feature blog post
         working-directory: scripts
-        run: python batch_generate.py
+        run: python generate_feature_blog.py
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -33,5 +33,5 @@ jobs:
       - name: Commit and push
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore(blog): auto-generate posts"
-          file_pattern: "src/content/blog/*.md scripts/keywords_used.txt"
+          commit_message: "chore(blog): sunday feature spotlight"
+          file_pattern: "src/content/blog/*.md scripts/feature_blog_state.json"

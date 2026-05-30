@@ -11,7 +11,7 @@ from pathlib import Path
 # Allow imports from scripts/
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from generate_post import generate_post, load_keywords, save_as_astro_md  # noqa: E402
+from generate_post import generate_post_with_fallback, load_keywords, save_as_astro_md  # noqa: E402
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 USED_KEYWORDS_FILE = SCRIPT_DIR / "keywords_used.txt"
@@ -45,11 +45,11 @@ def main() -> None:
     for kw in batch:
         print(f"  -> {kw!r}")
         try:
-            post = generate_post(kw)
+            post, provider = generate_post_with_fallback(kw)
             save_as_astro_md(post)
             mark_keyword_used(kw)
             generated += 1
-            print(f"    Done: {post['slug']}")
+            print(f"    Done ({provider}): {post['slug']}")
         except Exception as e:
             print(f"    Error: {e}")
 
