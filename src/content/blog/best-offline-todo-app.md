@@ -4,8 +4,6 @@ description: "Offline reliability, fast capture, smart lists, and privacy — ho
 pubDate: 2026-03-23
 tags: ["offline", "tasks", "productivity"]
 draft: false
-image: "/blog/covers/ai/best-offline-todo-app.png"
-imageAlt: "Paper to-do list with checkboxes and pencil on a desk"
 ---
 
 ## Offline is not a niche

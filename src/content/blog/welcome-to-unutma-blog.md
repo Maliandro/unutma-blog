@@ -4,8 +4,6 @@ description: "Why we started this blog, what you will find here, and how it conn
 pubDate: 2026-03-15
 tags: ["Unutma", "productivity", "privacy"]
 draft: false
-image: "/blog/covers/ai/welcome-to-unutma-blog.png"
-imageAlt: "Cozy desk with notebook, pen, and soft morning light by a window"
 ---
 
 ## What you will find here
@@ -18,7 +16,7 @@ Unutma is an app for lists, notes, routines, a vault, and more — with your dat
 
 ## What is next
 
-Browse the [blog index](/blog/), read [about us](/about/), and when you are ready, try Unutma on [Google Play](https://play.google.com/store/apps/details?id=com.mehmet.unutma) or the [App Store](https://apps.apple.com/us/app/unutma-peace-of-mind/id6758889495).
+Browse the [blog index](/blog/), read [about us](/about/), and when you are ready, try Unutma on [Google Play](https://play.google.com/store/apps/details?id=com.mehmet.unutma) or the [App Store](https://apps.apple.com/app/id6758889495).
 
 ### Quick tips
 

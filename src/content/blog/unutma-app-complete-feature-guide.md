@@ -4,8 +4,6 @@ description: "From quick actions and lists to vault, money tracking, and journal
 pubDate: 2026-03-29
 tags: ["Unutma", "productivity", "privacy", "organization"]
 draft: false
-image: "/blog/covers/ai/unutma-app-complete-feature-guide.png"
-imageAlt: "Smartphone and coffee cup on a wooden table, calm lifestyle photo"
 ---
 
 Most productivity apps ask you to **sign up**, **sync everything**, and **live inside their cloud** before you get value. Unutma takes the opposite path: your notes, tasks, money entries, and journal stay **on your phone**, and the interface is built around **five clear “rooms”** you swipe between — plus a few powerful tools tucked in the header and settings.
@@ -22,7 +20,7 @@ Each tab answers a different question:
 
 | Tab | Question it answers |
 | --- | --- |
-| **Actions** | “Did I do that small real-world check — in one tap?” |
+| **Actions** | “What did I do today — in one tap?” |
 | **Lists** | “What do I need to buy, do, or wish for?” |
 | **Vault** | “Where do I keep sensitive info, locked away?” |
 | **Economy** | “Where did my money go — and what’s coming?” |
@@ -32,15 +30,15 @@ Across the top, you also get **Notes** (quick capture), **Calendar** (events and
 
 ---
 
-## Actions: checklist taps, not a diary of your day
+## Actions: your “today I did this” dashboard
 
-The **Actions** screen is for **small, real-world checks** you want to remember — the kind of thing you’d ask on the way out the door: **“Did I unplug the iron?”**, **“Did I lock the door?”**, **“Is the stove off?”**, **“Did I take my meds?”** You define **custom buttons** in your own words; tap once and Unutma **logs it with a timestamp**. That is the whole mechanic — proof you did the thing, without turning the tab into a “what I did today” essay.
+The **Actions** screen is built around **custom buttons** you define yourself — for example “Water”, “Walk”, “Read”, “Deep work”. Tap a button and Unutma **logs that action with a timestamp**. That sounds simple; the payoff is huge:
 
-- You get **evidence for mundane but important habits**, not a performance review.
-- The app can show **recent activity**, **streaks**, and **statistics** when you stay consistent.
-- A **“On this day last year”** style card can surface what you logged a year ago — continuity, not guilt.
+- You build a **honest picture of your day** without writing paragraphs.
+- The app can show **recent activity**, **streaks**, and **achievements** when you stay consistent.
+- A **“On this day last year”** style card can surface what you logged a year ago — a gentle nudge to see progress, not guilt.
 
-**How to use it well:** Add **3–7 buttons** that match *your* life (safety, health, shutdown rituals — whatever you actually need to verify). If you want narrative or feelings, use **Journal**; Actions stay **short and checkable**.
+**How to use it well:** Add **3–7 actions** that matter to *you*, not a generic list from the internet. Tap through the day. If you miss a day, the world does not end; you still have a signal when you return. Pair this tab with **Journal** when you want story, not just signal.
 
 ---
 
@@ -129,12 +127,4 @@ Then revisit [our welcome post](/blog/welcome-to-unutma-blog/) for the bigger �
 - **Notes**, **Calendar**, and **Statistics** support the core loop without forcing every feature on every user.
 - The product philosophy is **offline-first and privacy-respecting** — your data stays with you.
 
-## Deep dives on the blog (long reads)
-
-- [Quick Actions, streaks, heatmaps & Statistics](/blog/unutma-quick-actions-streaks-heatmap-statistics/)
-- [Lists: Todo, Shopping & Wishlist workflows](/blog/unutma-lists-todo-shopping-wishlist-workflow/)
-- [Vault: passwords, Face ID & privacy habits](/blog/unutma-vault-passwords-face-id-privacy/)
-- [Economy: expenses, subscriptions, budgets & assets](/blog/unutma-economy-expenses-budgets-assets/)
-- [Journal: mood, voice & reflection](/blog/unutma-journal-mood-voice-reflection/)
-- [Routines, Calendar & widgets](/blog/unutma-routines-calendar-widgets-time/)
-- [Themes, mini games, languages & backup](/blog/unutma-themes-games-languages-backup/)
+**What feature do you want us to unpack in a dedicated deep-dive next — Vault security, Economy budgets, or the Journal workflow?** Leave a note when you try the app; we read real usage stories.
