@@ -1,7 +1,7 @@
 ---
 title: "Quick Action Habit Tracker For Forgetful People: A Calm, Private Way to Stay Organized"
 description: "Practical guide to quick action habit tracker for forgetful people with privacy-first tips. Learn how Unutma helps you stay organized offline."
-pubDate: 2026-05-31
+pubDate: 2026-06-07
 tags: ["unutma", "productivity", "privacy"]
 image: /blog/covers/cover-1.svg
 draft: false
