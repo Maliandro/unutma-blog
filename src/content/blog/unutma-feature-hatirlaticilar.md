@@ -1,7 +1,7 @@
 ---
 title: "Private Offline Reminder App Without Account: A Calm, Private Way to Stay Organized"
 description: "Practical guide to private offline reminder app without account with privacy-first tips. Learn how Unutma helps you stay organized offline."
-pubDate: 2026-06-14
+pubDate: 2026-06-21
 tags: ["unutma", "productivity", "privacy"]
 image: /blog/covers/cover-2.svg
 draft: false
