@@ -15,8 +15,12 @@ const sorted = all.sort(
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
-// Showcase/featured post becomes the big hero; everything else fills the side rail.
-const hero = sorted.find((p) => p.data.featured) ?? sorted[0];
+// Showcase/katalog yazısı her zaman büyük hero (başa sabit); yoksa featured'a düş.
+const PINNED_HERO_SLUG = 'unutma-app-showcase-complete-guide';
+const hero =
+  sorted.find((p) => p.slug === PINNED_HERO_SLUG) ??
+  sorted.find((p) => p.data.featured) ??
+  sorted[0];
 const rest = sorted.filter((p) => p.slug !== hero?.slug);
 const sideList = rest.slice(0, 5);
 const moreGrid = rest.slice(5, 8);
