@@ -4,6 +4,7 @@ description: "A practical checklist: local storage, optional accounts, export, a
 pubDate: 2026-03-21
 tags: ["privacy", "productivity", "security"]
 draft: false
+image: /blog/covers/auto/privacy-first-productivity-apps.svg
 ---
 
 ## Local-first is a feature

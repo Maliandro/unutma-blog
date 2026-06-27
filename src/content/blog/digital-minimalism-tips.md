@@ -4,6 +4,7 @@ description: "Reduce app overload with boundaries, not guilt — practical steps
 pubDate: 2026-03-17
 tags: ["digital wellbeing", "minimalism", "focus"]
 draft: false
+image: /blog/covers/auto/digital-minimalism-tips.svg
 ---
 
 ## Why less often beats “more productive”

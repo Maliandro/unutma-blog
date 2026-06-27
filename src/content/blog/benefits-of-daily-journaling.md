@@ -4,6 +4,7 @@ description: "Why short daily notes beat rare long essays — clarity, mood, and
 pubDate: 2026-03-18
 tags: ["journaling", "wellness", "habits"]
 draft: false
+image: /blog/covers/auto/benefits-of-daily-journaling.svg
 ---
 
 ## Small entries, big compounding

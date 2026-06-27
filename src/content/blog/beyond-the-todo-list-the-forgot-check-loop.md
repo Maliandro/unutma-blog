@@ -4,6 +4,7 @@ description: "Why checklist apps still leave you anxious, how a one-tap log chan
 pubDate: 2026-05-17
 tags: ["productivity", "mental load", "Unutma", "privacy", "habits"]
 draft: false
+image: /blog/covers/auto/beyond-the-todo-list-the-forgot-check-loop.svg
 ---
 
 A normal to-do list answers: **what should I do next?**  

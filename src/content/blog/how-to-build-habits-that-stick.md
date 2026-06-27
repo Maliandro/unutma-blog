@@ -4,6 +4,7 @@ description: "Identity-based habits, friction design, and recovery plans — a h
 pubDate: 2026-03-20
 tags: ["habits", "routines", "discipline"]
 draft: false
+image: /blog/covers/auto/how-to-build-habits-that-stick.svg
 ---
 
 ## Shrink the starting line

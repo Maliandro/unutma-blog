@@ -4,6 +4,7 @@ description: "Hydration, light, movement, and one meaningful task — a gentle t
 pubDate: 2026-03-24
 tags: ["routines", "wellness", "habits"]
 draft: false
+image: /blog/covers/auto/how-to-build-a-morning-routine.svg
 ---
 
 ## Anchor habits first

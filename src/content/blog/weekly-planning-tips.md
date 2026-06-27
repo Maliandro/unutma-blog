@@ -4,6 +4,7 @@ description: "A 30-minute weekly reset: review, prioritize, and protect deep wor
 pubDate: 2026-03-22
 tags: ["planning", "productivity", "focus"]
 draft: false
+image: /blog/covers/auto/weekly-planning-tips.svg
 ---
 
 ## The three-list method

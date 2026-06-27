@@ -3,7 +3,7 @@ title: "Personal Organization Tips 2026: A Calm, Private Way to Stay Organized"
 description: "Practical guide to personal organization tips 2026 with privacy-first tips. Learn how Unutma helps you stay organized offline."
 pubDate: 2026-06-26
 tags: ["unutma", "productivity", "privacy"]
-image: /blog/covers/cover-3.svg
+image: /blog/covers/auto/personal-organization-tips-2026.svg
 draft: false
 ---
 

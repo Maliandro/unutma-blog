@@ -4,6 +4,7 @@ description: "A practical framework for calendars, lists, and routines — plus 
 pubDate: 2026-03-16
 tags: ["productivity", "organization", "routines"]
 draft: false
+image: /blog/covers/auto/how-to-organize-your-life.svg
 ---
 
 ## Start with one layer, not ten

@@ -4,6 +4,7 @@ description: "Lightweight expense tracking: categories, weekly reviews, and priv
 pubDate: 2026-03-19
 tags: ["finance", "budgeting", "privacy"]
 draft: false
+image: /blog/covers/auto/how-to-track-personal-expenses.svg
 ---
 
 ## Start with categories you will actually use
