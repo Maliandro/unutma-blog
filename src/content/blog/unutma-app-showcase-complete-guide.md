@@ -3,7 +3,7 @@ title: "Unutma App Showcase: The Private Life Organizer Built for Real People"
 description: "See every major Unutma feature in one detailed visual guide: quick actions, routines, notes, lists, privacy, offline use, and Premium."
 pubDate: 2026-06-26
 tags: ["Unutma", "productivity", "privacy", "app guide"]
-image: /blog/app-showcase/iphone-01-hero.png
+image: /blog/app-showcase/cover.png
 imageAlt: "Unutma app showcase with iPhone screenshots"
 featured: true
 draft: false
