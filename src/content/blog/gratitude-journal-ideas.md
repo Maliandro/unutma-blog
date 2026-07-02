@@ -1,15 +1,15 @@
 ---
-title: "How To Track Personal Expenses: A Calm, Private Way to Stay Organized"
-description: "Practical guide to how to track personal expenses with privacy-first tips. Learn how Unutma helps you stay organized offline."
+title: "Gratitude Journal Ideas: A Calm, Private Way to Stay Organized"
+description: "Practical guide to gratitude journal ideas with privacy-first tips. Learn how Unutma helps you stay organized offline."
 pubDate: 2026-07-02
 tags: ["unutma", "productivity", "privacy"]
-image: /blog/covers/cover-2.svg
+image: /blog/covers/cover-3.svg
 draft: false
 ---
 
-## Why How To Track Personal Expenses Matters
+## Why Gratitude Journal Ideas Matters
 
-Many people search for help with how to track personal expenses — not because they are lazy, but because modern life is noisy.
+Many people search for help with gratitude journal ideas — not because they are lazy, but because modern life is noisy.
 
 When reminders live in five different apps, it is easy to miss what matters. A calm, offline-first approach keeps your routines private and under your control.
 
@@ -27,7 +27,7 @@ Start with one habit: capture the thought immediately, review once a day, and ce
 
 [Unutma](/blog/welcome-to-unutma-blog/) is a privacy-first organizer — to-dos, journal, password vault, wishlists, routines, and quick-action logging — **on your device**, offline, with no ads.
 
-If how to track personal expenses is part of your daily stress, try dedicating one screen in Unutma to it for a week.
+If gratitude journal ideas is part of your daily stress, try dedicating one screen in Unutma to it for a week.
 
 ## Key Takeaways
 
