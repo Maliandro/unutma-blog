@@ -1,37 +1,39 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { withBase } from '../utils/site';
 import '../styles/global.css';
-import { t } from '../i18n/ui';
 
+interface Props {
+  /** When no slot head, optional defaults for minimal pages */
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
 const adsenseClient = import.meta.env.PUBLIC_ADSENSE_CLIENT ?? '';
-const u = t();
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="dark:bg-gray-950">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script is:inline>
-      (function () {
-        try {
-          var t = localStorage.getItem('theme');
-          if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches))
-            document.documentElement.classList.add('dark');
-          else document.documentElement.classList.remove('dark');
-        } catch (e) {}
-      })();
-    </script>
-    <link rel="icon" type="image/png" href="/unutma-icon.png" sizes="512x512" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/unutma-icon.png" />
+    <link rel="icon" type="image/png" href={withBase('/unutma-icon.png')} sizes="512x512" />
+    <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
+    <link rel="apple-touch-icon" href={withBase('/unutma-icon.png')} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
-    /><meta name="google-site-verification" content="rVJoWbeF3Dfk7rHEeypqRQDOtIZZeKAt0uks_ToUnFw" />
+    />
+    {title && !Astro.slots.has('head') && (
+      <>
+        <title>{title}</title>
+        {description && <meta name="description" content={description} />}
+      </>
+    )}
     <slot name="head" />
     {
       adsenseClient && import.meta.env.PUBLIC_ADSENSE_ENABLED === 'true' && (
@@ -43,29 +45,11 @@ const u = t();
       )
     }
   </head>
-  <body
-    class="min-h-screen bg-white font-sans text-gray-800 subpixel-antialiased transition-colors dark:bg-gray-950 dark:text-gray-100"
-  >
-    <a href="#main-content" class="skip-link">{u.skip.toMain}</a>
+  <body class="min-h-screen bg-white font-sans text-gray-800 subpixel-antialiased">
     <Header />
-    <main id="main-content" tabindex="-1">
+    <main>
       <slot />
     </main>
     <Footer />
-    <script is:inline>
-      (function () {
-        var btn = document.getElementById('theme-toggle');
-        if (!btn) return;
-        function apply(dark) {
-          document.documentElement.classList.toggle('dark', dark);
-          try {
-            localStorage.setItem('theme', dark ? 'dark' : 'light');
-          } catch (e) {}
-        }
-        btn.addEventListener('click', function () {
-          apply(!document.documentElement.classList.contains('dark'));
-        });
-      })();
-    </script>
   </body>
 </html>

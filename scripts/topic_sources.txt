@@ -1,0 +1,25 @@
+SOURCE: https://x.com/emrullahai/status/2071902810707309004
+
+Tweet topic:
+Academics and PhD students use a set of research sites and tools that make literature search, reading, citation mapping, and evidence checking much faster.
+
+Original tool list mentioned:
+- annas-archive.org
+- scispace.com
+- papernity.com
+- semanticscholar.org
+- connectedpapers.com
+- elicit.com
+- consensus.app
+- researchrabbit.ai
+- litmaps.com
+- scite.ai
+- core.ac.uk
+
+Use this as topic inspiration for Unutma blog posts aimed at students, academics, researchers, and lifelong learners.
+
+Important editorial guardrails:
+- Do not encourage copyright infringement, piracy, or bypassing paid access.
+- If mentioning Anna's Archive, frame it as legally/ethically controversial and steer readers toward legal/open-access options such as CORE, institutional libraries, publisher open-access pages, Semantic Scholar, and author preprints.
+- Verify tool names before making strong claims when possible.
+- Focus on workflows: literature review tracking, paper reading queues, citation maps, claim checking, note organization, research routines, and how Unutma can help keep research tasks private and organized.

@@ -1,8 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { DATE_LOCALE } from '../i18n/locales';
 import { coverForSlug } from '../utils/covers';
-import { t } from '../i18n/ui';
+import { withBase } from '../utils/site';
 
 interface Props {
   post: CollectionEntry<'blog'>;
@@ -10,18 +9,16 @@ interface Props {
 
 const { post } = Astro.props;
 const date = post.data.pubDate;
-const coverSrc = post.data.image ?? coverForSlug(post.slug);
+const coverSrc = withBase(post.data.image ?? coverForSlug(post.slug));
 const coverAlt = post.data.imageAlt ?? post.data.title;
-const u = t();
-const postHref = `/blog/${post.slug}/`;
 ---
 
 <article
-  class="group flex flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition hover:border-indigo-100 hover:shadow-md dark:border-gray-800 dark:bg-gray-900 dark:hover:border-indigo-900/80"
+  class="group flex flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition hover:border-indigo-100 hover:shadow-md"
 >
   <a
-    href={postHref}
-    class="relative aspect-[1200/630] w-full shrink-0 overflow-hidden bg-gray-100 dark:bg-gray-800/90"
+    href={withBase(`/blog/${post.slug}/`)}
+    class="relative aspect-[1200/630] w-full shrink-0 overflow-hidden bg-gray-100"
   >
     <img
       src={coverSrc}
@@ -30,52 +27,49 @@ const postHref = `/blog/${post.slug}/`;
       height="630"
       loading="lazy"
       decoding="async"
-      class="h-full w-full object-cover object-center motion-safe:transition motion-safe:duration-300 motion-safe:group-hover:scale-[1.02] ring-1 ring-inset ring-black/[0.06] dark:ring-white/10"
+      class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
     />
   </a>
   <div class="flex flex-1 flex-col p-6">
-    <time
-      class="text-xs font-medium uppercase tracking-wide text-gray-500 dark:text-gray-400"
-      datetime={date.toISOString()}
-    >
-      {
-        date.toLocaleDateString(DATE_LOCALE, {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-        })
-      }
-    </time>
-    <h2
-      class="font-display mt-2 text-xl font-semibold tracking-tight text-gray-900 group-hover:text-brand dark:text-gray-100 dark:group-hover:text-indigo-300"
-    >
-      <a
-        href={postHref}
-        class="rounded text-inherit no-underline visited:text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand/40 dark:visited:text-gray-100"
-      >
-        {post.data.title}
-      </a>
-    </h2>
-    <p class="mt-2 flex-1 text-gray-600 line-clamp-3 dark:text-gray-400">{post.data.description}</p>
+  <time
+    class="text-xs font-medium uppercase tracking-wide text-gray-500"
+    datetime={date.toISOString()}
+  >
     {
-      post.data.tags?.length ? (
-        <div class="mt-4 flex flex-wrap gap-2">
-          {post.data.tags.slice(0, 4).map((tag) => (
-            <a
-              href={`/blog/tags/${encodeURIComponent(tag)}/`}
-              class="rounded-full bg-indigo-50 px-2 py-0.5 text-xs text-indigo-700 hover:bg-indigo-100 dark:bg-indigo-950/80 dark:text-indigo-300 dark:hover:bg-indigo-900"
-            >
-              {tag}
-            </a>
-          ))}
-        </div>
-      ) : null
+      date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      })
     }
-    <a
-      href={postHref}
-      class="mt-4 inline-flex text-sm font-medium text-brand hover:underline dark:text-indigo-400"
-    >
-      {u.blogCard.readMore}
+  </time>
+  <h2
+    class="font-display mt-2 text-xl font-semibold tracking-tight text-gray-900 group-hover:text-brand"
+  >
+    <a href={withBase(`/blog/${post.slug}/`)} class="focus:outline-none focus:ring-2 focus:ring-brand/40 rounded">
+      {post.data.title}
     </a>
+  </h2>
+  <p class="mt-2 flex-1 text-gray-600 line-clamp-3">{post.data.description}</p>
+  {
+    post.data.tags?.length ? (
+      <div class="mt-4 flex flex-wrap gap-2">
+        {post.data.tags.slice(0, 4).map((tag) => (
+          <a
+            href={withBase(`/blog/tags/${encodeURIComponent(tag)}/`)}
+            class="rounded-full bg-indigo-50 px-2 py-0.5 text-xs text-indigo-700 hover:bg-indigo-100"
+          >
+            {tag}
+          </a>
+        ))}
+      </div>
+    ) : null
+  }
+  <a
+    href={withBase(`/blog/${post.slug}/`)}
+    class="mt-4 inline-flex text-sm font-medium text-brand hover:underline"
+  >
+    Read more →
+  </a>
   </div>
 </article>
