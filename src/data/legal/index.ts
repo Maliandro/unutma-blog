@@ -50,6 +50,7 @@ export const PRIVACY_SECTIONS = [
   { title: 'noPersonalData', text: 'noPersonalDataText' },
   { title: 'dataOnDevice', text: 'dataOnDeviceText' },
   { title: 'howWeUse', text: 'howWeUseText' },
+  { title: 'optionalAnalytics', text: 'optionalAnalyticsText' },
   { title: 'security', text: 'securityText' },
   { title: 'gdprRights', text: 'gdprRightsText' },
   { title: 'children', text: 'childrenText' },

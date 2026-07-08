@@ -3,7 +3,7 @@ title: "Our Story — and We Would Love Your Ideas"
 description: "Why we built Unutma, what we believe about privacy and calm productivity, and how your suggestions shape what we ship next."
 pubDate: 2026-05-27
 tags: ["Unutma", "productivity", "privacy", "feedback"]
-image: /blog/covers/auto/our-story-we-want-your-feedback.svg
+image: /blog/covers/cover-1.svg
 draft: false
 ---
 
