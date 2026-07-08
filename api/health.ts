@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-import { isAnalyticsStorageConfigured } from './lib/analytics-store';
+import { isAnalyticsStorageConfigured } from './lib/analytics-store.js';
 
 /** Public liveness check — confirms /api routes are deployed (no secrets). */
 export default function handler(_req: VercelRequest, res: VercelResponse) {

@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { aggregateEvents, isAnalyticsStorageConfigured, readRecentEvents } from './lib/analytics-store';
+import { aggregateEvents, isAnalyticsStorageConfigured, readRecentEvents } from './lib/analytics-store.js';
 
 function escapeHtml(value: string): string {
   return value
