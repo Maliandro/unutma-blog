@@ -11,7 +11,7 @@ function escapeHtml(value: string): string {
 
 function renderTable(title: string, rows: [string, number][]) {
   if (!rows.length) {
-    return `<h2>${escapeHtml(title)}</h2><p class="muted">No data yet.</p>`;
+    return `<h2>${escapeHtml(title)}</h2><p class="muted">Henüz veri yok.</p>`;
   }
   const body = rows
     .map(
@@ -19,8 +19,41 @@ function renderTable(title: string, rows: [string, number][]) {
         `<tr><td>${escapeHtml(label)}</td><td class="num">${count}</td></tr>`
     )
     .join('');
-  return `<h2>${escapeHtml(title)}</h2><table><thead><tr><th>Label</th><th>Count</th></tr></thead><tbody>${body}</tbody></table>`;
+  return `<h2>${escapeHtml(title)}</h2><table><thead><tr><th>Etiket</th><th>Adet</th></tr></thead><tbody>${body}</tbody></table>`;
 }
+
+/** Event adları koddan geldiği için İngilizce; panelde okunaklı Türkçe karşılık göster. */
+const EVENT_LABELS_TR: Record<string, string> = {
+  app_open: 'Uygulama açılışı',
+  screen_view: 'Ekran görüntüleme',
+  tab_view: 'Sekme görüntüleme',
+  onboarding_step: 'Onboarding adımı',
+  onboarding_completed: 'Onboarding tamamlandı',
+  trial_offer_shown: 'Deneme teklifi gösterildi',
+  trial_started: 'Deneme başladı',
+  trial_skipped: 'Deneme atlandı',
+  trial_expired: 'Deneme süresi bitti',
+  paywall_view: 'Paywall görüntüleme',
+  plan_selected: 'Plan seçildi',
+  purchase_tapped: 'Satın al butonu',
+  purchase_success: 'Satın alma başarılı',
+  purchase_error: 'Satın alma hatası',
+  restore_tapped: 'Geri yükleme',
+  feature_locked: 'Kilitli özelliğe dokunma',
+  upsell_shown: 'Upsell gösterildi',
+  export_blocked: 'Export engellendi',
+  analytics_consent_changed: 'Analytics izni değişti',
+  first_action_logged: 'İlk eylem loglandı',
+  soft_cap_hit: 'Ücretsiz limite takıldı',
+  notification_permission_result: 'Bildirim izni sonucu',
+  review_prompt_shown: 'Puanlama istendi',
+  streak_freeze_used: 'Streak dondurma kullanıldı',
+  daily_goal_reached: 'Günlük hedefe ulaşıldı',
+  mood_checkin: 'Mood check-in',
+};
+
+const trEventLabel = (name: string): string =>
+  EVENT_LABELS_TR[name] ? `${EVENT_LABELS_TR[name]} (${name})` : name;
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'GET') {
@@ -46,11 +79,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const stats = aggregateEvents(events);
 
     const html = `<!doctype html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="utf-8" />
   <meta name="robots" content="noindex,nofollow" />
-  <title>Unutma Analytics (private)</title>
+  <title>Unutma Analytics (özel)</title>
   <style>
     body { font-family: system-ui, sans-serif; margin: 24px; color: #111; background: #fafafa; }
     h1 { margin-bottom: 4px; }
@@ -66,26 +99,26 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   </style>
 </head>
 <body>
-  <h1>Unutma — Private Analytics</h1>
-  <p class="muted">Not linked from the public blog. Anonymous, opt-in events only.</p>
+  <h1>Unutma — Özel Analytics</h1>
+  <p class="muted">Herkese açık blogdan bağlantı yok. Yalnızca izin vermiş kullanıcıların anonim olayları.</p>
   <div class="cards">
-    <div class="card"><span class="muted">Total events</span><strong>${stats.totalEvents}</strong></div>
-    <div class="card"><span class="muted">Unique installs (monthly hash)</span><strong>${stats.uniqueInstalls}</strong></div>
+    <div class="card"><span class="muted">Toplam olay</span><strong>${stats.totalEvents}</strong></div>
+    <div class="card"><span class="muted">Tekil kurulum (aylık hash)</span><strong>${stats.uniqueInstalls}</strong></div>
   </div>
   <section>
-    <h2>Premium funnel</h2>
+    <h2>Premium hunisi</h2>
     <table><tbody>
       ${Object.entries(stats.funnel)
-        .map(([k, v]) => `<tr><td>${escapeHtml(k)}</td><td class="num">${v}</td></tr>`)
+        .map(([k, v]) => `<tr><td>${escapeHtml(trEventLabel(k))}</td><td class="num">${v}</td></tr>`)
         .join('')}
     </tbody></table>
   </section>
-  ${renderTable('Events by name', stats.byName)}
-  ${renderTable('Screens', stats.byScreen)}
-  ${renderTable('Tabs / features', stats.byTab)}
+  ${renderTable('Olaylar', stats.byName.map(([k, v]) => [trEventLabel(k), v] as [string, number]))}
+  ${renderTable('En çok kullanılan ekranlar', stats.byScreen)}
+  ${renderTable('Sekmeler / özellikler', stats.byTab)}
   ${renderTable('Platform', stats.byPlatform)}
-  ${renderTable('Locale', stats.byLocale)}
-  ${renderTable('Last 14 days', stats.byDay)}
+  ${renderTable('Dil', stats.byLocale)}
+  ${renderTable('Son 14 gün', stats.byDay)}
 </body>
 </html>`;
 
