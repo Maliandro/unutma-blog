@@ -1,9 +1,9 @@
 ---
 title: "Best Offline To-Do App: A Calm, Private Way to Stay Organized"
 description: "Practical guide to best offline to-do app with privacy-first tips. Learn how Unutma helps you stay organized offline."
-pubDate: 2026-07-09
+pubDate: 2026-07-12
 tags: ["unutma", "productivity", "privacy"]
-image: /blog/covers/cover-3.svg
+image: /blog/covers/auto/best-offline-to-do-app.svg
 draft: false
 ---
 
