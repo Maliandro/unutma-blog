@@ -1,7 +1,7 @@
 ---
 title: "Daily Planner Tips For Busy People: A Calm, Private Way to Stay Organized"
 description: "Practical guide to daily planner tips for busy people with privacy-first tips. Learn how Unutma helps you stay organized offline."
-pubDate: 2026-07-09
+pubDate: 2026-07-13
 tags: ["unutma", "productivity", "privacy"]
 image: /blog/covers/cover-2.svg
 draft: false
