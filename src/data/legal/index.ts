@@ -49,7 +49,6 @@ export function isLegalLang(value: string | undefined): value is LegalLang {
 export const PRIVACY_SECTIONS = [
   { title: 'noPersonalData', text: 'noPersonalDataText' },
   { title: 'dataOnDevice', text: 'dataOnDeviceText' },
-  { title: 'subscriptions', text: 'subscriptionsText' },
   { title: 'howWeUse', text: 'howWeUseText' },
   { title: 'optionalAnalytics', text: 'optionalAnalyticsText' },
   { title: 'security', text: 'securityText' },
@@ -62,7 +61,6 @@ export const PRIVACY_SECTIONS = [
 export const TERMS_SECTIONS = [
   { title: 'acceptance', text: 'acceptanceText' },
   { title: 'usage', text: 'usageText' },
-  { title: 'subscriptions', text: 'subscriptionsText' },
   { title: 'disclaimer', text: 'disclaimerText' },
   { title: 'liability', text: 'liabilityText' },
   { title: 'intellectualProperty', text: 'intellectualPropertyText' },

@@ -62,7 +62,7 @@ export async function readRecentEvents(limit = 5000): Promise<StoredAnalyticsEve
     .filter(Boolean) as StoredAnalyticsEvent[];
 }
 
-export function aggregateEvents(events: StoredAnalyticsEvent[]) {
+export function aggregateEvents(events: StoredAnalyticsEvent[], dayRange = 14) {
   const byName: Record<string, number> = {};
   const byScreen: Record<string, number> = {};
   const byTab: Record<string, number> = {};
@@ -70,6 +70,8 @@ export function aggregateEvents(events: StoredAnalyticsEvent[]) {
   const byLocale: Record<string, number> = {};
   const uniqueInstalls = new Set<string>();
   const byDay: Record<string, number> = {};
+  const byDayName: Record<string, Record<string, number>> = {};
+  const installsByDay: Record<string, Set<string>> = {};
 
   for (const event of events) {
     byName[event.name] = (byName[event.name] ?? 0) + 1;
@@ -77,6 +79,10 @@ export function aggregateEvents(events: StoredAnalyticsEvent[]) {
 
     const day = new Date(event.ts).toISOString().slice(0, 10);
     byDay[day] = (byDay[day] ?? 0) + 1;
+    (byDayName[day] ??= {})[event.name] = (byDayName[day]?.[event.name] ?? 0) + 1;
+    if (event.install_hash) {
+      (installsByDay[day] ??= new Set()).add(event.install_hash);
+    }
 
     const props = event.props ?? {};
     if (event.name === 'screen_view' && typeof props.screen === 'string') {
@@ -96,6 +102,29 @@ export function aggregateEvents(events: StoredAnalyticsEvent[]) {
   const sortDesc = (obj: Record<string, number>) =>
     Object.entries(obj).sort((a, b) => b[1] - a[1]);
 
+  const topEventNames = sortDesc(byName)
+    .slice(0, 8)
+    .map(([name]) => name);
+
+  const days = sortDesc(byDay)
+    .map(([day]) => day)
+    .sort((a, b) => (a < b ? 1 : -1)) // newest first
+    .slice(0, dayRange);
+
+  const dailyBreakdown = days.map((day) => {
+    const counts = byDayName[day] ?? {};
+    const perName = topEventNames.map((name) => counts[name] ?? 0);
+    const otherTotal =
+      byDay[day] - perName.reduce((sum, n) => sum + n, 0);
+    return {
+      day,
+      total: byDay[day] ?? 0,
+      uniqueInstalls: installsByDay[day]?.size ?? 0,
+      perName,
+      other: Math.max(0, otherTotal),
+    };
+  });
+
   return {
     totalEvents: events.length,
     uniqueInstalls: uniqueInstalls.size,
@@ -104,7 +133,9 @@ export function aggregateEvents(events: StoredAnalyticsEvent[]) {
     byTab: sortDesc(byTab),
     byPlatform: sortDesc(byPlatform),
     byLocale: sortDesc(byLocale),
-    byDay: sortDesc(byDay).slice(0, 14),
+    byDay: sortDesc(byDay).slice(0, dayRange),
+    topEventNames,
+    dailyBreakdown,
     funnel: {
       trial_offer_shown: byName.trial_offer_shown ?? 0,
       trial_started: byName.trial_started ?? 0,
