@@ -1,7 +1,7 @@
 ---
 title: "Why You Should Use Offline Apps: A Calm, Private Way to Stay Organized"
 description: "Practical guide to why you should use offline apps with privacy-first tips. Learn how Unutma helps you stay organized offline."
-pubDate: 2026-07-11
+pubDate: 2026-07-16
 tags: ["unutma", "productivity", "privacy"]
 image: /blog/covers/cover-2.svg
 draft: false
