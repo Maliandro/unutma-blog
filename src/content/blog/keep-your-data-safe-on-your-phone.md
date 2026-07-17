@@ -1,7 +1,7 @@
 ---
 title: "Keep Your Data Safe On Your Phone: A Calm, Private Way to Stay Organized"
 description: "Practical guide to keep your data safe on your phone with privacy-first tips. Learn how Unutma helps you stay organized offline."
-pubDate: 2026-07-12
+pubDate: 2026-07-17
 tags: ["unutma", "productivity", "privacy"]
 image: /blog/covers/cover-4.svg
 draft: false
