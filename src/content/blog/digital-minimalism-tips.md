@@ -1,53 +1,28 @@
 ---
-title: "Digital Minimalism Tips: A Calm, Private Way to Stay Organized"
-description: "Practical guide to digital minimalism tips with privacy-first tips. Learn how Unutma helps you stay organized offline."
-pubDate: 2026-07-16
-tags: ["unutma", "productivity", "privacy"]
-image: /blog/covers/cover-3.svg
+title: "Digital Minimalism Tips That Actually Stick"
+description: "Reduce app overload with boundaries, not guilt — practical steps for calmer screen time in 2026."
+pubDate: 2026-03-17
+tags: ["digital wellbeing", "minimalism", "focus"]
 draft: false
+image: /blog/covers/auto/digital-minimalism-tips.svg
 ---
 
-## Why Digital Minimalism Tips Matters
+## Why less often beats “more productive”
 
-Many people search for help with digital minimalism tips — not because they are lazy, but because modern life is noisy.
+**Digital minimalism** is not deleting every app — it is choosing tools with a clear job. If two apps do the same thing, pick one and uninstall the other within 24 hours.
 
-When reminders live in five different apps, it is easy to miss what matters. A calm, offline-first approach keeps your routines private and under your control.
+## Boundaries that work
 
-## What Gets in the Way
+- **No-phone** blocks for the first and last hour of the day.
+- **Grayscale** after 9pm to reduce dopamine loops.
+- One **read-later** bucket instead of fifty open tabs.
 
-- Too many notifications from apps that want your attention
-- Cloud accounts and sync friction when you just need a quick log
-- Tools that feel like work instead of relief
+## Connect the dots
 
-## How to Build a Simple System
+If you liked our [introduction to the blog](/blog/welcome-to-unutma-blog/), you will enjoy pairing these habits with offline-capable tools so your data is not scattered across dashboards.
 
-Start with one habit: capture the thought immediately, review once a day, and celebrate small wins. Pair lists with gentle reminders instead of alarm spam.
+## Key takeaways
 
-## Where Unutma Fits
+Minimalism is a practice: review subscriptions monthly, not yearly.
 
-[Unutma](/blog/welcome-to-unutma-blog/) is a privacy-first organizer — to-dos, journal, password vault, wishlists, routines, and quick-action logging — **on your device**, offline, with no ads.
-
-If digital minimalism tips is part of your daily stress, try dedicating one screen in Unutma to it for a week.
-
-## Key Takeaways
-
-- One trusted place beats five scattered apps
-- Offline + on-device storage protects your private life
-- Small daily reviews beat perfect systems you never open
-
-## Quick Tips
-
-1. Log quick actions the moment you think of them
-2. Keep lists short and actionable
-3. Review at the same time each evening
-
-## Your Turn
-
-What is the one thing you forget most often — and would a single private app help?
-
-Read more on the [Unutma blog](/blog/welcome-to-unutma-blog/).
-
-
----
-
-**Ready to get organized?** [Download Unutma](https://play.google.com/store/apps/details?id=com.mehmet.unutma) — free, offline, and private. Available on [Google Play](https://play.google.com/store/apps/details?id=com.mehmet.unutma) and [App Store](https://apps.apple.com/app/id6758889495).
+Which app would you delete first if you had to choose today?
