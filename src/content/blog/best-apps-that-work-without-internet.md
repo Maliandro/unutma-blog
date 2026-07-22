@@ -1,7 +1,7 @@
 ---
 title: "Best Apps That Work Without Internet: A Calm, Private Way to Stay Organized"
 description: "Practical guide to best apps that work without internet with privacy-first tips. Learn how Unutma helps you stay organized offline."
-pubDate: 2026-07-16
+pubDate: 2026-07-22
 tags: ["unutma", "productivity", "privacy"]
 image: /blog/covers/cover-3.svg
 draft: false
