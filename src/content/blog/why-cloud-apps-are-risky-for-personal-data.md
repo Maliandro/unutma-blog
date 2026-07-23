@@ -1,7 +1,7 @@
 ---
 title: "Why Cloud Apps Are Risky For Personal Data: A Calm, Private Way to Stay Organized"
 description: "Practical guide to why cloud apps are risky for personal data with privacy-first tips. Learn how Unutma helps you stay organized offline."
-pubDate: 2026-07-18
+pubDate: 2026-07-23
 tags: ["unutma", "productivity", "privacy"]
 image: /blog/covers/cover-2.svg
 draft: false
