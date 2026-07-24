@@ -1,7 +1,7 @@
 ---
 title: "How To Start A Digital Journal: A Calm, Private Way to Stay Organized"
 description: "Practical guide to how to start a digital journal with privacy-first tips. Learn how Unutma helps you stay organized offline."
-pubDate: 2026-07-18
+pubDate: 2026-07-24
 tags: ["unutma", "productivity", "privacy"]
 image: /blog/covers/cover-3.svg
 draft: false
