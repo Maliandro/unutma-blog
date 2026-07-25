@@ -99,6 +99,10 @@ Use it for **morning pages**, **end-of-day reflection**, or **one line a day**. 
 
 Together, these are not “extra clutter”; they are **optional layers** once the core loop feels natural.
 
+## Talking instead of typing
+
+Every text field in Unutma has a microphone next to it, but it is not plain dictation. Say a full sentence — *"pick up milk and bread"*, *"dentist tomorrow at 3"*, *"spent 50 on groceries"* — and the app figures out which tab it belongs in and files it there on its own. Say a command instead, like *"open my calendar"* or *"show my vault"*, and Unutma jumps straight to that screen. See [how the voice feature actually works](/blog/unutma-voice-commands-hands-free-organizing/) for the full breakdown.
+
 ---
 
 ## Privacy and “why not everything needs an account”

@@ -96,7 +96,7 @@ If Unutma fits that slot for you, start small — three Actions, honest taps, no
 **More on the blog**
 
 - [Inside Unutma: complete feature guide](/blog/unutma-app-complete-feature-guide/)  
-- [Privacy-first productivity apps](/blog/privacy-first-productivity-apps/)  
-- [How to build a morning routine](/blog/how-to-build-a-morning-routine/)
+- [The Unutma Vault: passwords, PINs, and privacy](/blog/unutma-vault-passwords-face-id-privacy/)  
+- [Routines, calendar, and widgets in Unutma](/blog/unutma-routines-calendar-widgets-time/)
 
 What check do you replay most? If you tell us, we might turn it into our next short guide.

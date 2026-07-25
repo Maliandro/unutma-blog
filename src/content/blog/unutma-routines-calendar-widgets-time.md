@@ -22,7 +22,7 @@ This guide explains how to **design routines that survive real life**, how **Cal
 - **Keep steps small** — if a routine is twenty steps, it is a project, not a rhythm.
 - **Use reminders** as **nudges**, not **alarms of shame** — rename notifications in plain language: “Gentle: wind down” instead of “FAILURE IMMINENT.”
 
-Pair routines with [how to build a morning routine](/blog/how-to-build-a-morning-routine/) for philosophical framing — Unutma supplies the **container**.
+Pair routines with a simple morning anchor habit for philosophical framing — Unutma supplies the **container**.
 
 ## Calendar: events in the world, not just tasks in a list
 

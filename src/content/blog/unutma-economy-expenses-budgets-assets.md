@@ -38,7 +38,7 @@ Subscriptions are psychologically small and financially large. Unutma can help y
 - For each, ask: **“Would I subscribe again today at full price?”**
 - Cancel **one** with relief, not five with regret — momentum beats theater.
 
-Pair this with ideas from [how to track personal expenses](/blog/how-to-track-personal-expenses/) if you want category discipline without misery.
+Pair categories with a simple weekly review if you want category discipline without misery.
 
 ## Layer 3: budgets (guardrails, not handcuffs)
 
@@ -90,4 +90,4 @@ If spending is emotional — stress shopping, revenge spending — **numbers alo
 
 ## Closing
 
-Economy in Unutma is built for **clarity under your control** — aligned with the same privacy posture we describe across the blog. Next in the series: **Journal** — mood, memory, and voice — or revisit [digital minimalism tips](/blog/digital-minimalism-tips/) if you want fewer money triggers from your phone overall.
+Economy in Unutma is built for **clarity under your control** — aligned with the same privacy posture we describe across the blog. Next in the series: **Journal** — mood, memory, and voice — or revisit [the full Unutma feature guide](/blog/unutma-app-showcase-complete-guide/) if you want fewer money triggers from your phone overall.

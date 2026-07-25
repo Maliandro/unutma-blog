@@ -74,7 +74,7 @@ When Unutma surfaces **“on this day”**-style memories — what you logged a 
 
 ## Privacy reminder
 
-Quick Actions data lives with your other Unutma content: **on your device** in normal use, not sold as engagement metrics. That is the same philosophy we outline in [privacy-first productivity apps](/blog/privacy-first-productivity-apps/) — tools should earn trust by architecture, not slogans.
+Quick Actions data lives with your other Unutma content: **on your device** in normal use, not sold as engagement metrics. That is the same philosophy we outline in [the Unutma Vault](/blog/unutma-vault-passwords-face-id-privacy/) — tools should earn trust by architecture, not slogans.
 
 ## Common mistakes (and calmer fixes)
 
@@ -84,7 +84,7 @@ Quick Actions data lives with your other Unutma content: **on your device** in n
 
 **Mistake 3 — Using Actions as a substitute for sleep or medical care.** If exhaustion is chronic, heatmaps will show it — that is data to act on in the real world, not proof you should try harder in an app.
 
-**Mistake 4 — Ignoring the emotional layer.** If the heatmap looks “fine” but you feel awful, that mismatch is information. Pair with [benefits of daily journaling](/blog/benefits-of-daily-journaling/) for nuance.
+**Mistake 4 — Ignoring the emotional layer.** If the heatmap looks “fine” but you feel awful, that mismatch is information. Pair with [journaling in Unutma](/blog/unutma-journal-mood-voice-reflection/) for nuance.
 
 ## A closing-routine sketch (realistic, not aspirational)
 

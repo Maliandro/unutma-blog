@@ -65,7 +65,7 @@ Once a quarter, spend **fifteen minutes** in Settings:
 
 ## Connection to privacy culture
 
-This “human layer” still sits on the same foundation we discuss in [privacy-first productivity apps](/blog/privacy-first-productivity-apps/) — tools should not need to **extract** your attention to fund themselves.
+This “human layer” still sits on the same foundation we discuss in [the Unutma Vault](/blog/unutma-vault-passwords-face-id-privacy/) — tools should not need to **extract** your attention to fund themselves.
 
 ## Where to go next
 

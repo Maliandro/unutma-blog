@@ -36,7 +36,7 @@ If your app build includes **voice capture** for journaling, treat it as **dicta
 - Speak in **short paragraphs** — easier to reread.
 - Name emotions explicitly — “I am anxious about money” beats vague ranting for later pattern recognition.
 
-Voice pairs beautifully with [benefits of daily journaling](/blog/benefits-of-daily-journaling/) — especially on days when typing feels impossible.
+Voice pairs beautifully with a typed line later — especially on days when typing feels impossible.
 
 ## Journal + Actions: story after signal
 
@@ -82,6 +82,6 @@ If you are in acute crisis, **human help** beats any UI — Unutma is a tool, no
 ## What to read next
 
 - [How to build habits that stick](/blog/how-to-build-habits-that-stick/) — rhythm without rigidity.
-- [Morning routine ideas](/blog/how-to-build-a-morning-routine/) — gentle structure.
+- [Routines, calendar, and widgets](/blog/unutma-routines-calendar-widgets-time/) — gentle structure.
 
 **Bottom line:** Unutma’s Journal wins when you treat it as **a private conversation** — small enough to continue, deep enough to matter.

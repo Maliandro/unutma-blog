@@ -56,7 +56,7 @@ Keep **Shopping lists** human and boring. Keep **Vault** for secrets. The cognit
 
 ## Threat model (honest)
 
-Unutma’s pitch is **on-device storage** and **no mandatory cloud login for your private content** in ordinary use — aligned with what we discuss in [privacy-first productivity apps](/blog/privacy-first-productivity-apps/). That does not mean your phone is invincible:
+Unutma’s pitch is **on-device storage** and **no mandatory cloud login for your private content** in ordinary use. That does not mean your phone is invincible:
 
 - **Physical theft** matters — use device encryption + strong PIN + remote wipe options from the OS.
 - **Malware** on a compromised device can still scrape screens — Vault raises the bar; it does not repeal physics.

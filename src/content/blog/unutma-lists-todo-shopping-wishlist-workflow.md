@@ -83,4 +83,4 @@ Once a month, **audit** each mode in under ten minutes:
 
 ## Closing
 
-Unutma’s Lists tab works because it respects **how attention actually works** — not how productivity influencers pretend it works. Next up: **Vault** — how sensitive data stays yours behind biometrics — or revisit [how to organize your life](/blog/how-to-organize-your-life/) for the bigger picture.
+Unutma’s Lists tab works because it respects **how attention actually works** — not how productivity influencers pretend it works. Next up: **Vault** — how sensitive data stays yours behind biometrics — or revisit [the Unutma feature guide](/blog/unutma-app-showcase-complete-guide/) for the bigger picture.
