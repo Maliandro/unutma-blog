@@ -86,8 +86,6 @@ A sentence. A name. A parking spot. A gift idea. A phrase you want to remember. 
 
 Unutma gives those thoughts a quiet place to land. You can sort later. The first win is capture.
 
-The mic next to every field helps here too — say the thought instead of typing it, and Unutma decides on its own whether it's a note, a task, an expense, or a line in today's journal. See [how the voice feature works](/blog/unutma-voice-commands-hands-free-organizing/).
-
 ## Lists for the practical side of life
 
 Unutma includes lists for tasks, shopping, and wishes because everyday organization is not one category.
