@@ -12,9 +12,13 @@ interface Props {
 
 const { title, description } = Astro.props;
 const adsenseClient = import.meta.env.PUBLIC_ADSENSE_CLIENT ?? '';
-// Google Search Console dogrulamasi: Vercel'de PUBLIC_GSC_VERIFICATION
-// degiskenine GSC'nin verdigi kodu yaz. Bos ise etiket hic basilmaz.
-const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION ?? '';
+// Google Search Console dogrulamasi. Iki yol da calisir:
+//   1) Vercel'de PUBLIC_GSC_VERIFICATION env degiskeni (panel gerektirir), ya da
+//   2) asagidaki sabite GSC'nin verdigi kodu yazmak (sadece commit gerektirir).
+// Kod gizli bir sey degil — sayfa kaynaginda zaten herkese gorunur.
+// Ikisi de bos ise etiket hic basilmaz.
+const GSC_CODE = '';
+const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION || GSC_CODE;
 ---
 
 <!DOCTYPE html>
