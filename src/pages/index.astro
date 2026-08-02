@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SEOHead from '../components/SEOHead.astro';
+import AppSchema from '../components/AppSchema.astro';
 import BlogCard from '../components/BlogCard.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
 import StoreBadgeRow from '../components/StoreBadgeRow.astro';
@@ -34,11 +35,13 @@ const fmtDate = (d: Date) =>
 ---
 
 <BaseLayout>
-  <SEOHead
-    slot="head"
-    title="Organize Your Life, Your Way"
-    description="Unutma Blog — practical guides on productivity, privacy-first apps, journaling, and routines. Download Unutma: offline, private, free."
-  />
+  <Fragment slot="head">
+    <SEOHead
+      title="Organize Your Life, Your Way"
+      description="Unutma Blog — practical guides on productivity, privacy-first apps, journaling, and routines. Download Unutma: offline, private, free."
+    />
+    <AppSchema />
+  </Fragment>
 
   <section
     class="relative overflow-hidden border-b border-indigo-100/80 bg-gradient-to-b from-indigo-50/95 via-emerald-50/30 to-white"

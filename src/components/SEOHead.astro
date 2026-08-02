@@ -5,6 +5,10 @@ interface Props {
   image?: string;
   article?: boolean;
   publishedDate?: Date | string;
+  /** Guncelleme tarihi — tazelik sinyali. */
+  modifiedDate?: Date | string;
+  /** Yazi etiketleri; schema keywords + article:tag olarak kullanilir. */
+  keywords?: string[];
 }
 
 const {
@@ -13,9 +17,12 @@ const {
   image = '/unutma-icon.png',
   article = false,
   publishedDate,
+  modifiedDate,
+  keywords = [],
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const siteRoot = (Astro.site?.href ?? 'https://unutma-blog.vercel.app/').replace(/\/$/, '');
 const fullTitle = `${title} | Unutma Blog`;
 const baseRoot = new URL(import.meta.env.BASE_URL, Astro.site);
 const ogImage = new URL(image.replace(/^\//, ''), baseRoot).href;
@@ -26,23 +33,54 @@ const publishedIso =
       ? new Date(publishedDate).toISOString()
       : undefined;
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': article ? 'BlogPosting' : 'WebSite',
-  name: fullTitle,
-  description,
-  url: canonicalURL.toString(),
-  ...(article && {
-    headline: title,
-    datePublished: publishedIso,
-    image: ogImage.toString(),
-    publisher: {
-      '@type': 'Organization',
-      name: 'Unutma',
-      url: 'https://unutma.app',
-    },
-  }),
+// Yayinci/yazar bilgisi ayri tutuluyor: arama ve cevap motorlari icerigin
+// KIMDEN geldigini bilemedigi zaman alintilamaya daha isteksiz oluyor.
+const publisher = {
+  '@type': 'Organization',
+  name: 'Unutma',
+  url: siteRoot,
+  logo: {
+    '@type': 'ImageObject',
+    url: `${siteRoot}/unutma-icon.png`,
+  },
 };
+
+const modifiedIso =
+  modifiedDate instanceof Date
+    ? modifiedDate.toISOString()
+    : modifiedDate
+      ? new Date(modifiedDate).toISOString()
+      : undefined;
+
+const jsonLd = article
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: title,
+      name: fullTitle,
+      description,
+      url: canonicalURL.toString(),
+      mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalURL.toString() },
+      datePublished: publishedIso,
+      // dateModified yoksa Google yayin tarihini tazelik sinyali olarak kullanir.
+      dateModified: modifiedIso ?? publishedIso,
+      image: ogImage.toString(),
+      author: publisher,
+      publisher,
+      inLanguage: 'en',
+      ...(keywords.length ? { keywords: keywords.join(', ') } : {}),
+      isAccessibleForFree: true,
+    }
+  : {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'Unutma',
+      alternateName: fullTitle,
+      description,
+      url: canonicalURL.toString(),
+      publisher,
+      inLanguage: 'en',
+    };
 ---
 
 <!-- Primary Meta Tags -->
@@ -72,5 +110,9 @@ const jsonLd = {
 {article && publishedIso && (
   <meta property="article:published_time" content={publishedIso} />
 )}
+{article && modifiedIso && (
+  <meta property="article:modified_time" content={modifiedIso} />
+)}
+{article && keywords.map((k) => <meta property="article:tag" content={k} />)}
 
 <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

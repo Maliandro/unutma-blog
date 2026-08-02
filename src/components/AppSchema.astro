@@ -1,0 +1,111 @@
+---
+/**
+ * SoftwareApplication + Organization JSON-LD.
+ *
+ * NEDEN: Site canonical/OG/BlogPosting semasina sahipti ama hicbir yerde
+ * uygulamanin KENDISI makine-okunur degildi. Arama motorlari ve cevap
+ * motorlari (ChatGPT, Perplexity, Google AI Overviews) bir uygulamayi
+ * onerebilmek icin once ne oldugunu, hangi platformda oldugunu, ne kadar
+ * tuttugunu yapilandirilmis bicimde bilmek zorunda.
+ *
+ * Buradaki her iddia uründe DOGRULANMIS olmalidir. aggregateRating bilerek
+ * YOK: gercek oy sayisi cok dusuk (n=7) ve sisirilmis puan gostermek hem
+ * Google yapisal veri politikasina hem kullanicinin sahte-sosyal-kanit
+ * kuralina aykiri olur.
+ */
+const APP_STORE = 'https://apps.apple.com/app/id6758889495';
+const PLAY_STORE = 'https://play.google.com/store/apps/details?id=com.mehmet.unutma';
+// Domain TEK kaynaktan (astro.config.mjs -> Astro.site). Elle yazmak, 2026-08'de
+// canonical'in baskasinin domain'ini gostermesine yol acan hatanin ta kendisiydi.
+const SITE = (Astro.site?.href ?? 'https://unutma-blog.vercel.app/').replace(/\/$/, '');
+
+const featureList = [
+  'Voice command capture (offline, rule-based, 8 languages)',
+  'Reminders and repeating tasks',
+  'To-do list with subtasks and priorities',
+  'Routine and habit tracking',
+  'Private journal with mood tracking',
+  'Calendar',
+  'Notes',
+  'Shopping list and wishlist',
+  'AES-256 encrypted vault with biometric lock',
+  'Budget and expense tracking',
+  'Home screen widgets',
+  'Fully offline — no account, no cloud',
+];
+
+const organization = {
+  '@type': 'Organization',
+  '@id': `${SITE}/#organization`,
+  name: 'Unutma',
+  url: SITE,
+  logo: {
+    '@type': 'ImageObject',
+    url: `${SITE}/unutma-icon.png`,
+  },
+};
+
+const app = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    organization,
+    {
+      '@type': 'SoftwareApplication',
+      '@id': `${SITE}/#app`,
+      name: 'Unutma: Daily Planner & Diary',
+      alternateName: ['Unutma', 'Unutma Private Life Organizer'],
+      applicationCategory: 'ProductivityApplication',
+      applicationSubCategory: 'Personal organizer',
+      operatingSystem: 'iOS, Android',
+      url: SITE,
+      downloadUrl: [APP_STORE, PLAY_STORE],
+      installUrl: [APP_STORE, PLAY_STORE],
+      publisher: { '@id': `${SITE}/#organization` },
+      inLanguage: ['en', 'tr', 'de', 'es', 'fr', 'it', 'ar', 'zh'],
+      featureList,
+      description:
+        'Offline, private life organizer: reminders, to-do list, journal, calendar, ' +
+        'notes, shopping lists, routine tracking, expense tracking and an encrypted ' +
+        'vault in one app. No account, no cloud — all data stays encrypted on the device.',
+      offers: [
+        {
+          '@type': 'Offer',
+          name: 'Monthly subscription',
+          price: '2.99',
+          priceCurrency: 'USD',
+          category: 'subscription',
+          url: APP_STORE,
+        },
+        {
+          '@type': 'Offer',
+          name: 'Yearly subscription',
+          price: '29.99',
+          priceCurrency: 'USD',
+          category: 'subscription',
+          url: APP_STORE,
+        },
+        {
+          '@type': 'Offer',
+          name: 'Lifetime — one-time purchase',
+          price: '79.99',
+          priceCurrency: 'USD',
+          category: 'one-time',
+          url: APP_STORE,
+        },
+      ],
+      // Dogrulanabilir, urunde gercekten var olan ayirt edici ozellikler.
+      additionalProperty: [
+        { '@type': 'PropertyValue', name: 'Requires account', value: 'No' },
+        { '@type': 'PropertyValue', name: 'Works offline', value: 'Yes' },
+        { '@type': 'PropertyValue', name: 'Cloud sync', value: 'No — data stays on device' },
+        { '@type': 'PropertyValue', name: 'Encryption', value: 'AES-256, device-only' },
+        { '@type': 'PropertyValue', name: 'Free trial', value: '7 days' },
+        { '@type': 'PropertyValue', name: 'Ads', value: 'None' },
+        { '@type': 'PropertyValue', name: 'Third-party tracking', value: 'None' },
+      ],
+    },
+  ],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(app)} />
