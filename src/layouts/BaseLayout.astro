@@ -12,6 +12,9 @@ interface Props {
 
 const { title, description } = Astro.props;
 const adsenseClient = import.meta.env.PUBLIC_ADSENSE_CLIENT ?? '';
+// Google Search Console dogrulamasi: Vercel'de PUBLIC_GSC_VERIFICATION
+// degiskenine GSC'nin verdigi kodu yaz. Bos ise etiket hic basilmaz.
+const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION ?? '';
 ---
 
 <!DOCTYPE html>
@@ -19,6 +22,9 @@ const adsenseClient = import.meta.env.PUBLIC_ADSENSE_CLIENT ?? '';
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {gscVerification && (
+      <meta name="google-site-verification" content={gscVerification} />
+    )}
     <link rel="icon" type="image/png" href={withBase('/unutma-icon.png')} sizes="512x512" />
     <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
     <link rel="apple-touch-icon" href={withBase('/unutma-icon.png')} />
