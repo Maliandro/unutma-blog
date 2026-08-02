@@ -23,6 +23,10 @@ jobs:
       - name: Install dependencies
         run: pip install -r scripts/requirements.txt
 
+      - name: Remove duplicate posts
+        working-directory: scripts
+        run: python dedupe_posts.py
+
       - name: Generate blog posts
         working-directory: scripts
         run: python batch_generate.py
@@ -34,4 +38,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore(blog): auto-generate posts"
-          file_pattern: "src/content/blog/*.md scripts/keywords_used.txt"
+          file_pattern: "src/content/blog/*.md scripts/keywords_used.txt scripts/topic_sources.txt"
