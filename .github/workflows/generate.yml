@@ -2,7 +2,11 @@ name: Generate Blog Posts
 
 on:
   schedule:
-    - cron: "0 8 * * *"
+    # Haftada 1 (Pazar 08:00 UTC). Onceden gunlukTU: bu hem LLM kotasini
+    # bosa yakiyor hem de otorite kazanmamis bir sitede gunluk yapay
+    # icerik uretmek SEO acisindan ZARARLI (ince icerik sinyali).
+    # Kaliteli tek yazi > yedi doldurma yazisi.
+    - cron: "0 8 * * 0"
   workflow_dispatch:
 
 permissions:
