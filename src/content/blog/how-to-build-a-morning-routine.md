@@ -1,7 +1,7 @@
 ---
 title: "How To Build A Morning Routine: A Calm, Private Way to Stay Organized"
 description: "Practical guide to how to build a morning routine with privacy-first tips. Learn how Unutma helps you stay organized offline."
-pubDate: 2026-07-27
+pubDate: 2026-08-09
 tags: ["unutma", "productivity", "privacy"]
 image: /blog/covers/cover-4.svg
 draft: false
