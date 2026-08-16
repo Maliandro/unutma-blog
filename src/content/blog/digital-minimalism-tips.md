@@ -1,7 +1,7 @@
 ---
 title: "Digital Minimalism Tips: A Calm, Private Way to Stay Organized"
 description: "Practical guide to digital minimalism tips with privacy-first tips. Learn how Unutma helps you stay organized offline."
-pubDate: 2026-07-28
+pubDate: 2026-08-16
 tags: ["unutma", "productivity", "privacy"]
 image: /blog/covers/cover-3.svg
 draft: false
