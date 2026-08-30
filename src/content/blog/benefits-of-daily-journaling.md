@@ -1,7 +1,7 @@
 ---
 title: "Benefits Of Daily Journaling: A Calm, Private Way to Stay Organized"
 description: "Practical guide to benefits of daily journaling with privacy-first tips. Learn how Unutma helps you stay organized offline."
-pubDate: 2026-07-31
+pubDate: 2026-08-30
 tags: ["unutma", "productivity", "privacy"]
 image: /blog/covers/cover-1.svg
 draft: false
