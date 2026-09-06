@@ -1,7 +1,7 @@
 ---
 title: "Mindfulness And Organization: A Calm, Private Way to Stay Organized"
 description: "Practical guide to mindfulness and organization with privacy-first tips. Learn how Unutma helps you stay organized offline."
-pubDate: 2026-08-01
+pubDate: 2026-09-06
 tags: ["unutma", "productivity", "privacy"]
 image: /blog/covers/cover-1.svg
 draft: false
