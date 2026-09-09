@@ -21,7 +21,12 @@ const baseNorm = base === '/' ? undefined : base;
 export default defineConfig({
   site,
   ...(baseNorm ? { base: baseNorm } : {}),
-  integrations: [tailwind(), sitemap()],
+  integrations: [
+    tailwind(),
+    // /gorev noindex bir kopru sayfasi: sitemap'e girerse GSC "Submitted URL
+    // marked noindex" hatasi uretir (bu proje bununla bir kez yandi).
+    sitemap({ filter: (page) => !page.includes('/gorev') }),
+  ],
   markdown: {
     shikiConfig: {
       theme: 'github-light',

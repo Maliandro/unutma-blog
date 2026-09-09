@@ -1,0 +1,414 @@
+---
+/**
+ * WhatsApp gorev-devri koprusu.
+ *
+ * NEDEN VAR: Uygulamanin sunucusu yok, hesabi yok — bu yuzden "birine gorev
+ * gonder" ozelligi bir link icinde tasinan veriyle calisiyor. Gonderen kisi
+ * uygulama icinde bir gorevi bu sayfanin linkine kodluyor (ornek:
+ * https://unutma-blog.vercel.app/gorev#d=<base64url json>) ve WhatsApp'tan
+ * paylasiyor. Alici linke tikladiginda:
+ *   1) Uygulama zaten kuruluysa universal link / App Link ile dogrudan
+ *      uygulama acilir (bkz. public/.well-known/*), bu sayfaya hic ugramaz.
+ *   2) Uygulama kurulu degilse (ya da universal link tetiklenmezse) bu sayfa
+ *      gorevi tarayicida onizler, "Uygulamada Ac" butonuyla custom scheme
+ *      dener ve magaza linklerini gosterir.
+ *
+ * ONEMLI: `#...` (URL fragment) TARAYICIDAN SUNUCUYA ASLA GONDERILMEZ. Yani
+ * gorev metni bu sayfanin sunucusuna (Vercel) hic ulasmiyor — sadece alicinin
+ * cihazinda, JS ile fragment okunup cozuluyor. Bu yuzden sayfa noindex ve
+ * sunucu tarafinda payload'a dair hicbir islem/log YOK.
+ */
+---
+
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Unutma — Görev</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="header">
+        <p class="wordmark">Unutma</p>
+        <p class="tagline">Çevrimdışı kişisel asistan</p>
+      </header>
+
+      <main class="card">
+        <!-- JS calisana kadar gosterilen notr durum -->
+        <div id="state-loading" class="state">
+          <p class="muted">Görev yükleniyor…</p>
+        </div>
+
+        <!-- Gecerli payload bulunduğunda doldurulur -->
+        <div id="state-task" class="state" hidden>
+          <p id="task-sender" class="sender" hidden></p>
+          <p id="task-text" class="task-text"></p>
+          <p id="task-note" class="task-note" hidden></p>
+          <p id="task-due" class="task-due" hidden></p>
+
+          <a id="open-app-btn" class="btn-primary" href="#">Uygulamada Aç</a>
+          <p class="hint">Uygulama açılmazsa aşağıdan indirebilirsin.</p>
+        </div>
+
+        <!-- Link gecersiz/eksikse gosterilen dostane yedek -->
+        <div id="state-fallback" class="state" hidden>
+          <p class="task-text">Bu bağlantı bir Unutma görevi içermiyor.</p>
+          <p class="muted">Bağlantı eskimiş ya da hatalı kopyalanmış olabilir.</p>
+        </div>
+
+        <div class="stores">
+          <a
+            class="store-link"
+            href="https://apps.apple.com/app/id6758889495?ct=delegate&pt=share&mt=8"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            App Store’da indir
+          </a>
+          <a
+            class="store-link"
+            id="play-store-link"
+            href="https://play.google.com/store/apps/details?id=com.mehmet.unutma"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Google Play’de indir
+          </a>
+        </div>
+
+        <p class="privacy-note">
+          Görev verisi yalnızca bu bağlantının içinde taşınır, hiçbir sunucuya
+          gönderilmez.
+        </p>
+      </main>
+    </div>
+
+    <script>
+      // ---- base64url -> UTF-8 metin ----
+      function base64UrlDecode(input: string): string {
+        let b64 = input.replace(/-/g, '+').replace(/_/g, '/');
+        while (b64.length % 4 !== 0) b64 += '=';
+        const binary = atob(b64);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+        if (typeof TextDecoder !== 'undefined') {
+          return new TextDecoder('utf-8').decode(bytes);
+        }
+        // Eski tarayici yedeği (TextDecoder yoksa)
+        return decodeURIComponent(escape(binary));
+      }
+
+      interface DelegatePayload {
+        v: number;
+        k: string;
+        t: string;
+        n?: string;
+        d?: string;
+        r?: string;
+        p?: string;
+        s?: string;
+        c: number;
+      }
+
+      function parsePayload(): { raw: string; payload: DelegatePayload } | null {
+        const hash = window.location.hash || '';
+        const match = hash.match(/^#d=(.+)$/);
+        if (!match) return null;
+        const raw = match[1];
+        try {
+          const json = base64UrlDecode(raw);
+          const payload = JSON.parse(json) as DelegatePayload;
+          if (payload.v !== 1) return null;
+          if (payload.k !== 'delegate') return null;
+          if (typeof payload.t !== 'string' || payload.t.length === 0 || payload.t.length > 500) {
+            return null;
+          }
+          return { raw, payload };
+        } catch {
+          return null;
+        }
+      }
+
+      // tr yerel bicimde tarih/saat
+      function formatDue(d?: string, r?: string): string | null {
+        if (!d) return null;
+        const iso = r ? `${d}T${r}:00` : `${d}T00:00:00`;
+        const date = new Date(iso);
+        if (Number.isNaN(date.getTime())) return null;
+        const datePart = date.toLocaleDateString('tr-TR', {
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric',
+        });
+        if (!r) return datePart;
+        const timePart = date.toLocaleTimeString('tr-TR', {
+          hour: '2-digit',
+          minute: '2-digit',
+        });
+        return `${datePart}, saat ${timePart}`;
+      }
+
+      function show(id: string) {
+        document.querySelectorAll<HTMLElement>('.state').forEach((el) => {
+          el.hidden = el.id !== id;
+        });
+      }
+
+      const result = parsePayload();
+
+      if (!result) {
+        show('state-fallback');
+      } else {
+        const { raw, payload } = result;
+
+        const senderEl = document.getElementById('task-sender')!;
+        if (payload.s) {
+          // textContent kullanılıyor — payload dışarıdan geliyor, innerHTML asla değil.
+          senderEl.textContent = `${payload.s} sana bir görev gönderdi`;
+          senderEl.hidden = false;
+        }
+
+        const textEl = document.getElementById('task-text')!;
+        textEl.textContent = payload.t;
+
+        const noteEl = document.getElementById('task-note')!;
+        if (payload.n) {
+          noteEl.textContent = payload.n;
+          noteEl.hidden = false;
+        }
+
+        const dueEl = document.getElementById('task-due')!;
+        const due = formatDue(payload.d, payload.r);
+        if (due) {
+          dueEl.textContent = due;
+          dueEl.hidden = false;
+        }
+
+        const deepLink = `unutma://gorev?d=${raw}`;
+        const openBtn = document.getElementById('open-app-btn') as HTMLAnchorElement;
+
+        // OTOMATIK yonlendirme YOK — bilerek. Uygulama yuklu degilken
+        // `location.href = unutma://...` Android Chrome'da sekmeyi
+        // ERR_UNKNOWN_URL_SCHEME hata sayfasina cevirir: gorev onizlemesi ve
+        // magaza linkleri 1,2 saniye sonra yok olurdu (bu sayfanin var olma
+        // sebebi tam da uygulamasi olmayan alici). Uygulama YUKLUYSE zaten
+        // universal/app link sayfayi hic acmadan uygulamaya gider; buraya
+        // dusen ziyaretcinin buyuk cogunlugu uygulamasizdir.
+        //
+        // Buton Android'de intent:// kullanir: kayitli handler yoksa Chrome
+        // hata yerine browser_fallback_url'e (Play) gider. iOS/masaustunde
+        // kullanici dokunusuyla unutma:// denenir; basarisizsa sayfa yerinde
+        // kalir ve magaza rozetleri gorunur durur.
+        const isAndroid = /android/i.test(navigator.userAgent);
+        if (isAndroid) {
+          const fallback = encodeURIComponent(
+            'https://play.google.com/store/apps/details?id=com.mehmet.unutma&referrer=' +
+              encodeURIComponent('utm_source=unutma_app&utm_medium=share&utm_campaign=delegate')
+          );
+          openBtn.href =
+            `intent://gorev?d=${raw}` +
+            `#Intent;scheme=unutma;package=com.mehmet.unutma;S.browser_fallback_url=${fallback};end`;
+        } else {
+          openBtn.href = deepLink;
+        }
+
+        show('state-task');
+      }
+
+      // Google Play linkine paylasan tarafi ayirt eden kampanya etiketi ekle
+      // (bkz. src/services/shareSignature.ts — aynı referrer kalıbı, source='delegate').
+      const playLink = document.getElementById('play-store-link') as HTMLAnchorElement | null;
+      if (playLink) {
+        const referrer = encodeURIComponent(
+          'utm_source=unutma_app&utm_medium=share&utm_campaign=delegate'
+        );
+        playLink.href = `https://play.google.com/store/apps/details?id=com.mehmet.unutma&referrer=${referrer}`;
+      }
+    </script>
+
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f8f8fb;
+        --card-bg: #ffffff;
+        --border: rgba(15, 23, 42, 0.08);
+        --text: #1f2333;
+        --muted: #64748b;
+        --brand: #4f46e5;
+        --brand-dark: #4338ca;
+        --peace: #0d6636;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0f1115;
+          --card-bg: #171a21;
+          --border: rgba(255, 255, 255, 0.08);
+          --text: #f1f2f6;
+          --muted: #9aa1b1;
+          --brand: #818cf8;
+          --brand-dark: #6366f1;
+          --peace: #34d399;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: 'Plus Jakarta Sans', system-ui, 'Segoe UI', Roboto, sans-serif;
+      }
+
+      .wrap {
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 24px 16px 40px;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .wordmark {
+        margin: 0;
+        font-family: Fraunces, Georgia, serif;
+        font-weight: 700;
+        font-size: 1.6rem;
+        letter-spacing: -0.02em;
+        color: var(--brand);
+      }
+
+      .tagline {
+        margin: 4px 0 0;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+
+      .card {
+        width: 100%;
+        max-width: 420px;
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 24px 20px;
+        box-shadow: 0 12px 32px -12px rgba(15, 23, 42, 0.18);
+      }
+
+      .state {
+        text-align: center;
+      }
+
+      .muted {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin: 0;
+      }
+
+      .sender {
+        margin: 0 0 6px;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+
+      .task-text {
+        margin: 0 0 10px;
+        font-size: 1.15rem;
+        font-weight: 600;
+        line-height: 1.4;
+        word-break: break-word;
+      }
+
+      .task-note {
+        margin: 0 0 10px;
+        font-size: 0.95rem;
+        color: var(--muted);
+        line-height: 1.5;
+        word-break: break-word;
+      }
+
+      .task-due {
+        margin: 0 0 18px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--peace);
+      }
+
+      .btn-primary {
+        display: block;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        background: var(--brand);
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 14px 20px;
+        border-radius: 14px;
+        transition: opacity 0.15s ease;
+      }
+
+      .btn-primary:hover,
+      .btn-primary:focus-visible {
+        opacity: 0.9;
+      }
+
+      .hint {
+        margin: 12px 0 0;
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+
+      .stores {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 20px;
+      }
+
+      .store-link {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 10px 14px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--text);
+      }
+
+      .store-link:hover,
+      .store-link:focus-visible {
+        border-color: var(--brand);
+        color: var(--brand);
+      }
+
+      .privacy-note {
+        margin: 18px 0 0;
+        font-size: 0.75rem;
+        line-height: 1.5;
+        color: var(--muted);
+        text-align: center;
+      }
+    </style>
+  </body>
+</html>
