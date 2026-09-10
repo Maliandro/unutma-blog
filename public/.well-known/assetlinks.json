@@ -1,1 +1,1 @@
-[{"relation":["delegate_permission/common.handle_all_urls"],"target":{"namespace":"android_app","package_name":"com.mehmet.unutma","sha256_cert_fingerprints":["REPLACE_WITH_PLAY_APP_SIGNING_SHA256"]}}]
+[{"relation":["delegate_permission/common.handle_all_urls"],"target":{"namespace":"android_app","package_name":"com.mehmet.unutma","sha256_cert_fingerprints":["2C:B0:6A:FF:22:02:A1:49:F2:3A:00:0F:95:17:C1:65:D5:37:85:B9:46:B4:1C:D6:75:C5:B5:F5:25:89:6D:CE"]}}]
