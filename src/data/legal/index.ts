@@ -49,6 +49,9 @@ export function isLegalLang(value: string | undefined): value is LegalLang {
 export const PRIVACY_SECTIONS = [
   { title: 'noPersonalData', text: 'noPersonalDataText' },
   { title: 'dataOnDevice', text: 'dataOnDeviceText' },
+  // Voice input goes through the phone's own dictation service (Apple/Google)
+  // — the one exception to "nothing leaves your phone", so the policy says so.
+  { title: 'voiceInput', text: 'voiceInputText' },
   { title: 'subscriptions', text: 'subscriptionsText' },
   { title: 'howWeUse', text: 'howWeUseText' },
   { title: 'optionalAnalytics', text: 'optionalAnalyticsText' },
