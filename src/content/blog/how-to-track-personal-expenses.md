@@ -1,7 +1,7 @@
 ---
 title: "How To Track Personal Expenses: A Calm, Private Way to Stay Organized"
 description: "Practical guide to how to track personal expenses with privacy-first tips. Learn how Unutma helps you stay organized offline."
-pubDate: 2026-08-01
+pubDate: 2026-09-13
 tags: ["unutma", "productivity", "privacy"]
 image: /blog/covers/cover-2.svg
 draft: false
