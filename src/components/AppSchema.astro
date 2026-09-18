@@ -20,7 +20,7 @@ const PLAY_STORE = 'https://play.google.com/store/apps/details?id=com.mehmet.unu
 const SITE = (Astro.site?.href ?? 'https://unutma-blog.vercel.app/').replace(/\/$/, '');
 
 const featureList = [
-  'Voice command capture (offline, rule-based, 8 languages)',
+  'Voice command capture (rule-based, understood on the device, 8 languages)',
   'Reminders and repeating tasks',
   'To-do list with subtasks and priorities',
   'Routine and habit tracking',
@@ -31,7 +31,7 @@ const featureList = [
   'AES-256 encrypted vault with biometric lock',
   'Budget and expense tracking',
   'Home screen widgets',
-  'Fully offline — no account, no cloud',
+  'Works offline — no account, no cloud sync',
 ];
 
 const organization = {
@@ -66,7 +66,8 @@ const app = {
       description:
         'Offline, private life organizer: reminders, to-do list, journal, calendar, ' +
         'notes, shopping lists, routine tracking, expense tracking and an encrypted ' +
-        'vault in one app. No account, no cloud — all data stays encrypted on the device.',
+        'vault in one app. No account and no cloud sync — all data stays on the device, ' +
+        'with the vault and journal encrypted at rest.',
       offers: [
         {
           '@type': 'Offer',
@@ -96,12 +97,24 @@ const app = {
       // Dogrulanabilir, urunde gercekten var olan ayirt edici ozellikler.
       additionalProperty: [
         { '@type': 'PropertyValue', name: 'Requires account', value: 'No' },
-        { '@type': 'PropertyValue', name: 'Works offline', value: 'Yes' },
+        {
+          '@type': 'PropertyValue',
+          name: 'Works offline',
+          value: 'Yes — except voice dictation, which uses the phone’s own speech service',
+        },
         { '@type': 'PropertyValue', name: 'Cloud sync', value: 'No — data stays on device' },
-        { '@type': 'PropertyValue', name: 'Encryption', value: 'AES-256, device-only' },
+        {
+          '@type': 'PropertyValue',
+          name: 'Encryption',
+          value: 'AES-256 for vault and journal, key held on the device',
+        },
         { '@type': 'PropertyValue', name: 'Free trial', value: '7 days' },
         { '@type': 'PropertyValue', name: 'Ads', value: 'None' },
-        { '@type': 'PropertyValue', name: 'Third-party tracking', value: 'None' },
+        {
+          '@type': 'PropertyValue',
+          name: 'Third-party tracking',
+          value: 'None — anonymous usage analytics only if the user opts in',
+        },
       ],
     },
   ],

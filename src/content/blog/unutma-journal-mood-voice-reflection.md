@@ -65,7 +65,7 @@ Mismatch between the two is not failure — it is **data about expectations**.
 
 ## Privacy as a feature, not a footnote
 
-Journal content is **for you** — stored in Unutma’s **offline-first** posture alongside other personal data. Still: **device security matters**. Use OS-level protections, and treat backups as **conscious choices**, not accidental uploads.
+Journal content is **for you** — stored on your phone in Unutma’s **offline-first** posture alongside other personal data, and encrypted at rest. If you dictate instead of typing, the speech-to-text step is handled by your phone’s own service (Apple on iOS, Google on Android) — on the device when your phone supports that language offline, through the provider when it does not — and the entry itself never reaches us. Still: **device security matters**. Use OS-level protections, and treat backups as **conscious choices**, not accidental uploads.
 
 ## Habits that keep journaling alive
 

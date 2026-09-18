@@ -14,7 +14,7 @@ Most apps that add a microphone button do exactly one thing with it: turn your s
 
 ## What actually happens when you talk to Unutma
 
-There's no cloud dictation service listening in here — Unutma uses on-device speech recognition, consistent with the rest of the app's offline-first design (see our [complete feature guide](/blog/unutma-app-complete-feature-guide/)). When you tap the mic and speak, two things can happen:
+The part that decides what you meant runs on your phone: the routing is rule-based, with no AI service in the loop, consistent with the rest of the app's offline-first design (see our [complete feature guide](/blog/unutma-app-complete-feature-guide/)). Turning your speech into text is the one step Unutma hands off — to your phone's own dictation service, Apple's on iOS and Google's on Android. Unutma asks for on-device recognition whenever your phone reports that language is available offline, and falls back to the provider's service when it isn't; either way nothing is sent to us, because there is no account and no server on our side. When you tap the mic and speak, two things can happen:
 
 **1. You describe something you want to capture.** Unutma parses the sentence and decides where it belongs:
 
@@ -43,7 +43,7 @@ This also quietly helps in moments where typing is genuinely hard: low light, on
 3. Check the destination pill that appears — it shows exactly where your words are about to be filed, before anything saves.
 4. If you'd rather just move around the app, say a command like "open settings" or "show statistics" instead.
 
-Unutma's speech recognition currently supports the same 8 languages as the rest of the app (Turkish, English, German, Spanish, French, Italian, Arabic, and Chinese), so this works whether you think in Turkish or English.
+Voice input currently covers the same 8 languages as the rest of the app (Turkish, English, German, Spanish, French, Italian, Arabic, and Chinese), so this works whether you think in Turkish or English. Whether the dictation step stays on your phone depends on which of those languages your phone has downloaded for offline recognition.
 
 ## What it's not
 

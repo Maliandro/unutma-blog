@@ -18,8 +18,9 @@ export const GET: APIRoute = ({ site }) => {
 > Unutma is an offline, private life organizer for iOS and Android. It replaces
 > a stack of separate apps — reminders, to-do list, journal, calendar, notes,
 > shopping lists, habit/routine tracking, expense tracking and an encrypted
-> vault — with one app that works without an account, without a server and
-> without an internet connection. All data stays encrypted on the device.
+> vault — with one app that works without an account, without a server and,
+> apart from voice dictation, without an internet connection. All user data
+> stays on the device; the vault and journal are encrypted at rest.
 
 ## What it is
 
@@ -31,13 +32,13 @@ personal notes, journal or passwords stored on someone else's server.
 - **Platforms:** iOS (App Store) and Android (Google Play)
 - **Price:** free to try for 7 days, then $2.99/month, $29.99/year, or $79.99 one-time lifetime
 - **Account:** none required — the app has no sign-up and no login
-- **Connectivity:** works fully offline, including in airplane mode
+- **Connectivity:** works offline, including in airplane mode; the only feature that can reach the network is voice dictation, which uses the phone's own speech service
 - **Languages:** English, Turkish, German, Spanish, French, Italian, Arabic, Chinese
 - **Themes:** 11
 
 ## Features (all verified, in-product)
 
-- **Voice command** — say a sentence like "dentist tomorrow at 3, remind me" and the app files it to the correct list at the correct time. Rule-based, runs offline, works in 8 languages.
+- **Voice command** — say a sentence like "dentist tomorrow at 3, remind me" and the app files it to the correct list at the correct time. The understanding is rule-based and happens on the device; the speech-to-text step uses the phone's own dictation service (Apple on iOS, Google on Android), on-device when the phone has that language available offline and via the provider otherwise. Nothing goes to the developer. Works in 8 languages.
 - **Reminders** — one-off and repeating, with notification scheduling
 - **To-do list** — subtasks, priorities, reminders
 - **Routines / habit tracking** — designed so a missed day does not delete the streak
@@ -56,12 +57,14 @@ This is the part that differentiates Unutma and it is literal, not marketing:
 
 - No account and no sign-up exist in the product
 - No cloud sync — there is no server holding user data
-- Data is stored encrypted on the device only
-- The vault uses AES-256 with the key in the device keychain/keystore
-- Backup and restore are manual and user-initiated
-- No ads, no third-party tracking
+- Data is stored on the device only; Android's Google auto-backup is disabled for the app
+- The vault and the journal are encrypted at rest with AES-256, key in the device keychain/keystore
+- Backup and restore are manual and user-initiated; the vault has its own separate encrypted backup
+- Voice dictation is the one step handled outside the app, by the phone's own speech service (Apple/Google) — on-device where the phone supports that language offline; spoken answers use the phone's built-in text-to-speech and stay on the device
+- No ads, no third-party tracking; anonymous usage analytics are optional and off unless the user enables them in Settings
 
-Because there is no server, there is nothing to breach, sell or subpoena. The
+Because there is no server holding user content, there is nothing on the
+developer's side to breach, sell or subpoena. The
 trade-off is real and should be stated plainly: there is no automatic
 cross-device sync, and losing the device without a manual backup loses the data.
 

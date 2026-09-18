@@ -17,7 +17,7 @@ import StoreBadgeRow from '../components/StoreBadgeRow.astro';
 const faqs: { q: string; a: string }[] = [
   {
     q: 'Does Unutma work without an internet connection?',
-    a: 'Yes. Unutma works fully offline, including in airplane mode. There is no server involved in normal use — every feature, including the vault, reminders and lists, runs on the device.',
+    a: 'Yes. Unutma works offline, including in airplane mode: the vault, reminders, lists, journal and the assistant all run on the device, and none of our servers are involved. The one exception is the microphone — dictation is handled by your phone\'s own speech service, which may need a connection unless your phone has that language available for offline recognition. Typing works offline either way.',
   },
   {
     q: 'Do I need to create an account?',
@@ -25,7 +25,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: 'Where is my data stored?',
-    a: 'Only on your device, encrypted. Unutma has no cloud sync and no server holding user content. The vault uses AES-256 with the key held in the device keychain or keystore and unlocked with Face ID, Touch ID or the equivalent Android biometric.',
+    a: 'Only on your device. Unutma has no cloud sync and no server holding user content, and Android\'s Google auto-backup is switched off for the app so nothing travels to a new phone on its own. The vault and the journal are encrypted at rest with AES-256, with the key held in the device keychain or keystore and unlocked with Face ID, Touch ID or the equivalent Android biometric.',
   },
   {
     q: 'Does Unutma sync between my phone and my tablet?',
@@ -37,7 +37,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: 'How does the voice command work?',
-    a: 'You say a normal sentence such as "dentist tomorrow at 3, remind me" and the app works out which list it belongs to and what time to set. It is rule-based rather than cloud AI, which is why it runs offline, and it works in all eight supported languages.',
+    a: 'You say a normal sentence such as "dentist tomorrow at 3, remind me" and the app works out which list it belongs to and what time to set. That understanding step is rule-based rather than cloud AI, so it happens on the device. Turning speech into text is done by your phone\'s own dictation service (Apple on iOS, Google on Android) — on-device when your phone supports that language offline, otherwise through the provider — and nothing is sent to us. It works in all eight supported languages.',
   },
   {
     q: 'How much does Unutma cost?',
@@ -57,11 +57,11 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: 'What happens if I lose my phone?',
-    a: 'If you have not made a manual backup, the data is gone — there is no cloud copy to restore from. This is the direct cost of the no-server design. Backup and restore are built in and take a few taps; doing it periodically is strongly recommended.',
+    a: 'If you have not made a manual backup, the data is gone — there is no cloud copy to restore from. This is the direct cost of the no-server design. Backup and restore are built in and take a few taps; doing it periodically is strongly recommended. Note that the main backup deliberately leaves the vault out: the vault has its own encrypted backup button on the Vault screen, so back that up separately.',
   },
   {
     q: 'Does Unutma show ads or track me?',
-    a: 'No ads and no third-party tracking of your content. Optional anonymous usage analytics can be switched off in Settings under Data.',
+    a: 'No ads and no third-party tracking of your content. Anonymous usage analytics are optional and off unless you switch them on yourself in Settings under Data.',
   },
 ];
 

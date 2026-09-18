@@ -10,7 +10,7 @@ draft: false
 
 Unutma has no account and no cloud. Your routines, journal, lists and vault live on your phone and nowhere else. That is the whole point — but it has one consequence worth being honest about:
 
-**Nobody can restore your data for you. Not even us.** There is no copy on a server, because there is no server.
+**Nobody can restore your data for you. Not even us.** There is no copy on a server, because there is no server. On Android, Google's automatic app backup is switched off for Unutma on purpose, so your entries do not quietly ride along to a new phone either — the file you export is the only path.
 
 So when you change phones, you move the data yourself. It takes about two minutes. Here is exactly how.
 
@@ -54,7 +54,7 @@ It also means **there is no reset**. If you forget it, the backup cannot be open
 
 Passwords and sensitive notes in the vault are encrypted with a key that lives in your phone's secure hardware. That key never leaves the device and is never in a backup — that is what makes the vault a vault.
 
-So the vault has **its own backup button**, inside the vault screen, with its own password. If you have anything in there, back it up separately before switching phones.
+So the main backup deliberately leaves the vault out, and the vault has **its own encrypted backup button**, inside the vault screen, with its own password. If you have anything in there, back it up separately before switching phones.
 
 ## Do this before you wipe the old phone
 
