@@ -1,15 +1,15 @@
 ---
-title: "How To Save Money With Expense Tracking: A Calm, Private Way to Stay Organized"
-description: "Practical guide to how to save money with expense tracking with privacy-first tips. Learn how Unutma helps you stay organized offline."
+title: "How To Set And Track Goals: A Calm, Private Way to Stay Organized"
+description: "Practical guide to how to set and track goals with privacy-first tips. Learn how Unutma helps you stay organized offline."
 pubDate: 2026-09-20
 tags: ["unutma", "productivity", "privacy"]
-image: /blog/covers/cover-4.svg
+image: /blog/covers/cover-1.svg
 draft: false
 ---
 
-## Why How To Save Money With Expense Tracking Matters
+## Why How To Set And Track Goals Matters
 
-Many people search for help with how to save money with expense tracking — not because they are lazy, but because modern life is noisy.
+Many people search for help with how to set and track goals — not because they are lazy, but because modern life is noisy.
 
 When reminders live in five different apps, it is easy to miss what matters. A calm, offline-first approach keeps your routines private and under your control.
 
@@ -27,7 +27,7 @@ Start with one habit: capture the thought immediately, review once a day, and ce
 
 [Unutma](/blog/welcome-to-unutma-blog/) is a privacy-first organizer — to-dos, journal, password vault, wishlists, routines, and quick-action logging — **on your device**, offline, with no ads.
 
-If how to save money with expense tracking is part of your daily stress, try dedicating one screen in Unutma to it for a week.
+If how to set and track goals is part of your daily stress, try dedicating one screen in Unutma to it for a week.
 
 ## Key Takeaways
 
