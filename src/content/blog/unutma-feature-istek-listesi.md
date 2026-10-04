@@ -1,7 +1,7 @@
 ---
 title: "Personal Wishlist Organizer App Offline: A Calm, Private Way to Stay Organized"
 description: "Practical guide to personal wishlist organizer app offline with privacy-first tips. Learn how Unutma helps you stay organized offline."
-pubDate: 2026-07-26
+pubDate: 2026-10-04
 tags: ["unutma", "productivity", "privacy"]
 image: /blog/covers/cover-1.svg
 draft: false
