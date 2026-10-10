@@ -50,6 +50,15 @@ ve site haritasında olup olmadığını Türkçe raporlar. "UYARI" satırı var
    `google-keep-alternative-no-account-offline`.
 3. İki komutu çalıştır, sonra yayınla.
 
+Hazır bağlantı cümleleri (yazının ilgili paragrafının sonuna eklenir, `updatedDate` güncellenir):
+
+- `move-unutma-to-a-new-phone`: Still choosing an app? Our guide to finding a [to-do list app with no account](/blog/todo-list-app-no-account-offline/) includes a 5-minute test you can run on any app, this one included.
+- `unutma-routines-calendar-widgets-time`: All of these reminders are scheduled on your phone, so they keep firing with no signal. That is the core of a [to-do list app with no account](/blog/todo-list-app-no-account-offline/).
+- `unutma-themes-games-languages-backup`: The same foundation is why Unutma is a [to-do list app with no account](/blog/todo-list-app-no-account-offline/): no sign-up, no server, no sync.
+- `unutma-vault-passwords-face-id-privacy`: Why no mandatory login at all? Our guide to a [to-do list app with no account](/blog/todo-list-app-no-account-offline/) explains the trade-off, including what you give up.
+- `unutma-lists-todo-shopping-wishlist-workflow`: If you want lists that never ask you to log in, read our guide to a [to-do list app with no account](/blog/todo-list-app-no-account-offline/).
+- `unutma-app-showcase-complete-guide` ve `our-story-we-want-your-feedback`: Keep cümlesinin yanına "and our [to-do list app with no account](/blog/todo-list-app-no-account-offline/) guide" eklenir.
+
 ## Sonra gözden geçirilecek yazılar (SİLME)
 
 Bu iki yazı Unutma'nın konusu dışında, kısa (~400 kelime) ve büyük ihtimalle alakasız trafik getiriyor:
