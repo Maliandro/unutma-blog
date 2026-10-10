@@ -24,7 +24,7 @@
     "optionalAnalytics": "6. Optionale anonyme Analyse",
     "optionalAnalyticsText": "Wenn du in den Einstellungen „Unutma verbessern helfen“ aktivierst, kann die App anonyme Nutzungsstatistiken an unseren Server senden (z. B. welcher Bildschirm geöffnet wurde, Testversion gestartet, Premium-Ansicht). Standard ist aus. Diese Ereignisse enthalten niemals Notizen, Tresor, Tagebuchtext, Listen, Backups, Benutzernamen oder Zahlungsdaten.",
     "security": "7. Datensicherheit",
-    "securityText": "Tresor-Inhalte sind auf deinem Gerät verschlüsselt. Wir nutzen starke lokale Verschlüsselung zum Schutz sensibler Daten. Wir haben keinen Zugriff auf deine Tresor-Inhalte.",
+    "securityText": "Tresor- und Tagebuch-Inhalte sind auf deinem Gerät verschlüsselt. Wir nutzen starke lokale Verschlüsselung zum Schutz sensibler Daten. Wir haben keinen Zugriff auf deine Tresor- oder Tagebuch-Inhalte.",
     "gdprRights": "8. EU/EWR und DSGVO (Hinweis)",
     "gdprRightsText": "Für Nutzer in der Europäischen Union oder im Europäischen Wirtschaftsraum gelten Datenschutzregeln (DSGVO) mit bestimmten Rechten; wir weisen kurz darauf hin — nur zur rechtlichen Transparenz. Unutma speichert deine persönlichen Inhalte nicht auf unseren Servern, sie bleiben auf deinem Gerät. Beim Deinstallieren der App oder Löschen der App-Daten erfolgt die Löschung automatisch; du musst uns dafür nicht extra kontaktieren.",
     "children": "9. Kinder",

@@ -24,7 +24,7 @@
     "optionalAnalytics": "6. Analítica anónima opcional",
     "optionalAnalyticsText": "Si activas \"Ayudar a mejorar Unutma\" en Ajustes, la app puede enviar estadísticas de uso anónimas a nuestro servidor (por ejemplo: qué pantalla se abrió, prueba iniciada, pantalla premium vista). Está desactivado por defecto. Estos eventos nunca incluyen notas, caja fuerte, texto del diario, listas, copias de seguridad, nombre de usuario ni datos de pago.",
     "security": "7. Seguridad de datos",
-    "securityText": "El contenido de la caja fuerte se cifra en tu dispositivo. Usamos cifrado local fuerte para proteger datos sensibles. No tenemos acceso al contenido de tu caja fuerte.",
+    "securityText": "El contenido de la caja fuerte y del diario se cifra en tu dispositivo. Usamos cifrado local fuerte para proteger datos sensibles. No tenemos acceso al contenido de tu caja fuerte ni de tu diario.",
     "gdprRights": "8. UE/EEE y RGPD (información)",
     "gdprRightsText": "Si vives en la Unión Europea o el Espacio Económico Europeo, la normativa de protección de datos (RGPD) prevé ciertos derechos; lo indicamos brevemente solo por transparencia legal. Unutma no guarda tu contenido personal en nuestros servidores: permanece en tu dispositivo. Al desinstalar la app o borrar sus datos, la eliminación es automática; no necesitas contactarnos aparte para ejercer esos derechos.",
     "children": "9. Menores",

@@ -24,7 +24,7 @@
     "optionalAnalytics": "6. İsteğe bağlı anonim analitik",
     "optionalAnalyticsText": "Ayarlar'da \"Unutma'yı geliştirmeme yardım et\" seçeneğini açarsanız, uygulama sunucumuza anonim kullanım istatistikleri gönderebilir (örneğin: hangi ekran açıldı, deneme başlatıldı, premium ekranı görüldü). Bu özellik varsayılan olarak kapalıdır. Bu veriler notlarınızı, kasanızı, günlük metninizi, listelerinizi, yedeklerinizi, kullanıcı adınızı veya ödeme bilgilerinizi asla içermez. Yalnızca hangi özelliklerin kullanıldığını anlamak ve uygulamayı geliştirmek için kullanılır.",
     "security": "7. Veri Güvenliği",
-    "securityText": "Kasa içeriği cihazınızda şifrelenir. Hassas verileri korumak için güçlü yerel şifreleme kullanıyoruz. Kasa içeriğinize erişimimiz yoktur.",
+    "securityText": "Kasa ve günlük içeriği cihazınızda şifrelenir. Hassas verileri korumak için güçlü yerel şifreleme kullanıyoruz. Kasa ve günlük içeriğinize erişimimiz yoktur.",
     "gdprRights": "8. AB/AEA ve GDPR (bilgilendirme)",
     "gdprRightsText": "Avrupa Birliği veya Avrupa Ekonomik Alanı'nda oturanlar için geçerli veri koruma kuralları (GDPR) bazı haklar öngörür; burada buna kısaca değinmek yalnızca yasal şeffaflık içindir. Unutma kişisel içeriğinizi sunucularında tutmaz — veriler yalnızca cihazınızdadır. Uygulamayı kaldırdığınızda veya uygulama verilerini temizlediğinizde silme kendiliğinden olur; bu yüzden bu hakları kullanmak için bizimle ayrıca iletişime geçmeniz gerekmez.",
     "children": "9. Çocuklar",

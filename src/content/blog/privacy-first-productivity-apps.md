@@ -41,6 +41,8 @@ If privacy-first productivity apps is part of your daily stress, try dedicating 
 2. Keep lists short and actionable
 3. Review at the same time each evening
 
+If the app you use today is Google Keep, we put both side by side in an honest [Google Keep alternative](/blog/google-keep-alternative-no-account-offline/) comparison, including the rows where Keep wins.
+
 ## Your Turn
 
 What is the one thing you forget most often — and would a single private app help?

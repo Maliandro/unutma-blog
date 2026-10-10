@@ -24,7 +24,7 @@
     "optionalAnalytics": "6. Optional anonymous analytics",
     "optionalAnalyticsText": "If you turn on \"Help improve Unutma\" in Settings, the app may send anonymous usage statistics to our server (for example: which screen opened, trial started, premium screen viewed). This is off by default. These events never include your notes, vault, journal text, lists, backups, display name, or payment details. We use them only to understand feature usage and improve the app.",
     "security": "7. Data Security",
-    "securityText": "Vault content is encrypted on your device. We use strong local encryption to protect sensitive data. We do not have access to your vault contents.",
+    "securityText": "Vault and journal content is encrypted on your device. We use strong local encryption to protect sensitive data. We do not have access to your vault or journal contents.",
     "gdprRights": "8. EU/EEA and GDPR (information only)",
     "gdprRightsText": "If you live in the European Union or European Economic Area, data protection rules (GDPR) include certain rights; we mention this briefly for legal transparency only. Unutma does not keep your personal content on our servers — it stays on your device. When you uninstall the app or clear its data, deletion happens automatically, so you do not need to contact us separately to exercise those rights.",
     "children": "9. Children",

@@ -2,6 +2,7 @@
 title: "Todo, Shopping, and Wishlist in Unutma: One Tab, Three Mental Modes"
 description: "Why Unutma separates work tasks, grocery runs, and long-term wishes — and how to move items between them without turning your phone into a second job."
 pubDate: 2026-04-03
+updatedDate: 2026-10-10
 tags: ["Unutma", "productivity", "tasks", "organization"]
 draft: false
 image: "/blog/covers/ai/unutma-lists-todo-shopping-wishlist-workflow.png"
@@ -84,3 +85,5 @@ Once a month, **audit** each mode in under ten minutes:
 ## Closing
 
 Unutma’s Lists tab works because it respects **how attention actually works** — not how productivity influencers pretend it works. Next up: **Vault** — how sensitive data stays yours behind biometrics — or revisit [the Unutma feature guide](/blog/unutma-app-showcase-complete-guide/) for the bigger picture.
+
+Coming from a notes app? Our honest [Google Keep alternative](/blog/google-keep-alternative-no-account-offline/) comparison shows which lists move over well, and where Keep is still the better choice.

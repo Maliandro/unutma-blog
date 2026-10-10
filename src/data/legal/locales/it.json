@@ -24,7 +24,7 @@
     "optionalAnalytics": "6. Analitica anonima facoltativa",
     "optionalAnalyticsText": "Se attivi \"Aiuta a migliorare Unutma\" nelle Impostazioni, l'app può inviare statistiche di utilizzo anonime al nostro server (ad es. schermata aperta, prova avviata, schermata premium vista). Disattivato per impostazione predefinita. Questi eventi non includono mai note, cassaforte, diario, liste, backup, nome visualizzato o dati di pagamento.",
     "security": "7. Sicurezza dei dati",
-    "securityText": "Il contenuto del cassetto è crittografato sul tuo dispositivo. Utilizziamo crittografia locale robusta per proteggere i dati sensibili. Non abbiamo accesso al contenuto del tuo cassetto.",
+    "securityText": "Il contenuto del cassetto e del diario è crittografato sul tuo dispositivo. Utilizziamo crittografia locale robusta per proteggere i dati sensibili. Non abbiamo accesso al contenuto del tuo cassetto o del tuo diario.",
     "gdprRights": "8. UE/SEE e GDPR (informazione)",
     "gdprRightsText": "Se vivi nell'Unione europea o nello Spazio economico europeo, la normativa sulla protezione dei dati (GDPR) prevede alcuni diritti; lo ricordiamo brevemente solo per trasparenza legale. Unutma non conserva i tuoi contenuti personali sui nostri server — restano sul dispositivo. Disinstallando l'app o cancellandone i dati, la rimozione avviene automaticamente; non devi contattarci separatamente per esercitare quei diritti.",
     "children": "9. Minori",

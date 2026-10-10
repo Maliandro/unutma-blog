@@ -24,7 +24,7 @@
     "optionalAnalytics": "6. Analytique anonyme facultative",
     "optionalAnalyticsText": "Si vous activez « Aider à améliorer Unutma » dans les réglages, l'app peut envoyer des statistiques d'utilisation anonymes à notre serveur (par ex. écran ouvert, essai démarré, écran premium vu). Désactivé par défaut. Ces événements n'incluent jamais notes, coffre, journal, listes, sauvegardes, nom d'affichage ni données de paiement.",
     "security": "7. Sécurité des données",
-    "securityText": "Le contenu du coffre est chiffré sur votre appareil. Nous utilisons un chiffrement local robuste pour protéger les données sensibles. Nous n'avons pas accès au contenu de votre coffre.",
+    "securityText": "Le contenu du coffre et du journal est chiffré sur votre appareil. Nous utilisons un chiffrement local robuste pour protéger les données sensibles. Nous n'avons pas accès au contenu de votre coffre ni de votre journal.",
     "gdprRights": "8. UE/EEE et RGPD (information)",
     "gdprRightsText": "Si vous vivez dans l'Union européenne ou l'Espace économique européen, la réglementation sur la protection des données (RGPD) prévoit certains droits ; nous le rappelons brièvement pour la transparence légale uniquement. Unutma ne conserve pas votre contenu personnel sur nos serveurs — il reste sur votre appareil. La suppression est automatique lorsque vous désinstallez l'app ou effacez ses données ; vous n'avez pas besoin de nous contacter séparément pour exercer ces droits.",
     "children": "9. Enfants",

@@ -2,6 +2,7 @@
 title: "Talk to Unutma: The Voice Feature Most Organizer Apps Don't Have"
 description: "Unutma doesn't just transcribe your voice — it understands it. Say a task, an expense, or 'open my calendar' and watch it go straight to the right place, hands-free."
 pubDate: 2026-07-25
+updatedDate: 2026-10-10
 tags: ["Unutma", "voice", "productivity", "accessibility"]
 draft: false
 image: "/blog/covers/auto/unutma-voice-commands-hands-free-organizing.svg"
@@ -48,6 +49,8 @@ Voice input currently covers the same 8 languages as the rest of the app (Turkis
 ## What it's not
 
 To be precise about what this feature is and isn't: it's a rule-based intent detector, not a general-purpose AI assistant you can have a conversation with. It won't answer trivia or write an email for you. What it does — reliably and privately — is take one clear sentence and get it to the right place in your own organizer, or take you to the right screen. That's a narrower promise, and it's one Unutma actually keeps.
+
+If you are comparing this with Google Keep's transcribed voice memos, our [Google Keep alternative](/blog/google-keep-alternative-no-account-offline/) page puts the two side by side, including where Keep wins.
 
 ## Bottom line
 

@@ -2,6 +2,7 @@
 title: "Our Story — and We Would Love Your Ideas"
 description: "Why we built Unutma, what we believe about privacy and calm productivity, and how your suggestions shape what we ship next."
 pubDate: 2026-05-27
+updatedDate: 2026-10-10
 tags: ["Unutma", "productivity", "privacy", "feedback"]
 image: /blog/covers/auto/our-story-we-want-your-feedback.svg
 draft: false
@@ -25,6 +26,8 @@ That is the story behind **Unutma: Private Life Organizer**.
 - **Offline should work.** Productivity tools should not break when Wi‑Fi does.
 - **No ads selling your attention.** We would rather build something useful than optimize for noise.
 - **Small habits beat perfect systems.** One reminder, one list, one quiet win at a time.
+
+To see what those beliefs mean in practice, read our [Google Keep alternative](/blog/google-keep-alternative-no-account-offline/) comparison, including the rows where Keep beats us.
 
 We are not trying to be another social network or another dashboard for corporations. We are building a **private life organizer** for real people with real mental load.
 
