@@ -1,6 +1,8 @@
 ---
 title: "I built a phone assistant that files your sentences without an LLM"
-description: "How Unutma turns one typed or spoken sentence into a task, expense, routine, memory or vault entry, on the device, with hand-written rules and a 41 KB classifier. With honest numbers."
+description: "How one typed or spoken sentence becomes a task, expense, routine or vault entry on the phone, using rules and a 41 KB classifier, with honest accuracy numbers."
+seoTitle: "Phone Assistant Without an LLM: How It Works"
+keyword: "phone assistant without an LLM"
 pubDate: 2026-09-23
 updatedDate: 2026-10-16
 tags: ["Unutma", "engineering", "privacy", "on-device", "show-hn"]
@@ -12,7 +14,7 @@ draft: false
 
 <video src="/launch/unutma-show-hn-16x9.mp4" poster="/launch/unutma-show-hn-poster.jpg" controls playsinline preload="metadata" style="width:100%;border-radius:12px"></video>
 
-I'm a solo developer. Unutma ("don't forget" in Turkish) is a to-do list, calendar, budget, journal, notes app and password vault on one phone. The interesting part is the box at the bottom of the screen. You type or say one sentence, and it decides where that sentence belongs:
+I'm a solo developer. Unutma ("don't forget" in Turkish) is a to-do list, calendar, budget, journal, notes app and password vault on one phone. The interesting part is the box at the bottom of the screen. It is a phone assistant without an LLM. You type or say one sentence, and it decides where that sentence belongs:
 
 | You say | It does |
 |---|---|
@@ -49,7 +51,7 @@ When you pick a place, the phone stores that sentence's embedding (384 numbers, 
 
 I measure on held-out sets that the rules and the model never saw during tuning. The last one has 1,595 sentences across the six languages, many of them deliberately messy or with two intents in one sentence. It was opened once, after the thresholds were frozen. The figures below are as of 18 September 2026, the date of that measurement.
 
-| | Rules only | Rules + model |
+| Measure | Rules only | Rules + model |
 |---|---|---|
 | Right place on the first try | 50.2% | 63.9% |
 | Right place shown to you (incl. the suggestion) | – | 67.4% |
@@ -64,6 +66,32 @@ One caveat: the test sentences were written for testing, independently of the ru
 - No account, no sign-up screen, no server that receives your data.
 - The vault and the journal are encrypted at rest (AES-256, key kept in the phone's secure storage).
 - Voice input uses the phone's own speech recognition. It runs on the device when the phone supports it; otherwise the OS may use its network service. The app tells you once when that happens.
+
+## Frequently asked questions
+
+### Does Unutma use a large language model?
+
+No. It uses hand-written rules in six languages, a small multilingual embedding model (about 29 MB, int8) and a 41 KB classifier. The classifier only picks a destination; it never writes content.
+
+### Is anything I type sent to a server?
+
+No. The rules, the embedding model and the classifier all run on the phone, and the app has no account and no server that receives your records.
+
+### How accurate is it?
+
+As of 18 September 2026, on a sealed test set of 1,595 sentences, it put 63.9% in the right place on the first try (rules alone: 50.2%). Counting the suggestion it shows you, 67.4%. It saved 19.9% in the wrong place without asking. The test sentences were written for testing, not taken from real users.
+
+### Which languages does the assistant understand?
+
+Six: English, Turkish, German, Spanish, French and Italian.
+
+### Does voice input stay on the phone?
+
+It depends on your phone. Unutma uses the phone's own speech recognition. On iPhone, Apple lets an app check [whether the recognizer can run without network access](https://developer.apple.com/documentation/speech/sfspeechrecognizer/supportsondevicerecognition). On Android, the default [speech recognizer may stream audio to remote servers](https://developer.android.com/reference/android/speech/SpeechRecognizer), while newer versions also offer an on-device one.
+
+### How is the vault encrypted?
+
+With AES-256, the [Advanced Encryption Standard published by NIST](https://csrc.nist.gov/pubs/fips/197/final), and a key kept in the phone's secure storage. The journal uses the same scheme.
 
 ## Try it
 

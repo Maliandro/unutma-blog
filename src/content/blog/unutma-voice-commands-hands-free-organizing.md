@@ -50,6 +50,8 @@ Voice input currently covers the same 8 languages as the rest of the app (Turkis
 
 To be precise about what this feature is and isn't: it's a rule-based intent detector, not a general-purpose AI assistant you can have a conversation with. It won't answer trivia or write an email for you. What it does — reliably and privately — is take one clear sentence and get it to the right place in your own organizer, or take you to the right screen. That's a narrower promise, and it's one Unutma actually keeps.
 
+For the engineering details and the measured accuracy, read how we built [a phone assistant without an LLM](/blog/a-phone-assistant-without-an-llm/).
+
 If you are comparing this with the transcribed voice memos in cloud note apps, our [notes app with no account](/blog/notes-app-no-account-offline/) page puts the two side by side, including where cloud apps win.
 
 ## Bottom line

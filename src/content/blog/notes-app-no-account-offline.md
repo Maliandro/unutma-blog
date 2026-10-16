@@ -64,7 +64,7 @@ Most note apps are a single board of notes. Unutma has more sections, each with 
 - **Quick actions**: one tap to log "locked the door" or "took medicine", so you can check later instead of worrying
 - **Routines and reminders**, a **budget**, an **encrypted journal**, and a **Vault for passwords behind Face ID**
 
-You can also type or say one sentence, like "Dentist Thursday at 3, buy milk, spent 25 at the store", and Unutma splits it into an appointment, a list item and an expense. It shows you each one before saving. [Here is how the voice feature works](/blog/unutma-voice-commands-hands-free-organizing/).
+You can also type or say one sentence, like "Dentist Thursday at 3, buy milk, spent 25 at the store", and Unutma splits it into an appointment, a list item and an expense. It shows you each one before saving. [Here is how the voice feature works](/blog/unutma-voice-commands-hands-free-organizing/), and here is how [a phone assistant without an LLM](/blog/a-phone-assistant-without-an-llm/) does the sorting.
 
 ## What is free and what is Premium (exact numbers)
 
@@ -90,6 +90,33 @@ Unutma does not import notes from other apps automatically, and we don't want yo
 ## The trade-off, said plainly
 
 With no account and no cloud, nobody can restore your data if you lose your phone. That includes us. That is the cost of the privacy, and it is why the backup file matters. If you switch, read [how to move your Unutma data to a new phone](/blog/move-unutma-to-a-new-phone/) once, so you know where that file lives.
+The UK National Cyber Security Centre gives the same advice for any phone: [back up your most important data](https://www.ncsc.gov.uk/collection/top-tips-for-staying-secure-online/always-back-up-your-most-important-data) and keep a copy somewhere other than the device.
+
+## Frequently asked questions
+
+### Do I need an account to use Unutma?
+
+No. There is no sign-up screen, so there is no name, email or profile to enter. You open the app and start writing.
+
+### Does it work in airplane mode?
+
+Yes. Everything works with no connection, the built-in assistant included. There is no online mode to fall back from.
+
+### Are my notes encrypted?
+
+The Vault and the journal are encrypted by the app with AES-256, and the key stays in your phone's secure storage. Regular notes rely on the encryption your phone already applies to its storage: [Data Protection on iPhone](https://support.apple.com/guide/security/data-protection-overview-secf6276da8a/web) and [encryption on Android](https://source.android.com/docs/security/features/encryption).
+
+### Can I use the same notes on two phones?
+
+Not at the same time. There is no sync. To move to a new phone you create one backup file, protected by a password you choose, and open it on the new device.
+
+### Does Unutma send anything about me anywhere?
+
+There are no ads. Usage statistics stay off unless you turn them on yourself.
+
+### What happens to my notes if I don't pay after the trial?
+
+Nothing is deleted or hidden. Everything you already wrote stays on your phone and stays readable on the free plan.
 
 ## Bottom line
 

@@ -27,7 +27,7 @@ That is the story behind **Unutma: Private Life Organizer**.
 - **No ads selling your attention.** We would rather build something useful than optimize for noise.
 - **Small habits beat perfect systems.** One reminder, one list, one quiet win at a time.
 
-To see what those beliefs mean in practice, read our [notes app with no account](/blog/notes-app-no-account-offline/) comparison and our [to-do list app with no account](/blog/todo-list-app-no-account-offline/) guide, including the rows where cloud note apps beat us.
+To see what those beliefs mean in practice, read our [notes app with no account](/blog/notes-app-no-account-offline/) comparison and our [to-do list app with no account](/blog/todo-list-app-no-account-offline/) guide, including the rows where cloud note apps beat us. To see how the assistant inside the app works, read about [a phone assistant without an LLM](/blog/a-phone-assistant-without-an-llm/).
 
 We are not trying to be another social network or another dashboard for corporations. We are building a **private life organizer** for real people with real mental load.
 

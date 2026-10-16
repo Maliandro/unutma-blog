@@ -54,7 +54,7 @@ We ran the same test on Unutma. The app has no account and no server for your re
 | Sending a backup file to a new phone | Needs a way to move the file | Creating the file works offline; email or cloud transfer does not |
 | Starting or restoring a Premium purchase | No | The app store needs a connection |
 
-The assistant row is the one people doubt most. In Unutma, it cannot make a network call at all. The Settings screen called "Where is your data?" spells that out, along with how many records are stored on the phone.
+The assistant row is the one people doubt most. In Unutma, it cannot make a network call at all. The Settings screen called "Where is your data?" spells that out, along with how many records are stored on the phone. If you want the technical details, we wrote up how [a phone assistant without an LLM](/blog/a-phone-assistant-without-an-llm/) sorts your sentences.
 
 ## What you give up with a local-first app
 
