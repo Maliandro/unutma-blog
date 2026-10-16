@@ -1,12 +1,17 @@
 ---
 title: "The Unutma Vault: Passwords, PINs, and Calm Behind Face ID"
-description: "How Unutma’s Vault keeps bank logins, IDs, and secrets encrypted on your device — with biometric locks and habits that keep the vault usable, not overflowing."
+seoTitle: "Offline Password Vault App: How Unutma's Works"
+description: "An offline password vault app on your phone: how Unutma's Vault encrypts entries, what it does not protect, and a lost-phone checklist with backup steps."
 pubDate: 2026-04-04
+updatedDate: 2026-10-16
+keyword: "offline password vault app"
 tags: ["Unutma", "privacy", "security", "organization"]
 draft: false
 image: "/blog/covers/ai/unutma-vault-passwords-face-id-privacy.png"
 imageAlt: "Padlock and laptop on a wooden desk, security and privacy mood"
 ---
+
+Looking for an offline password vault app that keeps a handful of important logins on your phone, with no account and no cloud? This page explains how Unutma's Vault does that, what it protects, and where it stops.
 
 The worst password manager is the one you **stopped using** because it felt like another job — so you went back to **reusing three passwords** and hoping for the best. **Unutma’s Vault** is designed for a narrower promise: **sensitive items live in one place**, gated by **Face ID, Touch ID, or your device PIN**, with categories that match real life — not a spreadsheet fantasy.
 
@@ -74,6 +79,67 @@ If you need **team sharing**, **role-based access**, or **enterprise audit logs*
 1. Delete **three** entries you no longer recognize.
 2. Confirm **biometric lock** still works after an OS update.
 3. Add **one** entry you have been looking up in screenshots — stop the screenshot habit.
+
+## Under the hood: how the Vault protects entries
+
+Here is exactly what the Vault does, checked against the app's code in October 2026. We would rather give you the dull technical version than a shield icon.
+
+| Layer | What it does | What it does not do |
+|---|---|---|
+| Encryption | Each entry is encrypted with AES-256-CBC and a random 128-bit IV | It does not protect entries while the Vault is open on screen |
+| The key | A random key is created on your phone and kept in the phone's secure storage (Keychain or Keystore), available only when the phone is unlocked | There is no copy of the key on any server, so nobody can recover it for you |
+| Vault PIN | Your 4 to 6 digit PIN is salted and hashed with key stretching (10,000 rounds of SHA-256), so the PIN itself is never stored | A short PIN is still guessable by someone with your unlocked phone and time; repeated wrong attempts trigger a waiting period |
+| Face ID or fingerprint | Opens the Vault without typing the PIN | It is only as strong as the phone's own biometric setup |
+| Screenshots | Blocked while the Vault is unlocked | It cannot stop someone photographing the screen with another phone |
+| Copying a password | The clipboard clears 30 seconds after you copy an entry | Other apps can still read the clipboard during those 30 seconds |
+| Network | The Vault never sends anything; the app has no server | Malware already on the phone is outside what any app can stop |
+
+The Vault even says this about itself: for critical financial information, a dedicated password manager is the safer tool. We agree. The Vault is for the small set of things you look up on your phone and would otherwise keep in a note or a screenshot. On the free plan it holds 3 entries.
+
+Official guidance points the same way. The US NIST's [digital identity guidelines (SP 800-63B)](https://pages.nist.gov/800-63-3/sp800-63b.html) favour long, unique passwords over complicated rules. CISA's guide to [strong passwords](https://www.cisa.gov/secure-our-world/use-strong-passwords) recommends a password manager so you do not reuse passwords. The UK NCSC's [password advice](https://www.ncsc.gov.uk/collection/passwords/updating-your-approach) also suggests storing passwords rather than trying to remember them all.
+
+## Lost phone: a checklist
+
+With no account and no cloud, nobody can restore your Vault if you lose your phone. That includes us. So do this now, not after the phone is gone:
+
+- [ ] **Make a Vault backup.** On the Vault screen, tap "Back Up", set a backup password (at least 4 characters) and save the file somewhere off the phone.
+- [ ] **Write the backup password down** and keep it away from the phone. It is the only way to open the backup.
+- [ ] **Remember that the Vault is not in the main backup.** The app's general backup file deliberately leaves it out, so you need both files.
+- [ ] **Turn on your phone's find-and-erase feature**, so a lost phone can be wiped remotely.
+- [ ] **Keep a list of which accounts are in the Vault**, without the passwords, so you know what to change if the phone is stolen.
+
+If the phone is lost or stolen:
+
+1. Erase it remotely through the phone maker's find-my-device service.
+2. Change the passwords for the most important accounts in the Vault, starting with email and banking.
+3. On the new phone, install Unutma, open the Vault screen, tap "Back Up" and then "Restore from file", and enter the backup password.
+
+Our guide on [moving Unutma to a new phone](/blog/move-unutma-to-a-new-phone/) covers the main backup, and [how to keep personal data on your phone](/blog/keep-your-data-safe-on-your-phone/) has the wider device checklist. If you are still deciding whether a phone-only tool suits you, start with our test for [apps that work offline](/blog/why-you-should-use-offline-apps/).
+
+## Frequently asked questions
+
+### Is Unutma's Vault an offline password vault app?
+
+Yes. Entries are encrypted and stored only on your phone, and the Vault works in airplane mode. There is no account and no sync.
+
+### What encryption does the Vault use?
+
+AES-256-CBC with a random IV per entry. The key lives in the phone's secure storage. Your Vault PIN is protected with key stretching (10,000 rounds of SHA-256) and a random salt.
+
+### Can you recover my Vault if I forget the PIN or lose the phone?
+
+No. We have no server and no copy of your key. A Vault backup file and its password are the only way back.
+
+### Is the Vault included in the normal backup?
+
+No. It has its own "Back Up" button on the Vault screen, so you choose when that file is created and where it goes.
+
+### Should I use it instead of a dedicated password manager?
+
+For a few personal entries, it works well. For dozens of accounts, browser autofill or shared family logins, a dedicated password manager is the better tool.
+
+Why no mandatory login at all? Our guide to a [to-do list app with no account](/blog/todo-list-app-no-account-offline/) explains the trade-off, including what you give up.
+
 
 ## What to read next
 
