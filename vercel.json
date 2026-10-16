@@ -42,6 +42,256 @@
       "source": "/blog/google-keep-alternative-no-account-offline/",
       "destination": "/blog/notes-app-no-account-offline/",
       "permanent": true
+    },
+    {
+      "source": "/blog/unutma-feature-hatirlaticilar",
+      "destination": "/blog/unutma-routines-calendar-widgets-time/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/unutma-feature-hatirlaticilar/",
+      "destination": "/blog/unutma-routines-calendar-widgets-time/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/unutma-feature-rutinler",
+      "destination": "/blog/unutma-routines-calendar-widgets-time/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/unutma-feature-rutinler/",
+      "destination": "/blog/unutma-routines-calendar-widgets-time/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/unutma-feature-widgetlar",
+      "destination": "/blog/unutma-routines-calendar-widgets-time/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/unutma-feature-widgetlar/",
+      "destination": "/blog/unutma-routines-calendar-widgets-time/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/unutma-feature-yapilacaklar",
+      "destination": "/blog/unutma-lists-todo-shopping-wishlist-workflow/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/unutma-feature-yapilacaklar/",
+      "destination": "/blog/unutma-lists-todo-shopping-wishlist-workflow/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/unutma-feature-istek-listesi",
+      "destination": "/blog/unutma-lists-todo-shopping-wishlist-workflow/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/unutma-feature-istek-listesi/",
+      "destination": "/blog/unutma-lists-todo-shopping-wishlist-workflow/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/unutma-feature-gunluk",
+      "destination": "/blog/unutma-journal-mood-voice-reflection/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/unutma-feature-gunluk/",
+      "destination": "/blog/unutma-journal-mood-voice-reflection/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/unutma-feature-ekonomi-takibi",
+      "destination": "/blog/unutma-economy-expenses-budgets-assets/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/unutma-feature-ekonomi-takibi/",
+      "destination": "/blog/unutma-economy-expenses-budgets-assets/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/unutma-feature-sifre-kasasi",
+      "destination": "/blog/unutma-vault-passwords-face-id-privacy/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/unutma-feature-sifre-kasasi/",
+      "destination": "/blog/unutma-vault-passwords-face-id-privacy/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-manage-passwords-without-cloud",
+      "destination": "/blog/unutma-vault-passwords-face-id-privacy/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-manage-passwords-without-cloud/",
+      "destination": "/blog/unutma-vault-passwords-face-id-privacy/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/unutma-feature-hizli-eylemler",
+      "destination": "/blog/unutma-quick-actions-streaks-heatmap-statistics/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/unutma-feature-hizli-eylemler/",
+      "destination": "/blog/unutma-quick-actions-streaks-heatmap-statistics/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/best-apps-that-work-without-internet",
+      "destination": "/blog/why-you-should-use-offline-apps/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/best-apps-that-work-without-internet/",
+      "destination": "/blog/why-you-should-use-offline-apps/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/unutma-feature-offline-kullanim",
+      "destination": "/blog/why-you-should-use-offline-apps/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/unutma-feature-offline-kullanim/",
+      "destination": "/blog/why-you-should-use-offline-apps/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/why-cloud-apps-are-risky-for-personal-data",
+      "destination": "/blog/keep-your-data-safe-on-your-phone/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/why-cloud-apps-are-risky-for-personal-data/",
+      "destination": "/blog/keep-your-data-safe-on-your-phone/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/privacy-first-productivity-apps",
+      "destination": "/blog/keep-your-data-safe-on-your-phone/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/privacy-first-productivity-apps/",
+      "destination": "/blog/keep-your-data-safe-on-your-phone/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/benefits-of-daily-journaling",
+      "destination": "/blog/how-to-start-a-digital-journal/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/benefits-of-daily-journaling/",
+      "destination": "/blog/how-to-start-a-digital-journal/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/gratitude-journal-ideas",
+      "destination": "/blog/journaling-prompts-for-self-improvement/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/gratitude-journal-ideas/",
+      "destination": "/blog/journaling-prompts-for-self-improvement/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/best-personal-finance-habits",
+      "destination": "/blog/simple-budgeting-tips-for-beginners/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/best-personal-finance-habits/",
+      "destination": "/blog/simple-budgeting-tips-for-beginners/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-save-money-with-expense-tracking",
+      "destination": "/blog/how-to-track-personal-expenses/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-save-money-with-expense-tracking/",
+      "destination": "/blog/how-to-track-personal-expenses/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-prioritize-your-goals",
+      "destination": "/blog/how-to-set-and-track-goals/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-prioritize-your-goals/",
+      "destination": "/blog/how-to-set-and-track-goals/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/vision-board-alternative-digital",
+      "destination": "/blog/how-to-set-and-track-goals/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/vision-board-alternative-digital/",
+      "destination": "/blog/how-to-set-and-track-goals/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/evening-routine-for-productivity",
+      "destination": "/blog/how-to-build-a-morning-routine/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/evening-routine-for-productivity/",
+      "destination": "/blog/how-to-build-a-morning-routine/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/daily-planner-tips-for-busy-people",
+      "destination": "/blog/weekly-planning-tips/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/daily-planner-tips-for-busy-people/",
+      "destination": "/blog/weekly-planning-tips/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/personal-organization-tips-2026",
+      "destination": "/blog/how-to-organize-your-life/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/personal-organization-tips-2026/",
+      "destination": "/blog/how-to-organize-your-life/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/digital-minimalism-tips",
+      "destination": "/blog/how-to-organize-your-life/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/digital-minimalism-tips/",
+      "destination": "/blog/how-to-organize-your-life/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/mindfulness-and-organization",
+      "destination": "/blog/how-to-organize-your-life/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/mindfulness-and-organization/",
+      "destination": "/blog/how-to-organize-your-life/",
+      "permanent": true
     }
   ]
 }

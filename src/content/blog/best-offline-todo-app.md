@@ -2,6 +2,7 @@
 title: "What Makes a Great Offline To-Do App in 2026?"
 description: "Offline reliability, fast capture, smart lists, and privacy — how to evaluate apps when the Wi‑Fi dies."
 pubDate: 2026-03-23
+updatedDate: 2026-10-16
 tags: ["offline", "tasks", "productivity"]
 draft: false
 image: /blog/covers/auto/best-offline-todo-app.svg
@@ -19,7 +20,7 @@ The **best offline to-do app** for you is one you can open on a plane, in a base
 
 ## Honest fit
 
-Some people need collaboration; others need solitude for tasks. If you want everything local with no account for content, apps like **Unutma** aim for that model — compare with our [privacy-first productivity apps](/blog/privacy-first-productivity-apps/) checklist.
+Some people need collaboration; others need solitude for tasks. If you want everything local with no account for content, apps like **Unutma** aim for that model — compare with our checklist to [keep personal data on your phone](/blog/keep-your-data-safe-on-your-phone/).
 
 ## Key takeaways
 
