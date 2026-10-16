@@ -33,7 +33,7 @@ We are not trying to be another social network or another dashboard for corporat
 
 ## Where we are today
 
-Unutma already includes to‑do lists, shopping lists, reminders, routines, journaling, a password vault, wishlists, finance tracking, widgets, and more — in **8 languages**, with your information stored locally.
+Unutma already includes to‑do lists, shopping lists, reminders, routines, journaling, a password vault, wishlists, finance tracking, widgets, and more — in **6 languages**, with your information stored locally.
 
 We ship improvements regularly, but the best ideas rarely come from us alone. They come from **you** — the people who actually live with the app every day.
 

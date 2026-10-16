@@ -7,7 +7,7 @@ const blogRoot = path.resolve(__dirname, '..');
 const appLocalesDir = path.resolve(blogRoot, '..', 'src', 'locales');
 const outDir = path.resolve(blogRoot, 'src', 'data', 'legal', 'locales');
 
-const langs = ['en', 'tr', 'de', 'es', 'fr', 'it', 'zh', 'ar'];
+const langs = ['en', 'tr', 'de', 'es', 'fr', 'it'];
 
 try {
   await access(appLocalesDir);

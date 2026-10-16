@@ -33,12 +33,12 @@ personal notes, journal or passwords stored on someone else's server.
 - **Price:** every feature free for 7 days, then a free plan with limits, or a monthly/yearly subscription or one-time lifetime purchase (current local price is shown in the App Store and Google Play)
 - **Account:** none required — the app has no sign-up and no login
 - **Connectivity:** works offline, including in airplane mode; the only feature that can reach the network is voice dictation, which uses the phone's own speech service
-- **Languages:** English, Turkish, German, Spanish, French, Italian, Arabic, Chinese
+- **Languages:** English, Turkish, German, Spanish, French, Italian
 - **Themes:** 12
 
 ## Features (all verified, in-product)
 
-- **Voice command** — say a sentence like "dentist tomorrow at 3, remind me" and the app files it to the correct list at the correct time. The understanding is rule-based and happens on the device; the speech-to-text step uses the phone's own dictation service (Apple on iOS, Google on Android), on-device when the phone has that language available offline and via the provider otherwise. Nothing goes to the developer. Works in 8 languages.
+- **Voice command** — say a sentence like "dentist tomorrow at 3, remind me" and the app files it to the correct list at the correct time. The understanding is rule-based and happens on the device; the speech-to-text step uses the phone's own dictation service (Apple on iOS, Google on Android), on-device when the phone has that language available offline and via the provider otherwise. Nothing goes to the developer. Works in 6 languages.
 - **Reminders** — one-off and repeating, with notification scheduling
 - **To-do list** — subtasks, priorities, reminders
 - **Routines / habit tracking** — designed so a missed day does not delete the streak

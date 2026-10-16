@@ -20,7 +20,7 @@ const PLAY_STORE = 'https://play.google.com/store/apps/details?id=com.mehmet.unu
 const SITE = (Astro.site?.href ?? 'https://unutma-blog.vercel.app/').replace(/\/$/, '');
 
 const featureList = [
-  'Voice command capture (rule-based, understood on the device, 8 languages)',
+  'Voice command capture (rule-based, understood on the device, 6 languages)',
   'Reminders and repeating tasks',
   'To-do list with subtasks and priorities',
   'Routine and habit tracking',
@@ -70,7 +70,7 @@ const app = {
       downloadUrl: [APP_STORE, PLAY_STORE],
       installUrl: [APP_STORE, PLAY_STORE],
       publisher: { '@id': `${SITE}/#organization` },
-      inLanguage: ['en', 'tr', 'de', 'es', 'fr', 'it', 'ar', 'zh'],
+      inLanguage: ['en', 'tr', 'de', 'es', 'fr', 'it'],
       featureList,
       description:
         'Offline, private life organizer: reminders, to-do list, journal, calendar, ' +

@@ -1,7 +1,7 @@
 import { LEGAL_LANGUAGES, type LegalBundle, type LegalLang } from '../data/legal';
 
 const OG_LOCALE: Record<LegalLang, string> = {
-  en: 'en_US', tr: 'tr_TR', de: 'de_DE', es: 'es_ES', fr: 'fr_FR', it: 'it_IT', zh: 'zh_CN', ar: 'ar_AR',
+  en: 'en_US', tr: 'tr_TR', de: 'de_DE', es: 'es_ES', fr: 'fr_FR', it: 'it_IT',
 };
 
 /** Yasal sayfa adresi: Ingilizce kokte, digerleri /<lang>/ altinda. */

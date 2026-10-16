@@ -301,6 +301,46 @@
       "source": "/blog/mindfulness-and-organization/",
       "destination": "/blog/how-to-organize-your-life/",
       "permanent": true
+    },
+    {
+      "source": "/privacy/ar",
+      "destination": "/privacy/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy/ar/",
+      "destination": "/privacy/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy/zh",
+      "destination": "/privacy/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy/zh/",
+      "destination": "/privacy/",
+      "permanent": true
+    },
+    {
+      "source": "/terms/ar",
+      "destination": "/terms/",
+      "permanent": true
+    },
+    {
+      "source": "/terms/ar/",
+      "destination": "/terms/",
+      "permanent": true
+    },
+    {
+      "source": "/terms/zh",
+      "destination": "/terms/",
+      "permanent": true
+    },
+    {
+      "source": "/terms/zh/",
+      "destination": "/terms/",
+      "permanent": true
     }
   ]
 }

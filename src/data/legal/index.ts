@@ -4,10 +4,8 @@ import de from './locales/de.json';
 import es from './locales/es.json';
 import fr from './locales/fr.json';
 import it from './locales/it.json';
-import zh from './locales/zh.json';
-import ar from './locales/ar.json';
 
-export type LegalLang = 'en' | 'tr' | 'de' | 'es' | 'fr' | 'it' | 'zh' | 'ar';
+export type LegalLang = 'en' | 'tr' | 'de' | 'es' | 'fr' | 'it';
 
 export type LegalBundle = (typeof en);
 
@@ -22,8 +20,6 @@ export const LEGAL_LANGUAGES: {
   { code: 'es', label: 'Spanish', native: 'Español' },
   { code: 'fr', label: 'French', native: 'Français' },
   { code: 'it', label: 'Italian', native: 'Italiano' },
-  { code: 'zh', label: 'Chinese', native: '中文' },
-  { code: 'ar', label: 'Arabic', native: 'العربية' },
 ];
 
 const bundles: Record<LegalLang, LegalBundle> = {
@@ -33,8 +29,6 @@ const bundles: Record<LegalLang, LegalBundle> = {
   es,
   fr,
   it,
-  zh,
-  ar,
 };
 
 export function getLegal(lang: LegalLang | undefined): LegalBundle {
@@ -104,13 +98,5 @@ export const BLOG_PRIVACY_NOTICE: Record<LegalLang, { title: string; text: strin
   it: {
     title: 'Questo sito web (blog)',
     text: 'Questo sito è un blog marketing statico: il provider di hosting (es. Vercel) può conservare log server o CDN ordinari. Non mostriamo annunci nell’app Unutma, e questo blog non mostra banner di terze parti salvo abilitazione esplicita in seguito con aggiornamento di questo avviso.',
-  },
-  zh: {
-    title: '本网站（博客）',
-    text: '本网站为静态营销博客：托管服务商（例如 Vercel）可能会保留常规服务器或 CDN 日志。Unutma 应用内不展示广告；除非我们日后明确启用并更新本说明，本博客也不展示第三方广告横幅。',
-  },
-  ar: {
-    title: 'هذا الموقع (المدونة)',
-    text: 'هذا الموقع مدونة تسويقية ثابتة؛ قد يحتفظ مزود الاستضافة (مثل Vercel) بسجلات خادم أو CDN عادية. لا نعرض إعلانات في تطبيق Unutma، ولا تعرض هذه المدونة لافتات إعلانية لجهات خارجية ما لم نفعّل ذلك لاحقاً ونحدّث هذا الإشعار.',
   },
 };
