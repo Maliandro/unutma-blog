@@ -17,6 +17,15 @@ export default {
         },
         accent: '#06B6D4',
       },
+      /**
+       * Kontrast (WCAG AA 4.5:1): Tailwind gray-400 (#9ca3af) beyaz zeminde 2.53:1 idi
+       * (tarih/etiket yazilari). Yazi rengi olarak gray-400 artik #6b7280 (4.83:1), ayni gri
+       * tonu. Yalniz textColor degisir; kenarlik/ikon/placeholder renkleri ayni kalir.
+       * Not: site koyu modu acmiyor (darkMode: 'class', .dark hic eklenmiyor).
+       */
+      textColor: {
+        gray: { 400: '#6b7280' },
+      },
       fontFamily: {
         /** Body: modern, readable UI */
         sans: ['"Plus Jakarta Sans"', '"Plus Jakarta Sans Fallback"', 'system-ui', 'Segoe UI', 'Roboto', 'sans-serif'],
