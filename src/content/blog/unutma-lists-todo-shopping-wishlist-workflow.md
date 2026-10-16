@@ -82,6 +82,9 @@ Once a month, **audit** each mode in under ten minutes:
 2. Shopping: remove seasonal items you will not buy.
 3. Wishlist: celebrate one removal as self-knowledge, not loss.
 
+If you want lists that never ask you to log in, read our guide to a [to-do list app with no account](/blog/todo-list-app-no-account-offline/). To turn a big to-do into subtasks and a routine, see [how to set and track goals](/blog/how-to-set-and-track-goals/).
+
+
 ## Closing
 
 Unutma’s Lists tab works because it respects **how attention actually works** — not how productivity influencers pretend it works. Next up: **Vault** — how sensitive data stays yours behind biometrics — or revisit [the Unutma feature guide](/blog/unutma-app-showcase-complete-guide/) for the bigger picture.

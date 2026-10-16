@@ -72,7 +72,7 @@ Some people find that tracking itself becomes the stressor. Signs: you feel anxi
 
 ## What to read next
 
-For a ready-made pair of routines, see our [morning and evening routine](/blog/how-to-build-a-morning-routine/) template. If the habit serves a bigger goal, [how to set and track goals](/blog/how-to-set-and-track-goals/) shows how to link them. The "did I do it?" side of habits, like locking the door, is covered in [Unutma's quick actions](/blog/unutma-quick-actions-streaks-heatmap-statistics/) guide and in [how to stop forgetting things](/blog/how-to-stop-forgetting-things/). And reminders that fire offline are explained in our [reminders app that works offline](/blog/unutma-routines-calendar-widgets-time/) guide.
+For a ready-made pair of routines, see our [morning and evening routine](/blog/how-to-build-a-morning-routine/) template. If the habit serves a bigger goal, [how to set and track goals](/blog/how-to-set-and-track-goals/) shows how to link them. The "did I do it?" side of habits, like locking the door, is covered in [Unutma's quick actions](/blog/unutma-quick-actions-streaks-heatmap-statistics/) guide and in [how to stop forgetting things](/blog/how-to-stop-forgetting-things/). And reminders that fire offline are explained in our [reminders app that works offline](/blog/unutma-routines-calendar-widgets-time/) guide. If your first habit is writing, start with [how to start a digital journal](/blog/how-to-start-a-digital-journal/).
 
 ## Frequently asked questions
 

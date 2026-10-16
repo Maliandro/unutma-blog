@@ -2,6 +2,7 @@
 title: "Journaling in Unutma: Mood, Memory, and Showing Up Without Performance"
 description: "How Unutma’s Journal blends mood tracking with writing — including voice-friendly capture — so reflection stays private, small, and sustainable."
 pubDate: 2026-04-06
+updatedDate: 2026-10-16
 tags: ["Unutma", "journaling", "wellness", "habits"]
 draft: false
 image: "/blog/covers/ai/unutma-journal-mood-voice-reflection.png"
@@ -78,6 +79,9 @@ Journal content is **for you** — stored on your phone in Unutma’s **offline-
 ## When not to journal in the app
 
 If you are in acute crisis, **human help** beats any UI — Unutma is a tool, not emergency services. Use Journal to **track medication reminders** or **grounding steps** if that helps — but reach out to professionals when needed.
+
+New to journaling? Our [7-day plan for starting a digital journal](/blog/how-to-start-a-digital-journal/) begins with a single mood tap, and our [journaling prompts for self-improvement](/blog/journaling-prompts-for-self-improvement/) give you thirty small questions for week two. For the wider device checklist around private writing, see how to [keep personal data on your phone](/blog/keep-your-data-safe-on-your-phone/).
+
 
 ## What to read next
 

@@ -22,6 +22,9 @@ The **best offline to-do app** for you is one you can open on a plane, in a base
 
 Some people need collaboration; others need solitude for tasks. If you want everything local with no account for content, apps like **Unutma** aim for that model — compare with our checklist to [keep personal data on your phone](/blog/keep-your-data-safe-on-your-phone/).
 
+If what you really want is a list that never asks for an email, our newer guide to a [to-do list app with no account](/blog/todo-list-app-no-account-offline/) goes into the details, including a 5-minute test.
+
+
 ## Key takeaways
 
 Pick the app you will open when you are tired — not the one with the flashiest landing page.

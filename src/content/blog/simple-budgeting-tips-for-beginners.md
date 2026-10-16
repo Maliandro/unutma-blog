@@ -83,7 +83,7 @@ If you are behind on essential bills or dealing with debt collectors, a budget i
 
 ## What to read next
 
-If week 2 felt hard, read [how to track personal expenses](/blog/how-to-track-personal-expenses/) for a 30-day logging template. For splitting your money into needs, wants and savings, see the [50/30/20 budget rule](/blog/50-30-20-budget-rule-explained/). And to build a monthly money check into your week, see our [weekly planning tips](/blog/weekly-planning-tips/).
+If week 2 felt hard, read [how to track personal expenses](/blog/how-to-track-personal-expenses/) for a 30-day logging template. For splitting your money into needs, wants and savings, see the [50/30/20 budget rule](/blog/50-30-20-budget-rule-explained/). And to build a monthly money check into your week, see our [weekly planning tips](/blog/weekly-planning-tips/). If you are budgeting to save for something specific, see [how to set and track goals](/blog/how-to-set-and-track-goals/).
 
 ## Frequently asked questions
 

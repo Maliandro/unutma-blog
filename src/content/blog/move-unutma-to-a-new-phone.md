@@ -2,6 +2,7 @@
 title: "How to Move Your Unutma Data to a New Phone"
 description: "Unutma keeps everything on your device — no account, no cloud. That means moving to a new phone is a deliberate step. Here is the exact path, including the one place people get stuck."
 pubDate: 2026-08-09
+updatedDate: 2026-10-16
 tags: ["Unutma", "backup", "privacy", "how-to"]
 image: /blog/covers/auto/move-unutma-to-a-new-phone.svg
 imageAlt: "Moving Unutma data from an old phone to a new one"
@@ -61,6 +62,9 @@ So the main backup deliberately leaves the vault out, and the vault has **its ow
 The most common way to lose data is not a bug — it is **wiping the old phone before checking the new one**.
 
 Restore first. Open the app. Look at your journal, your lists, your vault. Only then reset the old device.
+
+Still choosing an app? Our guide to finding a [to-do list app with no account](/blog/todo-list-app-no-account-offline/) includes a 5-minute test you can run on any app, this one included.
+
 
 ## Why not just sync it to the cloud?
 

@@ -76,7 +76,7 @@ That is all. You do not need a new security routine, just one evening and a remi
 
 ## Where to go next
 
-If you are still choosing apps, start with our test for [apps that work offline](/blog/why-you-should-use-offline-apps/). For private writing, see how the [private journal app with mood tracking](/blog/unutma-journal-mood-voice-reflection/) handles encryption. For money records kept off the cloud, see the [expense tracker without bank linking](/blog/unutma-economy-expenses-budgets-assets/). And before you switch phones, read [how to move your data to a new phone](/blog/move-unutma-to-a-new-phone/).
+If you are still choosing apps, start with our test for [apps that work offline](/blog/why-you-should-use-offline-apps/). For private writing, see how the [private journal app with mood tracking](/blog/unutma-journal-mood-voice-reflection/) handles encryption. For money records kept off the cloud, see the [expense tracker without bank linking](/blog/unutma-economy-expenses-budgets-assets/). And before you switch phones, read [how to move your data to a new phone](/blog/move-unutma-to-a-new-phone/). If your private records are scattered across many apps, our guide on [how to organize your life](/blog/how-to-organize-your-life/) starts with a simple inventory.
 
 ## Frequently asked questions
 

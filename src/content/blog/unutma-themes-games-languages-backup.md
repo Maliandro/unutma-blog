@@ -64,6 +64,9 @@ Once a quarter, spend **fifteen minutes** in Settings:
 2. Check **notification** defaults — silence what became noise.
 3. Verify **backup** destinations still exist (folder not deleted, cloud account active).
 
+The same foundation is why Unutma is a [to-do list app with no account](/blog/todo-list-app-no-account-offline/): no sign-up, no server, no sync.
+
+
 ## Connection to privacy culture
 
 This “human layer” still sits on the same foundation we discuss in [the Unutma Vault](/blog/unutma-vault-passwords-face-id-privacy/) — tools should not need to **extract** your attention to fund themselves.

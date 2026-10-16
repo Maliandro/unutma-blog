@@ -103,7 +103,7 @@ That separation matters. A grocery item should not sit beside a private dream. A
 
 Unutma is built around a simple promise: your personal organization should not require handing your life to a server.
 
-Your notes, lists, routines, journal content, and sensitive data are stored locally on your device. The app is designed for offline use, and it does not need an account for your core personal content. For a side-by-side view, see our honest [notes app with no account](/blog/notes-app-no-account-offline/) comparison.
+Your notes, lists, routines, journal content, and sensitive data are stored locally on your device. The app is designed for offline use, and it does not need an account for your core personal content. For a side-by-side view, see our honest [notes app with no account](/blog/notes-app-no-account-offline/) comparison and our [to-do list app with no account](/blog/todo-list-app-no-account-offline/) guide.
 
 ![Unutma privacy screenshot](/blog/app-showcase/iphone-06-privacy.png)
 

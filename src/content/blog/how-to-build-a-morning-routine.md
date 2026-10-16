@@ -63,7 +63,7 @@ Shift workers and new parents will find "same time every day" unrealistic. Ancho
 
 ## What to read next
 
-If the evening step "check tomorrow" turns into a bigger job, our [weekly planning tips](/blog/weekly-planning-tips/) move most of it to one session a week. The keys-and-wallet step is part of a longer list in [how to stop forgetting things](/blog/how-to-stop-forgetting-things/). For the journal step, see [how to start a digital journal](/blog/how-to-start-a-digital-journal/). And for how routine reminders work without a connection, read our guide to the [reminders app that works offline](/blog/unutma-routines-calendar-widgets-time/).
+If the evening step "check tomorrow" turns into a bigger job, our [weekly planning tips](/blog/weekly-planning-tips/) move most of it to one session a week. The keys-and-wallet step is part of a longer list in [how to stop forgetting things](/blog/how-to-stop-forgetting-things/). For the journal step, see [how to start a digital journal](/blog/how-to-start-a-digital-journal/). And for how routine reminders work without a connection, read our guide to the [reminders app that works offline](/blog/unutma-routines-calendar-widgets-time/). For questions to answer in that evening entry, see our [journaling prompts for self-improvement](/blog/journaling-prompts-for-self-improvement/).
 
 ## Frequently asked questions
 

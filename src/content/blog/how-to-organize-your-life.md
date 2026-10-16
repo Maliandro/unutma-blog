@@ -80,7 +80,7 @@ If you work across a laptop and a phone all day, a phone-only app will frustrate
 
 ## What to read next
 
-For the "did I do it?" row, read [how to stop forgetting things](/blog/how-to-stop-forgetting-things/). For to-dos and shopping, see [to-do, shopping and wishlist in one app](/blog/unutma-lists-todo-shopping-wishlist-workflow/). For passwords, see our [offline password vault app](/blog/unutma-vault-passwords-face-id-privacy/) guide, and for money, the [expense tracker without bank linking](/blog/unutma-economy-expenses-budgets-assets/). If privacy is part of why you are consolidating, start with [apps that work offline](/blog/why-you-should-use-offline-apps/). And to keep the system tidy, add our [weekly planning tips](/blog/weekly-planning-tips/) once a week.
+For the "did I do it?" row, read [how to stop forgetting things](/blog/how-to-stop-forgetting-things/). For to-dos and shopping, see [to-do, shopping and wishlist in one app](/blog/unutma-lists-todo-shopping-wishlist-workflow/). For passwords, see our [offline password vault app](/blog/unutma-vault-passwords-face-id-privacy/) guide, and for money, the [expense tracker without bank linking](/blog/unutma-economy-expenses-budgets-assets/). If privacy is part of why you are consolidating, start with [apps that work offline](/blog/why-you-should-use-offline-apps/). And to keep the system tidy, add our [weekly planning tips](/blog/weekly-planning-tips/) once a week. For the money row in particular, try [how to track personal expenses](/blog/how-to-track-personal-expenses/) for a month, then compare the result with the [50/30/20 budget rule](/blog/50-30-20-budget-rule-explained/).
 
 ## Frequently asked questions
 

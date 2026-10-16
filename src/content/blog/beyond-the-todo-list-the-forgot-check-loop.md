@@ -77,6 +77,9 @@ You do not need to “use every feature.” Try this instead:
 
 If something feels like homework, delete it from the experiment. The goal is **relief**, not gamification guilt.
 
+If day 5 is your first journal entry ever, our guide on [how to start a digital journal](/blog/how-to-start-a-digital-journal/) keeps it to a mood tap and one line.
+
+
 ## When to use reminders — and when not to
 
 Reminders are brilliant for **time-based** realities: meetings, pickups, renewals.
