@@ -5,8 +5,8 @@ pubDate: 2026-10-10
 updatedDate: 2026-10-16
 keyword: "notes app with no account"
 tags: ["Unutma", "notes app", "privacy", "offline", "comparison"]
-image: /blog/app-showcase/iphone-04-notes.png
-imageAlt: "Unutma Notes screen on iPhone showing four colored note cards and a search bar"
+image: /blog/covers/cover-3.svg
+imageAlt: "Abstract cover illustration for a guide to notes apps with no account"
 draft: false
 ---
 
@@ -55,11 +55,9 @@ Cloud apps work offline by keeping a local copy and syncing it later, and how mu
 
 ### You want notes, lists and "did I do it?" in one place
 
-![App Store screenshot of Unutma's Lists tab, with To-Do, Shopping List and Wishlist tabs, a typed task with a microphone button, and bottom tabs for Actions, Lists, Vault, Economy and Journal](/blog/app-showcase/iphone-05-lists.png)
-
 Most note apps are a single board of notes. Unutma has more sections, each with its own job:
 
-- **Notes** for loose thoughts (the colored cards at the top of this page)
+- **Notes** for loose thoughts, as colored cards you can search
 - **Lists** split into to-do, shopping and wishlist, so groceries don't sit next to your life goals ([how the three lists work](/blog/unutma-lists-todo-shopping-wishlist-workflow/))
 - **Quick actions**: one tap to log "locked the door" or "took medicine", so you can check later instead of worrying
 - **Routines and reminders**, a **budget**, an **encrypted journal**, and a **Vault for passwords behind Face ID**

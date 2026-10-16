@@ -4,8 +4,8 @@ description: "See every major Unutma feature in one detailed visual guide: quick
 pubDate: 2026-06-26
 updatedDate: 2026-10-16
 tags: ["Unutma", "productivity", "privacy", "app guide"]
-image: /blog/app-showcase/cover.png
-imageAlt: "Unutma app showcase with iPhone screenshots"
+image: /blog/covers/auto/unutma-app-complete-feature-guide.svg
+imageAlt: "Unutma cover card with the line Peace of mind, on your phone"
 featured: true
 draft: false
 ---
@@ -15,12 +15,6 @@ Most productivity apps ask you to become a different person.
 They want perfect projects, clean folders, weekly reviews, account sync, workspaces, dashboards, and a dozen decisions before you can record the simplest thing: *I locked the door. I paid that bill. I need to remember this.*
 
 **Unutma is built for the life you actually have.** The busy one. The private one. The one where your brain is full, your day is moving, and you need a calm place to put the small but important things before they disappear.
-
-<div class="not-prose my-8 overflow-hidden rounded-2xl border border-gray-100 bg-gray-950 shadow-xl">
-  <video controls playsinline preload="metadata" poster="/blog/app-showcase/iphone-01-hero.png" class="w-full">
-    <source src="/blog/app-showcase/store-preview-features.mp4" type="video/mp4" />
-  </video>
-</div>
 
 ## What Unutma is
 
@@ -38,12 +32,6 @@ It brings together:
 - **Offline-first privacy** so your personal data stays on your device
 
 It is not trying to turn your life into a spreadsheet. It is trying to give your mind somewhere safe to exhale.
-
-<div class="not-prose my-10 grid gap-5 md:grid-cols-3">
-  <img src="/blog/app-showcase/iphone-01-hero.png" alt="Unutma app hero screen" class="rounded-2xl border border-gray-100 shadow-sm" />
-  <img src="/blog/app-showcase/iphone-02-quickactions.png" alt="Unutma quick actions screen" class="rounded-2xl border border-gray-100 shadow-sm" />
-  <img src="/blog/app-showcase/iphone-06-privacy.png" alt="Unutma privacy and offline screen" class="rounded-2xl border border-gray-100 shadow-sm" />
-</div>
 
 ## The feeling Unutma is designed to remove
 
@@ -63,15 +51,11 @@ Locked the door. Took medicine. Fed the pet. Sent the document. Paid the bill. T
 
 Instead of asking your memory to hold the answer, Unutma lets you create a log in one tap.
 
-![Unutma Quick Actions screenshot](/blog/app-showcase/iphone-02-quickactions.png)
-
 This is powerful because it respects how people actually forget. You do not always need a future task. Sometimes you need proof that the thing already happened.
 
 ## Routines and reminders without pressure
 
 Unutma helps you keep recurring life tasks visible: daily checks, weekly resets, bills, habits, health routines, and small maintenance rituals.
-
-![Unutma routines and reminders screenshot](/blog/app-showcase/iphone-03-reminders.png)
 
 The point is not to shame you into consistency. The point is to make consistency easier to return to.
 
@@ -83,8 +67,6 @@ Some thoughts do not belong in a formal task list yet.
 
 A sentence. A name. A parking spot. A gift idea. A phrase you want to remember. A thing you cannot process right now but do not want to lose.
 
-![Unutma notes screenshot](/blog/app-showcase/iphone-04-notes.png)
-
 Unutma gives those thoughts a quiet place to land. You can sort later. The first win is capture.
 
 The mic next to every field helps here too — say the thought instead of typing it, and Unutma decides on its own whether it's a note, a task, an expense, or a line in today's journal. See [how the voice feature works](/blog/unutma-voice-commands-hands-free-organizing/).
@@ -95,8 +77,6 @@ Unutma includes lists for tasks, shopping, and wishes because everyday organizat
 
 Tasks are obligations. Shopping is logistical. Wishes are desire, inspiration, and future plans. Keeping them separate makes the app feel lighter and easier to scan.
 
-![Unutma lists screenshot](/blog/app-showcase/iphone-05-lists.png)
-
 That separation matters. A grocery item should not sit beside a private dream. A bill reminder should not bury a book you want to read. Unutma gives each kind of thought the right container.
 
 ## Privacy: the feature you feel every day
@@ -104,8 +84,6 @@ That separation matters. A grocery item should not sit beside a private dream. A
 Unutma is built around a simple promise: your personal organization should not require handing your life to a server.
 
 Your notes, lists, routines, journal content, and sensitive data are stored locally on your device. The app is designed for offline use, and it does not need an account for your core personal content. For a side-by-side view, see our honest [notes app with no account](/blog/notes-app-no-account-offline/) comparison and our [to-do list app with no account](/blog/todo-list-app-no-account-offline/) guide.
-
-![Unutma privacy screenshot](/blog/app-showcase/iphone-06-privacy.png)
 
 That changes the emotional texture of the app. You can write more honestly. You can store more practically. You can use it for small private details without wondering who else is part of the loop.
 

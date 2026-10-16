@@ -4,8 +4,8 @@ description: "Want a to-do list app with no account, no sign-up and no email? A 
 pubDate: 2026-10-17
 keyword: "to-do list app with no account"
 tags: ["Unutma", "to-do list", "privacy", "offline", "no account"]
-image: /blog/app-showcase/iphone-02-quickactions.png
-imageAlt: "Unutma home screen on iPhone with one-tap quick actions such as Locked the door and Took medicine"
+image: /blog/covers/ai/unutma-lists-todo-shopping-wishlist-workflow.png
+imageAlt: "A handwritten shopping list and a pen on a wooden kitchen table next to an apple"
 draft: true
 ---
 
@@ -44,8 +44,6 @@ An app that passes 1 to 3 really is offline-first. Step 4 tells you whether it s
 - **Steps 2 and 3:** Everything keeps working in airplane mode, including the built-in assistant that turns "dentist Thursday at 3, buy milk" into an appointment and a list item. The assistant has no network access at all; we explain how that is possible in [how the assistant works without an LLM](/blog/a-phone-assistant-without-an-llm/).
 - **Step 4:** There is no sync setting because there is no sync. Settings has a screen called **"Where is your data?"** which shows how many records you have and states that they all live on the phone.
 - **Anonymous usage statistics are off by default.** If you switch them on, only event names (like which screen opened) are sent, never what you write.
-
-![App Store screenshot of Unutma's To-Do list with a typed task, a microphone button and filters for Focus, Work and Home](/blog/app-showcase/iphone-05-lists.png)
 
 ## What works offline in Unutma, and what doesn't
 
