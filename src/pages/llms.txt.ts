@@ -30,11 +30,11 @@ their life but keep abandoning systems, and for people who do not want their
 personal notes, journal or passwords stored on someone else's server.
 
 - **Platforms:** iOS (App Store) and Android (Google Play)
-- **Price:** free to try for 7 days, then $2.99/month, $29.99/year, or $79.99 one-time lifetime
+- **Price:** every feature free for 7 days, then a free plan with limits, or a monthly/yearly subscription or one-time lifetime purchase (current local price is shown in the App Store and Google Play)
 - **Account:** none required — the app has no sign-up and no login
 - **Connectivity:** works offline, including in airplane mode; the only feature that can reach the network is voice dictation, which uses the phone's own speech service
 - **Languages:** English, Turkish, German, Spanish, French, Italian, Arabic, Chinese
-- **Themes:** 11
+- **Themes:** 12
 
 ## Features (all verified, in-product)
 

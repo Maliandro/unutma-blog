@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "sync:legal": "node scripts/sync-legal-locales.mjs",
-    "prebuild": "node scripts/sync-legal-locales.mjs",
+    "prebuild": "node scripts/sync-legal-locales.mjs && node scripts/clear-content-cache.mjs",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",

@@ -77,32 +77,9 @@ const app = {
         'notes, shopping lists, routine tracking, expense tracking and an encrypted ' +
         'vault in one app. No account and no cloud sync — all data stays on the device, ' +
         'with the vault and journal encrypted at rest.',
-      offers: [
-        {
-          '@type': 'Offer',
-          name: 'Monthly subscription',
-          price: '2.99',
-          priceCurrency: 'USD',
-          category: 'subscription',
-          url: APP_STORE,
-        },
-        {
-          '@type': 'Offer',
-          name: 'Yearly subscription',
-          price: '29.99',
-          priceCurrency: 'USD',
-          category: 'subscription',
-          url: APP_STORE,
-        },
-        {
-          '@type': 'Offer',
-          name: 'Lifetime — one-time purchase',
-          price: '79.99',
-          priceCurrency: 'USD',
-          category: 'one-time',
-          url: APP_STORE,
-        },
-      ],
+      // 2026-10-16: offers (fiyat) ve aggregateRating BILEREK YOK. Fiyat ulkeye
+      // gore degisiyor ve magazada degisince sema yalan soyler; puan zaten yok.
+      // Fiyat bilgisi FAQ metninde ve magaza sayfasinda.
       // Dogrulanabilir, urunde gercekten var olan ayirt edici ozellikler.
       additionalProperty: [
         { '@type': 'PropertyValue', name: 'Requires account', value: 'No' },
@@ -118,6 +95,7 @@ const app = {
           value: 'AES-256 for vault and journal, key held on the device',
         },
         { '@type': 'PropertyValue', name: 'Free trial', value: '7 days' },
+        { '@type': 'PropertyValue', name: 'Pricing model', value: 'Subscription or one-time purchase after the free trial' },
         { '@type': 'PropertyValue', name: 'Ads', value: 'None' },
         {
           '@type': 'PropertyValue',

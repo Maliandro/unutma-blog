@@ -3,18 +3,21 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SEOHead from '../../components/SEOHead.astro';
 import LegalDocument from '../../components/LegalDocument.astro';
 import { getLegal } from '../../data/legal';
+import { legalAlternates, legalDescription } from '../../utils/legal-seo';
+const legal = getLegal('en');
 ---
 
-<BaseLayout>
+<BaseLayout lang="en">
   <SEOHead
     slot="head"
     title="Terms of Service"
-    description="Unutma app terms of service — personal use, device-only storage, and liability limits."
+    description={legalDescription('terms', legal)}
+    alternates={legalAlternates('terms')}
   />
 
   <article
     class="prose prose-lg mx-auto max-w-3xl px-4 py-12 prose-a:text-brand prose-strong:text-gray-900"
   >
-    <LegalDocument kind="terms" lang="en" legal={getLegal('en')} />
+    <LegalDocument kind="terms" lang="en" legal={legal} />
   </article>
 </BaseLayout>

@@ -2,6 +2,7 @@
 title: "To-Do List App With No Account: No Sign-Up, No Email"
 description: "Want a to-do list app with no account, no sign-up and no email? A 5-minute test to check any app's privacy claims, and what Unutma does without a login."
 pubDate: 2026-10-17
+keyword: "to-do list app with no account"
 tags: ["Unutma", "to-do list", "privacy", "offline", "no account"]
 image: /blog/app-showcase/iphone-02-quickactions.png
 imageAlt: "Unutma home screen on iPhone with one-tap quick actions such as Locked the door and Took medicine"
@@ -14,16 +15,16 @@ This page does two things. First, it gives you a **5-minute test** you can run o
 
 ## Why most to-do apps need an account
 
-An account usually means your tasks are stored on a server so they can sync between devices. That is a real benefit. It also means the app needs that server. Two popular examples, checked October 2026 on their own help pages:
+An account usually means your tasks are stored on a server so they can sync between devices. That is a real benefit. It also means the app needs that server. Here is how the common types of to-do apps usually handle it (details vary by app, so check the help pages of the one you use):
 
-| App | Account needed? | Offline, in their words |
+| Type of app | Account needed? | Offline, typically |
 |---|---|---|
-| **Todoist** | Yes, a Todoist account | "Make sure you're logged in to your Todoist account before going offline." Offline changes sync when you are back online ([Todoist Help](https://www.todoist.com/help/articles/use-todoist-while-offline-4rbaZw)) |
-| **Microsoft To Do** | Yes, a Microsoft account. Free with a personal one ([Microsoft Support](https://support.microsoft.com/en-us/office/which-accounts-can-i-use-microsoft-to-do-with-b0eef0e0-9077-435c-9d65-0fff24e2766e)) | Work or school accounts need an Exchange Online mailbox so To Do can sync your data (same page) |
-| **Google Keep** | Notes are saved to your Google Account ([Keep Help](https://support.google.com/keep/answer/10431250?hl=en)) | "Offline access to notes is available on Keep mobile apps, but not on your computer" ([Keep Help](https://support.google.com/keep/answer/10183819?hl=en)) |
+| **Cloud to-do apps** | Yes, a sign-up with email or a platform login | You can often add tasks offline, but changes wait to sync, and some apps ask you to be logged in before you go offline |
+| **To-do apps tied to an office or email suite** | Yes, the suite's account. Work or school accounts may need extra services to sync | Works best online; offline support depends on the platform |
+| **Cloud note apps used as to-do lists** | Yes, notes are saved to your online account | Usually fine on the phone app, more limited on a computer or in a browser |
 | **Unutma** | No. There is no sign-up screen | Works fully offline. There is no server, so there is nothing to sync |
 
-These are good apps. If you need your list on a laptop or shared with someone, an account-based app is the right choice. We compare one of them in detail in our [Google Keep alternative](/blog/google-keep-alternative-no-account-offline/) page, including where Keep wins.
+These are good apps. If you need your list on a laptop or shared with someone, an account-based app is the right choice. We compare the note-app side in detail in our guide to a [notes app with no account](/blog/notes-app-no-account-offline/), including where cloud apps win.
 
 ## The 5-minute test for "no account" and "offline" claims
 

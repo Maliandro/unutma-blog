@@ -2,6 +2,7 @@
 title: "Privacy-First Productivity Apps: A Calm, Private Way to Stay Organized"
 description: "Practical guide to privacy-first productivity apps with privacy-first tips. Learn how Unutma helps you stay organized offline."
 pubDate: 2026-08-23
+updatedDate: 2026-10-16
 tags: ["unutma", "productivity", "privacy"]
 image: /blog/covers/cover-4.svg
 draft: false
@@ -41,7 +42,7 @@ If privacy-first productivity apps is part of your daily stress, try dedicating 
 2. Keep lists short and actionable
 3. Review at the same time each evening
 
-If the app you use today is Google Keep, we put both side by side in an honest [Google Keep alternative](/blog/google-keep-alternative-no-account-offline/) comparison, including the rows where Keep wins.
+If the app you use today is a cloud notes app, we put both approaches side by side in an honest [notes app with no account](/blog/notes-app-no-account-offline/) comparison, including the rows where cloud apps win.
 
 ## Your Turn
 

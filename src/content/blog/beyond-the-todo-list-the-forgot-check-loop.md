@@ -2,7 +2,7 @@
 title: "Beyond the todo list: the 'did I do it?' loop (and a calmer way out)"
 description: "Why checklist apps still leave you anxious, how a one-tap log changes the mental game, and what to look for in a privacy-first organizer — with Unutma as the practical example."
 pubDate: 2026-05-17
-updatedDate: 2026-10-10
+updatedDate: 2026-10-16
 tags: ["productivity", "mental load", "Unutma", "privacy", "habits"]
 draft: false
 image: /blog/covers/auto/beyond-the-todo-list-the-forgot-check-loop.svg
@@ -64,7 +64,7 @@ That background process makes the “forgot check” loop worse, because stress 
 
 Unutma is designed **device-first**: your content stays with you, with strong protection for the **Vault** (PIN/biometrics, screenshot blocking where supported, and backup exclusions for sensitive areas). Fewer accounts, fewer dashboards, fewer reasons to distrust the surface you rely on at 11pm.
 
-If you are weighing this against a cloud notes app, we wrote an honest [Google Keep alternative](/blog/google-keep-alternative-no-account-offline/) comparison, with the rows where Keep beats us left in.
+If you are weighing this against a cloud notes app, we wrote an honest comparison of a [notes app with no account](/blog/notes-app-no-account-offline/) and typical cloud note apps, with the rows where cloud apps beat us left in.
 
 ## A practical 7-day starter plan
 

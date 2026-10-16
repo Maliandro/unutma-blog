@@ -8,6 +8,7 @@ import {
   LEGAL_LANGUAGES,
   type LegalLang,
 } from '../../data/legal';
+import { legalAlternates, legalDescription, legalLocale } from '../../utils/legal-seo';
 
 export function getStaticPaths() {
   return LEGAL_LANGUAGES.filter(({ code }) => code !== 'en').map(({ code }) => ({
@@ -23,11 +24,13 @@ const lang = langParam as LegalLang;
 const legal = getLegal(lang);
 ---
 
-<BaseLayout>
+<BaseLayout lang={lang}>
   <SEOHead
     slot="head"
     title={legal.privacyTitle}
-    description={`${legal.privacyTitle} — Unutma`}
+    description={legalDescription('privacy', legal)}
+    alternates={legalAlternates('privacy')}
+    locale={legalLocale(lang)}
   />
 
   <article

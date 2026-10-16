@@ -2,6 +2,8 @@
 import type { CollectionEntry } from 'astro:content';
 import { coverForSlug } from '../utils/covers';
 import { withBase } from '../utils/site';
+import { pageImage } from '../utils/webp';
+import { tagSlug } from '../utils/posts';
 
 interface Props {
   post: CollectionEntry<'blog'>;
@@ -9,7 +11,7 @@ interface Props {
 
 const { post } = Astro.props;
 const date = post.data.pubDate;
-const coverSrc = withBase(post.data.image ?? coverForSlug(post.slug));
+const coverSrc = withBase(pageImage(post.data.image ?? coverForSlug(post.slug)));
 const coverAlt = post.data.imageAlt ?? post.data.title;
 ---
 
@@ -56,7 +58,7 @@ const coverAlt = post.data.imageAlt ?? post.data.title;
       <div class="mt-4 flex flex-wrap gap-2">
         {post.data.tags.slice(0, 4).map((tag) => (
           <a
-            href={withBase(`/blog/tags/${encodeURIComponent(tag)}/`)}
+            href={withBase(`/blog/tags/${encodeURIComponent(tagSlug(tag))}/`)}
             class="rounded-full bg-indigo-50 px-2 py-0.5 text-xs text-indigo-700 hover:bg-indigo-100"
           >
             {tag}

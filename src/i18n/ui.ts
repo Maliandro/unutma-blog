@@ -155,9 +155,9 @@ const ui: UIStrings = {
     noPostsHint: 'or run the Python generator.',
   },
   blog: {
-    seoTitle: 'Blog',
+    seoTitle: 'Productivity and Privacy Guides',
     seoDesc:
-      'Articles on productivity, privacy-first tools, journaling, routines, and organization — from the Unutma team.',
+      'Practical guides on offline planning, to-do lists, private journaling, routines and budgeting, plus how to keep personal data on your phone.',
     title: 'Blog',
     sub: 'All posts, newest first. Filter by tag from each card.',
     pageTitle: 'Blog — page',

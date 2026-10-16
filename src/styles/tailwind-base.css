@@ -1,0 +1,5 @@
+/* @astrojs/tailwind applyBaseStyles:false sonrasi: BaseLayout kullanmayan sayfalar
+   (gorev.astro) eskiden entegrasyonun enjekte ettigi tabani buradan alir. Ayni icerik. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

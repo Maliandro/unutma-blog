@@ -2,7 +2,7 @@
 title: "Unutma App Showcase: The Private Life Organizer Built for Real People"
 description: "See every major Unutma feature in one detailed visual guide: quick actions, routines, notes, lists, privacy, offline use, and Premium."
 pubDate: 2026-06-26
-updatedDate: 2026-10-10
+updatedDate: 2026-10-16
 tags: ["Unutma", "productivity", "privacy", "app guide"]
 image: /blog/app-showcase/cover.png
 imageAlt: "Unutma app showcase with iPhone screenshots"
@@ -103,7 +103,7 @@ That separation matters. A grocery item should not sit beside a private dream. A
 
 Unutma is built around a simple promise: your personal organization should not require handing your life to a server.
 
-Your notes, lists, routines, journal content, and sensitive data are stored locally on your device. The app is designed for offline use, and it does not need an account for your core personal content. For a side-by-side view, see our honest [Google Keep alternative](/blog/google-keep-alternative-no-account-offline/) comparison.
+Your notes, lists, routines, journal content, and sensitive data are stored locally on your device. The app is designed for offline use, and it does not need an account for your core personal content. For a side-by-side view, see our honest [notes app with no account](/blog/notes-app-no-account-offline/) comparison.
 
 ![Unutma privacy screenshot](/blog/app-showcase/iphone-06-privacy.png)
 

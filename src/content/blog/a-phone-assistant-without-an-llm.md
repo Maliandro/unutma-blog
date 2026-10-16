@@ -2,6 +2,7 @@
 title: "I built a phone assistant that files your sentences without an LLM"
 description: "How Unutma turns one typed or spoken sentence into a task, expense, routine, memory or vault entry, on the device, with hand-written rules and a 41 KB classifier. With honest numbers."
 pubDate: 2026-09-23
+updatedDate: 2026-10-16
 tags: ["Unutma", "engineering", "privacy", "on-device", "show-hn"]
 image: "/launch/unutma-show-hn-poster.jpg"
 imageAlt: "Unutma turning the sentence 'Dentist Thursday at 3pm' into a to-do with a 3 PM reminder"
@@ -46,7 +47,7 @@ When you pick a place, the phone stores that sentence's embedding (384 numbers, 
 
 ## Honest numbers
 
-I measure on held-out sets that the rules and the model never saw during tuning. The last one has 1,595 sentences across the six languages, many of them deliberately messy or with two intents in one sentence. It was opened once, after the thresholds were frozen.
+I measure on held-out sets that the rules and the model never saw during tuning. The last one has 1,595 sentences across the six languages, many of them deliberately messy or with two intents in one sentence. It was opened once, after the thresholds were frozen. The figures below are as of 18 September 2026, the date of that measurement.
 
 | | Rules only | Rules + model |
 |---|---|---|

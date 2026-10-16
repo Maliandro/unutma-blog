@@ -3,22 +3,23 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import SEOHead from '../../../components/SEOHead.astro';
 import BlogCard from '../../../components/BlogCard.astro';
 import { getCollection } from 'astro:content';
+import { getLivePosts, tagSlug } from '../../../utils/posts';
 import { t } from '../../../i18n/ui';
 
 export const prerender = true;
 
 export async function getStaticPaths() {
-  const all = await getCollection('blog', ({ data }) => !data.draft);
+  const all = await getLivePosts();
   const tagSet = new Set<string>();
   for (const post of all) {
     for (const t of post.data.tags ?? []) {
-      tagSet.add(t);
+      tagSet.add(tagSlug(t));
     }
   }
 
   return [...tagSet].map((tag) => {
     const posts = all
-      .filter((p) => (p.data.tags ?? []).includes(tag))
+      .filter((p) => (p.data.tags ?? []).map(tagSlug).includes(tag))
       .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
     return {
       params: { tag },
@@ -40,8 +41,8 @@ const { tag, posts } = Astro.props;
 <BaseLayout>
   <SEOHead
     slot="head"
-    title={`${u.tagSeo}: ${tag}`}
-    description={`${u.tagSeo} “${tag}”.`}
+    title={`Articles tagged “${tag}”`}
+    description={`${posts.length} Unutma Blog ${posts.length === 1 ? 'article' : 'articles'} tagged “${tag}”: practical, privacy-first guides on planning, lists, journaling and keeping personal data on your phone.`}
   />
 
   <div class="mx-auto max-w-5xl px-4 py-12">

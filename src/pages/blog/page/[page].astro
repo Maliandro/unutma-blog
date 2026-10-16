@@ -3,6 +3,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import SEOHead from '../../../components/SEOHead.astro';
 import BlogCard from '../../../components/BlogCard.astro';
 import { getCollection } from 'astro:content';
+import { getLivePosts } from '../../../utils/posts';
 import { postsPerPage } from '../../../i18n/paths';
 import { t } from '../../../i18n/ui';
 
@@ -10,7 +11,7 @@ export const prerender = true;
 
 export async function getStaticPaths() {
   const POSTS_PER_PAGE = postsPerPage();
-  const all = await getCollection('blog', ({ data }) => !data.draft);
+  const all = await getLivePosts();
   const sorted = all.sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
   );
@@ -56,7 +57,7 @@ const title = `${u.pageTitle} ${currentPage}`;
   <SEOHead
     slot="head"
     title={title}
-    description={`Unutma Blog — ${u.pageOf} ${currentPage} / ${totalPages}`}
+    description={`Older Unutma Blog articles, page ${currentPage} of ${totalPages}: practical guides on offline planning, private journaling, routines, budgeting and keeping data on your phone.`}
   />
 
   <div class="mx-auto max-w-5xl px-4 py-12">

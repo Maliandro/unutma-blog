@@ -5,11 +5,12 @@ import BlogCard from '../../components/BlogCard.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
 import StoreBadgeRow from '../../components/StoreBadgeRow.astro';
 import { getCollection } from 'astro:content';
+import { getLivePosts } from '../../utils/posts';
 import { t } from '../../i18n/ui';
 
 const u = t().home;
 
-const all = await getCollection('blog', ({ data }) => !data.draft);
+const all = await getLivePosts();
 const sorted = all.sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );

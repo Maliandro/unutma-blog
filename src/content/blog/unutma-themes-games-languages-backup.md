@@ -1,20 +1,21 @@
 ---
 title: "Themes, Mini Games, Languages, and Backup: The Human Layer of Unutma"
-description: "Beyond tasks and money — how Unutma’s eight themes, brain-break games, multilingual UI, and export/backup choices keep the app livable for real humans."
+description: "Beyond tasks and money — how Unutma’s 12 themes, brain-break games, multilingual UI, and export/backup choices keep the app livable for real humans."
 pubDate: 2026-04-08
+updatedDate: 2026-10-16
 tags: ["Unutma", "productivity", "wellness", "privacy"]
 draft: false
 image: "/blog/covers/ai/unutma-themes-games-languages-backup.png"
 imageAlt: "Smartphone on a nightstand with soft colorful glow from the screen"
 ---
 
-An app that only optimizes you is an app you **eventually uninstall** — because humans are not spreadsheets with legs. **Unutma’s “human layer”** is everything that makes the serious stuff **sustainable**: **eight visual themes**, **mini games** for mental breaks, **multiple interface languages**, **accessibility choices** like font sizing, and **export / backup** flows that keep **you** in charge of where data lives.
+An app that only optimizes you is an app you **eventually uninstall** — because humans are not spreadsheets with legs. **Unutma’s “human layer”** is everything that makes the serious stuff **sustainable**: **12 visual themes**, **mini games** for mental breaks, **multiple interface languages**, **accessibility choices** like font sizing, and **export / backup** flows that keep **you** in charge of where data lives.
 
 This article ties those pieces together — not as marketing fluff, but as **design decisions that affect daily friction**. For the core tabs (Actions, Lists, Vault, Economy, Journal), start with the [complete feature guide](/blog/unutma-app-complete-feature-guide/).
 
-## Eight themes: aesthetics as emotional regulation
+## 12 themes: aesthetics as emotional regulation
 
-**Light, Dark, Anthracite, Steel, Ice, Grass, Pink, Purple** — names aside, the point is **choice**. Dark modes reduce glare at night; lighter themes feel open in daylight; bolder colors can **signal identity** (“this is my workspace”) rather than defaulting every user to the same startup-gray.
+**Light, Dark, Anthracite, Steel, Ice, Grass, Pastel, Sunset, Coffee, Sakura, Gold, Silver** — names aside, the point is **choice**. Dark modes reduce glare at night; lighter themes feel open in daylight; bolder colors can **signal identity** (“this is my workspace”) rather than defaulting every user to the same startup-gray.
 
 **How to pick without spiraling:**
 

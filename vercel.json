@@ -12,15 +12,36 @@
     {
       "source": "/.well-known/apple-app-site-association",
       "headers": [
-        { "key": "Content-Type", "value": "application/json" },
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
       ]
     },
     {
       "source": "/.well-known/assetlinks.json",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/blog/google-keep-alternative-no-account-offline",
+      "destination": "/blog/notes-app-no-account-offline/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/google-keep-alternative-no-account-offline/",
+      "destination": "/blog/notes-app-no-account-offline/",
+      "permanent": true
     }
   ]
 }

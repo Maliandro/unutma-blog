@@ -4,8 +4,11 @@ import SEOHead from '../components/SEOHead.astro';
 import AdSense from '../components/AdSense.astro';
 import AppStoreBanner from '../components/AppStoreBanner.astro';
 import ShareButtons from '../components/ShareButtons.astro';
+import AppSchema from '../components/AppSchema.astro';
 import { coverForSlug } from '../utils/covers';
 import { withBase } from '../utils/site';
+import { pageImage } from '../utils/webp';
+import { tagSlug } from '../utils/posts';
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
@@ -14,14 +17,14 @@ interface Props {
 
 const { post } = Astro.props;
 const { title, description, pubDate, tags, image } = post.data;
-const heroImage = withBase(image ?? coverForSlug(post.slug));
+const heroImage = withBase(pageImage(image ?? coverForSlug(post.slug)));
 const heroAlt = post.data.imageAlt ?? `${title} — article cover`;
 ---
 
 <BaseLayout>
+  <Fragment slot="head">
   <SEOHead
-    slot="head"
-    title={title}
+    title={post.data.seoTitle ?? title}
     description={description}
     image={image ?? coverForSlug(post.slug)}
     article={true}
@@ -29,6 +32,8 @@ const heroAlt = post.data.imageAlt ?? `${title} — article cover`;
     modifiedDate={post.data.updatedDate}
     keywords={tags}
   />
+  <AppSchema />
+  </Fragment>
 
   <article class="mx-auto max-w-3xl px-4 py-8">
     <header class="mb-8">
@@ -38,6 +43,7 @@ const heroAlt = post.data.imageAlt ?? `${title} — article cover`;
         width={1200}
         height={630}
         loading="eager"
+        fetchpriority="high"
         decoding="async"
         class="mb-8 w-full rounded-xl object-cover aspect-[1200/630]"
       />
@@ -59,7 +65,7 @@ const heroAlt = post.data.imageAlt ?? `${title} — article cover`;
             <div class="flex flex-wrap gap-2">
               {tags.map((tag: string) => (
                 <a
-                  href={withBase(`/blog/tags/${encodeURIComponent(tag)}/`)}
+                  href={withBase(`/blog/tags/${encodeURIComponent(tagSlug(tag))}/`)}
                   class="rounded bg-indigo-100 px-2 py-0.5 text-xs text-indigo-700 hover:bg-indigo-200"
                 >
                   {tag}

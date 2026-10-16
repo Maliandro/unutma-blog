@@ -1,0 +1,63 @@
+# ONERI — KURULU DEGIL. Kurmak icin sahibi bu dosyayi .github/workflows/daily-rebuild.yml
+# olarak kopyalar ve asagidaki gizli degiskeni ekler. Ayrinti: seo/proposals/daily-rebuild.md
+#
+# Ne yapar: her gun 06:00 UTC'de, son 24 saatte yayin ani (publishAt ya da pubDate) gelmis
+# bir yazi varsa Vercel "Deploy Hook" adresine POST atar; Vercel master'i yeniden derler ve
+# zamani gelen yazi yayina cikar. Yazi yoksa hicbir sey yapmaz (bos derleme yok).
+#
+# Gerekli gizli degisken (GitHub > Settings > Secrets and variables > Actions):
+#   VERCEL_DEPLOY_HOOK_URL  = Vercel > Project > Settings > Git > Deploy Hooks > (branch: master)
+name: Daily scheduled-post rebuild
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Yazi olmasa da derlemeyi tetikle"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: daily-rebuild
+  cancel-in-progress: true
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Bugun yayin ani gelen yazi var mi?
+        id: due
+        run: |
+          node --input-type=module -e "
+          import fs from 'node:fs';
+          import { blogPublishState } from './src/utils/publish-state.mjs';
+          const now = Date.now(), dayAgo = now - 24 * 3600 * 1000;
+          const due = blogPublishState('src/content/blog').filter(({ live, fm }) => {
+            const at = new Date(fm.publishAt || fm.pubDate).valueOf();
+            return live && at > dayAgo && at <= now;
+          }).map((p) => p.slug);
+          console.log('Zamani gelen:', due.join(', ') || '(yok)');
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, 'count=' + due.length + '\n');
+          "
+
+      - name: Vercel derlemesini tetikle
+        if: steps.due.outputs.count != '0' || inputs.force == true
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK" ]; then echo "VERCEL_DEPLOY_HOOK_URL tanimli degil"; exit 1; fi
+          code=$(curl -s -o /dev/null -w '%{http_code}' -X POST "$HOOK")
+          echo "Vercel yaniti: $code"
+          test "$code" = "201" -o "$code" = "200"

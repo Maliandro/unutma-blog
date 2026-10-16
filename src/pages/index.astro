@@ -8,8 +8,10 @@ import StoreBadgeRow from '../components/StoreBadgeRow.astro';
 import { withBase } from '../utils/site';
 import { coverForSlug } from '../utils/covers';
 import { getCollection } from 'astro:content';
+import { getLivePosts } from '../utils/posts';
+import { pageImage } from '../utils/webp';
 
-const all = await getCollection('blog', ({ data }) => !data.draft);
+const all = await getLivePosts();
 const sorted = all.sort(
   (a, b) =>
     Number(Boolean(b.data.featured)) - Number(Boolean(a.data.featured)) ||
@@ -27,7 +29,7 @@ const sideList = rest.slice(0, 5);
 const moreGrid = rest.slice(5, 8);
 
 const heroCover = hero
-  ? withBase(hero.data.image ?? coverForSlug(hero.slug))
+  ? withBase(pageImage(hero.data.image ?? coverForSlug(hero.slug)))
   : '';
 const heroCoverAlt = hero?.data.imageAlt ?? hero?.data.title ?? '';
 const fmtDate = (d: Date) =>
@@ -38,7 +40,7 @@ const fmtDate = (d: Date) =>
   <Fragment slot="head">
     <SEOHead
       title="Organize Your Life, Your Way"
-      description="Unutma Blog — practical guides on productivity, privacy-first apps, journaling, and routines. Download Unutma: offline, private, free."
+      description="Practical guides on productivity, privacy-first apps, journaling and routines, from the team behind Unutma, the offline organizer that needs no account."
     />
     <AppSchema />
   </Fragment>
@@ -142,7 +144,7 @@ const fmtDate = (d: Date) =>
                 <li class="group py-4 first:pt-0">
                   <a href={withBase(`/blog/${post.slug}/`)} class="flex gap-4">
                     <img
-                      src={withBase(post.data.image ?? coverForSlug(post.slug))}
+                      src={withBase(pageImage(post.data.image ?? coverForSlug(post.slug)))}
                       alt={post.data.imageAlt ?? post.data.title}
                       width="120"
                       height="80"

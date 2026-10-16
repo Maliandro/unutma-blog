@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { getLivePosts } from '../../utils/posts';
 import BlogPost from '../../layouts/BlogPost.astro';
 import type { CollectionEntry } from 'astro:content';
 import { readingTimeMinutes } from '../../utils/reading-time';
@@ -7,7 +8,7 @@ import { readingTimeMinutes } from '../../utils/reading-time';
 export const prerender = true;
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  const posts = await getLivePosts();
   return posts.map((post) => ({
     params: { slug: post.slug },
     props: { post },

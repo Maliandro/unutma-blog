@@ -9,6 +9,12 @@ interface Props {
   modifiedDate?: Date | string;
   /** Yazi etiketleri; schema keywords + article:tag olarak kullanilir. */
   keywords?: string[];
+  /** true: sayfa dizine alinmasin (404 gibi). Canonical da basilmaz. */
+  noindex?: boolean;
+  /** Dil alternatifleri (hreflang). Ornek: [{ lang: 'tr', href: '/privacy/tr/' }]. */
+  alternates?: { lang: string; href: string }[];
+  /** og:locale, ornek tr_TR. Varsayilan en_US. */
+  locale?: string;
 }
 
 const {
@@ -19,6 +25,9 @@ const {
   publishedDate,
   modifiedDate,
   keywords = [],
+  noindex = false,
+  alternates = [],
+  locale = 'en_US',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -77,6 +86,8 @@ const jsonLd = article
       author: publisher,
       publisher,
       inLanguage: 'en',
+      // Yazinin konusu uygulamanin kendisi: AppSchema'daki SoftwareApplication'a baglanir.
+      about: { '@id': `${siteRoot}/#app` },
       ...(keywords.length ? { keywords: keywords.join(', ') } : {}),
       isAccessibleForFree: true,
     }
@@ -96,7 +107,10 @@ const jsonLd = article
 <title>{fullTitle}</title>
 <meta name="title" content={fullTitle} />
 <meta name="description" content={description} />
-<link rel="canonical" href={canonicalURL} />
+{noindex ? <meta name="robots" content="noindex, follow" /> : <link rel="canonical" href={canonicalURL} />}
+{alternates.map((a) => (
+  <link rel="alternate" hreflang={a.lang} href={new URL(a.href, Astro.site).href} />
+))}
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={article ? 'article' : 'website'} />
@@ -104,7 +118,7 @@ const jsonLd = article
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={ogImage} />
-<meta property="og:locale" content="en_US" />
+<meta property="og:locale" content={locale} />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
