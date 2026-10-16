@@ -34,9 +34,11 @@ const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION || GSC_CODE;
     <link rel="icon" type="image/png" href={withBase('/unutma-icon.png')} sizes="512x512" />
     <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
     <link rel="apple-touch-icon" href={withBase('/unutma-icon.png')} />
-    {/* Fontlar kendi alanimizdan (src/styles/fonts.css). Govde fontu preload: ilk boyamada hazir,
+    {/* Fontlar kendi alanimizdan (src/styles/fonts.css). Govde + baslik fontu preload: ilk boyamada hazir,
         olculu fallback yuzleri sayesinde swap'ta kayma yok (CLS < 0,1). */}
     <link rel="preload" href={withBase('/fonts/plus-jakarta-sans-normal-latin.woff2')} as="font" type="font/woff2" crossorigin />
+    {/* Basliklar (H1 = cogu sayfada LCP ogesi) Fraunces; preload olmazsa swap LCP'yi ~0,7 sn geciktiriyor. */}
+    <link rel="preload" href={withBase('/fonts/fraunces-normal-latin.woff2')} as="font" type="font/woff2" crossorigin />
     {title && !Astro.slots.has('head') && (
       <>
         <title>{title}</title>
