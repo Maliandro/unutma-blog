@@ -44,7 +44,7 @@ This also quietly helps in moments where typing is genuinely hard: low light, on
 3. Check the destination pill that appears — it shows exactly where your words are about to be filed, before anything saves.
 4. If you'd rather just move around the app, say a command like "open settings" or "show statistics" instead.
 
-Voice input currently covers the same 8 languages as the rest of the app (Turkish, English, German, Spanish, French, Italian, Arabic, and Chinese), so this works whether you think in Turkish or English. Whether the dictation step stays on your phone depends on which of those languages your phone has downloaded for offline recognition.
+Dictation itself is available in all 8 app languages, but the assistant that understands what you said (dates, amounts, which list it belongs to) currently works in 6 of them: Turkish, English, German, Spanish, French and Italian. In Arabic and Chinese, spoken text is saved with the simpler capture path, without that understanding layer. Whether the dictation step stays on your phone depends on which of those languages your phone has downloaded for offline recognition.
 
 ## What it's not
 
