@@ -1,53 +1,101 @@
 ---
-title: "How To Start A Digital Journal: A Calm, Private Way to Stay Organized"
-description: "Practical guide to how to start a digital journal with privacy-first tips. Learn how Unutma helps you stay organized offline."
+title: "How to Start a Digital Journal: 7-Day Plan"
+description: "How to start a digital journal you will still open next week: a 7-day plan where a one-tap mood counts, what research says, and how to keep entries private."
 pubDate: 2026-08-30
-tags: ["unutma", "productivity", "privacy"]
+updatedDate: 2026-10-16
+keyword: "how to start a digital journal"
+tags: ["unutma", "journal", "privacy"]
 image: /blog/covers/cover-3.svg
+imageAlt: "Abstract cover illustration for a 7-day digital journal starter plan"
 draft: false
 ---
 
-## Why How To Start A Digital Journal Matters
+Most journals die on day four. Not because people stop having thoughts, but because the blank page starts to feel like homework. If you are wondering how to start a digital journal that survives a busy week, the answer is smaller than you think: make the first week so light that skipping it feels silly.
 
-Many people search for help with how to start a digital journal — not because they are lazy, but because modern life is noisy.
+This guide gives you a 7-day plan where a single mood tap counts as an entry. It also covers what the research does and does not say about writing things down, and how to keep a phone journal private. The examples use Unutma's Journal tab because that is what we build, but the plan works in any app or notebook.
 
-When reminders live in five different apps, it is easy to miss what matters. A calm, offline-first approach keeps your routines private and under your control.
+## What the research says (and what it does not)
 
-## What Gets in the Way
+Writing about your experiences has been studied for decades. The US Department of Veterans Affairs describes the most researched method, expressive writing, in its [therapeutic journaling handout](https://www.va.gov/WHOLEHEALTHLIBRARY/docs/Therapeutic-Journaling.pdf): writing about a stressful or emotional experience for 15 to 20 minutes per session, over three to five sessions on consecutive days.
 
-- Too many notifications from apps that want your attention
-- Cloud accounts and sync friction when you just need a quick log
-- Tools that feel like work instead of relief
+A 2025 systematic review of positive writing in non-clinical groups, published in [PLoS One](https://pmc.ncbi.nlm.nih.gov/articles/PMC12094736/), found the most reliable gains in wellbeing and positive mood. Effects on negative mood and physical health were less consistent, and many of the included studies were rated poor or fair in quality.
 
-## How to Build a Simple System
+So the honest summary is this: journaling helps some people, in some ways, and it is not a treatment. If you are struggling, talk to a professional. A journal is a good companion to that, not a replacement.
 
-Start with one habit: capture the thought immediately, review once a day, and celebrate small wins. Pair lists with gentle reminders instead of alarm spam.
+## Before day 1: three decisions
 
-## Where Unutma Fits
+Make these once, so you do not have to think about them every night.
 
-[Unutma](/blog/welcome-to-unutma-blog/) is a privacy-first organizer — to-dos, journal, password vault, wishlists, routines, and quick-action logging — **on your device**, offline, with no ads.
+1. **When.** Pick an anchor you already have: after brushing your teeth, on the bus home, with the first coffee.
+2. **Where.** One app or one notebook. Not both. In Unutma, the Journal is the last tab at the bottom of the screen.
+3. **Minimum.** Decide what counts as "done" on a bad day. We suggest one mood tap.
 
-If how to start a digital journal is part of your daily stress, try dedicating one screen in Unutma to it for a week.
+## The 7-day starter plan
 
-## Key Takeaways
+| Day | What to do | Time |
+|---|---|---|
+| 1 | Tap a mood for today. That is the whole entry. | 5 seconds |
+| 2 | Mood, plus one sentence: what took most of your energy? | 1 minute |
+| 3 | Mood, plus three short lines: one good thing, one annoying thing, one thing for tomorrow. | 3 minutes |
+| 4 | Answer one question, for example "What drained you today?" | 3 minutes |
+| 5 | Mood only, on purpose. Practise the bad-day minimum. | 5 seconds |
+| 6 | Write for 10 minutes about something that is still on your mind. | 10 minutes |
+| 7 | Read back the week. Note one pattern, such as which days felt heavy. | 5 minutes |
 
-- One trusted place beats five scattered apps
-- Offline + on-device storage protects your private life
-- Small daily reviews beat perfect systems you never open
+Day 5 is the important one. It teaches you that a short entry still counts, which is what keeps the habit alive in week three. Tap once. Move on.
 
-## Quick Tips
+## Doing the plan in Unutma
 
-1. Log quick actions the moment you think of them
-2. Keep lists short and actionable
-3. Review at the same time each evening
+Here is where each step lives in the app, so you are not hunting for buttons:
 
-## Your Turn
+- **Mood tap.** Open the Journal tab. Under "How was today?", pick Happy, Neutral, Sad, Angry or Tired. Unutma saves that as today's entry, even with no text.
+- **Writing.** Tap "Start writing". The microphone button lets you dictate instead of typing.
+- **Day 4 question.** The home screen shows a "Question of the Day", and you can answer it straight into the journal.
+- **Day 7 review.** "Past Entries" lists earlier days. You can filter by mood or search for a word. Opening past entries asks for Face ID or your PIN.
+- **A safety net.** Deleted entries go to the Recycle Bin for 30 days before they disappear.
 
-What is the one thing you forget most often — and would a single private app help?
+On the free plan you get 10 journal entries per month; the first 7 days have every feature unlocked.
 
-Read more on the [Unutma blog](/blog/welcome-to-unutma-blog/).
+## Keeping a phone journal private
 
+A journal is probably the most private thing on your phone. A few habits help:
 
----
+- **Choose an app that encrypts entries.** Unutma stores the journal encrypted on the device, and even its own "Where is your data?" screen only counts entries without reading them.
+- **Lock the phone properly.** Encryption inside the app does not help if the phone is unlocked and lying on the table. The UK NCSC's guide to [securing your devices](https://www.ncsc.gov.uk/guidance/securing-your-devices) is a good short checklist.
+- **Back it up.** With no account, nobody can restore your data if you lose your phone. That includes us.
 
-**Ready to get organized?** [Download Unutma](https://play.google.com/store/apps/details?id=com.mehmet.unutma) — free, offline, and private. Available on [Google Play](https://play.google.com/store/apps/details?id=com.mehmet.unutma) and [App Store](https://apps.apple.com/app/id6758889495).
+More on this in our guide to [keeping personal data on your phone](/blog/keep-your-data-safe-on-your-phone/).
+
+## When a digital journal is not the right tool
+
+If you love the feel of paper, use paper. If you want to share entries with a therapist or partner in real time, a phone-only app without sync will frustrate you. And if writing about a hard event leaves you feeling worse, stop and talk to someone.
+
+## What to read next
+
+Once the first week feels easy, try our list of [journaling prompts for self-improvement](/blog/journaling-prompts-for-self-improvement/). If you want to see the full Journal feature, read the [private journal app with mood tracking](/blog/unutma-journal-mood-voice-reflection/) guide. To tie journaling to the rest of your day, see [how to build habits that stick](/blog/how-to-build-habits-that-stick/) and our [morning and evening routine](/blog/how-to-build-a-morning-routine/) template.
+
+## Frequently asked questions
+
+### How long should a journal entry be?
+
+As long as you want, and on bad days as short as one mood tap. Consistency matters more than length in the first month.
+
+### Is it better to journal in the morning or at night?
+
+Whichever you will actually do. Night suits reflection; morning suits planning. Tie it to something you already do at that time.
+
+### Can I journal by voice?
+
+Yes, in apps that support dictation. In Unutma, voice input uses your phone's own dictation service, which may go through Apple or Google depending on your phone.
+
+### Is a digital journal private?
+
+It depends on the app. Look for one that stores entries on the phone, encrypts them, and asks for Face ID or a PIN before showing past entries.
+
+### What if I miss a few days?
+
+Nothing breaks. Start again with a mood tap. The plan is built to be restarted.
+
+## Bottom line
+
+If you want to know how to start a digital journal and keep it, lower the bar until it is almost embarrassing, then keep it there for a week. A mood tap on a hard day is still an entry. The longer writing tends to arrive on its own once the habit exists.
