@@ -9,11 +9,6 @@ draft: false
 
 ## Why Private Journal App With Pin Lock Offline Matters
 
-This is a Sunday FEATURE SPOTLIGHT for the Unutma app.
-Focus feature: Private Journal (gunluk).
-Explain what the feature does, who it helps, 3 practical use cases, and how it differs from cloud-heavy apps. Tone: warm, expert, not salesy.
-Include a section 'How to try it in Unutma' with step-by-step tips.
-Mention Washington DC / busy professional life only if natural.
 
 When reminders live in five different apps, it is easy to miss what matters. A calm, offline-first approach keeps your routines private and under your control.
 
