@@ -1,3 +1,4 @@
+@import "./fonts.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -37,7 +38,7 @@
    * Brand wordmark — gradient fill + soft glow (header & hero).
    */
   .brand-wordmark {
-    font-family: Fraunces, Georgia, serif;
+    font-family: Fraunces, 'Fraunces Fallback', Georgia, serif;
     font-weight: 600;
     letter-spacing: -0.03em;
     line-height: 1.1;
@@ -80,7 +81,7 @@
    * “Peace of mind” — editorial italic + depth.
    */
   .brand-peace {
-    font-family: Fraunces, Georgia, serif;
+    font-family: Fraunces, 'Fraunces Fallback', Georgia, serif;
     font-style: italic;
     font-weight: 500;
     font-optical-sizing: auto;
@@ -106,7 +107,7 @@
 
   /** Hero main headline */
   .brand-hero-title {
-    font-family: Fraunces, Georgia, serif;
+    font-family: Fraunces, 'Fraunces Fallback', Georgia, serif;
     font-weight: 600;
     letter-spacing: -0.035em;
     line-height: 1.12;
@@ -133,7 +134,7 @@
 
   /** Section titles on marketing pages */
   .section-title {
-    font-family: Fraunces, Georgia, serif;
+    font-family: Fraunces, 'Fraunces Fallback', Georgia, serif;
     font-weight: 600;
     letter-spacing: -0.025em;
     @apply text-gray-900 dark:text-gray-50;

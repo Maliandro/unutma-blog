@@ -20,8 +20,6 @@ const adsenseClient = import.meta.env.PUBLIC_ADSENSE_CLIENT ?? '';
 // Kod gizli bir sey degil — sayfa kaynaginda zaten herkese gorunur.
 // Ikisi de bos ise etiket hic basilmaz.
 const GSC_CODE = '';
-const FONTS_CSS =
-  'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap';
 const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION || GSC_CODE;
 ---
 
@@ -36,13 +34,9 @@ const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION || GSC_CODE;
     <link rel="icon" type="image/png" href={withBase('/unutma-icon.png')} sizes="512x512" />
     <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
     <link rel="apple-touch-icon" href={withBase('/unutma-icon.png')} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    {/* Yazi tipi CSS'i bilerek render-blocking birakildi: async yuklemeyi (preload+onload)
-        denedik, Lighthouse mobilde FCP ~3,1 -> ~1,6 sn iyilesti ama Fraunces gec gelince yazi govdesi
-        kaydi ve CLS 0 -> 0,106 oldu (Core Web Vitals esigi 0,1). Kalici cozum fontlari
-        kendi alanimizdan sunmak + preload (tasarim karari, SEO-RAPOR.md'de soru). */}
-    <link href={FONTS_CSS} rel="stylesheet" />
+    {/* Fontlar kendi alanimizdan (src/styles/fonts.css). Govde fontu preload: ilk boyamada hazir,
+        olculu fallback yuzleri sayesinde swap'ta kayma yok (CLS < 0,1). */}
+    <link rel="preload" href={withBase('/fonts/plus-jakarta-sans-normal-latin.woff2')} as="font" type="font/woff2" crossorigin />
     {title && !Astro.slots.has('head') && (
       <>
         <title>{title}</title>

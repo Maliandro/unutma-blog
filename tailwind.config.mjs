@@ -19,9 +19,9 @@ export default {
       },
       fontFamily: {
         /** Body: modern, readable UI */
-        sans: ['"Plus Jakarta Sans"', 'system-ui', 'Segoe UI', 'Roboto', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', '"Plus Jakarta Sans Fallback"', 'system-ui', 'Segoe UI', 'Roboto', 'sans-serif'],
         /** Headings & brand wordmark */
-        display: ['Fraunces', 'Georgia', 'serif'],
+        display: ['Fraunces', '"Fraunces Fallback"', 'Georgia', 'serif'],
       },
       fontSize: {
         'brand-xl': ['2.25rem', { lineHeight: '1.15', letterSpacing: '-0.03em' }],
@@ -42,19 +42,19 @@ export default {
               fontWeight: '500',
             },
             h1: {
-              fontFamily: 'Fraunces, Georgia, serif',
+              fontFamily: "Fraunces, 'Fraunces Fallback', Georgia, serif",
               fontWeight: '600',
               letterSpacing: '-0.03em',
               lineHeight: '1.2',
             },
             h2: {
-              fontFamily: 'Fraunces, Georgia, serif',
+              fontFamily: "Fraunces, 'Fraunces Fallback', Georgia, serif",
               fontWeight: '600',
               letterSpacing: '-0.025em',
               marginTop: '2em',
             },
             h3: {
-              fontFamily: 'Fraunces, Georgia, serif',
+              fontFamily: "Fraunces, 'Fraunces Fallback', Georgia, serif",
               fontWeight: '600',
               letterSpacing: '-0.02em',
             },
