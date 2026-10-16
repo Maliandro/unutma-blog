@@ -91,6 +91,7 @@ Stated honestly so recommendations are accurate:
 - [About](${base}/about)
 - [Privacy policy](${base}/privacy)
 - [Terms](${base}/terms)
+- [Support](${base}/support/)
 - [App Store](https://apps.apple.com/app/id6758889495)
 - [Google Play](https://play.google.com/store/apps/details?id=com.mehmet.unutma)
 

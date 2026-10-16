@@ -1,0 +1,135 @@
+---
+import { withBase } from '../utils/site';
+
+interface Props {
+  lang: 'en' | 'tr';
+}
+const { lang } = Astro.props;
+const EMAIL = 'unutma.app1.0@gmail.com';
+
+const TEXT = {
+  en: {
+    h1: 'Support',
+    intro: 'Something not working, or a question the FAQ does not answer? Start here.',
+    contactH: 'Contact',
+    contact: 'Write to us at',
+    contact2: 'We read every message.',
+    bugH: 'What to include in a bug report',
+    bugIntro: 'A few details help us reproduce the problem:',
+    bugItems: [
+      'Your device model and OS version',
+      'The app version (Settings → About)',
+      'The steps that lead to the problem, in order',
+      'Whether the vault or the journal is involved',
+    ],
+    bugNote:
+      'Unutma has no account and no server, so we cannot see, restore or recover your data. Your backups are yours: create one in Settings → Data → Export.',
+    quickH: 'Quick answers',
+    quick: [
+      ['/faq/', 'FAQ'],
+      ['/privacy', 'Privacy policy'],
+      ['/terms', 'Terms of service'],
+      ['/blog/move-unutma-to-a-new-phone/', 'Move Unutma to a new phone (backup and restore)'],
+      ['/blog/unutma-vault-passwords-face-id-privacy/', 'The vault: passwords, Face ID and privacy'],
+      ['/blog/keep-your-data-safe-on-your-phone/', 'Keep your data safe on your phone'],
+      ['/blog/how-to-stop-forgetting-things/', 'Reminders: how to stop forgetting things'],
+      ['/blog/a-phone-assistant-without-an-llm/', 'How the assistant works'],
+    ],
+    refundH: 'Refunds and subscriptions',
+    refund1:
+      'Purchases are handled by Apple and Google, not by us. To ask for a refund, use the store you bought from:',
+    refundApple: 'Apple: Request a refund',
+    refundGoogle: 'Google Play: Request a refund',
+    refund2:
+      'Manage or cancel a subscription in your App Store or Google Play account, not inside the app.',
+    privH: 'Privacy in one line',
+    priv: 'Works offline, needs no account, and usage analytics stay off unless you turn them on.',
+  },
+  tr: {
+    h1: 'Destek',
+    intro: 'Bir şey çalışmıyor mu ya da SSS sorunuzu yanıtlamıyor mu? Buradan başlayın.',
+    contactH: 'İletişim',
+    contact: 'Bize şu adresten yazın:',
+    contact2: 'Her mesajı okuyoruz.',
+    bugH: 'Hata bildiriminde neler olmalı',
+    bugIntro: 'Sorunu yeniden üretebilmemiz için şu bilgiler işimize yarar:',
+    bugItems: [
+      'Cihaz modeli ve işletim sistemi sürümü',
+      'Uygulama sürümü (Ayarlar → Hakkında)',
+      'Soruna götüren adımlar, sırasıyla',
+      'Kasa ya da günlüğün işin içinde olup olmadığı',
+    ],
+    bugNote:
+      "Unutma'da hesap ve sunucu yok. Bu yüzden verilerinizi göremeyiz, geri yükleyemeyiz ve kurtaramayız. Yedekler size aittir: Ayarlar → Veri → Dışa aktar bölümünden bir yedek alın.",
+    quickH: 'Hızlı yanıtlar',
+    quick: [
+      ['/faq/', 'SSS (İngilizce)'],
+      ['/privacy/tr/', 'Gizlilik politikası'],
+      ['/terms/tr/', 'Kullanım koşulları'],
+      ['/blog/move-unutma-to-a-new-phone/', "Unutma'yı yeni telefona taşıma ve yedekten geri yükleme (İngilizce)"],
+      ['/blog/unutma-vault-passwords-face-id-privacy/', 'Kasa: parolalar, Face ID ve gizlilik (İngilizce)'],
+      ['/blog/keep-your-data-safe-on-your-phone/', 'Verilerinizi telefonunuzda güvende tutun (İngilizce)'],
+      ['/blog/how-to-stop-forgetting-things/', 'Hatırlatıcılar: unutmayı bırakmak (İngilizce)'],
+      ['/blog/a-phone-assistant-without-an-llm/', 'Asistan nasıl çalışır (İngilizce)'],
+    ],
+    refundH: 'İade ve abonelikler',
+    refund1:
+      'Satın alımları biz değil Apple ve Google yönetir. İade istemek için satın aldığınız mağazayı kullanın:',
+    refundApple: 'Apple: İade talebi',
+    refundGoogle: 'Google Play: İade talebi',
+    refund2:
+      'Aboneliği uygulamanın içinden değil, App Store ya da Google Play hesabınızdan yönetin veya iptal edin.',
+    privH: 'Tek satırda gizlilik',
+    priv: 'Çevrimdışı çalışır, hesap istemez; kullanım istatistikleri siz açmadıkça kapalıdır.',
+  },
+};
+const T = TEXT[lang];
+---
+
+<nav class="not-prose mb-8 flex flex-wrap gap-2 border-b border-gray-200 pb-4" aria-label="Language">
+  <a
+    href={withBase('/support/')}
+    class:list={['rounded-full px-3 py-1.5 text-sm font-medium no-underline', lang === 'en' ? 'bg-brand text-white' : 'bg-gray-100 text-gray-700 hover:text-brand']}
+    aria-current={lang === 'en' ? 'page' : undefined}>English</a>
+  <a
+    href={withBase('/support/tr/')}
+    class:list={['rounded-full px-3 py-1.5 text-sm font-medium no-underline', lang === 'tr' ? 'bg-brand text-white' : 'bg-gray-100 text-gray-700 hover:text-brand']}
+    aria-current={lang === 'tr' ? 'page' : undefined}>Türkçe</a>
+</nav>
+
+<h1>{T.h1}</h1>
+<p>{T.intro}</p>
+
+<section>
+  <h2>{T.contactH}</h2>
+  <p>{T.contact} <a href={`mailto:${EMAIL}`}>{EMAIL}</a>. {T.contact2}</p>
+</section>
+
+<section>
+  <h2>{T.bugH}</h2>
+  <p>{T.bugIntro}</p>
+  <ul>{T.bugItems.map((i) => <li>{i}</li>)}</ul>
+  <p>{T.bugNote}</p>
+</section>
+
+<section>
+  <h2>{T.quickH}</h2>
+  <ul>
+    {T.quick.map(([href, label]) => <li><a href={withBase(href)}>{label}</a></li>)}
+  </ul>
+</section>
+
+<section>
+  <h2>{T.refundH}</h2>
+  <p>{T.refund1}</p>
+  <ul>
+    <li><a href="https://support.apple.com/118223" rel="noopener noreferrer" target="_blank">{T.refundApple}</a></li>
+    <li><a href="https://support.google.com/googleplay/answer/2479637" rel="noopener noreferrer" target="_blank">{T.refundGoogle}</a></li>
+  </ul>
+  <p>{T.refund2}</p>
+</section>
+
+<section>
+  <h2>{T.privH}</h2>
+  <p>{T.priv}</p>
+</section>

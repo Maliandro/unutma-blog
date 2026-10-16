@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SEOHead from '../../components/SEOHead.astro';
+import SupportPage from '../../components/SupportPage.astro';
+
+const alternates = [
+  { lang: 'en', href: '/support/' },
+  { lang: 'tr', href: '/support/tr/' },
+  { lang: 'x-default', href: '/support/' },
+];
+---
+
+<BaseLayout lang="tr">
+  <SEOHead
+    slot="head"
+    title="Destek"
+    description="Unutma ile iletişime geçin, hata bildiriminde nelerin olması gerektiğini görün, hızlı yanıtlara ve App Store ile Google Play iade adımlarına ulaşın."
+    alternates={alternates}
+    locale="tr_TR"
+  />
+
+  <article
+    class="prose prose-lg mx-auto max-w-3xl px-4 py-12 prose-a:text-brand prose-strong:text-gray-900"
+  >
+    <SupportPage lang="tr" />
+  </article>
+</BaseLayout>

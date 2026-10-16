@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEOHead from '../components/SEOHead.astro';
+import SupportPage from '../components/SupportPage.astro';
+
+const alternates = [
+  { lang: 'en', href: '/support/' },
+  { lang: 'tr', href: '/support/tr/' },
+  { lang: 'x-default', href: '/support/' },
+];
+---
+
+<BaseLayout lang="en">
+  <SEOHead
+    slot="head"
+    title="Support"
+    description="Contact Unutma support, see what to include in a bug report, find quick answers, and learn how refunds and subscriptions work on the App Store and Google Play."
+    alternates={alternates}
+    locale="en_US"
+  />
+
+  <article
+    class="prose prose-lg mx-auto max-w-3xl px-4 py-12 prose-a:text-brand prose-strong:text-gray-900"
+  >
+    <SupportPage lang="en" />
+  </article>
+</BaseLayout>
