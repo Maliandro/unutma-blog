@@ -43,6 +43,36 @@
   ],
   "redirects": [
     {
+      "source": "/blog/unutma-vs-todoist-2026",
+      "destination": "/blog/best-offline-todo-app/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/unutma-vs-todoist-2026/",
+      "destination": "/blog/best-offline-todo-app/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/best-offline-first-todo-planner-apps-2026-no-account",
+      "destination": "/blog/best-offline-todo-app/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/best-offline-first-todo-planner-apps-2026-no-account/",
+      "destination": "/blog/best-offline-todo-app/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/best-privacy-focused-productivity-apps-2026-on-device",
+      "destination": "/blog/keep-your-data-safe-on-your-phone/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/best-privacy-focused-productivity-apps-2026-on-device/",
+      "destination": "/blog/keep-your-data-safe-on-your-phone/",
+      "permanent": true
+    },
+    {
       "source": "/blog/google-keep-alternative-no-account-offline",
       "destination": "/blog/notes-app-no-account-offline/",
       "permanent": true
