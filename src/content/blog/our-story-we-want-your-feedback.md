@@ -48,7 +48,7 @@ If you have tried Unutma — or even if you are still looking for the right tool
 - What do you wish more productivity apps understood about privacy?
 - Would you use Unutma for mornings, work, home, or all of the above?
 
-Leave a comment on [Instagram](https://www.instagram.com/private_life_organizer/) or email us at **unutma.app1.0@gmail.com**. We read everything.
+Leave a comment on [Instagram](https://www.instagram.com/life_admin_assistant/) or email us at **unutma.app1.0@gmail.com**. We read everything.
 
 ## Try Unutma
 
