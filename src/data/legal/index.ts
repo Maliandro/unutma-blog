@@ -40,16 +40,24 @@ export function isLegalLang(value: string | undefined): value is LegalLang {
   return !!value && value in bundles;
 }
 
+// Same keys and order as the app's LegalScreen (u40-b src/screens/LegalScreen.tsx).
+// Text comes from the app's src/locales/<lang>.json (legal.privacyContent); 3.30.0 policy,
+// last updated 13 November 2026.
 export const PRIVACY_SECTIONS = [
   { title: 'noPersonalData', text: 'noPersonalDataText' },
   { title: 'dataOnDevice', text: 'dataOnDeviceText' },
-  // Voice input goes through the phone's own dictation service (Apple/Google)
-  // — the one exception to "nothing leaves your phone", so the policy says so.
+  { title: 'assistant', text: 'assistantText' },
+  // Voice input: on-device by default; the phone's online service only if the user allows it.
   { title: 'voiceInput', text: 'voiceInputText' },
+  { title: 'contacts', text: 'contactsText' },
+  { title: 'permissions', text: 'permissionsText' },
+  // The app's only own connection: the EAS Update check at launch (no user content).
+  { title: 'network', text: 'networkText' },
   { title: 'subscriptions', text: 'subscriptionsText' },
   { title: 'howWeUse', text: 'howWeUseText' },
   { title: 'optionalAnalytics', text: 'optionalAnalyticsText' },
   { title: 'security', text: 'securityText' },
+  { title: 'feedback', text: 'feedbackText' },
   { title: 'gdprRights', text: 'gdprRightsText' },
   { title: 'children', text: 'childrenText' },
   { title: 'policyChanges', text: 'policyChangesText' },

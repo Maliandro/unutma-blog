@@ -61,7 +61,7 @@ This is the part that differentiates Unutma and it is literal, not marketing:
 - The vault and the journal are encrypted at rest with AES-256, key in the device keychain/keystore
 - Backup and restore are manual and user-initiated; the vault has its own separate encrypted backup
 - Voice dictation is the one step handled outside the app, by the phone's own speech service (Apple/Google) — on-device where the phone supports that language offline; spoken answers use the phone's built-in text-to-speech and stay on the device
-- No ads, no third-party tracking; anonymous usage analytics are optional and off unless the user enables them in Settings
+- No ads, no analytics, no tracking and no usage statistics; apart from the App Store or Google Play for purchases, the app connects on its own only for an app-update check with Expo (EAS Update) at launch and, at most once a day, to download a public announcements file from this website (no identifiers, none of the user's content)
 
 Because there is no server holding user content, there is nothing on the
 developer's side to breach, sell or subpoena. The
