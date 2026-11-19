@@ -32,9 +32,10 @@ const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION || GSC_CODE;
     {gscVerification && (
       <meta name="google-site-verification" content={gscVerification} />
     )}
-    <link rel="icon" type="image/png" href={withBase('/unutma-icon.png')} sizes="512x512" />
-    <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
-    <link rel="apple-touch-icon" href={withBase('/unutma-icon.png')} />
+    <link rel="icon" type="image/png" href={withBase('/favicon-32.png')} sizes="32x32" />
+    <link rel="icon" type="image/png" href={withBase('/favicon-48.png')} sizes="48x48" />
+    <link rel="icon" href={withBase('/favicon.ico')} sizes="any" />
+    <link rel="apple-touch-icon" href={withBase('/apple-touch-icon.png')} sizes="180x180" />
     {/* Fontlar kendi alanimizdan (src/styles/fonts.css). Govde + baslik fontu preload: ilk boyamada hazir,
         olculu fallback yuzleri sayesinde swap'ta kayma yok (CLS < 0,1). */}
     <link rel="preload" href={withBase('/fonts/plus-jakarta-sans-normal-latin.woff2')} as="font" type="font/woff2" crossorigin />
