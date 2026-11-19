@@ -371,6 +371,17 @@
       "source": "/terms/zh/",
       "destination": "/terms/",
       "permanent": true
+    },
+    {
+      "source": "/:path((?!\\.well-known(?:/|$)|gorev(?:/|$)|duyuru(?:/|$)|api(?:/|$)|_astro/|fonts/|favicon-32\\.png$).*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "unutma-blog.vercel.app"
+        }
+      ],
+      "destination": "https://unutma.meyadestudio.com/:path",
+      "permanent": true
     }
   ]
 }
