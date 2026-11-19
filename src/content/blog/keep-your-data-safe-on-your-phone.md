@@ -5,8 +5,8 @@ pubDate: 2026-08-23
 updatedDate: 2026-10-16
 keyword: "keep personal data on your phone"
 tags: ["unutma", "privacy", "security"]
-image: /blog/covers/cover-4.svg
-imageAlt: "Abstract cover illustration for a phone data safety checklist"
+image: /blog/covers/v3/keep-your-data-safe-on-your-phone.jpg
+imageAlt: "Unutma notice: your data is stored encrypted on your device"
 draft: false
 ---
 

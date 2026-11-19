@@ -5,8 +5,8 @@ pubDate: 2026-08-09
 updatedDate: 2026-10-16
 keyword: "how to stop forgetting things"
 tags: ["unutma", "memory", "productivity"]
-image: /blog/covers/cover-2.svg
-imageAlt: "Abstract cover illustration for a checklist on how to stop forgetting things"
+image: /blog/covers/v3/how-to-stop-forgetting-things.jpg
+imageAlt: "Unutma assistant remembering Mom’s birthday and answering when it is"
 draft: false
 ---
 

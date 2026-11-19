@@ -29,7 +29,7 @@ const AI_AGENTS = [
 ];
 
 export const GET: APIRoute = ({ site }) => {
-  const base = (site?.href ?? 'https://unutma-blog.vercel.app/').replace(/\/$/, '');
+  const base = (site?.href ?? 'https://unutma.meyadestudio.com/').replace(/\/$/, '');
   const body = [
     `# Unutma — ${base}`,
     '# Machine-readable summary: ' + `${base}/llms.txt`,

@@ -5,8 +5,8 @@ pubDate: 2026-10-04
 updatedDate: 2026-10-16
 keyword: "how to build habits that stick"
 tags: ["unutma", "habits", "routines"]
-image: /blog/covers/cover-1.svg
-imageAlt: "Abstract cover illustration for a habit setup checklist"
+image: /blog/covers/v3/how-to-build-habits-that-stick.jpg
+imageAlt: "Unutma day summary with gentle goals and the note that missing a day is okay"
 draft: false
 ---
 

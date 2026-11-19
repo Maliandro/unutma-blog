@@ -4,6 +4,8 @@ description: "A practical, legally safer guide to research search engines, citat
 pubDate: 2026-06-17
 tags: ["research tools", "students", "academia", "productivity"]
 draft: false
+image: /blog/covers/v3/free-academic-research-tools-for-students.jpg
+imageAlt: "Unutma monthly calendar for planning a semester"
 ---
 
 Academic work gets expensive fast: books, databases, subscriptions, PDF tools, citation managers, and a dozen tabs you swear you will organize later.

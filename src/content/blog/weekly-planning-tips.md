@@ -5,8 +5,8 @@ pubDate: 2026-10-04
 updatedDate: 2026-10-16
 keyword: "weekly planning tips"
 tags: ["unutma", "planning", "productivity"]
-image: /blog/covers/cover-1.svg
-imageAlt: "Abstract cover illustration for a 20-minute weekly planning checklist"
+image: /blog/covers/v3/weekly-planning-tips.jpg
+imageAlt: "Unutma showing what is on the calendar tomorrow"
 draft: false
 ---
 

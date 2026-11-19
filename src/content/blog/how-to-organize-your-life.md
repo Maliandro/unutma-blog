@@ -5,8 +5,8 @@ pubDate: 2026-08-02
 updatedDate: 2026-10-16
 keyword: "how to organize your life"
 tags: ["unutma", "organization", "productivity"]
-image: /blog/covers/cover-2.svg
-imageAlt: "Abstract cover illustration for a personal organization inventory"
+image: /blog/covers/v3/how-to-organize-your-life.jpg
+imageAlt: "Unutma home screen: say something or ask, with My records"
 draft: false
 ---
 

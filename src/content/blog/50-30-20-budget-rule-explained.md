@@ -5,8 +5,8 @@ pubDate: 2026-09-20
 updatedDate: 2026-10-16
 keyword: "50/30/20 budget rule"
 tags: ["unutma", "budgeting", "money"]
-image: /blog/covers/cover-1.svg
-imageAlt: "Abstract cover illustration for the 50/30/20 budget rule"
+image: /blog/covers/v3/50-30-20-budget-rule-explained.jpg
+imageAlt: "Unutma Budget screen showing monthly income, expense and balance"
 draft: false
 ---
 

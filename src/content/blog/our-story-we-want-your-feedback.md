@@ -4,7 +4,8 @@ description: "Why we built Unutma, what we believe about privacy and calm produc
 pubDate: 2026-05-27
 updatedDate: 2026-10-16
 tags: ["Unutma", "productivity", "privacy", "feedback"]
-image: /blog/covers/auto/our-story-we-want-your-feedback.svg
+image: /blog/covers/v3/our-story-we-want-your-feedback.jpg
+imageAlt: "Unutma assistant home screen with its green icon"
 draft: false
 ---
 

@@ -5,8 +5,8 @@ pubDate: 2026-10-10
 updatedDate: 2026-10-16
 keyword: "notes app with no account"
 tags: ["Unutma", "notes app", "privacy", "offline", "comparison"]
-image: /blog/covers/cover-3.svg
-imageAlt: "Abstract cover illustration for a guide to notes apps with no account"
+image: /blog/covers/v3/notes-app-no-account-offline.jpg
+imageAlt: "Unutma saving a quick note and recalling it later"
 draft: false
 ---
 

@@ -5,8 +5,8 @@ pubDate: 2026-08-30
 updatedDate: 2026-10-16
 keyword: "how to start a digital journal"
 tags: ["unutma", "journal", "privacy"]
-image: /blog/covers/cover-3.svg
-imageAlt: "Abstract cover illustration for a 7-day digital journal starter plan"
+image: /blog/covers/v3/how-to-start-a-digital-journal.jpg
+imageAlt: "Unutma journal screen with today’s entry and a mood picker"
 draft: false
 ---
 

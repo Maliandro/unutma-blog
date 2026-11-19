@@ -11,7 +11,7 @@ import type { APIRoute } from 'astro';
  * bilerek var — eksigi gizlemek yanlis oneriye ve kotu yoruma yol acar.
  */
 export const GET: APIRoute = ({ site }) => {
-  const base = (site?.href ?? 'https://unutma-blog.vercel.app/').replace(/\/$/, '');
+  const base = (site?.href ?? 'https://unutma.meyadestudio.com/').replace(/\/$/, '');
 
   const body = `# Unutma
 

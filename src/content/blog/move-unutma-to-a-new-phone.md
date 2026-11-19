@@ -4,8 +4,8 @@ description: "Unutma keeps everything on your device — no account, no cloud. T
 pubDate: 2026-08-09
 updatedDate: 2026-10-16
 tags: ["Unutma", "backup", "privacy", "how-to"]
-image: /blog/covers/auto/move-unutma-to-a-new-phone.svg
-imageAlt: "Moving Unutma data from an old phone to a new one"
+image: /blog/covers/v3/move-unutma-to-a-new-phone.jpg
+imageAlt: "Unutma home screen in dark mode"
 draft: false
 ---
 

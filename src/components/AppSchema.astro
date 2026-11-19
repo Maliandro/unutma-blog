@@ -17,7 +17,7 @@ const APP_STORE = 'https://apps.apple.com/app/id6758889495';
 const PLAY_STORE = 'https://play.google.com/store/apps/details?id=com.mehmet.unutma';
 // Domain TEK kaynaktan (astro.config.mjs -> Astro.site). Elle yazmak, 2026-08'de
 // canonical'in baskasinin domain'ini gostermesine yol acan hatanin ta kendisiydi.
-const SITE = (Astro.site?.href ?? 'https://unutma-blog.vercel.app/').replace(/\/$/, '');
+const SITE = (Astro.site?.href ?? 'https://unutma.meyadestudio.com/').replace(/\/$/, '');
 
 const featureList = [
   'Voice command capture (rule-based, understood on the device, 6 languages)',
@@ -77,9 +77,14 @@ const app = {
         'notes, shopping lists, routine tracking, expense tracking and an encrypted ' +
         'vault in one app. No account and no cloud sync — all data stays on the device, ' +
         'with the vault and journal encrypted at rest.',
-      // 2026-10-16: offers (fiyat) ve aggregateRating BILEREK YOK. Fiyat ulkeye
-      // gore degisiyor ve magazada degisince sema yalan soyler; puan zaten yok.
-      // Fiyat bilgisi FAQ metninde ve magaza sayfasinda.
+      // 2026-11-20: offers yalnizca "ucretsiz indirme" (price 0) + magaza baglantisi.
+      // Abonelik/omur boyu fiyati BILEREK yazilmaz: ulkeye gore degisir, magazadan okunur.
+      // aggregateRating hala YOK (gercek oy sayisi cok dusuk).
+      offers: [
+        { '@type': 'Offer', price: '0', priceCurrency: 'USD', url: APP_STORE, availability: 'https://schema.org/InStock', category: 'Free download, 7-day free trial, in-app purchase' },
+        { '@type': 'Offer', price: '0', priceCurrency: 'USD', url: PLAY_STORE, availability: 'https://schema.org/InStock', category: 'Free download, 7-day free trial, in-app purchase' },
+      ],
+      image: `${SITE}/blog/covers/v3/site-default.jpg`,
       // Dogrulanabilir, urunde gercekten var olan ayirt edici ozellikler.
       additionalProperty: [
         { '@type': 'PropertyValue', name: 'Requires account', value: 'No' },

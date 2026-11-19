@@ -5,8 +5,8 @@ pubDate: 2026-09-20
 updatedDate: 2026-10-16
 keyword: "how to set and track goals"
 tags: ["unutma", "goals", "planning"]
-image: /blog/covers/cover-1.svg
-imageAlt: "Abstract cover illustration for turning goals into tasks and routines"
+image: /blog/covers/v3/how-to-set-and-track-goals.jpg
+imageAlt: "Unutma to-do list with tasks done today and tasks to go"
 draft: false
 ---
 

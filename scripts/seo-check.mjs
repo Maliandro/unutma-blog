@@ -43,7 +43,7 @@ const AI_CLICHES = [
 ];
 
 // Kendi alanlarımız: "resmi dış kaynak" sayılmaz.
-const OWN_HOSTS = ['unutma-blog.vercel.app', 'apps.apple.com', 'play.google.com'];
+const OWN_HOSTS = ['unutma.meyadestudio.com', 'unutma-blog.vercel.app', 'apps.apple.com', 'play.google.com'];
 
 const errors = [];
 let warnings = 0;

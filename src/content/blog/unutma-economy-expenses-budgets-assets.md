@@ -7,8 +7,8 @@ updatedDate: 2026-10-16
 keyword: "expense tracker without bank linking"
 tags: ["Unutma", "finance", "budgeting", "productivity"]
 draft: false
-image: "/blog/covers/ai/unutma-economy-expenses-budgets-assets.png"
-imageAlt: "Calculator, coins, and receipt on a desk in daylight"
+image: /blog/covers/v3/unutma-economy-expenses-budgets-assets.jpg
+imageAlt: "Unutma Budget screen with income, expense, balance and trends"
 ---
 
 If you want an expense tracker without bank linking, where you type what you spent and nothing connects to your bank, this is how Unutma's Economy tab works, including what manual entry honestly costs you.

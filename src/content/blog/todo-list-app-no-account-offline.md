@@ -4,8 +4,8 @@ description: "Want a to-do list app with no account, no sign-up and no email? A 
 pubDate: 2026-10-17
 keyword: "to-do list app with no account"
 tags: ["Unutma", "to-do list", "privacy", "offline", "no account"]
-image: /blog/covers/ai/unutma-lists-todo-shopping-wishlist-workflow.png
-imageAlt: "A handwritten shopping list and a pen on a wooden kitchen table next to an apple"
+image: /blog/covers/v3/todo-list-app-no-account-offline.jpg
+imageAlt: "Unutma to-do list working without an account"
 draft: true
 ---
 

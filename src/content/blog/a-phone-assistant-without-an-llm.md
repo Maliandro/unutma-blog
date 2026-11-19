@@ -6,8 +6,8 @@ keyword: "phone assistant without an LLM"
 pubDate: 2026-09-23
 updatedDate: 2026-10-16
 tags: ["Unutma", "engineering", "privacy", "on-device", "show-hn"]
-image: "/launch/unutma-show-hn-poster.jpg"
-imageAlt: "Unutma turning the sentence 'Dentist Thursday at 3pm' into a to-do with a 3 PM reminder"
+image: /blog/covers/v3/a-phone-assistant-without-an-llm.jpg
+imageAlt: "Unutma assistant splitting one sentence into a calendar entry, a shopping item and a budget expense"
 featured: true
 draft: false
 ---

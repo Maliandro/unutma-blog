@@ -4,8 +4,8 @@ description: "See every major Unutma feature in one detailed visual guide: quick
 pubDate: 2026-06-26
 updatedDate: 2026-10-16
 tags: ["Unutma", "productivity", "privacy", "app guide"]
-image: /blog/covers/auto/unutma-app-complete-feature-guide.svg
-imageAlt: "Unutma cover card with the line Peace of mind, on your phone"
+image: /blog/covers/v3/unutma-app-showcase-complete-guide.jpg
+imageAlt: "Unutma assistant saving a calendar entry, a shopping item and a budget expense"
 featured: true
 draft: false
 ---

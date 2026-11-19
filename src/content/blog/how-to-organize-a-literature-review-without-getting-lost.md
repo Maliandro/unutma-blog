@@ -4,6 +4,8 @@ description: "A simple literature review workflow using citation maps, paper que
 pubDate: 2026-06-20
 tags: ["literature review", "PhD", "research", "planning"]
 draft: false
+image: /blog/covers/v3/how-to-organize-a-literature-review-without-getting-lost.jpg
+imageAlt: "Unutma to-do list with upcoming tasks such as finishing project slides"
 ---
 
 A literature review can start with one paper and become a maze by lunchtime.

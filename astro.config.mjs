@@ -16,10 +16,13 @@ const publicDir = fileURLToPath(new URL('./public', import.meta.url));
  * surum su adreste" diyordu — ve isaret ettigi adres 404'tu. Blogun neden hic
  * organik trafik almadiginin buyuk bolumu buydu.
  *
- * Kendi domain alininca YALNIZCA burasi degistirilir; robots.txt, llms.txt ve
+ * 2026-11-20: asil adres artik https://unutma.meyadestudio.com (eski unutma-blog.vercel.app oraya
+ * 301 ile yonlenecek; uygulamanin kullandigi .well-known, /gorev, /duyuru, /api yollari
+ * eski adreste kalir — bkz. eski-adres-yonlendirme dali, vercel.json).
+ * Domain degisirse YALNIZCA burasi degistirilir; robots.txt, llms.txt ve
  * uygulama semasi bu degerden turedigi icin kendiliginden guncellenir.
  */
-const site = process.env.ASTRO_SITE_URL || 'https://unutma-blog.vercel.app';
+const site = process.env.ASTRO_SITE_URL || 'https://unutma.meyadestudio.com';
 const base = (process.env.ASTRO_BASE_PATH || '/').replace(/\/?$/, '') || '/';
 const baseNorm = base === '/' ? undefined : base;
 

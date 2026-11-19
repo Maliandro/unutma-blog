@@ -106,3 +106,17 @@
     color: var(--u-ink);
   }
 }
+
+/* 2026-11-20 dar ekran (390 px) tasmalari: yazi tablolari kendi icinde kayar,
+   uzun tek kelimeli basliklar (ör. "Nutzungsbedingungen") satira sigar. */
+.prose table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.prose h1,
+.prose h2 {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}

@@ -5,8 +5,8 @@ pubDate: 2026-09-13
 updatedDate: 2026-10-16
 keyword: "budgeting tips for beginners"
 tags: ["unutma", "budgeting", "money"]
-image: /blog/covers/cover-4.svg
-imageAlt: "Abstract cover illustration for a first-month budgeting checklist"
+image: /blog/covers/v3/simple-budgeting-tips-for-beginners.jpg
+imageAlt: "Unutma six-month spending trend chart"
 draft: false
 ---
 

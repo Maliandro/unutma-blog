@@ -5,8 +5,8 @@ pubDate: 2026-04-03
 updatedDate: 2026-10-16
 tags: ["Unutma", "productivity", "tasks", "organization"]
 draft: false
-image: "/blog/covers/ai/unutma-lists-todo-shopping-wishlist-workflow.png"
-imageAlt: "Handwritten shopping list and fresh fruit on a kitchen counter"
+image: /blog/covers/v3/unutma-lists-todo-shopping-wishlist-workflow.jpg
+imageAlt: "Unutma shopping list with quantities"
 ---
 
 If your task app and your grocery list ever had a baby — and that baby also kept a birthday wishlist for headphones — you would get something close to the cognitive mess most people carry in a single “misc” list. **Unutma’s Lists tab refuses that mess.** It gives you **three modes** behind one roof: **Todo**, **Shopping**, and **Wishlist** — because your brain already treats those as different animals, even when your old app did not.

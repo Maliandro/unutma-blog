@@ -4,7 +4,8 @@ description: "Why we started this blog, what you will find here, and how it conn
 pubDate: 2026-03-15
 tags: ["Unutma", "productivity", "privacy"]
 draft: false
-image: /blog/covers/auto/welcome-to-unutma-blog.svg
+image: /blog/covers/v3/welcome-to-unutma-blog.jpg
+imageAlt: "Unutma home screen"
 ---
 
 ## What you will find here

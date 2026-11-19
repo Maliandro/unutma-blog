@@ -13,7 +13,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const KEY = '932277e70982d3f8a82a1812cf04a6fe';
-const SITE = (process.env.ASTRO_SITE_URL || 'https://unutma-blog.vercel.app').replace(/\/$/, '');
+const SITE = (process.env.ASTRO_SITE_URL || 'https://unutma.meyadestudio.com').replace(/\/$/, '');
 const ENDPOINT = 'https://api.indexnow.org/indexnow';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 

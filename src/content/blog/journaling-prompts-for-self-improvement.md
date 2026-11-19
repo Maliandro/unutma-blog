@@ -5,8 +5,8 @@ pubDate: 2026-09-06
 updatedDate: 2026-10-16
 keyword: "journaling prompts for self-improvement"
 tags: ["unutma", "journal", "self-improvement"]
-image: /blog/covers/cover-2.svg
-imageAlt: "Abstract cover illustration for a list of journaling prompts"
+image: /blog/covers/v3/journaling-prompts-for-self-improvement.jpg
+imageAlt: "Unutma journal mood history for the last seven days"
 draft: false
 ---
 

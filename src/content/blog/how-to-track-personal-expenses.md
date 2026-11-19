@@ -5,8 +5,8 @@ pubDate: 2026-09-13
 updatedDate: 2026-10-16
 keyword: "how to track personal expenses"
 tags: ["unutma", "budgeting", "money"]
-image: /blog/covers/cover-2.svg
-imageAlt: "Abstract cover illustration for a 30-day expense tracking template"
+image: /blog/covers/v3/how-to-track-personal-expenses.jpg
+imageAlt: "Unutma assistant answering how much was spent on groceries this month"
 draft: false
 ---
 

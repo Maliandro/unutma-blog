@@ -5,7 +5,8 @@ pubDate: 2026-05-17
 updatedDate: 2026-10-16
 tags: ["productivity", "mental load", "Unutma", "privacy", "habits"]
 draft: false
-image: /blog/covers/auto/beyond-the-todo-list-the-forgot-check-loop.svg
+image: /blog/covers/v3/beyond-the-todo-list-the-forgot-check-loop.jpg
+imageAlt: "Unutma Quick Actions log: locked the door, turned off the stove, took medicine"
 ---
 
 A normal to-do list answers: **what should I do next?**  

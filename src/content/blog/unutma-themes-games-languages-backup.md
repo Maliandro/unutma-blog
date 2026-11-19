@@ -5,8 +5,8 @@ pubDate: 2026-04-08
 updatedDate: 2026-10-16
 tags: ["Unutma", "productivity", "wellness", "privacy"]
 draft: false
-image: "/blog/covers/ai/unutma-themes-games-languages-backup.png"
-imageAlt: "Smartphone on a nightstand with soft colorful glow from the screen"
+image: /blog/covers/v3/unutma-themes-games-languages-backup.jpg
+imageAlt: "Unutma Budget screen in the dark theme"
 ---
 
 An app that only optimizes you is an app you **eventually uninstall** — because humans are not spreadsheets with legs. **Unutma’s “human layer”** is everything that makes the serious stuff **sustainable**: **12 visual themes**, **mini games** for mental breaks, **multiple interface languages**, **accessibility choices** like font sizing, and **export / backup** flows that keep **you** in charge of where data lives.

@@ -5,8 +5,8 @@ pubDate: 2026-08-09
 updatedDate: 2026-10-16
 keyword: "morning and evening routine"
 tags: ["unutma", "routines", "habits"]
-image: /blog/covers/cover-4.svg
-imageAlt: "Abstract cover illustration for a two-column morning and evening routine template"
+image: /blog/covers/v3/how-to-build-a-morning-routine.jpg
+imageAlt: "Unutma reminders grouped into morning and evening routines"
 draft: false
 ---
 

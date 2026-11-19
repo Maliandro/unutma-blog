@@ -5,8 +5,8 @@ pubDate: 2026-08-16
 updatedDate: 2026-10-16
 keyword: "apps that work offline"
 tags: ["unutma", "offline", "privacy"]
-image: /blog/covers/cover-2.svg
-imageAlt: "Abstract cover illustration for a guide to testing apps that work offline"
+image: /blog/covers/v3/why-you-should-use-offline-apps.jpg
+imageAlt: "Unutma assistant in dark mode, running offline on the phone"
 draft: false
 ---
 

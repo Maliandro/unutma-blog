@@ -7,8 +7,8 @@ updatedDate: 2026-10-16
 keyword: "offline password vault app"
 tags: ["Unutma", "privacy", "security", "organization"]
 draft: false
-image: "/blog/covers/ai/unutma-vault-passwords-face-id-privacy.png"
-imageAlt: "Padlock and laptop on a wooden desk, security and privacy mood"
+image: /blog/covers/v3/unutma-vault-passwords-face-id-privacy.jpg
+imageAlt: "Unutma Vault locked behind fingerprint or face recognition"
 ---
 
 Looking for an offline password vault app that keeps a handful of important logins on your phone, with no account and no cloud? This page explains how Unutma's Vault does that, what it protects, and where it stops.

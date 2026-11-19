@@ -5,8 +5,8 @@ pubDate: 2026-07-25
 updatedDate: 2026-10-16
 tags: ["Unutma", "voice", "productivity", "accessibility"]
 draft: false
-image: "/blog/covers/auto/unutma-voice-commands-hands-free-organizing.svg"
-imageAlt: "Unutma voice command feature cover"
+image: /blog/covers/v3/unutma-voice-commands-hands-free-organizing.jpg
+imageAlt: "Unutma voice assistant: say something or ask"
 ---
 
 Most apps that add a microphone button do exactly one thing with it: turn your speech into text in a box. You still have to decide which app that text belongs in, open the right screen, and type or paste it there yourself. That is dictation, not help.

@@ -7,8 +7,8 @@ updatedDate: 2026-10-16
 keyword: "reminders app that works offline"
 tags: ["Unutma", "routines", "planning", "productivity"]
 draft: false
-image: "/blog/covers/ai/unutma-routines-calendar-widgets-time.png"
-imageAlt: "Wall calendar, clock, and morning coffee by a window"
+image: /blog/covers/v3/unutma-routines-calendar-widgets-time.jpg
+imageAlt: "Unutma evening routine with a phone alarm option"
 ---
 
 A reminders app that works offline has one job: fire on time whether or not there is a signal or a server. In Unutma, routines and reminders are scheduled on the phone itself, so they do not wait for a connection. This guide covers how they work, and how to test them against your phone's battery saver.

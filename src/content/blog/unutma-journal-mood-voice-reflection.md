@@ -5,8 +5,8 @@ pubDate: 2026-04-06
 updatedDate: 2026-10-16
 tags: ["Unutma", "journaling", "wellness", "habits"]
 draft: false
-image: "/blog/covers/ai/unutma-journal-mood-voice-reflection.png"
-imageAlt: "Open journal with fountain pen in warm lamplight"
+image: /blog/covers/v3/unutma-journal-mood-voice-reflection.jpg
+imageAlt: "Unutma journal with today’s entry and mood history"
 ---
 
 You do not need another blank page staring back at you like a judgmental mirror — yet most “journaling apps” still behave like **Medium for your trauma**: rich text, prompts, streaks, and subtle pressure to **produce**. **Unutma’s Journal** takes a different stance: **continuity beats eloquence**, **privacy beats performance**, and **mood plus words** beat either one alone when you are trying to understand a week, not win a literary prize.
