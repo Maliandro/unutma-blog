@@ -1,0 +1,46 @@
+---
+/** Blog listesi, ilk sayfa (EN: /blog/, TR: /tr/blog/). */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SEOHead from '../SEOHead.astro';
+import BlogCard from '../BlogCard.astro';
+import { getPostsFor } from '../../utils/posts';
+import { postsPerPage } from '../../i18n/paths';
+import { makeT, pageLang, type Lang } from '../../i18n/site';
+
+interface Props {
+  lang?: Lang;
+}
+const lang = Astro.props.lang ?? pageLang(Astro.url.pathname);
+const T = makeT('src/pages/blog/index.astro', lang);
+const sorted = await getPostsFor(lang);
+const totalPages = Math.max(1, Math.ceil(sorted.length / postsPerPage()));
+const posts = sorted.slice(0, postsPerPage());
+const nextHref = lang === 'tr' ? '/tr/blog/sayfa/2/' : '/blog/page/2/';
+---
+
+<BaseLayout>
+  <SEOHead slot="head" title={T('seoTitle')} description={T('seoDesc')} />
+
+  <div class="mx-auto max-w-5xl px-4 py-12">
+    <h1 class="section-title text-4xl md:text-[2.35rem]">{T('title')}</h1>
+    <p class="mt-2 text-gray-600 dark:text-gray-400">{T('sub')}</p>
+
+    <div class="mt-10 grid gap-8 md:grid-cols-2">
+      {posts.map((post) => <BlogCard post={post} lang={lang} />)}
+    </div>
+
+    {
+      totalPages > 1 && (
+        <nav class="mt-12 flex items-center justify-center gap-4" aria-label={T('paginationAria')}>
+          <span class="text-sm text-gray-500 dark:text-gray-400">{T('pageOf', { totalPages })}</span>
+          <a
+            href={nextHref}
+            class="rounded-lg bg-brand px-4 py-2 text-sm font-medium text-white hover:bg-brand-dark"
+          >
+            {T('next')}
+          </a>
+        </nav>
+      )
+    }
+  </div>
+</BaseLayout>

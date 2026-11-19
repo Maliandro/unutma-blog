@@ -2,8 +2,22 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import { fileURLToPath } from 'node:url';
-import { rehypeImageAttrs, rehypeUnpublishedLinks } from './src/plugins/rehype-blog.mjs';
+import fs from 'node:fs';
+import { rehypeImageAttrs, rehypeUnpublishedLinks, rehypeTrLinks } from './src/plugins/rehype-blog.mjs';
 
+const SLUGS = JSON.parse(fs.readFileSync(new URL('./src/i18n/slug-haritasi.json', import.meta.url), 'utf8'));
+const TR_BY_EN = SLUGS;
+const EN_BY_TR = Object.fromEntries(Object.entries(SLUGS).map(([en, tr]) => [tr, en]));
+const STATIC = [['/', '/tr/'], ['/blog/', '/tr/blog/'], ['/faq/', '/tr/sss/'], ['/about/', '/tr/hakkinda/'], ['/support/', '/support/tr/'], ['/privacy/', '/privacy/tr/'], ['/terms/', '/terms/tr/']];
+function trAlternate(p) {
+  for (const [en, tr] of STATIC) if (p === en || p === tr) return { en, tr };
+  let m;
+  if ((m = p.match(/^\/blog\/page\/(\d+)\/$/)) ) return { en: p, tr: `/tr/blog/sayfa/${m[1]}/` };
+  if ((m = p.match(/^\/tr\/blog\/sayfa\/(\d+)\/$/))) return { en: `/blog/page/${m[1]}/`, tr: p };
+  if ((m = p.match(/^\/blog\/([^/]+)\/$/)) && TR_BY_EN[m[1]] && m[1] !== 'page' && m[1] !== 'tags') return { en: p, tr: `/tr/blog/${TR_BY_EN[m[1]]}/` };
+  if ((m = p.match(/^\/tr\/blog\/([^/]+)\/$/)) && EN_BY_TR[m[1]]) return { en: `/blog/${EN_BY_TR[m[1]]}/`, tr: p };
+  return null;
+}
 const blogDir = fileURLToPath(new URL('./src/content/blog', import.meta.url));
 const publicDir = fileURLToPath(new URL('./public', import.meta.url));
 
@@ -36,12 +50,26 @@ export default defineConfig({
     tailwind({ applyBaseStyles: false }),
     // /gorev noindex bir kopru sayfasi: sitemap'e girerse GSC "Submitted URL
     // marked noindex" hatasi uretir (bu proje bununla bir kez yandi).
-    sitemap({ filter: (page) => !page.includes('/gorev') }),
+    sitemap({
+      filter: (page) => !page.includes('/gorev') && !/\/(tr\/)?404\/?$/.test(page),
+      // EN <-> TR karsiliklari (slug haritasi) sitemap'te de bildirilir.
+      serialize(item) {
+        const u = new URL(item.url);
+        const alt = trAlternate(u.pathname);
+        if (alt) {
+          item.links = [
+            { url: new URL(alt.en, item.url).href, lang: 'en' },
+            { url: new URL(alt.tr, item.url).href, lang: 'tr' },
+          ];
+        }
+        return item;
+      },
+    }),
   ],
   markdown: {
     // Yayinda olmayan (draft / ileri tarihli) yaziya verilen link duz metne doner;
     // govde gorsellerine lazy + gercek width/height eklenir. Bkz. src/plugins/rehype-blog.mjs
-    rehypePlugins: [rehypeUnpublishedLinks({ blogDir }), rehypeImageAttrs({ publicDir })],
+    rehypePlugins: [rehypeUnpublishedLinks({ blogDir }), rehypeTrLinks(), rehypeImageAttrs({ publicDir })],
     shikiConfig: {
       theme: 'github-light',
     },

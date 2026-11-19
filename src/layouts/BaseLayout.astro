@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { withBase } from '../utils/site';
+import { counterpart, makeT, pageLang } from '../i18n/site';
 import '../styles/global.css';
 
 interface Props {
@@ -14,7 +15,15 @@ interface Props {
   heroTone?: 'green';
 }
 
-const { title, description, lang = 'en', heroTone } = Astro.props;
+const { title, description, lang: langProp, heroTone } = Astro.props;
+// Arayuz dili adres yolundan gelir (/tr/ ...); <html lang> yasal sayfalarda kendi dilini alir.
+const uiLang = pageLang(Astro.url.pathname);
+const lang = langProp ?? uiLang;
+const T = makeT('src/layouts/BaseLayout.astro', uiLang);
+const altEn = counterpart(Astro.url.pathname, 'en');
+const altTr = counterpart(Astro.url.pathname, 'tr');
+// Yasal sayfalarda (6 dil) kayitli dil tercihi yonlendirme yapmaz.
+const prefRedirect = !/^\/(privacy|terms)\//.test(Astro.url.pathname) && !/^\/(tr\/)?404\/?$/.test(Astro.url.pathname);
 const adsenseClient = import.meta.env.PUBLIC_ADSENSE_CLIENT ?? '';
 // Google Search Console dogrulamasi. Iki yol da calisir:
 //   1) Vercel'de PUBLIC_GSC_VERIFICATION env degiskeni (panel gerektirir), ya da
@@ -26,7 +35,7 @@ const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION || GSC_CODE;
 ---
 
 <!DOCTYPE html>
-<html lang={lang}>
+<html lang={lang} data-ui-lang={uiLang} data-alt-en={altEn ?? undefined} data-alt-tr={altTr ?? undefined} data-pref={prefRedirect ? '1' : undefined}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -49,6 +58,7 @@ const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION || GSC_CODE;
       </>
     )}
     <slot name="head" />
+    <script is:inline src={withBase('/lang.js')}></script>
     {
       adsenseClient && import.meta.env.PUBLIC_ADSENSE_ENABLED === 'true' && (
         <script
@@ -60,7 +70,7 @@ const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION || GSC_CODE;
     }
   </head>
   <body class="min-h-screen font-sans antialiased">
-    <a href="#main" class="skip-link">Skip to main content</a>
+    <a href="#main" class="skip-link">{T('skip')}</a>
     <Header tone={heroTone} />
     <main id="main">
       <slot />

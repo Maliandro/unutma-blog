@@ -1,4 +1,5 @@
 ---
+import { makeT, pageLang } from '../i18n/site';
 interface Props {
   title: string;
   url: string;
@@ -6,10 +7,11 @@ interface Props {
 }
 
 const { title, url } = Astro.props;
+const T = makeT('src/components/ShareButtons.astro', pageLang(Astro.url.pathname));
 const fullUrl = new URL(url, Astro.site).toString();
 ---
 
-<div class="my-6 flex flex-wrap items-center gap-2"><span class="mr-1 text-sm font-medium text-gray-500">Share</span>
+<div class="my-6 flex flex-wrap items-center gap-2"><span class="mr-1 text-sm font-medium text-gray-500">{T('share')}</span>
   <a
     href={`https://pinterest.com/pin/create/button/?url=${encodeURIComponent(fullUrl)}&description=${encodeURIComponent(title)}`}
     target="_blank"

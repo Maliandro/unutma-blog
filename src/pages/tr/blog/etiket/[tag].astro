@@ -1,0 +1,18 @@
+---
+import BlogTagPage from '../../../../components/pages/BlogTagPage.astro';
+import { getPostsFor, tagSlug } from '../../../../utils/posts';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const all = await getPostsFor('tr');
+  const tagSet = new Set<string>();
+  for (const post of all) for (const t of post.data.tags ?? []) tagSet.add(tagSlug(t));
+  return [...tagSet].map((tag) => ({
+    params: { tag },
+    props: { tag, posts: all.filter((p) => (p.data.tags ?? []).map(tagSlug).includes(tag)) },
+  }));
+}
+const { tag, posts } = Astro.props;
+---
+<BlogTagPage lang="tr" tag={tag} posts={posts} />

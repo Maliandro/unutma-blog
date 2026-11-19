@@ -33,7 +33,7 @@ personal notes, journal or passwords stored on someone else's server.
 - **Price:** every feature free for 7 days, then a free plan with limits, or a monthly/yearly subscription or one-time lifetime purchase (current local price is shown in the App Store and Google Play)
 - **Account:** none required — the app has no sign-up and no login
 - **Connectivity:** works offline, including in airplane mode; the only feature that can reach the network is voice dictation, which uses the phone's own speech service
-- **App interface languages (8):** English, Turkish, German, Spanish, French, Italian, Arabic, Chinese. The voice assistant works in the first 6 of these; this blog is in English.
+- **App interface languages (8):** English, Turkish, German, Spanish, French, Italian, Arabic, Chinese. The voice assistant works in the first 6 of these; this blog is in English and Turkish (Turkish edition under /tr/).
 - **Themes:** 12
 
 ## Features (all verified, in-product)

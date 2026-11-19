@@ -37,6 +37,36 @@ export function rehypeUnpublishedLinks({ blogDir }) {
   };
 }
 
+
+// 3) rehypeTrLinks: src/content/blogTr altindaki Turkce yazilarda Ingilizce adres
+//    veren ic baglantilari /tr/... karsiligina cevirir (slug haritasi:
+//    src/i18n/slug-haritasi.json). Ingilizce yazilara dokunmaz.
+const SLUGS = JSON.parse(fs.readFileSync(new URL('../i18n/slug-haritasi.json', import.meta.url), 'utf8'));
+const STATIC_TR = { '/': '/tr/', '/blog/': '/tr/blog/', '/faq/': '/tr/sss/', '/about/': '/tr/hakkinda/', '/support/': '/support/tr/' };
+export function trHref(href) {
+  const m = href.match(/^([^?#]*)([?#].*)?$/);
+  const p = m[1];
+  const rest = m[2] || '';
+  if (!p.startsWith('/') || /\.[a-z0-9]+$/i.test(p)) return href;
+  const withSlash = p.endsWith('/') ? p : p + '/';
+  if (/^\/(privacy|terms)\/$/.test(withSlash)) return `${withSlash}tr/${rest}`;
+  if (STATIC_TR[withSlash]) return STATIC_TR[withSlash] + rest;
+  const b = withSlash.match(/^\/blog\/([a-z0-9-]+)\/$/);
+  if (b && SLUGS[b[1]]) return `/tr/blog/${SLUGS[b[1]]}/${rest}`;
+  return href;
+}
+export function rehypeTrLinks() {
+  return () => (tree, file) => {
+    const f = String(file?.path ?? file?.history?.[0] ?? '').split(String.fromCharCode(92)).join('/');
+    if (!f.includes('/content/blogTr/')) return;
+    walk(tree, (node) => {
+      if (node.type !== 'element' || node.tagName !== 'a') return;
+      const href = node.properties?.href;
+      if (typeof href === 'string' && href.startsWith('/')) node.properties.href = trHref(href);
+    });
+  };
+}
+
 function pngSize(buf) {
   if (buf.length > 24 && buf.toString('ascii', 1, 4) === 'PNG') return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) };
   return null;

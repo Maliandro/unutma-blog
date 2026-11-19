@@ -1,0 +1,23 @@
+---
+import BlogPaginationPage from '../../../../components/pages/BlogPaginationPage.astro';
+import { getPostsFor } from '../../../../utils/posts';
+import { postsPerPage } from '../../../../i18n/paths';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const per = postsPerPage();
+  const sorted = await getPostsFor('tr');
+  const totalPages = Math.max(1, Math.ceil(sorted.length / per));
+  const paths = [];
+  for (let p = 2; p <= totalPages; p++) {
+    paths.push({
+      params: { page: String(p) },
+      props: { posts: sorted.slice((p - 1) * per, p * per), currentPage: p, totalPages },
+    });
+  }
+  return paths;
+}
+const { posts, currentPage, totalPages } = Astro.props;
+---
+<BlogPaginationPage lang="tr" posts={posts} currentPage={currentPage} totalPages={totalPages} />

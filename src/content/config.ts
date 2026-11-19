@@ -1,8 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 
-const blog = defineCollection({
-  type: 'content',
-  schema: z.object({
+const postFields = {
     title: z.string(),
     description: z.string(),
     pubDate: z.coerce.date(),
@@ -22,7 +20,14 @@ const blog = defineCollection({
     keyword: z.string().optional(),
     /** Arama sonucu basligi farkli olacaksa (ek " | Unutma Blog" otomatik eklenir). */
     seoTitle: z.string().optional(),
-  }),
+  };
+
+const blog = defineCollection({ type: 'content', schema: z.object(postFields) });
+
+/** Turkce surum: ayni yazilar, dosya adi = Ingilizce slug; adres trSlug ile /tr/blog/<trSlug>/. */
+const blogTr = defineCollection({
+  type: 'content',
+  schema: z.object({ ...postFields, trSlug: z.string() }),
 });
 
-export const collections = { blog };
+export const collections = { blog, blogTr };

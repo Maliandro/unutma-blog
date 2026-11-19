@@ -5,46 +5,52 @@
  * Diger sayfalarda hep beyaz. Eski "tema" dugmesi hicbir sey yapmiyordu, kaldirildi.
  */
 import { withBase } from '../utils/site';
+import { makeT, pageLang } from '../i18n/site';
+import LangSwitch from './LangSwitch.astro';
 
 interface Props {
   tone?: 'green';
 }
 const { tone } = Astro.props;
 const pathname = Astro.url.pathname;
+const lang = pageLang(pathname);
+const T = makeT('src/components/Header.astro', lang);
+const pre = lang === 'tr' ? '/tr' : '';
 
 const nav = [
-  { href: '/#how', label: 'How it works', key: 'how' },
-  { href: '/#private', label: 'Privacy', key: 'private' },
-  { href: '/blog/', label: 'Blog', key: 'blog' },
-  { href: '/faq/', label: 'FAQ', key: 'faq' },
+  { href: `${pre}/#how`, label: T('nav.how'), key: 'how' },
+  { href: `${pre}/#private`, label: T('nav.private'), key: 'private' },
+  { href: `${pre}/blog/`, label: T('nav.blog'), key: 'blog' },
+  { href: lang === 'tr' ? '/tr/sss/' : '/faq/', label: T('nav.faq'), key: 'faq' },
 ];
 
 const isActive = (key: string) =>
-  (key === 'blog' && pathname.startsWith('/blog')) || (key === 'faq' && pathname.startsWith('/faq'));
+  (key === 'blog' && /^\/(tr\/)?blog/.test(pathname)) || (key === 'faq' && /^\/(faq|tr\/sss)/.test(pathname));
 ---
 
 <header class:list={['u-head', tone === 'green' && 'is-green']} data-u-head>
   <div class="u-head__in">
-    <a href={withBase('/')} class="u-head__brand" aria-label="Unutma home">
+    <a href={withBase(`${pre}/`)} class="u-head__brand" aria-label={T('brandAria')}>
       <img src={withBase('/unutma-icon.png')} width="36" height="36" alt="" decoding="async" />
       <span>Unutma</span>
     </a>
 
-    <nav class="u-head__nav" aria-label="Primary navigation">
+    <nav class="u-head__nav" aria-label={T('navAria')}>
       {nav.map(({ href, label, key }) => (
         <a href={href} aria-current={isActive(key) ? 'page' : undefined}>{label}</a>
       ))}
     </nav>
 
     <div class="u-head__end">
-      <a href="/#get" class="u-head__cta">Get the app</a>
+      <LangSwitch class="u-head__lang" />
+      <a href={`${pre}/#get`} class="u-head__cta">{T('cta')}</a>
       <button
         type="button"
         id="mobile-menu-btn"
         class="u-head__menu"
         aria-expanded="false"
         aria-controls="mobile-drawer"
-        aria-label="Open menu"
+        aria-label={T('menuOpenAria')}
       >
         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" aria-hidden="true">
           <path stroke-linecap="round" stroke-width="2" d="M4 8h16M4 16h16" />
@@ -54,24 +60,25 @@ const isActive = (key: string) =>
   </div>
 </header>
 
-<div id="mobile-drawer" class="u-drawer" hidden role="dialog" aria-modal="true" aria-label="Menu">
-  <button type="button" id="mobile-drawer-backdrop" class="u-drawer__back" tabindex="-1" aria-label="Close menu"></button>
+<div id="mobile-drawer" class="u-drawer" hidden role="dialog" aria-modal="true" aria-label={T('drawerAria')}>
+  <button type="button" id="mobile-drawer-backdrop" class="u-drawer__back" tabindex="-1" aria-label={T('menuCloseAria')}></button>
   <div class="u-drawer__panel">
     <div class="u-drawer__top">
-      <span class="u-drawer__title">Menu</span>
-      <button type="button" id="mobile-menu-close" class="u-head__menu" aria-label="Close menu">
+      <span class="u-drawer__title">{T('drawerTitle')}</span>
+      <button type="button" id="mobile-menu-close" class="u-head__menu" aria-label={T('menuCloseAria')}>
         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" aria-hidden="true">
           <path stroke-linecap="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
     </div>
-    <nav class="u-drawer__nav" aria-label="Primary navigation">
-      <a href="/" data-mobile-nav-link>Home</a>
+    <nav class="u-drawer__nav" aria-label={T('navAria')}>
+      <a href={`${pre}/`} data-mobile-nav-link>{T('drawer.home')}</a>
       {nav.map(({ href, label }) => <a href={href} data-mobile-nav-link>{label}</a>)}
-      <a href="/about/" data-mobile-nav-link>About</a>
-      <a href="/support/" data-mobile-nav-link>Support</a>
+      <a href={lang === 'tr' ? '/tr/hakkinda/' : '/about/'} data-mobile-nav-link>{T('drawer.about')}</a>
+      <a href={lang === 'tr' ? '/support/tr/' : '/support/'} data-mobile-nav-link>{T('drawer.support')}</a>
     </nav>
-    <a href="/#get" class="u-drawer__cta" data-mobile-nav-link>Get the app</a>
+    <LangSwitch class="u-drawer__lang" />
+    <a href={`${pre}/#get`} class="u-drawer__cta" data-mobile-nav-link>{T('cta')}</a>
   </div>
 </div>
 
@@ -196,10 +203,17 @@ const isActive = (key: string) =>
       display: none;
     }
   }
-  @media (max-width: 380px) {
+  @media (max-width: 520px) {
     .u-head__cta {
       display: none;
     }
+  }
+  .u-head__end :global(.u-lang) {
+    margin-right: 0.15rem;
+  }
+  .u-drawer__panel :global(.u-drawer__lang) {
+    align-self: flex-start;
+    margin: 0 0 1rem;
   }
 
   .u-drawer {

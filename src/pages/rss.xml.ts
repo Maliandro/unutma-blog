@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
-import { getLivePosts } from '../utils/posts';
+import { getPostsFor } from '../utils/posts';
+import { postPath, type Lang } from '../i18n/site';
 
 /**
  * RSS 2.0 akisi (bagimliliksiz). Adresler astro.config.mjs'teki tek kaynaktan
@@ -8,12 +9,13 @@ import { getLivePosts } from '../utils/posts';
 const x = (s: string) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-export const GET: APIRoute = async ({ site }) => {
+export async function buildRss(site: URL | undefined, lang: Lang): Promise<Response> {
   const base = (site?.href ?? 'https://unutma.meyadestudio.com/').replace(/\/$/, '');
-  const posts = (await getLivePosts()).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  const posts = await getPostsFor(lang);
+  const pre = lang === 'tr' ? '/tr' : '';
   const items = posts
     .map((p) => {
-      const url = `${base}/blog/${p.slug}/`;
+      const url = `${base}${postPath(lang, p as any)}`;
       const img = p.data.image && /\.(jpe?g|png)$/i.test(p.data.image) ? `${base}${p.data.image}` : '';
       return [
         '<item>',
@@ -32,13 +34,15 @@ export const GET: APIRoute = async ({ site }) => {
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
 <title>Unutma Blog</title>
-<link>${base}/blog/</link>
-<atom:link href="${base}/rss.xml" rel="self" type="application/rss+xml" />
-<description>Practical, privacy-first guides to organizing your life, from the makers of Unutma.</description>
-<language>en</language>
+<link>${base}${pre}/blog/</link>
+<atom:link href="${base}${pre}/rss.xml" rel="self" type="application/rss+xml" />
+<description>${lang === 'tr' ? 'Hayatınızı düzene sokmak için pratik, gizlilik öncelikli rehberler; Unutma yapımcılarından.' : 'Practical, privacy-first guides to organizing your life, from the makers of Unutma.'}</description>
+<language>${lang}</language>
 ${items}
 </channel>
 </rss>
 `;
   return new Response(body, { headers: { 'Content-Type': 'application/rss+xml; charset=utf-8' } });
-};
+}
+
+export const GET: APIRoute = ({ site }) => buildRss(site, 'en');

@@ -1,0 +1,938 @@
+{
+  "src/components/Header.astro#nav.how": {
+    "en": "How it works",
+    "tr": "Nasıl çalışır"
+  },
+  "src/components/Header.astro#nav.private": {
+    "en": "Privacy",
+    "tr": "Gizlilik"
+  },
+  "src/components/Header.astro#nav.blog": {
+    "en": "Blog",
+    "tr": "Blog"
+  },
+  "src/components/Header.astro#nav.faq": {
+    "en": "FAQ",
+    "tr": "SSS"
+  },
+  "src/components/Header.astro#brandAria": {
+    "en": "Unutma home",
+    "tr": "Unutma ana sayfa"
+  },
+  "src/components/Header.astro#navAria": {
+    "en": "Primary navigation",
+    "tr": "Ana gezinme"
+  },
+  "src/components/Header.astro#cta": {
+    "en": "Get the app",
+    "tr": "Uygulamayı indirin"
+  },
+  "src/components/Header.astro#menuOpenAria": {
+    "en": "Open menu",
+    "tr": "Menüyü aç"
+  },
+  "src/components/Header.astro#menuCloseAria": {
+    "en": "Close menu",
+    "tr": "Menüyü kapat"
+  },
+  "src/components/Header.astro#drawerAria": {
+    "en": "Menu",
+    "tr": "Menü"
+  },
+  "src/components/Header.astro#drawerTitle": {
+    "en": "Menu",
+    "tr": "Menü"
+  },
+  "src/components/Header.astro#drawer.home": {
+    "en": "Home",
+    "tr": "Ana sayfa"
+  },
+  "src/components/Header.astro#drawer.about": {
+    "en": "About",
+    "tr": "Hakkında"
+  },
+  "src/components/Header.astro#drawer.support": {
+    "en": "Support",
+    "tr": "Destek"
+  },
+  "src/components/Footer.astro#blurb": {
+    "en": "A life admin assistant that lives on your phone. No account, no cloud copy of your notes.",
+    "tr": "Telefonunuzda yaşayan kişisel asistanınız. Hesap yok, notlarınızın bulutta kopyası yok."
+  },
+  "src/components/Footer.astro#col.app": {
+    "en": "App",
+    "tr": "Uygulama"
+  },
+  "src/components/Footer.astro#col.appAria": {
+    "en": "App",
+    "tr": "Uygulama"
+  },
+  "src/components/Footer.astro#link.faq": {
+    "en": "FAQ",
+    "tr": "SSS"
+  },
+  "src/components/Footer.astro#link.support": {
+    "en": "Support",
+    "tr": "Destek"
+  },
+  "src/components/Footer.astro#col.read": {
+    "en": "Read",
+    "tr": "Okuyun"
+  },
+  "src/components/Footer.astro#col.siteAria": {
+    "en": "Site",
+    "tr": "Site"
+  },
+  "src/components/Footer.astro#link.blog": {
+    "en": "Blog",
+    "tr": "Blog"
+  },
+  "src/components/Footer.astro#link.about": {
+    "en": "About",
+    "tr": "Hakkında"
+  },
+  "src/components/Footer.astro#link.privacy": {
+    "en": "Privacy policy",
+    "tr": "Gizlilik politikası"
+  },
+  "src/components/Footer.astro#link.terms": {
+    "en": "Terms of service",
+    "tr": "Kullanım koşulları"
+  },
+  "src/components/Footer.astro#col.follow": {
+    "en": "Follow",
+    "tr": "Takip edin"
+  },
+  "src/components/Footer.astro#col.followAria": {
+    "en": "Follow Unutma",
+    "tr": "Unutma'yı takip edin"
+  },
+  "src/components/Footer.astro#rights": {
+    "en": "All rights reserved.",
+    "tr": "Tüm hakları saklıdır."
+  },
+  "src/components/Footer.astro#madeBy": {
+    "en": "Made by <strong>Meyade Digital Studio</strong>",
+    "tr": "<strong>Meyade Digital Studio</strong> tarafından yapıldı"
+  },
+  "src/components/Footer.astro#copyright": {
+    "en": "© {year} Unutma. All rights reserved.",
+    "tr": "© {year} Unutma. Tüm hakları saklıdır."
+  },
+  "src/layouts/BaseLayout.astro#skip": {
+    "en": "Skip to main content",
+    "tr": "Ana içeriğe geç"
+  },
+  "src/layouts/BlogPost.astro#allArticles": {
+    "en": "All articles",
+    "tr": "Tüm yazılar"
+  },
+  "src/layouts/BlogPost.astro#coverAltFallback": {
+    "en": "{title} — article cover",
+    "tr": "{title} — yazı kapağı"
+  },
+  "src/layouts/BlogPost.astro#dateLocale": {
+    "en": "en-US (toLocaleDateString)",
+    "tr": "tr-TR (örn. 20 Kasım 2026)"
+  },
+  "src/components/BlogCard.astro#readMore (ui.ts blogCard.readMore, kartta kullanılmıyor)": {
+    "en": "Read more →",
+    "tr": "Devamını oku →"
+  },
+  "src/components/BlogCard.astro#dateLocale": {
+    "en": "en-US (toLocaleDateString)",
+    "tr": "tr-TR"
+  },
+  "src/components/ShareButtons.astro#share": {
+    "en": "Share",
+    "tr": "Paylaş"
+  },
+  "src/components/StoreBadgeRow.astro#appStore.small": {
+    "en": "Download on the",
+    "tr": "Şuradan indirin:"
+  },
+  "src/components/StoreBadgeRow.astro#appStore.name": {
+    "en": "App Store",
+    "tr": "App Store"
+  },
+  "src/components/StoreBadgeRow.astro#play.small": {
+    "en": "Get it on",
+    "tr": "Şuradan edinin:"
+  },
+  "src/components/StoreBadgeRow.astro#play.name": {
+    "en": "Google Play",
+    "tr": "Google Play"
+  },
+  "src/components/AppStoreBanner.astro#title": {
+    "en": "Ready to get organized?",
+    "tr": "Düzene girmeye hazır mısınız?"
+  },
+  "src/components/AppStoreBanner.astro#body": {
+    "en": "Unutma keeps your life organized — offline, private, and free. No account needed. Your data stays on your device.",
+    "tr": "Unutma hayatınızı düzende tutar: çevrimdışı ve özel. Ücretsiz denemeyle başlayın, hesap gerekmez. Verileriniz telefonunuzda kalır."
+  },
+  "src/components/NewsletterForm.astro#title": {
+    "en": "Stay organized",
+    "tr": "Düzeninizi koruyun"
+  },
+  "src/components/NewsletterForm.astro#sub": {
+    "en": "Get occasional tips on productivity and privacy-first apps. No spam.",
+    "tr": "Verimlilik ve gizlilik öncelikli uygulamalar üzerine ara sıra ipuçları alın. Gereksiz e-posta yok."
+  },
+  "src/components/NewsletterForm.astro#email": {
+    "en": "Email",
+    "tr": "E-posta"
+  },
+  "src/components/NewsletterForm.astro#placeholder": {
+    "en": "you@example.com",
+    "tr": "siz@ornek.com"
+  },
+  "src/components/NewsletterForm.astro#btn": {
+    "en": "Coming soon",
+    "tr": "Yakında"
+  },
+  "src/components/NewsletterForm.astro#hint": {
+    "en": "We will only email when sign-up opens. No spam.",
+    "tr": "Yalnızca kayıt açıldığında e-posta göndereceğiz. Gereksiz e-posta yok."
+  },
+  "src/pages/404.astro#seoTitle": {
+    "en": "Page not found",
+    "tr": "Sayfa bulunamadı"
+  },
+  "src/pages/404.astro#seoDesc": {
+    "en": "The page you are looking for does not exist.",
+    "tr": "Aradığınız sayfa mevcut değil."
+  },
+  "src/pages/404.astro#title": {
+    "en": "Page not found",
+    "tr": "Sayfa bulunamadı"
+  },
+  "src/pages/404.astro#body": {
+    "en": "That link may be outdated or mistyped.",
+    "tr": "Bu bağlantı eskimiş ya da yanlış yazılmış olabilir."
+  },
+  "src/pages/404.astro#home": {
+    "en": "Back to home",
+    "tr": "Ana sayfaya dön"
+  },
+  "src/pages/blog/index.astro#seoTitle": {
+    "en": "Productivity and Privacy Guides",
+    "tr": "Verimlilik ve Gizlilik Rehberleri"
+  },
+  "src/pages/blog/index.astro#seoDesc": {
+    "en": "Practical guides on offline planning, to-do lists, private journaling, routines and budgeting, plus how to keep personal data on your phone.",
+    "tr": "Çevrimdışı planlama, yapılacaklar listesi, özel günlük, rutinler ve bütçe üzerine pratik rehberler; kişisel verilerinizi telefonunuzda tutmanın yolları."
+  },
+  "src/pages/blog/index.astro#title": {
+    "en": "Blog",
+    "tr": "Blog"
+  },
+  "src/pages/blog/index.astro#sub": {
+    "en": "All posts, newest first. Filter by tag from each card.",
+    "tr": "Tüm yazılar, en yeniden eskiye. Her karttaki etiketle süzebilirsiniz."
+  },
+  "src/pages/blog/index.astro#paginationAria": {
+    "en": "Pagination",
+    "tr": "Sayfalama"
+  },
+  "src/pages/blog/index.astro#pageOf": {
+    "en": "Page 1 / {totalPages}",
+    "tr": "Sayfa 1 / {totalPages}"
+  },
+  "src/pages/blog/index.astro#next": {
+    "en": "Next",
+    "tr": "Sonraki"
+  },
+  "src/pages/blog/page/[page].astro#title": {
+    "en": "Blog — page {n}",
+    "tr": "Blog — sayfa {n}"
+  },
+  "src/pages/blog/page/[page].astro#desc": {
+    "en": "Older Unutma Blog articles, page {n} of {total}: practical guides on offline planning, private journaling, routines, budgeting and keeping data on your phone.",
+    "tr": "Unutma Blog'un eski yazıları, sayfa {n} / {total}: çevrimdışı planlama, özel günlük, rutinler, bütçe ve verilerinizi telefonunuzda tutma üzerine pratik rehberler."
+  },
+  "src/pages/blog/page/[page].astro#older": {
+    "en": "Older articles.",
+    "tr": "Eski yazılar."
+  },
+  "src/pages/blog/page/[page].astro#prev": {
+    "en": "Previous",
+    "tr": "Önceki"
+  },
+  "src/pages/blog/page/[page].astro#next": {
+    "en": "Next",
+    "tr": "Sonraki"
+  },
+  "src/pages/blog/page/[page].astro#pageOf": {
+    "en": "Page {n} / {total}",
+    "tr": "Sayfa {n} / {total}"
+  },
+  "src/pages/blog/tags/[tag].astro#seoTitle": {
+    "en": "Articles tagged “{tag}”",
+    "tr": "“{tag}” etiketli yazılar"
+  },
+  "src/pages/blog/tags/[tag].astro#seoDesc": {
+    "en": "{count} Unutma Blog article(s) tagged “{tag}”: practical, privacy-first guides on planning, lists, journaling and keeping personal data on your phone.",
+    "tr": "“{tag}” etiketli {count} Unutma Blog yazısı: planlama, listeler, günlük ve verilerinizi telefonunuzda tutma üzerine pratik rehberler."
+  },
+  "src/pages/blog/tags/[tag].astro#all": {
+    "en": "← All posts",
+    "tr": "← Tüm yazılar"
+  },
+  "src/pages/blog/tags/[tag].astro#count": {
+    "en": "{count} article(s)",
+    "tr": "{count} yazı"
+  },
+  "src/pages/about.astro#seoTitle": {
+    "en": "About",
+    "tr": "Hakkında"
+  },
+  "src/pages/about.astro#seoDesc": {
+    "en": "About Unutma and this blog: who writes it, why the app works offline with no account, and how we write honest, practical guides on privacy-first productivity.",
+    "tr": "Unutma ve bu blog hakkında: uygulama neden hesapsız ve çevrimdışı çalışıyor, gizlilik öncelikli verimlilik üzerine dürüst rehberleri nasıl yazıyoruz."
+  },
+  "src/pages/about.astro#h1": {
+    "en": "About this blog",
+    "tr": "Bu blog hakkında"
+  },
+  "src/pages/about.astro#p1": {
+    "en": "Unutma Blog publishes helpful, SEO-friendly articles on productivity, journaling, routines, privacy-first tools, and personal organization. The goal is simple: help you build calmer habits — and introduce Unutma when it genuinely fits.",
+    "tr": "Unutma Blog; verimlilik, günlük tutma, rutinler, gizlilik öncelikli araçlar ve kişisel düzen üzerine işe yarar yazılar yayımlar. Amaç basit: daha sakin alışkanlıklar kurmanıza yardım etmek ve gerçekten uyduğu yerde Unutma'yı tanıtmak."
+  },
+  "src/pages/about.astro#h2": {
+    "en": "About Unutma",
+    "tr": "Unutma hakkında"
+  },
+  "src/pages/about.astro#p2": {
+    "en": "<strong>Unutma</strong> is a mobile app for lists, journal, password vault, wishlist, finance tracking, routines, and more — with a focus on offline use and keeping your data on your device. No account is required for your content.",
+    "tr": "<strong>Unutma</strong>; listeler, günlük, parola kasası, istek listesi, harcama takibi, rutinler ve daha fazlası için bir mobil uygulamadır. Odağı çevrimdışı kullanım ve verilerinizi telefonunuzda tutmaktır. İçeriğiniz için hesap gerekmez."
+  },
+  "src/pages/about.astro#p3": {
+    "en": "We are not a cloud-first service; we believe your notes and tasks belong with you. This blog is independent in tone: you should get value even if you never download the app.",
+    "tr": "Biz bulut öncelikli bir hizmet değiliz; notlarınızın ve görevlerinizin size ait olduğuna inanıyoruz. Bu blogun dili bağımsızdır: uygulamayı hiç indirmeseniz bile işinize yaramalı."
+  },
+  "src/pages/about.astro#links": {
+    "en": "Home · Blog · Privacy policy · Terms of service",
+    "tr": "Ana sayfa · Blog · Gizlilik politikası · Kullanım koşulları"
+  },
+  "src/pages/index.astro#seo.title": {
+    "en": "Unutma: Life Admin Assistant, Private and Offline",
+    "tr": "Unutma: Kişisel Asistanınız, Özel ve Çevrimdışı"
+  },
+  "src/pages/index.astro#seo.description": {
+    "en": "Say it once and Unutma files it: reminders, lists, calendar and expenses. Runs on your phone, works in airplane mode, no account needed.",
+    "tr": "Bir kez söyleyin, Unutma yerine koysun: hatırlatıcı, liste, takvim, harcama. Telefonunuzda çalışır, uçak modunda da açılır, hesap gerekmez."
+  },
+  "src/pages/index.astro#typed (demo cümlesi)": {
+    "en": "Zoe's birthday dinner Saturday at 7pm, buy milk and eggs, spent 64 dollars on groceries",
+    "tr": "Cumartesi akşam 7'de doğum günü yemeği, süt ve yumurta al, markete 64 dolar harcadım"
+  },
+  "src/pages/index.astro#feat1.title": {
+    "en": "Tell it once. Ask it later.",
+    "tr": "Bir kez söyleyin. Sonra sorun."
+  },
+  "src/pages/index.astro#feat1.body": {
+    "en": "Mention where you parked, a birthday, a gate code. Ask next week and the answer comes from your own notes, with the note it came from.",
+    "tr": "Arabayı nereye park ettiğinizi, bir doğum gününü, bir kapı şifresini söyleyin. Haftaya sorun; yanıt kendi notlarınızdan gelir, hangi nottan geldiği de yanında."
+  },
+  "src/pages/index.astro#feat1.alt": {
+    "en": "Unutma assistant saving \"I parked the car on level B2\" as a note, then answering \"Where is my car?\" with its source.",
+    "tr": "Unutma asistanı \"Arabayı B2 katına park ettim\" cümlesini not olarak kaydediyor, ardından \"Arabam nerede?\" sorusunu kaynağıyla birlikte yanıtlıyor."
+  },
+  "src/pages/index.astro#feat2.title": {
+    "en": "Ask about your own life.",
+    "tr": "Kendi hayatınızı sorun."
+  },
+  "src/pages/index.astro#feat2.body": {
+    "en": "What did I spend on groceries this month? What is on tomorrow? You get a straight answer and the records behind it.",
+    "tr": "Bu ay markete ne harcadım? Yarın neler var? Net bir yanıt alırsınız, arkasındaki kayıtlarla birlikte."
+  },
+  "src/pages/index.astro#feat2.alt": {
+    "en": "Unutma answering a grocery spending question with a total and two records, and listing tomorrow's plans.",
+    "tr": "Unutma, market harcaması sorusunu bir toplam ve iki kayıtla yanıtlıyor, yarının planlarını da listeliyor."
+  },
+  "src/pages/index.astro#feat3.title": {
+    "en": "Change it by saying so.",
+    "tr": "Söyleyerek değiştirin."
+  },
+  "src/pages/index.astro#feat3.body": {
+    "en": "Move the team meeting to 11. When it is not sure what you meant, it asks before touching anything, and changes can be undone.",
+    "tr": "Ekip toplantısını 11'e al deyin. Ne demek istediğinizden emin olmadığında hiçbir şeye dokunmadan önce sorar; yapılan değişiklikler geri alınabilir."
+  },
+  "src/pages/index.astro#feat3.alt": {
+    "en": "Unutma moving a team meeting to 11:00 and asking \"Did you mean this?\" before changing an evening walk.",
+    "tr": "Unutma, ekip toplantısını 11:00'e alıyor ve akşam yürüyüşünü değiştirmeden önce \"Bunu mu demek istediniz?\" diye soruyor."
+  },
+  "src/pages/index.astro#feat4.title": {
+    "en": "Did I lock the door?",
+    "tr": "Kapıyı kilitledim mi?"
+  },
+  "src/pages/index.astro#feat4.body": {
+    "en": "Log the small things with one tap: door locked, stove off, medicine taken. When the doubt comes back, the time is right there.",
+    "tr": "Küçük şeyleri tek dokunuşla kaydedin: kapı kilitlendi, ocak kapandı, ilaç alındı. Şüphe geri geldiğinde saati hemen orada."
+  },
+  "src/pages/index.astro#feat4.alt": {
+    "en": "Unutma Quick Actions list with logged times for locking the door and turning off the stove.",
+    "tr": "Unutma Hızlı Eylemler listesi; kapıyı kilitleme ve ocağı kapatma için kaydedilmiş saatlerle."
+  },
+  "src/pages/index.astro#rail.todo": {
+    "en": "To-dos",
+    "tr": "Yapılacaklar"
+  },
+  "src/pages/index.astro#rail.shopping": {
+    "en": "Shopping list",
+    "tr": "Alışveriş Listesi"
+  },
+  "src/pages/index.astro#rail.economy": {
+    "en": "Budget",
+    "tr": "Bütçe"
+  },
+  "src/pages/index.astro#rail.journal": {
+    "en": "Journal and mood",
+    "tr": "Günlük ve ruh hali"
+  },
+  "src/pages/index.astro#rail.calendar": {
+    "en": "Calendar",
+    "tr": "Takvim"
+  },
+  "src/pages/index.astro#rail.reminders": {
+    "en": "Routines",
+    "tr": "Rutinler"
+  },
+  "src/pages/index.astro#rail.alt": {
+    "en": "Unutma {label} screen",
+    "tr": "Unutma {label} ekranı"
+  },
+  "src/pages/index.astro#faq1.q": {
+    "en": "Does it need the internet?",
+    "tr": "İnternet gerekir mi?"
+  },
+  "src/pages/index.astro#faq1.a": {
+    "en": "No. The assistant, your lists, reminders, journal and vault run on the phone, including in airplane mode. Typing always works offline. If you speak instead, your phone's own speech service turns your voice into text, on the device when your phone supports that language offline.",
+    "tr": "Hayır. Asistan, listeleriniz, hatırlatıcılar, günlük ve Kasa telefonda çalışır; uçak modunda da. Yazmak her zaman çevrimdışı çalışır. Konuşursanız sesinizi yazıya telefonunuzun kendi konuşma hizmeti çevirir; telefonunuz o dili çevrimdışı destekliyorsa bu da cihazın üzerinde olur."
+  },
+  "src/pages/index.astro#faq2.q": {
+    "en": "Do I need an account?",
+    "tr": "Hesap açmam gerekir mi?"
+  },
+  "src/pages/index.astro#faq2.a": {
+    "en": "No. There is no sign-up and no login. Open the app and start. With no account there is no password to leak and no profile to sell.",
+    "tr": "Hayır. Kayıt da giriş de yok. Uygulamayı açın, başlayın. Hesap olmadığı için sızabilecek bir parola ve satılabilecek bir profil de yok."
+  },
+  "src/pages/index.astro#faq3.q": {
+    "en": "Where are my notes stored?",
+    "tr": "Notlarım nerede saklanıyor?"
+  },
+  "src/pages/index.astro#faq3.a": {
+    "en": "Only on your phone. There is no cloud copy and no server holding your content. The vault and journal are encrypted on the device. You can make an encrypted backup file and keep it wherever you choose.",
+    "tr": "Yalnızca telefonunuzda. Bulutta kopya yok, içeriğinizi tutan bir sunucu yok. Kasa ve günlük cihazın üzerinde şifrelenir. İsterseniz şifreli bir yedek dosyası oluşturup istediğiniz yerde saklayabilirsiniz."
+  },
+  "src/pages/index.astro#faq4.q": {
+    "en": "Is it a chatbot?",
+    "tr": "Bir sohbet botu mu?"
+  },
+  "src/pages/index.astro#faq4.a": {
+    "en": "No. It does not chat about the world. It understands sentences about your own day, saves them in the right place, and answers questions about what you saved.",
+    "tr": "Hayır. Dünya hakkında sohbet etmez. Kendi gününüzle ilgili cümleleri anlar, doğru yere kaydeder ve kaydettiklerinizle ilgili soruları yanıtlar."
+  },
+  "src/pages/index.astro#faq5.q": {
+    "en": "What does it cost?",
+    "tr": "Ne kadar?"
+  },
+  "src/pages/index.astro#faq5.a": {
+    "en": "Every feature is open for your first 7 days, with no card. After that, adding and editing needs a subscription or a one-time purchase. Everything you saved stays visible and your reminders keep ringing. The price for your country is shown in the App Store and Google Play. No ads, ever.",
+    "tr": "İlk 7 gün her özellik açık, kart gerekmez. Sonrasında ekleme ve düzenleme için abonelik ya da tek seferlik satın alma gerekir. Kaydettiğiniz her şey görünür kalır ve hatırlatıcılarınız çalmaya devam eder. Ülkenizdeki fiyat App Store ve Google Play'de gösterilir. Hiçbir zaman reklam yok."
+  },
+  "src/pages/index.astro#faq6.q": {
+    "en": "Which languages does it speak?",
+    "tr": "Hangi dilleri konuşuyor?"
+  },
+  "src/pages/index.astro#faq6.a": {
+    "en": "The app is in English, Turkish, German, Spanish, French, Italian, Arabic and Chinese. The assistant understands the first six.",
+    "tr": "Uygulama İngilizce, Türkçe, Almanca, İspanyolca, Fransızca, İtalyanca, Arapça ve Çince olarak kullanılabilir. Asistan ilk altısını anlar."
+  },
+  "src/pages/index.astro#hero.h": {
+    "en": "Say it once. It lands in the right place.",
+    "tr": "Bir kez söyleyin. Doğru yere gitsin."
+  },
+  "src/pages/index.astro#hero.sub": {
+    "en": "Unutma is a life admin assistant that lives on your phone. Type or say a sentence and it becomes a reminder, a list item or an expense. Later, ask what is coming up or what you spent.",
+    "tr": "Unutma, telefonunuzda yaşayan kişisel asistanınızdır. Bir cümle yazın ya da söyleyin; hatırlatıcıya, liste maddesine ya da harcamaya dönüşsün. Sonra neler yaklaştığını ya da ne harcadığınızı sorun."
+  },
+  "src/pages/index.astro#hero.vowAria": {
+    "en": "What Unutma promises",
+    "tr": "Unutma'nın verdiği sözler"
+  },
+  "src/pages/index.astro#hero.vow1": {
+    "en": "Runs on your phone",
+    "tr": "Telefonunuzda çalışır"
+  },
+  "src/pages/index.astro#hero.vow2": {
+    "en": "Works in airplane mode",
+    "tr": "Uçak modunda çalışır"
+  },
+  "src/pages/index.astro#hero.vow3": {
+    "en": "No account",
+    "tr": "Hesap yok"
+  },
+  "src/pages/index.astro#phone.aria": {
+    "en": "Unutma turning one sentence into a calendar entry, a shopping item and a budget line.",
+    "tr": "Unutma, tek bir cümleyi bir takvim kaydına, bir alışveriş maddesine ve bir bütçe satırına dönüştürüyor."
+  },
+  "src/pages/index.astro#chat.name": {
+    "en": "Assistant",
+    "tr": "Asistan"
+  },
+  "src/pages/index.astro#chat.status": {
+    "en": "Offline, runs on your phone",
+    "tr": "Çevrimdışı, telefonunuzda çalışır"
+  },
+  "src/pages/index.astro#chat.bot": {
+    "en": "I see 3 separate entries in this. Save them all?",
+    "tr": "Bunda 3 ayrı kayıt görüyorum. Hepsini kaydedeyim mi?"
+  },
+  "src/pages/index.astro#chat.li1": {
+    "en": "Calendar: Zoe's birthday dinner",
+    "tr": "Takvim: Doğum günü yemeği"
+  },
+  "src/pages/index.astro#chat.li2": {
+    "en": "Shopping: buy milk and eggs",
+    "tr": "Alışveriş: süt ve yumurta al"
+  },
+  "src/pages/index.astro#chat.li3": {
+    "en": "Budget: groceries, $64",
+    "tr": "Bütçe: market, 64 $"
+  },
+  "src/pages/index.astro#chat.btnSave": {
+    "en": "Save all",
+    "tr": "Hepsini kaydet"
+  },
+  "src/pages/index.astro#chat.btnOne": {
+    "en": "Keep as one entry",
+    "tr": "Tek kayıt olarak tut"
+  },
+  "src/pages/index.astro#card1.k": {
+    "en": "Calendar",
+    "tr": "Takvim"
+  },
+  "src/pages/index.astro#card1.b": {
+    "en": "Zoe's birthday dinner",
+    "tr": "Doğum günü yemeği"
+  },
+  "src/pages/index.astro#card1.chip": {
+    "en": "Saturday 7:00 PM",
+    "tr": "Cumartesi 19:00"
+  },
+  "src/pages/index.astro#card2.k": {
+    "en": "Shopping",
+    "tr": "Alışveriş"
+  },
+  "src/pages/index.astro#card2.b": {
+    "en": "buy milk and eggs",
+    "tr": "süt ve yumurta al"
+  },
+  "src/pages/index.astro#card3.k": {
+    "en": "Budget",
+    "tr": "Bütçe"
+  },
+  "src/pages/index.astro#card3.b": {
+    "en": "groceries · $64",
+    "tr": "market · 64 $"
+  },
+  "src/pages/index.astro#card3.chip": {
+    "en": "Groceries",
+    "tr": "Market"
+  },
+  "src/pages/index.astro#chat.input": {
+    "en": "Write or speak: a task, note, expense...",
+    "tr": "Yazın ya da söyleyin: görev, not, harcama..."
+  },
+  "src/pages/index.astro#green.pill": {
+    "en": "Today · 3 reminders · 1 birthday",
+    "tr": "Bugün · 3 hatırlatıcı · 1 doğum günü"
+  },
+  "src/pages/index.astro#green.say": {
+    "en": "Say something or ask",
+    "tr": "Bir şey söyleyin ya da sorun"
+  },
+  "src/pages/index.astro#green.ph": {
+    "en": "or type",
+    "tr": "ya da yazın"
+  },
+  "src/pages/index.astro#green.chip1": {
+    "en": "When is Dentist?",
+    "tr": "Diş hekimi ne zaman?"
+  },
+  "src/pages/index.astro#green.chip2": {
+    "en": "What's on tomorrow?",
+    "tr": "Yarın neler var?"
+  },
+  "src/pages/index.astro#green.chip3": {
+    "en": "Did I lock the door?",
+    "tr": "Kapıyı kilitledim mi?"
+  },
+  "src/pages/index.astro#green.rec": {
+    "en": "My records",
+    "tr": "Kayıtlarım"
+  },
+  "src/pages/index.astro#vow.h2": {
+    "en": "Your life stays on your phone.",
+    "tr": "Hayatınız telefonunuzda kalır."
+  },
+  "src/pages/index.astro#vow.lead": {
+    "en": "Unutma was built without a server for your notes. Nothing to sign up for, nothing to sync, nothing on our side to leak.",
+    "tr": "Unutma, notlarınız için sunucusuz tasarlandı. Kaydolacak bir şey yok, eşitlenecek bir şey yok, bizim tarafımızda sızabilecek bir şey yok."
+  },
+  "src/pages/index.astro#air.label": {
+    "en": "Airplane Mode",
+    "tr": "Uçak Modu"
+  },
+  "src/pages/index.astro#air.you": {
+    "en": "Tomorrow 2pm call mom",
+    "tr": "Yarın saat 14'te annemi ara"
+  },
+  "src/pages/index.astro#air.ok": {
+    "en": "Reminder · Tomorrow 2:00 PM",
+    "tr": "Hatırlatıcı · Yarın 14:00"
+  },
+  "src/pages/index.astro#vow1.h": {
+    "en": "Works in airplane mode",
+    "tr": "Uçak modunda çalışır"
+  },
+  "src/pages/index.astro#vow1.p": {
+    "en": "The assistant runs on the phone itself. Your lists, reminders and answers work with no connection at all.",
+    "tr": "Asistan telefonun kendisinde çalışır. Listeleriniz, hatırlatıcılarınız ve yanıtlar hiç bağlantı olmadan da çalışır."
+  },
+  "src/pages/index.astro#vow2.h": {
+    "en": "No account",
+    "tr": "Hesap yok"
+  },
+  "src/pages/index.astro#vow2.p": {
+    "en": "No sign-up, no login, no email address. You open the app and start.",
+    "tr": "Kayıt yok, giriş yok, e-posta adresi yok. Uygulamayı açar ve başlarsınız."
+  },
+  "src/pages/index.astro#vow3.h": {
+    "en": "No cloud copy, no ads",
+    "tr": "Bulut kopyası yok, reklam yok"
+  },
+  "src/pages/index.astro#vow3.p": {
+    "en": "Your vault and journal are encrypted on the device. Backups are files you make and keep where you choose.",
+    "tr": "Kasanız ve günlüğünüz cihazın üzerinde şifrelenir. Yedekler, sizin oluşturup istediğiniz yerde sakladığınız dosyalardır."
+  },
+  "src/pages/index.astro#vow.note": {
+    "en": "Speaking instead of typing? Your phone's own speech service turns your voice into text, on the device when your phone supports that language offline. Typing never needs a connection. <a>Read the privacy policy</a>",
+    "tr": "Yazmak yerine konuşuyor musunuz? Sesinizi yazıya telefonunuzun kendi konuşma hizmeti çevirir; telefonunuz o dili çevrimdışı destekliyorsa bu cihazın üzerinde olur. Yazmak hiçbir zaman bağlantı gerektirmez. <a>Gizlilik politikasını okuyun</a>"
+  },
+  "src/pages/index.astro#how.h2": {
+    "en": "One sentence is enough.",
+    "tr": "Tek cümle yeter."
+  },
+  "src/pages/index.astro#how.lead": {
+    "en": "No forms, no menus to learn. Write it the way you would say it. Unutma shows you what it understood before it saves.",
+    "tr": "Form yok, öğrenilecek menü yok. Nasıl söylerseniz öyle yazın. Unutma, kaydetmeden önce ne anladığını size gösterir."
+  },
+  "src/pages/index.astro#rail.h3": {
+    "en": "Everything else, under My records",
+    "tr": "Gerisi Kayıtlarım'ın içinde"
+  },
+  "src/pages/index.astro#rail.p": {
+    "en": "Plus an encrypted vault, home screen widgets and 12 themes.",
+    "tr": "Ayrıca şifreli Kasa, ana ekran widget'ları ve 12 tema."
+  },
+  "src/pages/index.astro#faq.h2": {
+    "en": "Questions people ask first",
+    "tr": "İnsanların ilk sorduğu sorular"
+  },
+  "src/pages/index.astro#faq.lead": {
+    "en": "More answers, including what Unutma deliberately does not do, are on the <a>FAQ page</a>.",
+    "tr": "Daha fazla yanıt, Unutma'nın bilerek yapmadıkları dahil, <a>SSS sayfasında</a>."
+  },
+  "src/pages/index.astro#blog.h2": {
+    "en": "From the blog",
+    "tr": "Blogdan"
+  },
+  "src/pages/index.astro#blog.all": {
+    "en": "All articles",
+    "tr": "Tüm yazılar"
+  },
+  "src/pages/index.astro#blog.pinTag": {
+    "en": "The full app guide",
+    "tr": "Uygulamanın tam rehberi"
+  },
+  "src/pages/index.astro#get.h2": {
+    "en": "Try every feature free for 7 days.",
+    "tr": "Her özelliği 7 gün ücretsiz deneyin."
+  },
+  "src/pages/index.astro#get.p": {
+    "en": "No card and no account. After the trial, everything you saved stays visible and your reminders keep ringing.",
+    "tr": "Kart yok, hesap yok. Deneme bitince kaydettiğiniz her şey görünür kalır ve hatırlatıcılarınız çalmaya devam eder."
+  },
+  "src/pages/index.astro#get.small": {
+    "en": "iPhone, iPad and Android. Prices for your country are shown in the store.",
+    "tr": "iPhone, iPad ve Android. Ülkenizdeki fiyatlar mağazada gösterilir."
+  },
+  "src/pages/faq.astro#seo.title": {
+    "en": "Unutma FAQ — offline planner, no account, encrypted vault",
+    "tr": "Unutma SSS: çevrimdışı planlayıcı, hesapsız, şifreli Kasa"
+  },
+  "src/pages/faq.astro#seo.description": {
+    "en": "Straight answers about Unutma: how it works offline, why there is no account, where data is stored, what it costs, and what it deliberately cannot do.",
+    "tr": "Unutma hakkında açık yanıtlar: çevrimdışı nasıl çalışır, neden hesap yok, veriler nerede saklanır, ne kadar tutar ve bilerek neleri yapamaz."
+  },
+  "src/pages/faq.astro#h1": {
+    "en": "Frequently asked questions",
+    "tr": "Sıkça sorulan sorular"
+  },
+  "src/pages/faq.astro#intro": {
+    "en": "Plain answers about what Unutma is, how the offline model works, and — just as importantly — what it deliberately does not do.",
+    "tr": "Unutma'nın ne olduğu, çevrimdışı modelin nasıl işlediği ve en az onun kadar önemlisi, bilerek neleri yapmadığı üzerine açık yanıtlar."
+  },
+  "src/pages/faq.astro#q1": {
+    "en": "Does Unutma work without an internet connection?",
+    "tr": "Unutma internet bağlantısı olmadan çalışır mı?"
+  },
+  "src/pages/faq.astro#a1": {
+    "en": "Yes. Unutma works offline, including in airplane mode: the vault, reminders, lists, journal and the assistant all run on the device, and none of our servers are involved. The one exception is the microphone — dictation is handled by your phone's own speech service, which may need a connection unless your phone has that language available for offline recognition. Typing works offline either way.",
+    "tr": "Evet. Unutma uçak modu dahil çevrimdışı çalışır: Kasa, hatırlatıcılar, listeler, günlük ve asistan cihazın üzerinde çalışır, bizim hiçbir sunucumuz devreye girmez. Tek istisna mikrofon: dikte işini telefonunuzun kendi konuşma hizmeti yapar; telefonunuzda o dil için çevrimdışı tanıma yoksa bağlantı gerekebilir. Yazmak her iki durumda da çevrimdışı çalışır."
+  },
+  "src/pages/faq.astro#q2": {
+    "en": "Do I need to create an account?",
+    "tr": "Hesap oluşturmam gerekir mi?"
+  },
+  "src/pages/faq.astro#a2": {
+    "en": "No. There is no sign-up and no login anywhere in the app. You open it and start using it. Because there is no account, there is also no password to be leaked and no profile to be sold.",
+    "tr": "Hayır. Uygulamanın hiçbir yerinde kayıt ya da giriş yok. Açarsınız ve kullanmaya başlarsınız. Hesap olmadığı için sızabilecek bir parola ve satılabilecek bir profil de yoktur."
+  },
+  "src/pages/faq.astro#q3": {
+    "en": "Where is my data stored?",
+    "tr": "Verilerim nerede saklanıyor?"
+  },
+  "src/pages/faq.astro#a3": {
+    "en": "Only on your device. Unutma has no cloud sync and no server holding user content, and Android's Google auto-backup is switched off for the app so nothing travels to a new phone on its own. The vault and the journal are encrypted at rest with AES-256, with the key held in the device keychain or keystore and unlocked with Face ID, Touch ID or the equivalent Android biometric.",
+    "tr": "Yalnızca cihazınızda. Unutma'da bulut eşitleme ve kullanıcı içeriğini tutan bir sunucu yoktur; ayrıca Android'in Google otomatik yedeği bu uygulama için kapalıdır, yani hiçbir şey kendiliğinden yeni telefona gitmez. Kasa ve günlük AES-256 ile şifrelenerek saklanır; anahtar cihazın anahtar zincirinde (keychain/keystore) durur ve Face ID, Touch ID ya da Android'deki eşdeğer biyometrik yöntemle açılır."
+  },
+  "src/pages/faq.astro#q4": {
+    "en": "Does Unutma sync between my phone and my tablet?",
+    "tr": "Unutma telefonum ile tabletim arasında eşitleme yapar mı?"
+  },
+  "src/pages/faq.astro#a4": {
+    "en": "No, and this is the honest trade-off of the offline design. There is no automatic cross-device sync. You can move your data manually using the export and device-transfer feature, but if you need continuous multi-device sync, Unutma is not the right choice.",
+    "tr": "Hayır; çevrimdışı tasarımın dürüst bedeli budur. Cihazlar arasında otomatik eşitleme yoktur. Verilerinizi dışa aktarma ve cihaz aktarımı özelliğiyle elle taşıyabilirsiniz, ancak sürekli çok cihazlı eşitleme istiyorsanız Unutma doğru seçim değildir."
+  },
+  "src/pages/faq.astro#q5": {
+    "en": "What does Unutma actually replace?",
+    "tr": "Unutma aslında neyin yerini tutuyor?"
+  },
+  "src/pages/faq.astro#a5": {
+    "en": "A reminders app, a to-do list, a journal or diary, a calendar, a notes app, a shopping list, a habit or routine tracker, an expense tracker and a password vault. The point is one habit to maintain instead of nine.",
+    "tr": "Bir hatırlatıcı uygulamasının, bir yapılacaklar listesinin, bir günlük ya da ajandanın, bir takvimin, bir not uygulamasının, bir alışveriş listesinin, bir alışkanlık ya da rutin takipçisinin, bir harcama takipçisinin ve bir parola kasasının. Amaç, dokuz yerine tek bir alışkanlığı sürdürmek."
+  },
+  "src/pages/faq.astro#q6": {
+    "en": "How does the voice command work?",
+    "tr": "Sesli komut nasıl çalışır?"
+  },
+  "src/pages/faq.astro#a6": {
+    "en": "You say a normal sentence such as \"dentist tomorrow at 3, remind me\" and the app works out which list it belongs to and what time to set. That understanding step is rule-based rather than cloud AI, so it happens on the device. Turning speech into text is done by your phone's own dictation service (Apple on iOS, Google on Android) — on-device when your phone supports that language offline, otherwise through the provider — and nothing is sent to us. It works in all six supported languages.",
+    "tr": "\"Yarın saat 3'te diş hekimi, hatırlat\" gibi sıradan bir cümle söylersiniz; uygulama bunun hangi listeye ait olduğunu ve hangi saate kurulacağını çözer. Bu anlama adımı bulut yapay zekâsı değil, kurallara dayalıdır; yani cihazın üzerinde gerçekleşir. Konuşmayı yazıya çevirme işini telefonunuzun kendi dikte hizmeti yapar (iOS'ta Apple, Android'de Google). Telefonunuz o dili çevrimdışı destekliyorsa cihazın üzerinde, desteklemiyorsa ilgili sağlayıcı üzerinden olur; bize hiçbir şey gönderilmez. Desteklenen altı dilin hepsinde çalışır."
+  },
+  "src/pages/faq.astro#q7": {
+    "en": "How much does Unutma cost?",
+    "tr": "Unutma ne kadar?"
+  },
+  "src/pages/faq.astro#a7": {
+    "en": "Every feature is open for a 7-day free trial. After that you can stay on the free plan with limits, or choose a monthly or yearly subscription or a one-time lifetime purchase. The current price for your country is shown in the App Store and Google Play before you pay. There are no ads at any tier.",
+    "tr": "Her özellik 7 günlük ücretsiz deneme boyunca açıktır. Sonrasında sınırlı ücretsiz planda kalabilir ya da aylık veya yıllık abonelik ya da tek seferlik ömür boyu satın alma seçebilirsiniz. Ülkenizdeki güncel fiyat, ödeme yapmadan önce App Store ve Google Play'de gösterilir. Hiçbir pakette reklam yoktur."
+  },
+  "src/pages/faq.astro#q8": {
+    "en": "Which languages does Unutma support?",
+    "tr": "Unutma hangi dilleri destekler?"
+  },
+  "src/pages/faq.astro#a8": {
+    "en": "English, Turkish, German, Spanish, French, and Italian — including the voice command feature.",
+    "tr": "İngilizce, Türkçe, Almanca, İspanyolca, Fransızca ve İtalyanca; sesli komut özelliği dahil."
+  },
+  "src/pages/faq.astro#q9": {
+    "en": "Is Unutma only for people with ADHD?",
+    "tr": "Unutma yalnızca DEHB olanlar için mi?"
+  },
+  "src/pages/faq.astro#a9": {
+    "en": "No. People with ADHD are one audience because low-friction capture matters to them, but the app is built for anyone trying to keep a system running — people juggling work and home, people who keep abandoning planners, and people who care about privacy.",
+    "tr": "Hayır. DEHB olan kişiler için sürtünmesiz kayıt önemli olduğundan hedef kitlelerden biridir; ancak uygulama, bir düzeni ayakta tutmaya çalışan herkes için yapıldı: iş ve evi birlikte yürütenler, ajandaları hep yarıda bırakanlar ve gizliliğe önem verenler."
+  },
+  "src/pages/faq.astro#q10": {
+    "en": "Can I share a list with someone else?",
+    "tr": "Bir listeyi başkasıyla paylaşabilir miyim?"
+  },
+  "src/pages/faq.astro#a10": {
+    "en": "Not in real time. Unutma is single-user by design because there is no server to coordinate shared state. You can export and send a list, but collaborative or shared lists are not supported.",
+    "tr": "Gerçek zamanlı olarak hayır. Ortak durumu eşgüdümleyecek bir sunucu olmadığından Unutma tasarım gereği tek kullanıcılıdır. Bir listeyi dışa aktarıp gönderebilirsiniz, ancak ortak çalışılan ya da paylaşılan listeler desteklenmez."
+  },
+  "src/pages/faq.astro#q11": {
+    "en": "What happens if I lose my phone?",
+    "tr": "Telefonumu kaybedersem ne olur?"
+  },
+  "src/pages/faq.astro#a11": {
+    "en": "If you have not made a manual backup, the data is gone — there is no cloud copy to restore from. This is the direct cost of the no-server design. Backup and restore are built in and take a few taps; doing it periodically is strongly recommended. Note that the main backup deliberately leaves the vault out: the vault has its own encrypted backup button on the Vault screen, so back that up separately.",
+    "tr": "Elle yedek almadıysanız veriler gider; geri yüklenecek bir bulut kopyası yoktur. Bu, sunucusuz tasarımın doğrudan bedelidir. Yedekleme ve geri yükleme uygulamanın içinde hazırdır ve birkaç dokunuş sürer; düzenli yapmanız önemle önerilir. Ana yedeğin Kasa'yı bilerek dışarıda bıraktığını unutmayın: Kasa ekranında kendi şifreli yedekleme düğmesi vardır, onu ayrıca yedekleyin."
+  },
+  "src/pages/faq.astro#q12": {
+    "en": "Does Unutma show ads or track me?",
+    "tr": "Unutma reklam gösterir mi ya da beni izler mi?"
+  },
+  "src/pages/faq.astro#a12": {
+    "en": "No. There are no ads, no analytics and no tracking in the app, and it collects no usage statistics. Apart from the App Store or Google Play for purchases, the app connects on its own only to check for app updates with Expo (EAS Update) when it starts and, at most once a day, to download a public announcements file from this website; neither request carries any of your content. Details are in the privacy policy.",
+    "tr": "Hayır. Uygulamada reklam, analiz aracı ve izleme yoktur; kullanım istatistiği de toplanmaz. Satın alımlar için App Store ya da Google Play dışında, uygulama kendi kendine yalnızca iki şey için bağlanır: açılışta Expo (EAS Update) üzerinden uygulama güncellemesini denetlemek ve günde en fazla bir kez bu web sitesinden herkese açık bir duyuru dosyası indirmek. İki istek de içeriğinizden hiçbir şey taşımaz. Ayrıntılar gizlilik politikasındadır."
+  },
+  "src/pages/faq.astro#try.h2": {
+    "en": "Try it for a week",
+    "tr": "Bir hafta deneyin"
+  },
+  "src/pages/faq.astro#try.p": {
+    "en": "Seven days free, no account and no card required.",
+    "tr": "Yedi gün ücretsiz, hesap ve kart gerekmez."
+  },
+  "src/components/AppSchema.astro#name": {
+    "en": "Unutma: Daily Planner & Diary",
+    "tr": "Unutma: Kişisel Asistanınız"
+  },
+  "src/components/AppSchema.astro#description": {
+    "en": "Offline, private life organizer: reminders, to-do list, journal, calendar, notes, shopping lists, routine tracking, expense tracking and an encrypted vault in one app. No account and no cloud sync — all data stays on the device, with the vault and journal encrypted at rest.",
+    "tr": "Çevrimdışı, özel hayat düzenleyici: hatırlatıcılar, yapılacaklar listesi, günlük, takvim, notlar, alışveriş listeleri, rutin takibi, harcama takibi ve şifreli Kasa tek uygulamada. Hesap ve bulut eşitleme yok; tüm veriler cihazda kalır, Kasa ve günlük şifrelenerek saklanır."
+  },
+  "src/components/AppSchema.astro#featureList[0]": {
+    "en": "Voice command capture (rule-based, understood on the device, 6 languages)",
+    "tr": "Sesli komutla kayıt (kural tabanlı, cihazın üzerinde anlaşılır, 6 dil)"
+  },
+  "src/components/AppSchema.astro#featureList[1]": {
+    "en": "Reminders and repeating tasks",
+    "tr": "Hatırlatıcılar ve tekrarlayan görevler"
+  },
+  "src/components/AppSchema.astro#featureList[2]": {
+    "en": "To-do list with subtasks and priorities",
+    "tr": "Alt görevli ve öncelikli yapılacaklar listesi"
+  },
+  "src/components/AppSchema.astro#featureList[3]": {
+    "en": "Routine and habit tracking",
+    "tr": "Rutin ve alışkanlık takibi"
+  },
+  "src/components/AppSchema.astro#featureList[4]": {
+    "en": "Private journal with mood tracking",
+    "tr": "Ruh hali takipli özel günlük"
+  },
+  "src/components/AppSchema.astro#featureList[5]": {
+    "en": "Calendar",
+    "tr": "Takvim"
+  },
+  "src/components/AppSchema.astro#featureList[6]": {
+    "en": "Notes",
+    "tr": "Notlar"
+  },
+  "src/components/AppSchema.astro#featureList[7]": {
+    "en": "Shopping list and wishlist",
+    "tr": "Alışveriş listesi ve istek listesi"
+  },
+  "src/components/AppSchema.astro#featureList[8]": {
+    "en": "AES-256 encrypted vault with biometric lock",
+    "tr": "Biyometrik kilitli, AES-256 şifreli Kasa"
+  },
+  "src/components/AppSchema.astro#featureList[9]": {
+    "en": "Budget and expense tracking",
+    "tr": "Bütçe ve harcama takibi"
+  },
+  "src/components/AppSchema.astro#featureList[10]": {
+    "en": "Home screen widgets",
+    "tr": "Ana ekran widget'ları"
+  },
+  "src/components/AppSchema.astro#featureList[11]": {
+    "en": "Works offline — no account, no cloud sync",
+    "tr": "Çevrimdışı çalışır: hesap yok, bulut eşitleme yok"
+  },
+  "src/components/AppSchema.astro#additionalProperty[0] Requires account (name)": {
+    "en": "Requires account",
+    "tr": "Hesap gerekir mi"
+  },
+  "src/components/AppSchema.astro#additionalProperty[1] (value)": {
+    "en": "No",
+    "tr": "Hayır"
+  },
+  "src/components/AppSchema.astro#additionalProperty[2] Works offline (name)": {
+    "en": "Works offline",
+    "tr": "Çevrimdışı çalışır"
+  },
+  "src/components/AppSchema.astro#additionalProperty[3] (value) ": {
+    "en": "Yes — except voice dictation, which uses the phone’s own speech service",
+    "tr": "Evet; telefonun kendi konuşma hizmetini kullanan sesli dikte hariç"
+  },
+  "src/components/AppSchema.astro#additionalProperty[4] Cloud sync (name)": {
+    "en": "Cloud sync",
+    "tr": "Bulut eşitleme"
+  },
+  "src/components/AppSchema.astro#additionalProperty[5] (value)  ": {
+    "en": "No — data stays on device",
+    "tr": "Hayır; veriler cihazda kalır"
+  },
+  "src/components/AppSchema.astro#additionalProperty[6] Encryption (name)": {
+    "en": "Encryption",
+    "tr": "Şifreleme"
+  },
+  "src/components/AppSchema.astro#additionalProperty[7] (value)   ": {
+    "en": "AES-256 for vault and journal, key held on the device",
+    "tr": "Kasa ve günlük için AES-256, anahtar cihazda tutulur"
+  },
+  "src/components/AppSchema.astro#additionalProperty[8] Free trial (name)": {
+    "en": "Free trial",
+    "tr": "Ücretsiz deneme"
+  },
+  "src/components/AppSchema.astro#additionalProperty[9] (value)    ": {
+    "en": "7 days",
+    "tr": "7 gün"
+  },
+  "src/components/AppSchema.astro#additionalProperty[10] Pricing model (name)": {
+    "en": "Pricing model",
+    "tr": "Fiyatlandırma modeli"
+  },
+  "src/components/AppSchema.astro#additionalProperty[11] (value)     ": {
+    "en": "Subscription or one-time purchase after the free trial",
+    "tr": "Ücretsiz denemeden sonra abonelik ya da tek seferlik satın alma"
+  },
+  "src/components/AppSchema.astro#additionalProperty[12] Ads (name)": {
+    "en": "Ads",
+    "tr": "Reklam"
+  },
+  "src/components/AppSchema.astro#additionalProperty[13] (value)      ": {
+    "en": "None",
+    "tr": "Yok"
+  },
+  "src/components/AppSchema.astro#additionalProperty[14] Third-party tracking (name)": {
+    "en": "Third-party tracking",
+    "tr": "Üçüncü taraf izleme"
+  },
+  "src/components/AppSchema.astro#additionalProperty[15] (value)       ": {
+    "en": "None — no analytics or usage statistics",
+    "tr": "Yok; analiz aracı ya da kullanım istatistiği yok"
+  },
+  "src/components/AppSchema.astro#offer.category": {
+    "en": "Free download, 7-day free trial, in-app purchase",
+    "tr": "Ücretsiz indirme, 7 gün ücretsiz deneme, uygulama içi satın alma"
+  },
+  "src/components/SEOHead.astro#titleSuffix": {
+    "en": "{title} | Unutma Blog",
+    "tr": "{title} | Unutma Blog (marka adı aynı kalır)"
+  },
+  "src/components/SEOHead.astro#og:locale": {
+    "en": "en_US",
+    "tr": "tr_TR"
+  },
+  "src/components/SEOHead.astro#rss.title": {
+    "en": "Unutma Blog",
+    "tr": "Unutma Blog"
+  },
+  "src/layouts/BlogPost.astro#lang": {
+    "en": "en",
+    "tr": "tr (html lang)"
+  },
+  "src/components/SupportPage.astro#(TR zaten var)": {
+    "en": "TR: src/components/SupportPage.astro içinde lang=\"tr\" metinleri ve /support/tr/ sayfası hazır.",
+    "tr": "ÇEVRİLMEDİ — zaten var. Not: \"SSS (İngilizce)\" ve blog bağlantıları sonunda \"(İngilizce)\" yazıyor; TR yazılar yayına girince bu etiketler TR başlıklara ve /tr adreslerine çevrilmeli."
+  }
+}

@@ -1,0 +1,52 @@
+---
+/** Blog 2+ sayfalar (EN: /blog/page/N/, TR: /tr/blog/sayfa/N/). */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SEOHead from '../SEOHead.astro';
+import BlogCard from '../BlogCard.astro';
+import { makeT, type Lang } from '../../i18n/site';
+import type { Post } from '../../utils/posts';
+
+interface Props {
+  lang: Lang;
+  posts: Post[];
+  currentPage: number;
+  totalPages: number;
+}
+const { lang, posts, currentPage, totalPages } = Astro.props;
+const T = makeT('src/pages/blog/page/[page].astro', lang);
+const pageHref = (n: number) => (lang === 'tr' ? `/tr/blog/sayfa/${n}/` : `/blog/page/${n}/`);
+const indexHref = lang === 'tr' ? '/tr/blog/' : '/blog/';
+const title = T('title', { n: currentPage });
+const btnPrev = 'rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-800';
+---
+
+<BaseLayout>
+  <SEOHead slot="head" title={title} description={T('desc', { n: currentPage, total: totalPages })} />
+
+  <div class="mx-auto max-w-5xl px-4 py-12">
+    <h1 class="section-title text-3xl md:text-[2.35rem]">{title}</h1>
+    <p class="mt-2 text-gray-600 dark:text-gray-400">{T('older')}</p>
+
+    <div class="mt-10 grid gap-8 md:grid-cols-2">
+      {posts.map((post) => <BlogCard post={post} lang={lang} />)}
+    </div>
+
+    <nav class="mt-12 flex flex-wrap items-center justify-center gap-4" aria-label={lang === 'tr' ? 'Sayfalama' : 'Pagination'}>
+      {
+        currentPage > 2 ? (
+          <a href={pageHref(currentPage - 1)} class={btnPrev}>{T('prev')}</a>
+        ) : (
+          <a href={indexHref} class={btnPrev}>{T('prev')}</a>
+        )
+      }
+      <span class="text-sm text-gray-500 dark:text-gray-400">{T('pageOf', { n: currentPage, total: totalPages })}</span>
+      {
+        currentPage < totalPages && (
+          <a href={pageHref(currentPage + 1)} class="rounded-lg bg-brand px-4 py-2 text-sm font-medium text-white hover:bg-brand-dark">
+            {T('next')}
+          </a>
+        )
+      }
+    </nav>
+  </div>
+</BaseLayout>

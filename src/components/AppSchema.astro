@@ -13,26 +13,16 @@
  * Google yapisal veri politikasina hem kullanicinin sahte-sosyal-kanit
  * kuralina aykiri olur.
  */
+import { makeT, pageLang } from '../i18n/site';
+const lang = pageLang(Astro.url.pathname);
+const T = makeT('src/components/AppSchema.astro', lang);
 const APP_STORE = 'https://apps.apple.com/app/id6758889495';
 const PLAY_STORE = 'https://play.google.com/store/apps/details?id=com.mehmet.unutma';
 // Domain TEK kaynaktan (astro.config.mjs -> Astro.site). Elle yazmak, 2026-08'de
 // canonical'in baskasinin domain'ini gostermesine yol acan hatanin ta kendisiydi.
 const SITE = (Astro.site?.href ?? 'https://unutma.meyadestudio.com/').replace(/\/$/, '');
 
-const featureList = [
-  'Voice command capture (rule-based, understood on the device, 6 languages)',
-  'Reminders and repeating tasks',
-  'To-do list with subtasks and priorities',
-  'Routine and habit tracking',
-  'Private journal with mood tracking',
-  'Calendar',
-  'Notes',
-  'Shopping list and wishlist',
-  'AES-256 encrypted vault with biometric lock',
-  'Budget and expense tracking',
-  'Home screen widgets',
-  'Works offline — no account, no cloud sync',
-];
+const featureList = Array.from({ length: 12 }, (_, i) => T(`featureList[${i}]`));
 
 const organization = {
   '@type': 'Organization',
@@ -61,7 +51,7 @@ const app = {
     {
       '@type': 'SoftwareApplication',
       '@id': `${SITE}/#app`,
-      name: 'Unutma: Daily Planner & Diary',
+      name: T('name'),
       alternateName: ['Unutma', 'Unutma Private Life Organizer'],
       applicationCategory: 'ProductivityApplication',
       applicationSubCategory: 'Personal organizer',
@@ -72,42 +62,21 @@ const app = {
       publisher: { '@id': `${SITE}/#organization` },
       inLanguage: ['en', 'tr', 'de', 'es', 'fr', 'it'],
       featureList,
-      description:
-        'Offline, private life organizer: reminders, to-do list, journal, calendar, ' +
-        'notes, shopping lists, routine tracking, expense tracking and an encrypted ' +
-        'vault in one app. No account and no cloud sync — all data stays on the device, ' +
-        'with the vault and journal encrypted at rest.',
+      description: T('description'),
       // 2026-11-20: offers yalnizca "ucretsiz indirme" (price 0) + magaza baglantisi.
       // Abonelik/omur boyu fiyati BILEREK yazilmaz: ulkeye gore degisir, magazadan okunur.
       // aggregateRating hala YOK (gercek oy sayisi cok dusuk).
       offers: [
-        { '@type': 'Offer', price: '0', priceCurrency: 'USD', url: APP_STORE, availability: 'https://schema.org/InStock', category: 'Free download, 7-day free trial, in-app purchase' },
-        { '@type': 'Offer', price: '0', priceCurrency: 'USD', url: PLAY_STORE, availability: 'https://schema.org/InStock', category: 'Free download, 7-day free trial, in-app purchase' },
+        { '@type': 'Offer', price: '0', priceCurrency: 'USD', url: APP_STORE, availability: 'https://schema.org/InStock', category: T('offer.category') },
+        { '@type': 'Offer', price: '0', priceCurrency: 'USD', url: PLAY_STORE, availability: 'https://schema.org/InStock', category: T('offer.category') },
       ],
       image: `${SITE}/blog/covers/v3/site-default.jpg`,
       // Dogrulanabilir, urunde gercekten var olan ayirt edici ozellikler.
-      additionalProperty: [
-        { '@type': 'PropertyValue', name: 'Requires account', value: 'No' },
-        {
-          '@type': 'PropertyValue',
-          name: 'Works offline',
-          value: 'Yes — except voice dictation, which uses the phone’s own speech service',
-        },
-        { '@type': 'PropertyValue', name: 'Cloud sync', value: 'No — data stays on device' },
-        {
-          '@type': 'PropertyValue',
-          name: 'Encryption',
-          value: 'AES-256 for vault and journal, key held on the device',
-        },
-        { '@type': 'PropertyValue', name: 'Free trial', value: '7 days' },
-        { '@type': 'PropertyValue', name: 'Pricing model', value: 'Subscription or one-time purchase after the free trial' },
-        { '@type': 'PropertyValue', name: 'Ads', value: 'None' },
-        {
-          '@type': 'PropertyValue',
-          name: 'Third-party tracking',
-          value: 'None — no analytics or usage statistics',
-        },
-      ],
+      additionalProperty: Array.from({ length: 8 }, (_, i) => ({
+        '@type': 'PropertyValue',
+        name: T(`additionalProperty[${i * 2}]`),
+        value: T(`additionalProperty[${i * 2 + 1}]`),
+      })),
     },
   ],
 };

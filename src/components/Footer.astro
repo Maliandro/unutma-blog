@@ -1,7 +1,11 @@
 ---
 import { withBase } from '../utils/site';
+import { makeT, pageLang } from '../i18n/site';
 
 const year = new Date().getFullYear();
+const lang = pageLang(Astro.url.pathname);
+const T = makeT('src/components/Footer.astro', lang);
+const tr = lang === 'tr';
 const playStoreUrl =
   import.meta.env.PUBLIC_PLAY_STORE_URL ??
   'https://play.google.com/store/apps/details?id=com.mehmet.unutma';
@@ -13,31 +17,31 @@ const appStoreUrl =
 <footer class="u-foot">
   <div class="u-foot__in">
     <div class="u-foot__brand">
-      <a href={withBase('/')} class="u-foot__mark">
+      <a href={withBase(tr ? '/tr/' : '/')} class="u-foot__mark">
         <img src={withBase('/unutma-icon.png')} width="40" height="40" alt="" loading="lazy" decoding="async" />
         <span>Unutma</span>
       </a>
-      <p>A life admin assistant that lives on your phone. No account, no cloud copy of your notes.</p>
+      <p>{T('blurb')}</p>
     </div>
 
-    <nav class="u-foot__col" aria-label="App">
-      <p class="u-foot__h">App</p>
+    <nav class="u-foot__col" aria-label={T('col.appAria')}>
+      <p class="u-foot__h">{T('col.app')}</p>
       <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">App Store</a>
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer">Google Play</a>
-      <a href={withBase('/faq/')}>FAQ</a>
-      <a href={withBase('/support/')}>Support</a>
+      <a href={withBase(tr ? '/tr/sss/' : '/faq/')}>{T('link.faq')}</a>
+      <a href={withBase(tr ? '/support/tr/' : '/support/')}>{T('link.support')}</a>
     </nav>
 
-    <nav class="u-foot__col" aria-label="Site">
-      <p class="u-foot__h">Read</p>
-      <a href={withBase('/blog/')}>Blog</a>
-      <a href={withBase('/about/')}>About</a>
-      <a href={withBase('/privacy')}>Privacy policy</a>
-      <a href={withBase('/terms')}>Terms of service</a>
+    <nav class="u-foot__col" aria-label={T('col.siteAria')}>
+      <p class="u-foot__h">{T('col.read')}</p>
+      <a href={withBase(tr ? '/tr/blog/' : '/blog/')}>{T('link.blog')}</a>
+      <a href={withBase(tr ? '/tr/hakkinda/' : '/about/')}>{T('link.about')}</a>
+      <a href={withBase(tr ? '/privacy/tr/' : '/privacy')}>{T('link.privacy')}</a>
+      <a href={withBase(tr ? '/terms/tr/' : '/terms')}>{T('link.terms')}</a>
     </nav>
 
-    <nav class="u-foot__col" aria-label="Follow Unutma">
-      <p class="u-foot__h">Follow</p>
+    <nav class="u-foot__col" aria-label={T('col.followAria')}>
+      <p class="u-foot__h">{T('col.follow')}</p>
       <a href="https://www.instagram.com/life_admin_assistant/" target="_blank" rel="noopener noreferrer me">Instagram</a>
       <a href="https://www.youtube.com/channel/UCrQXJXpD_ixGkfGQgouqVww" target="_blank" rel="noopener noreferrer me">YouTube</a>
       <a href="https://www.facebook.com/1169165316276395" target="_blank" rel="noopener noreferrer me">Facebook</a>
@@ -45,9 +49,9 @@ const appStoreUrl =
   </div>
 
   <div class="u-foot__base">
-    <p>© {year} Unutma. All rights reserved.</p>
+    <p>{T('copyright', { year })}</p>
     <a href="https://meyadestudio.com/#digital" class="u-foot__studio">
-      Made by <strong>Meyade Digital Studio</strong>
+      <Fragment set:html={T('madeBy')} />
     </a>
   </div>
 </footer>

@@ -1,0 +1,61 @@
+---
+/**
+ * EN / TR dil secici. Her dil icin sayfanin dogrudan karsiligina gider
+ * (blog yazisinda slug haritasi). Karsiligi yoksa ilgili dilin ana sayfasi.
+ */
+import { counterpart, pageLang } from '../i18n/site';
+interface Props {
+  class?: string;
+}
+const { class: className } = Astro.props;
+const path = Astro.url.pathname;
+const cur = pageLang(path);
+const items = [
+  { code: 'en' as const, label: 'EN', name: 'English', href: counterpart(path, 'en') ?? '/' },
+  { code: 'tr' as const, label: 'TR', name: 'Türkçe', href: counterpart(path, 'tr') ?? '/tr/' },
+];
+---
+<div class:list={['u-lang', className]} role="group" aria-label={cur === 'tr' ? 'Dil' : 'Language'}>
+  {items.map((i) => (
+    <a
+      href={i.href}
+      lang={i.code}
+      hreflang={i.code}
+      data-set-lang={i.code}
+      title={i.name}
+      aria-label={i.name}
+      aria-current={i.code === cur ? 'true' : undefined}
+    >{i.label}</a>
+  ))}
+</div>
+<style>
+  .u-lang {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    padding: 2px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    opacity: 0.95;
+  }
+  .u-lang a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 34px;
+    min-height: 32px;
+    padding: 0 0.45rem;
+    border-radius: 999px;
+    color: inherit;
+    opacity: 0.7;
+  }
+  .u-lang a:hover {
+    opacity: 1;
+  }
+  .u-lang a[aria-current='true'] {
+    opacity: 1;
+    background: rgba(127, 127, 127, 0.28);
+  }
+</style>

@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SEOHead from '../SEOHead.astro';
+import { withBase } from '../../utils/site';
+import { makeT, pageLang, type Lang } from '../../i18n/site';
+
+interface Props {
+  lang?: Lang;
+}
+const lang = Astro.props.lang ?? pageLang(Astro.url.pathname);
+const T = makeT('src/pages/about.astro', lang);
+const tr = lang === 'tr';
+const links = [
+  [tr ? '/tr/' : '/', tr ? 'Ana sayfa' : 'Home'],
+  [tr ? '/tr/blog/' : '/blog', 'Blog'],
+  [tr ? '/privacy/tr/' : '/privacy', tr ? 'Gizlilik politikası' : 'Privacy policy'],
+  [tr ? '/terms/tr/' : '/terms', tr ? 'Kullanım koşulları' : 'Terms of service'],
+];
+---
+<BaseLayout>
+  <SEOHead slot="head" title={T('seoTitle')} description={T('seoDesc')} />
+  <article
+    class="prose prose-lg mx-auto max-w-3xl px-4 py-12 prose-a:text-brand prose-strong:text-gray-900"
+  >
+    <h1>{T('h1')}</h1>
+    <p>{T('p1')}</p>
+    <h2>{T('h2')}</h2>
+    <p set:html={T('p2')} />
+    <p>{T('p3')}</p>
+    <p>
+      {links.map(([href, label], i) => (
+        <>{i > 0 && ' · '}<a href={withBase(href)}>{label}</a></>
+      ))}
+    </p>
+  </article>
+</BaseLayout>

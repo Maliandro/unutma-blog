@@ -1,4 +1,5 @@
 ---
+import { OG_LOCALES, hreflangPair, pageLang, rssPath } from '../i18n/site';
 interface Props {
   title: string;
   description: string;
@@ -30,9 +31,13 @@ const {
   keywords = [],
   noindex = false,
   alternates = [],
-  locale = 'en_US',
+  locale: localeProp,
   imageAlt,
 } = Astro.props;
+const uiLang = pageLang(Astro.url.pathname);
+const locale = localeProp ?? OG_LOCALES[uiLang];
+// Verilmediyse hreflang cifti adres yolundan hesaplanir (EN <-> TR).
+const pair = alternates.length === 0 ? hreflangPair(Astro.url.pathname) : null;
 // 1200x630 kapaklar (covers/v3) icin boyut etiketleri basilir; svg/ikon icin basilmaz.
 const isWide = /\/covers\/v3\//.test(image);
 
@@ -91,7 +96,7 @@ const jsonLd = article
       image: ogImage.toString(),
       author: publisher,
       publisher,
-      inLanguage: 'en',
+      inLanguage: uiLang,
       // Yazinin konusu uygulamanin kendisi: AppSchema'daki SoftwareApplication'a baglanir.
       about: { '@id': `${siteRoot}/#app` },
       ...(keywords.length ? { keywords: keywords.join(', ') } : {}),
@@ -105,7 +110,7 @@ const jsonLd = article
       description,
       url: canonicalURL.toString(),
       publisher,
-      inLanguage: 'en',
+      inLanguage: uiLang,
     };
 ---
 
@@ -117,14 +122,22 @@ const jsonLd = article
 {alternates.map((a) => (
   <link rel="alternate" hreflang={a.lang} href={new URL(a.href, Astro.site).href} />
 ))}
-{/* Dil surumu olmayan (Ingilizce) sayfalar: kendini en + x-default olarak bildirir. */}
-{!noindex && alternates.length === 0 && (
+{/* EN <-> TR karsiligi olan sayfalar: en + tr + x-default (EN). */}
+{!noindex && pair && (
   <>
-    <link rel="alternate" hreflang="en" href={canonicalURL} />
-    <link rel="alternate" hreflang="x-default" href={canonicalURL} />
+    <link rel="alternate" hreflang="en" href={new URL(pair.en, Astro.site).href} />
+    <link rel="alternate" hreflang="tr" href={new URL(pair.tr, Astro.site).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL(pair.en, Astro.site).href} />
   </>
 )}
-<link rel="alternate" type="application/rss+xml" title="Unutma Blog" href={new URL('rss.xml', baseRoot)} />
+{/* Karsiligi olmayan sayfa (etiket vb.): kendini bildirir. */}
+{!noindex && alternates.length === 0 && !pair && (
+  <>
+    <link rel="alternate" hreflang={uiLang} href={canonicalURL} />
+    {uiLang === 'en' && <link rel="alternate" hreflang="x-default" href={canonicalURL} />}
+  </>
+)}
+<link rel="alternate" type="application/rss+xml" title="Unutma Blog" href={new URL(rssPath(uiLang).slice(1), baseRoot)} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={article ? 'article' : 'website'} />

@@ -1,0 +1,33 @@
+---
+/** Etiket sayfasi (EN: /blog/tags/<etiket>/, TR: /tr/blog/etiket/<etiket>/). */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SEOHead from '../SEOHead.astro';
+import BlogCard from '../BlogCard.astro';
+import { makeT, type Lang } from '../../i18n/site';
+import type { Post } from '../../utils/posts';
+
+interface Props {
+  lang: Lang;
+  tag: string;
+  posts: Post[];
+}
+const { lang, tag, posts } = Astro.props;
+const T = makeT('src/pages/blog/tags/[tag].astro', lang);
+const count = posts.length;
+---
+
+<BaseLayout>
+  <SEOHead
+    slot="head"
+    title={T('seoTitle', { tag })}
+    description={T('seoDesc', { tag, count })}
+  />
+  <div class="mx-auto max-w-5xl px-4 py-12">
+    <a href={lang === 'tr' ? '/tr/blog/' : '/blog/'} class="text-sm font-medium text-brand hover:underline dark:text-indigo-400">{T('all')}</a>
+    <h1 class="section-title mt-4 text-3xl md:text-[2.35rem]">{tag}</h1>
+    <p class="mt-2 text-gray-600 dark:text-gray-400">{T('count', { count })}</p>
+    <div class="mt-10 grid gap-8 md:grid-cols-2">
+      {posts.map((post) => <BlogCard post={post} lang={lang} />)}
+    </div>
+  </div>
+</BaseLayout>

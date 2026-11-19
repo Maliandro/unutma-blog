@@ -1,15 +1,15 @@
 ---
-import { t } from '../i18n/ui';
+import { makeT, pageLang } from '../i18n/site';
 import StoreBadgeRow from './StoreBadgeRow.astro';
 
-const u = t().appBanner;
+const T = makeT('src/components/AppStoreBanner.astro', pageLang(Astro.url.pathname));
 ---
 
 <aside class="u-banner">
   <img src="/unutma-icon.png" width="56" height="56" alt="" loading="lazy" decoding="async" />
   <div>
-    <h3>{u.title}</h3>
-    <p>{u.body}</p>
+    <h3>{T('title')}</h3>
+    <p>{T('body')}</p>
     <StoreBadgeRow tone="green" />
   </div>
 </aside>

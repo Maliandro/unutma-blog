@@ -1,0 +1,28 @@
+---
+import { getLivePostsTr } from '../../../utils/posts';
+import BlogPost from '../../../layouts/BlogPost.astro';
+import type { CollectionEntry } from 'astro:content';
+import { readingTimeMinutes } from '../../../utils/reading-time';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const posts = await getLivePostsTr();
+  return posts.map((post) => ({
+    params: { slug: post.data.trSlug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'blogTr'>;
+}
+
+const { post } = Astro.props;
+const { Content, headings } = await post.render();
+const readingMinutes = readingTimeMinutes(post.body);
+---
+
+<BlogPost post={post} headings={headings} readingMinutes={readingMinutes}>
+  <Content />
+</BlogPost>
