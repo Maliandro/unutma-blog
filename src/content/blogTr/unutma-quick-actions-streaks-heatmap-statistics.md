@@ -5,7 +5,7 @@ trSlug: hizli-eylemler-seriler-isi-haritasi
 pubDate: 2026-04-02
 tags: ["Unutma", "alışkanlıklar", "verimlilik", "iyi oluş"]
 draft: false
-image: /blog/covers/v3/unutma-quick-actions-streaks-heatmap-statistics.jpg
+image: /blog/covers/v3-tr/unutma-quick-actions-streaks-heatmap-statistics.jpg
 imageAlt: "Unutma hızlı eylemleri ve kaydedilen saatler"
 ---
 

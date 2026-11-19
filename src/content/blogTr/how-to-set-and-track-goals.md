@@ -6,7 +6,7 @@ pubDate: 2026-09-20
 updatedDate: 2026-10-16
 keyword: "hedef belirleme ve takip"
 tags: ["unutma", "hedefler", "planlama"]
-image: /blog/covers/v3/how-to-set-and-track-goals.jpg
+image: /blog/covers/v3-tr/how-to-set-and-track-goals.jpg
 imageAlt: "Unutma yapılacaklar listesi: bugün tamamlananlar ve kalanlar"
 draft: false
 ---

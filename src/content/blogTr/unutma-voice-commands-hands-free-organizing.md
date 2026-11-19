@@ -6,7 +6,7 @@ pubDate: 2026-07-25
 updatedDate: 2026-10-16
 tags: ["Unutma", "ses", "verimlilik", "erişilebilirlik"]
 draft: false
-image: /blog/covers/v3/unutma-voice-commands-hands-free-organizing.jpg
+image: /blog/covers/v3-tr/unutma-voice-commands-hands-free-organizing.jpg
 imageAlt: "Unutma sesli asistanı: bir şey söyleyin ya da sorun"
 ---
 

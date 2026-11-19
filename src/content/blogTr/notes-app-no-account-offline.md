@@ -6,7 +6,7 @@ pubDate: 2026-10-10
 updatedDate: 2026-10-16
 keyword: "hesapsız not uygulaması"
 tags: ["Unutma", "not uygulaması", "gizlilik", "çevrimdışı", "karşılaştırma"]
-image: /blog/covers/v3/notes-app-no-account-offline.jpg
+image: /blog/covers/v3-tr/notes-app-no-account-offline.jpg
 imageAlt: "Unutma hızlı bir notu kaydediyor ve sonra hatırlıyor"
 draft: false
 ---

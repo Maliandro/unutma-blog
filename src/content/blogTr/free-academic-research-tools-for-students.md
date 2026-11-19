@@ -5,7 +5,7 @@ trSlug: ogrenciler-icin-arastirma-araclari
 pubDate: 2026-06-17
 tags: ["araştırma araçları", "öğrenciler", "akademi", "verimlilik"]
 draft: false
-image: /blog/covers/v3/free-academic-research-tools-for-students.jpg
+image: /blog/covers/v3-tr/free-academic-research-tools-for-students.jpg
 imageAlt: "Unutma aylık takvimi, bir dönemi planlamak için"
 ---
 

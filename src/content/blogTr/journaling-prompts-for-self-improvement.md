@@ -6,7 +6,7 @@ pubDate: 2026-09-06
 updatedDate: 2026-10-16
 keyword: "günlük soruları"
 tags: ["unutma", "günlük", "kendini geliştirme"]
-image: /blog/covers/v3/journaling-prompts-for-self-improvement.jpg
+image: /blog/covers/v3-tr/journaling-prompts-for-self-improvement.jpg
 imageAlt: "Unutma günlüğü, son yedi günün ruh hali geçmişi"
 draft: false
 ---

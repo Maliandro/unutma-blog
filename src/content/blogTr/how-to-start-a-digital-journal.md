@@ -6,7 +6,7 @@ pubDate: 2026-08-30
 updatedDate: 2026-10-16
 keyword: "dijital günlük tutmaya başlamak"
 tags: ["unutma", "günlük", "gizlilik"]
-image: /blog/covers/v3/how-to-start-a-digital-journal.jpg
+image: /blog/covers/v3-tr/how-to-start-a-digital-journal.jpg
 imageAlt: "Unutma günlük ekranı: bugünün kaydı ve ruh hali seçici"
 draft: false
 ---

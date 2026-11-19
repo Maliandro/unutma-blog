@@ -7,7 +7,7 @@ keyword: "yapay zekâ modeli olmayan telefon asistanı"
 pubDate: 2026-09-23
 updatedDate: 2026-10-16
 tags: ["Unutma", "mühendislik", "gizlilik", "cihaz içi", "show-hn"]
-image: /blog/covers/v3/a-phone-assistant-without-an-llm.jpg
+image: /blog/covers/v3-tr/a-phone-assistant-without-an-llm.jpg
 imageAlt: "Unutma asistanı tek cümleyi bir takvim kaydına, bir alışveriş maddesine ve bir bütçe harcamasına ayırıyor"
 featured: true
 draft: false

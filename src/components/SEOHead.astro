@@ -24,7 +24,7 @@ const {
   title,
   description,
   // Varsayilan paylasim gorseli 1200x630 (scripts/kapak-uret.mjs, 'site-default').
-  image = '/blog/covers/v3/site-default.jpg',
+  image: imageProp,
   article = false,
   publishedDate,
   modifiedDate,
@@ -35,11 +35,12 @@ const {
   imageAlt,
 } = Astro.props;
 const uiLang = pageLang(Astro.url.pathname);
+const image = imageProp ?? (uiLang === 'tr' ? '/blog/covers/v3-tr/site-default.jpg' : '/blog/covers/v3/site-default.jpg');
 const locale = localeProp ?? OG_LOCALES[uiLang];
 // Verilmediyse hreflang cifti adres yolundan hesaplanir (EN <-> TR).
 const pair = alternates.length === 0 ? hreflangPair(Astro.url.pathname) : null;
 // 1200x630 kapaklar (covers/v3) icin boyut etiketleri basilir; svg/ikon icin basilmaz.
-const isWide = /\/covers\/v3\//.test(image);
+const isWide = /\/covers\/v3(-tr)?\//.test(image);
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const siteRoot = (Astro.site?.href ?? 'https://unutma.meyadestudio.com/').replace(/\/$/, '');

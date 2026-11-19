@@ -6,7 +6,7 @@ pubDate: 2026-04-03
 updatedDate: 2026-10-16
 tags: ["Unutma", "verimlilik", "görevler", "düzen"]
 draft: false
-image: /blog/covers/v3/unutma-lists-todo-shopping-wishlist-workflow.jpg
+image: /blog/covers/v3-tr/unutma-lists-todo-shopping-wishlist-workflow.jpg
 imageAlt: "Unutma Alışveriş Listesi, miktarlarla birlikte"
 ---
 

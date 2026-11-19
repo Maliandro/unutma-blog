@@ -6,7 +6,7 @@ pubDate: 2026-08-02
 updatedDate: 2026-10-16
 keyword: "hayatı düzene sokmak"
 tags: ["unutma", "düzen", "verimlilik"]
-image: /blog/covers/v3/how-to-organize-your-life.jpg
+image: /blog/covers/v3-tr/how-to-organize-your-life.jpg
 imageAlt: "Unutma ana ekranı: bir şey söyleyin ya da sorun, Kayıtlarım ile"
 draft: false
 ---

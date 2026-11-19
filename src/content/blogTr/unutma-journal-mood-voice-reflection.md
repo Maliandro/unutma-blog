@@ -6,7 +6,7 @@ pubDate: 2026-04-06
 updatedDate: 2026-10-16
 tags: ["Unutma", "günlük tutma", "iyi oluş", "alışkanlıklar"]
 draft: false
-image: /blog/covers/v3/unutma-journal-mood-voice-reflection.jpg
+image: /blog/covers/v3-tr/unutma-journal-mood-voice-reflection.jpg
 imageAlt: "Unutma Günlük, bugünkü kayıt ve ruh hali geçmişiyle"
 ---
 

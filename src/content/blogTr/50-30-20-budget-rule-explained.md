@@ -6,7 +6,7 @@ pubDate: 2026-09-20
 updatedDate: 2026-10-16
 keyword: "50/30/20 bütçe kuralı"
 tags: ["unutma", "bütçe", "para"]
-image: /blog/covers/v3/50-30-20-budget-rule-explained.jpg
+image: /blog/covers/v3-tr/50-30-20-budget-rule-explained.jpg
 imageAlt: "Unutma Bütçe ekranı: aylık gelir, gider ve bakiye"
 draft: false
 ---

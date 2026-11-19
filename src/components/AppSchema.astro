@@ -70,7 +70,7 @@ const app = {
         { '@type': 'Offer', price: '0', priceCurrency: 'USD', url: APP_STORE, availability: 'https://schema.org/InStock', category: T('offer.category') },
         { '@type': 'Offer', price: '0', priceCurrency: 'USD', url: PLAY_STORE, availability: 'https://schema.org/InStock', category: T('offer.category') },
       ],
-      image: `${SITE}/blog/covers/v3/site-default.jpg`,
+      image: `${SITE}/blog/covers/${lang === 'tr' ? 'v3-tr' : 'v3'}/site-default.jpg`,
       // Dogrulanabilir, urunde gercekten var olan ayirt edici ozellikler.
       additionalProperty: Array.from({ length: 8 }, (_, i) => ({
         '@type': 'PropertyValue',

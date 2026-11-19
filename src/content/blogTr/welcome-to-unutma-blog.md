@@ -5,7 +5,7 @@ trSlug: unutma-bloga-hos-geldiniz
 pubDate: 2026-03-15
 tags: ["Unutma", "verimlilik", "gizlilik"]
 draft: false
-image: /blog/covers/v3/welcome-to-unutma-blog.jpg
+image: /blog/covers/v3-tr/welcome-to-unutma-blog.jpg
 imageAlt: "Unutma ana ekranı"
 ---
 

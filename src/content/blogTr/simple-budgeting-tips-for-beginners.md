@@ -6,7 +6,7 @@ pubDate: 2026-09-13
 updatedDate: 2026-10-16
 keyword: "bütçe nasıl yapılır"
 tags: ["unutma", "bütçe", "para"]
-image: /blog/covers/v3/simple-budgeting-tips-for-beginners.jpg
+image: /blog/covers/v3-tr/simple-budgeting-tips-for-beginners.jpg
 imageAlt: "Unutma altı aylık harcama eğilimi grafiği"
 draft: false
 ---

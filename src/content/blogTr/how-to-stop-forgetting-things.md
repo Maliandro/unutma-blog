@@ -6,7 +6,7 @@ pubDate: 2026-08-09
 updatedDate: 2026-10-16
 keyword: "unutmamak için ne yapmalı"
 tags: ["unutma", "hafıza", "verimlilik"]
-image: /blog/covers/v3/how-to-stop-forgetting-things.jpg
+image: /blog/covers/v3-tr/how-to-stop-forgetting-things.jpg
 imageAlt: "Unutma asistanı annenin doğum gününü hatırlıyor ve ne zaman olduğunu yanıtlıyor"
 draft: false
 ---

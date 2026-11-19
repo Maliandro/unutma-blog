@@ -6,7 +6,7 @@ pubDate: 2026-08-16
 updatedDate: 2026-10-16
 keyword: "çevrimdışı çalışan uygulamalar"
 tags: ["unutma", "çevrimdışı", "gizlilik"]
-image: /blog/covers/v3/why-you-should-use-offline-apps.jpg
+image: /blog/covers/v3-tr/why-you-should-use-offline-apps.jpg
 imageAlt: "Unutma asistanı koyu modda, telefonda çevrimdışı çalışıyor"
 draft: false
 ---

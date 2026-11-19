@@ -6,7 +6,7 @@ pubDate: 2026-10-04
 updatedDate: 2026-10-16
 keyword: "kalıcı alışkanlıklar nasıl kurulur"
 tags: ["unutma", "alışkanlıklar", "rutinler"]
-image: /blog/covers/v3/how-to-build-habits-that-stick.jpg
+image: /blog/covers/v3-tr/how-to-build-habits-that-stick.jpg
 imageAlt: "Unutma gün özeti: nazik hedefler ve bir günü kaçırmanın sorun olmadığı notu"
 draft: false
 ---

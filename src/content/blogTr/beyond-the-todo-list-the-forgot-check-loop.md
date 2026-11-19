@@ -6,7 +6,7 @@ pubDate: 2026-05-17
 updatedDate: 2026-10-16
 tags: ["verimlilik", "zihinsel yük", "Unutma", "gizlilik", "alışkanlıklar"]
 draft: false
-image: /blog/covers/v3/beyond-the-todo-list-the-forgot-check-loop.jpg
+image: /blog/covers/v3-tr/beyond-the-todo-list-the-forgot-check-loop.jpg
 imageAlt: "Unutma Hızlı Eylemler kaydı: kapı kilitlendi, ocak kapatıldı, ilaç alındı"
 ---
 

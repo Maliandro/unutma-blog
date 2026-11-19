@@ -5,7 +5,7 @@ trSlug: hesapsiz-yapilacaklar-listesi-uygulamasi
 pubDate: 2026-10-17
 keyword: "hesapsız yapılacaklar listesi uygulaması"
 tags: ["Unutma", "yapılacaklar listesi", "gizlilik", "çevrimdışı", "hesapsız"]
-image: /blog/covers/v3/todo-list-app-no-account-offline.jpg
+image: /blog/covers/v3-tr/todo-list-app-no-account-offline.jpg
 imageAlt: "Unutma yapılacaklar listesi, hesap olmadan çalışıyor"
 draft: true
 ---

@@ -6,7 +6,7 @@ pubDate: 2026-08-23
 updatedDate: 2026-10-16
 keyword: "kişisel verileri telefonda tutmak"
 tags: ["unutma", "gizlilik", "güvenlik"]
-image: /blog/covers/v3/keep-your-data-safe-on-your-phone.jpg
+image: /blog/covers/v3-tr/keep-your-data-safe-on-your-phone.jpg
 imageAlt: "Unutma bildirimi: verileriniz cihazınızda şifrelenmiş olarak saklanır"
 draft: false
 ---

@@ -6,7 +6,7 @@ pubDate: 2026-04-08
 updatedDate: 2026-10-16
 tags: ["Unutma", "verimlilik", "iyi oluş", "gizlilik"]
 draft: false
-image: /blog/covers/v3/unutma-themes-games-languages-backup.jpg
+image: /blog/covers/v3-tr/unutma-themes-games-languages-backup.jpg
 imageAlt: "Unutma Ekonomi ekranı, koyu temada"
 ---
 

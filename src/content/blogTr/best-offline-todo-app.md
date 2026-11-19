@@ -6,7 +6,7 @@ pubDate: 2026-03-23
 updatedDate: 2026-10-16
 tags: ["çevrimdışı", "görevler", "verimlilik"]
 draft: false
-image: /blog/covers/v3/best-offline-todo-app.jpg
+image: /blog/covers/v3-tr/best-offline-todo-app.jpg
 imageAlt: "Unutma yapılacaklar listesi, yaklaşan görevler ve telefonda çevrimdışı çalışıyor"
 ---
 

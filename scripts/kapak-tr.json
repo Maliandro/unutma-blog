@@ -1,0 +1,156 @@
+{
+  "50-30-20-budget-rule-explained": {
+    "title": "50/30/20 kuralı, örnek hesapla",
+    "chip": "Bütçe"
+  },
+  "a-phone-assistant-without-an-llm": {
+    "title": "Bir cümle, üç kayıt. Yapay zekâ modeli yok.",
+    "chip": "Mühendislik"
+  },
+  "best-offline-todo-app": {
+    "title": "İyi bir çevrimdışı yapılacaklar uygulaması",
+    "chip": "Çevrimdışı"
+  },
+  "beyond-the-todo-list-the-forgot-check-loop": {
+    "title": "“Yaptım mı?” Cevabı hazır.",
+    "chip": "Zihinsel yük"
+  },
+  "free-academic-research-tools-for-students": {
+    "title": "Öğrenciler için 11 araştırma aracı",
+    "chip": "Öğrenciler"
+  },
+  "how-to-build-a-morning-routine": {
+    "title": "Sabah ve akşam rutini şablonu",
+    "chip": "Rutinler"
+  },
+  "how-to-build-habits-that-stick": {
+    "title": "Kaçırılan güne dayanan alışkanlıklar",
+    "chip": "Alışkanlıklar"
+  },
+  "how-to-organize-a-literature-review-without-getting-lost": {
+    "title": "Literatür taraması: 47 sekme değil, düzen",
+    "chip": "Araştırma"
+  },
+  "how-to-organize-your-life": {
+    "title": "Hayatınızı düzene sokun: uygulama envanteri",
+    "chip": "Düzen"
+  },
+  "how-to-set-and-track-goals": {
+    "title": "Günlere dönüşen hedefler",
+    "chip": "Hedefler"
+  },
+  "how-to-start-a-digital-journal": {
+    "title": "7 günde dijital günlüğe başlayın",
+    "chip": "Günlük"
+  },
+  "how-to-stop-forgetting-things": {
+    "title": "Bir şeyleri unutmayı bırakın",
+    "chip": "Hafıza"
+  },
+  "how-to-track-personal-expenses": {
+    "title": "Harcamalarınızı 30 gün takip edin",
+    "chip": "Para"
+  },
+  "journaling-prompts-for-self-improvement": {
+    "title": "Kendini geliştirmek için 30 günlük sorusu",
+    "chip": "Günlük"
+  },
+  "keep-your-data-safe-on-your-phone": {
+    "title": "Verileriniz telefonunuzda, güvende",
+    "chip": "Gizlilik",
+    "shot": "e-home",
+    "y": 0.05,
+    "zoom": 1.15
+  },
+  "move-unutma-to-a-new-phone": {
+    "title": "Unutma verilerinizi yeni telefona taşıyın",
+    "chip": "Nasıl yapılır",
+    "shot": "e-home",
+    "y": 0,
+    "zoom": 1.1
+  },
+  "notes-app-no-account-offline": {
+    "title": "Hesapsız, çevrimdışı not uygulaması",
+    "chip": "Notlar",
+    "shot": "a1-bday",
+    "y": 0.6,
+    "zoom": 1.15
+  },
+  "our-story-we-want-your-feedback": {
+    "title": "Hikâyemiz ve sizin fikirleriniz",
+    "chip": "Unutma"
+  },
+  "simple-budgeting-tips-for-beginners": {
+    "title": "Bütçe ipuçları: ilk ayınız",
+    "chip": "Bütçe"
+  },
+  "todo-list-app-no-account-offline": {
+    "title": "Kayıt yok, e-posta yok: yapılacaklar uygulaması",
+    "chip": "Hesapsız"
+  },
+  "unutma-app-complete-feature-guide": {
+    "title": "Unutma'nın içi: her özellik, açıklamalı",
+    "chip": "Rehber"
+  },
+  "unutma-app-showcase-complete-guide": {
+    "title": "Özel hayat düzenleyici, tek turda",
+    "chip": "Tanıtım"
+  },
+  "unutma-economy-expenses-budgets-assets": {
+    "title": "Banka bağlamadan para netliği",
+    "chip": "Finans"
+  },
+  "unutma-journal-mood-voice-reflection": {
+    "title": "Gösterişsiz günlük tutmak",
+    "chip": "Günlük"
+  },
+  "unutma-lists-todo-shopping-wishlist-workflow": {
+    "title": "Yapılacaklar, alışveriş, istekler: tek sekme",
+    "chip": "Listeler"
+  },
+  "unutma-quick-actions-streaks-heatmap-statistics": {
+    "title": "Hızlı eylemler: bir dokunuş, kayıt",
+    "chip": "Alışkanlıklar"
+  },
+  "unutma-routines-calendar-widgets-time": {
+    "title": "Çevrimdışı çalışan hatırlatıcılar",
+    "chip": "Rutinler"
+  },
+  "unutma-themes-games-languages-backup": {
+    "title": "Temalar, diller, yedekleme: insani yüz",
+    "chip": "Unutma",
+    "shot": "e-economy",
+    "y": 0,
+    "zoom": 1.05
+  },
+  "unutma-vault-passwords-face-id-privacy": {
+    "title": "Kasanız telefonunuzda kalır",
+    "chip": "Güvenlik",
+    "shot": "e-journal",
+    "y": 0.08,
+    "zoom": 1.2
+  },
+  "unutma-voice-commands-hands-free-organizing": {
+    "title": "Unutma'yla konuşun",
+    "chip": "Ses"
+  },
+  "weekly-planning-tips": {
+    "title": "20 dakikalık haftalık gözden geçirme",
+    "chip": "Planlama"
+  },
+  "why-you-should-use-offline-apps": {
+    "title": "Çevrimdışı çalışan uygulamalar: 5 adım",
+    "chip": "Çevrimdışı",
+    "shot": "a2",
+    "y": 0.12,
+    "zoom": 1.2
+  },
+  "welcome-to-unutma-blog": {
+    "title": "Unutma Blog'a hoş geldiniz",
+    "chip": "Unutma"
+  },
+  "site-default": {
+    "title": "Bir cümle yazın. Unutma dosyalar.",
+    "chip": "Çevrimdışı · Hesap yok"
+  }
+}

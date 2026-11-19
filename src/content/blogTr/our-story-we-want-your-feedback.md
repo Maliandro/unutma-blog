@@ -5,7 +5,7 @@ trSlug: hikayemiz-ve-sizin-fikirleriniz
 pubDate: 2026-05-27
 updatedDate: 2026-10-16
 tags: ["Unutma", "verimlilik", "gizlilik", "geri bildirim"]
-image: /blog/covers/v3/our-story-we-want-your-feedback.jpg
+image: /blog/covers/v3-tr/our-story-we-want-your-feedback.jpg
 imageAlt: "Unutma asistan ana ekranı ve yeşil simgesi"
 draft: false
 ---

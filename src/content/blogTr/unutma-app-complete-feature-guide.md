@@ -5,7 +5,7 @@ trSlug: unutma-ozellik-rehberi
 pubDate: 2026-03-29
 tags: ["Unutma", "verimlilik", "gizlilik", "düzen"]
 draft: false
-image: /blog/covers/v3/unutma-app-complete-feature-guide.jpg
+image: /blog/covers/v3-tr/unutma-app-complete-feature-guide.jpg
 imageAlt: "Unutma ana ekranı: sıradaki plan, bugünün maddeleri ve hızlı eylemler"
 ---
 

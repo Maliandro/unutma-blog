@@ -6,7 +6,7 @@ pubDate: 2026-08-09
 updatedDate: 2026-10-16
 keyword: "sabah ve akşam rutini"
 tags: ["unutma", "rutinler", "alışkanlıklar"]
-image: /blog/covers/v3/how-to-build-a-morning-routine.jpg
+image: /blog/covers/v3-tr/how-to-build-a-morning-routine.jpg
 imageAlt: "Unutma hatırlatıcıları sabah ve akşam rutinleri olarak gruplanmış"
 draft: false
 ---

@@ -8,7 +8,7 @@ updatedDate: 2026-10-16
 keyword: "çevrimdışı çalışan hatırlatıcı uygulaması"
 tags: ["Unutma", "rutinler", "planlama", "verimlilik"]
 draft: false
-image: /blog/covers/v3/unutma-routines-calendar-widgets-time.jpg
+image: /blog/covers/v3-tr/unutma-routines-calendar-widgets-time.jpg
 imageAlt: "Unutma akşam rutini ve telefon alarmı seçeneği"
 ---
 

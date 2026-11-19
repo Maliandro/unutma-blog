@@ -8,7 +8,7 @@ updatedDate: 2026-10-16
 keyword: "çevrimdışı parola kasası uygulaması"
 tags: ["Unutma", "gizlilik", "güvenlik", "düzen"]
 draft: false
-image: /blog/covers/v3/unutma-vault-passwords-face-id-privacy.jpg
+image: /blog/covers/v3-tr/unutma-vault-passwords-face-id-privacy.jpg
 imageAlt: "Unutma Kasası, parmak izi ya da yüz tanıma arkasında kilitli"
 ---
 

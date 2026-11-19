@@ -5,7 +5,7 @@ trSlug: unutmayi-yeni-telefona-tasima
 pubDate: 2026-08-09
 updatedDate: 2026-10-16
 tags: ["Unutma", "yedekleme", "gizlilik", "nasıl yapılır"]
-image: /blog/covers/v3/move-unutma-to-a-new-phone.jpg
+image: /blog/covers/v3-tr/move-unutma-to-a-new-phone.jpg
 imageAlt: "Unutma ana ekranı, koyu modda"
 draft: false
 ---

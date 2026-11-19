@@ -8,7 +8,7 @@ updatedDate: 2026-10-16
 keyword: "banka bağlantısı olmayan harcama takipçisi"
 tags: ["Unutma", "finans", "bütçe", "verimlilik"]
 draft: false
-image: /blog/covers/v3/unutma-economy-expenses-budgets-assets.jpg
+image: /blog/covers/v3-tr/unutma-economy-expenses-budgets-assets.jpg
 imageAlt: "Unutma Bütçe ekranı: gelir, gider, bakiye ve eğilimler"
 ---
 

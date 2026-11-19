@@ -5,7 +5,7 @@ trSlug: unutma-tanitim-rehberi
 pubDate: 2026-06-26
 updatedDate: 2026-10-16
 tags: ["Unutma", "verimlilik", "gizlilik", "uygulama rehberi"]
-image: /blog/covers/v3/unutma-app-showcase-complete-guide.jpg
+image: /blog/covers/v3-tr/unutma-app-showcase-complete-guide.jpg
 imageAlt: "Unutma asistanı bir takvim kaydını, bir alışveriş maddesini ve bir bütçe harcamasını kaydediyor"
 featured: true
 draft: false

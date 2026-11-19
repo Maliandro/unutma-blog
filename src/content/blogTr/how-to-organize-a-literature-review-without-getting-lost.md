@@ -5,7 +5,7 @@ trSlug: literatur-taramasi-nasil-duzenlenir
 pubDate: 2026-06-20
 tags: ["literatür taraması", "doktora", "araştırma", "planlama"]
 draft: false
-image: /blog/covers/v3/how-to-organize-a-literature-review-without-getting-lost.jpg
+image: /blog/covers/v3-tr/how-to-organize-a-literature-review-without-getting-lost.jpg
 imageAlt: "Unutma yapılacaklar listesi, proje sunumlarını bitirmek gibi yaklaşan görevlerle"
 ---
 

@@ -15,10 +15,14 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import sharp from 'sharp';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+// Turkce kapaklar: KAPAK_DIL=tr node scripts/kapak-uret.mjs  (basliklar scripts/kapak-tr.json,
+// ekranlar ham/tr, cikti public/blog/covers/v3-tr/)
+const TR = process.env.KAPAK_DIL === 'tr';
 const SRC =
   process.env.KAPAK_KAYNAK ||
-  'C:/projelerim/PROJELERİM/marketing/unutma/magaza-3.30/ham/en';
-const OUT = path.join(root, 'public/blog/covers/v3');
+  `C:/projelerim/PROJELERİM/marketing/unutma/magaza-3.30/ham/${TR ? 'tr' : 'en'}`;
+const OUT = path.join(root, TR ? 'public/blog/covers/v3-tr' : 'public/blog/covers/v3');
+const TRT = TR ? JSON.parse(fs.readFileSync(path.join(root, 'scripts/kapak-tr.json'), 'utf8')) : {};
 const globalRoot = execSync('npm root -g').toString().trim();
 const { chromium } = createRequire(path.join(globalRoot, 'noop.js'))('playwright');
 
@@ -89,7 +93,7 @@ function html(k) {
   const phoneLeft = 1200 - 64 - (SW + 24);
   const titleW = Math.min(600, phoneLeft - 72 - 36);
   const long = k.title.length > 34 || titleW < 540;
-  return `<!doctype html><html><head><meta charset="utf-8"><style>
+  return `<!doctype html><html lang="${TR ? 'tr' : 'en'}"><head><meta charset="utf-8"><style>
 @font-face{font-family:J;src:url(${fontUrl}) format('woff2');font-weight:200 800}
 *{box-sizing:border-box;margin:0}
 body{width:1200px;height:630px;overflow:hidden;font-family:J,sans-serif;
@@ -132,10 +136,12 @@ async function encode(png, slug) {
 
 fs.mkdirSync(OUT, { recursive: true });
 const only = process.argv.slice(2);
+if (TR) for (const [slug, v] of Object.entries(TRT)) Object.assign(KAPAKLAR[slug], v);
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1200, height: 630 }, deviceScaleFactor: 1 });
 for (const [slug, k] of Object.entries(KAPAKLAR)) {
   if (only.length && !only.includes(slug)) continue;
+  if (TR && !TRT[slug]) continue;
   const tmp = path.join(os.tmpdir(), `kapak-${slug}.html`);
   fs.writeFileSync(tmp, html(k));
   await page.goto(pathToFileURL(tmp).href, { waitUntil: 'load' });

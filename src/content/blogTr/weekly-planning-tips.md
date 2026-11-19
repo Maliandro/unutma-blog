@@ -6,7 +6,7 @@ pubDate: 2026-10-04
 updatedDate: 2026-10-16
 keyword: "haftalık planlama"
 tags: ["unutma", "planlama", "verimlilik"]
-image: /blog/covers/v3/weekly-planning-tips.jpg
+image: /blog/covers/v3-tr/weekly-planning-tips.jpg
 imageAlt: "Unutma, yarın takvimde neler olduğunu gösteriyor"
 draft: false
 ---

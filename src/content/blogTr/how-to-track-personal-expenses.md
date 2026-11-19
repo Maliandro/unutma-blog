@@ -6,7 +6,7 @@ pubDate: 2026-09-13
 updatedDate: 2026-10-16
 keyword: "harcama takibi nasıl yapılır"
 tags: ["unutma", "bütçe", "para"]
-image: /blog/covers/v3/how-to-track-personal-expenses.jpg
+image: /blog/covers/v3-tr/how-to-track-personal-expenses.jpg
 imageAlt: "Unutma asistanı bu ay markete ne kadar harcandığını yanıtlıyor"
 draft: false
 ---
