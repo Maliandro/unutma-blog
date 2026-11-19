@@ -1,169 +1,267 @@
 ---
-import { t } from '../i18n/ui';
+/**
+ * Ust bar (3.30 yeniden tasarim). Ana sayfada `tone="green"`: yesil sahnenin
+ * ustunde saydam ve beyaz yazili baslar, sahne gecince beyaz zemine doner.
+ * Diger sayfalarda hep beyaz. Eski "tema" dugmesi hicbir sey yapmiyordu, kaldirildi.
+ */
+import { withBase } from '../utils/site';
 
+interface Props {
+  tone?: 'green';
+}
+const { tone } = Astro.props;
 const pathname = Astro.url.pathname;
-const u = t();
 
 const nav = [
-  { href: '/', label: u.nav.home, key: 'home' },
-  { href: '/blog/', label: u.nav.blog, key: 'blog' },
-  { href: '/about/', label: u.nav.about, key: 'about' },
+  { href: '/#how', label: 'How it works', key: 'how' },
+  { href: '/#private', label: 'Privacy', key: 'private' },
+  { href: '/blog/', label: 'Blog', key: 'blog' },
+  { href: '/faq/', label: 'FAQ', key: 'faq' },
 ];
 
-function isActive(key: string): boolean {
-  if (key === 'home') {
-    return pathname === '/' || pathname === '';
-  }
-  if (key === 'blog') {
-    return pathname.startsWith('/blog');
-  }
-  if (key === 'about') {
-    return pathname.startsWith('/about');
-  }
-  return false;
-}
-
-const linkClass = (key: string, large = false) =>
-  [
-    large
-      ? 'rounded-xl px-4 py-3.5 text-base font-semibold min-h-[48px] flex items-center'
-      : 'text-sm font-medium py-2 px-1',
-    'transition hover:text-brand',
-    isActive(key) ? 'text-brand' : 'text-gray-700 dark:text-gray-300',
-    large ? 'active:bg-gray-100 dark:active:bg-gray-800' : '',
-  ]
-    .filter(Boolean)
-    .join(' ');
+const isActive = (key: string) =>
+  (key === 'blog' && pathname.startsWith('/blog')) || (key === 'faq' && pathname.startsWith('/faq'));
 ---
 
-<header
-  class="sticky top-0 z-40 border-b border-gray-100/90 bg-white/90 shadow-brand-sm backdrop-blur-md dark:border-gray-800/90 dark:bg-gray-950/90"
->
-  <div class="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3 md:py-4">
-    <a
-      href="/"
-      class="group flex min-w-0 max-w-[65%] items-center gap-3 rounded-lg outline-none ring-brand/0 transition hover:ring-2 focus-visible:ring-2 focus-visible:ring-brand/30 sm:max-w-none"
-    >
-      <img
-        src="/unutma-icon.png"
-        width="40"
-        height="40"
-        alt=""
-        class="h-9 w-9 shrink-0 rounded-[22%] shadow-md ring-1 ring-black/[0.06] transition group-hover:shadow-brand-sm dark:ring-white/10"
-        decoding="async"
-      />
-      <span class="min-w-0 leading-tight">
-        <span class="flex flex-wrap items-baseline gap-x-2 gap-y-0">
-          <span class="brand-wordmark brand-wordmark-sm">Unutma</span>
-          <span
-            class="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-gray-400 dark:text-gray-500"
-          >
-            {u.header.blog}
-          </span>
-        </span>
-        <span class="brand-peace brand-peace-muted mt-0.5 block truncate text-[0.68rem] md:text-xs">
-          {u.header.peace}
-        </span>
-      </span>
+<header class:list={['u-head', tone === 'green' && 'is-green']} data-u-head>
+  <div class="u-head__in">
+    <a href={withBase('/')} class="u-head__brand" aria-label="Unutma home">
+      <img src={withBase('/unutma-icon.png')} width="36" height="36" alt="" decoding="async" />
+      <span>Unutma</span>
     </a>
 
-    <div class="flex shrink-0 items-center gap-2 sm:gap-3">
-      <button
-        type="button"
-        id="theme-toggle"
-        class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-600 shadow-sm transition hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:text-amber-200 dark:hover:bg-gray-800"
-        aria-label={u.theme.toggle}
-        title={u.theme.toggle}
-      >
-        <svg class="hidden h-5 w-5 dark:block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path
-            d="M12 3a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1zm5.657 2.343a1 1 0 0 1 1.414 0l.707.707a1 1 0 1 1-1.414 1.414l-.707-.707a1 1 0 0 1 0-1.414zM18 11a1 1 0 1 1 0 2h-1a1 1 0 1 1 0-2h1zm-2.343 5.657a1 1 0 0 1 0 1.414l-.707.707a1 1 0 1 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 0zM12 20a1 1 0 0 1-1-1v-1a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1zm-6.364-1.636a1 1 0 0 1 0-1.414l.707-.707a1 1 0 1 1 1.414 1.414l-.707.707a1 1 0 0 1-1.414 0zM6 13a1 1 0 1 1 0-2H5a1 1 0 1 1 0 2h1zm1.343-8.536a1 1 0 0 1 1.414 0l.707.707A1 1 0 0 1 8.05 6.585l-.707-.707a1 1 0 0 1 0-1.414zM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8z"
-          />
-        </svg>
-        <svg class="h-5 w-5 dark:hidden" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
-        </svg>
-      </button>
+    <nav class="u-head__nav" aria-label="Primary navigation">
+      {nav.map(({ href, label, key }) => (
+        <a href={href} aria-current={isActive(key) ? 'page' : undefined}>{label}</a>
+      ))}
+    </nav>
 
-      <nav class="hidden items-center gap-5 md:flex lg:gap-6" aria-label={u.header.navAria}>
-        {
-          nav.map(({ href: h, label, key }) => (
-            <a href={h} class={linkClass(key, false)}>
-              {label}
-            </a>
-          ))
-        }
-      </nav>
-
+    <div class="u-head__end">
+      <a href="/#get" class="u-head__cta">Get the app</a>
       <button
         type="button"
         id="mobile-menu-btn"
-        class="flex h-11 w-11 items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-700 shadow-sm md:hidden dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200"
+        class="u-head__menu"
         aria-expanded="false"
         aria-controls="mobile-drawer"
-        aria-label={u.header.menu}
+        aria-label="Open menu"
       >
-        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-          <path
-            class="menu-icon-open"
-            stroke-linecap="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          />
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-width="2" d="M4 8h16M4 16h16" />
         </svg>
       </button>
     </div>
   </div>
 </header>
 
-<!-- Mobile drawer -->
-<div
-  id="mobile-drawer"
-  class="fixed inset-0 z-50 hidden md:hidden"
-  role="dialog"
-  aria-modal="true"
-  aria-label={u.header.navAria}
->
-  <button
-    type="button"
-    id="mobile-drawer-backdrop"
-    class="absolute inset-0 bg-black/50 motion-safe:transition-opacity"
-    tabindex="-1"
-    aria-label={u.header.menuClose}
-  >
-  </button>
-  <div
-    class="absolute right-0 top-0 flex h-full w-[min(22rem,calc(100vw-1rem))] flex-col border-l border-gray-200 bg-white shadow-2xl motion-safe:transition-transform dark:border-gray-800 dark:bg-gray-950"
-    id="mobile-drawer-panel"
-  >
-    <div class="flex items-center justify-between border-b border-gray-100 px-4 py-3 dark:border-gray-800">
-      <span class="font-display text-lg font-semibold text-gray-900 dark:text-gray-100">Menu</span>
-      <button
-        type="button"
-        id="mobile-menu-close"
-        class="flex h-11 w-11 items-center justify-center rounded-lg text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
-        aria-label={u.header.menuClose}
-      >
-        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+<div id="mobile-drawer" class="u-drawer" hidden role="dialog" aria-modal="true" aria-label="Menu">
+  <button type="button" id="mobile-drawer-backdrop" class="u-drawer__back" tabindex="-1" aria-label="Close menu"></button>
+  <div class="u-drawer__panel">
+    <div class="u-drawer__top">
+      <span class="u-drawer__title">Menu</span>
+      <button type="button" id="mobile-menu-close" class="u-head__menu" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" aria-hidden="true">
           <path stroke-linecap="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
     </div>
-    <nav class="flex flex-1 flex-col gap-1 overflow-y-auto p-4" aria-label={u.header.navAria}>
-      {
-        nav.map(({ href: h, label, key }) => (
-          <a
-            href={h}
-            data-mobile-nav-link
-            class:list={[linkClass(key, true), isActive(key) && 'bg-indigo-50 text-brand dark:bg-indigo-950/50']}
-          >
-            {label}
-          </a>
-        ))
-      }
+    <nav class="u-drawer__nav" aria-label="Primary navigation">
+      <a href="/" data-mobile-nav-link>Home</a>
+      {nav.map(({ href, label }) => <a href={href} data-mobile-nav-link>{label}</a>)}
+      <a href="/about/" data-mobile-nav-link>About</a>
+      <a href="/support/" data-mobile-nav-link>Support</a>
     </nav>
+    <a href="/#get" class="u-drawer__cta" data-mobile-nav-link>Get the app</a>
   </div>
 </div>
+
+<style>
+  .u-head {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: saturate(1.4) blur(14px);
+    -webkit-backdrop-filter: saturate(1.4) blur(14px);
+    border-bottom: 1px solid var(--u-line);
+    transition: background-color 0.35s ease, border-color 0.35s ease, color 0.35s ease;
+    color: var(--u-ink);
+  }
+  .u-head.is-green {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background: transparent;
+    border-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    color: #fff;
+  }
+  .u-head.is-green.is-solid {
+    background: rgba(255, 255, 255, 0.94);
+    border-color: var(--u-line);
+    backdrop-filter: saturate(1.4) blur(14px);
+    -webkit-backdrop-filter: saturate(1.4) blur(14px);
+    color: var(--u-ink);
+  }
+  .u-head__in {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0.7rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .u-head__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 700;
+    font-size: 1.12rem;
+    letter-spacing: -0.03em;
+    color: inherit;
+    border-radius: 12px;
+  }
+  .u-head__brand img {
+    width: 36px;
+    height: 36px;
+    border-radius: 22%;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset, 0 4px 14px rgba(5, 85, 61, 0.22);
+  }
+  .u-head__nav {
+    display: none;
+    margin-left: auto;
+    gap: 1.75rem;
+    font-size: 0.86rem;
+    font-weight: 500;
+  }
+  .u-head__nav a {
+    color: inherit;
+    opacity: 0.82;
+    padding: 0.4rem 0;
+    transition: opacity 0.2s;
+  }
+  .u-head__nav a:hover,
+  .u-head__nav a[aria-current='page'] {
+    opacity: 1;
+  }
+  .u-head__nav a[aria-current='page'] {
+    box-shadow: 0 2px 0 currentColor;
+  }
+  .u-head__end {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .u-head__cta {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 0 1rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    background: var(--u-green);
+    color: #fff;
+    transition: background-color 0.2s;
+  }
+  .u-head__cta:hover {
+    background: var(--u-green-deep);
+  }
+  .is-green:not(.is-solid) .u-head__cta {
+    background: #fff;
+    color: var(--u-green-deep);
+  }
+  .u-head__menu {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    color: inherit;
+  }
+  .u-head__menu:hover {
+    background: rgba(127, 127, 127, 0.12);
+  }
+  @media (min-width: 860px) {
+    .u-head__nav {
+      display: flex;
+    }
+    .u-head__end {
+      margin-left: 1.25rem;
+    }
+    .u-head__menu {
+      display: none;
+    }
+  }
+  @media (max-width: 380px) {
+    .u-head__cta {
+      display: none;
+    }
+  }
+
+  .u-drawer {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+  }
+  .u-drawer[hidden] {
+    display: none;
+  }
+  .u-drawer__back {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 42, 31, 0.45);
+  }
+  .u-drawer__panel {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: min(21rem, calc(100vw - 2rem));
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem 1rem 1.5rem;
+    box-shadow: -20px 0 60px rgba(15, 42, 31, 0.18);
+    color: var(--u-ink);
+  }
+  .u-drawer__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--u-line);
+  }
+  .u-drawer__title {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .u-drawer__nav {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem 0;
+    flex: 1;
+  }
+  .u-drawer__nav a {
+    padding: 0.85rem 0.25rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--u-mint);
+  }
+  .u-drawer__cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 52px;
+    border-radius: 999px;
+    background: var(--u-green);
+    color: #fff;
+    font-weight: 600;
+  }
+</style>
 
 <script is:inline>
   (function () {
@@ -171,36 +269,49 @@ const linkClass = (key: string, large = false) =>
     var openBtn = document.getElementById('mobile-menu-btn');
     var closeBtn = document.getElementById('mobile-menu-close');
     var backdrop = document.getElementById('mobile-drawer-backdrop');
-    var panel = document.getElementById('mobile-drawer-panel');
     if (!drawer || !openBtn) return;
-
     function openMenu() {
-      drawer.classList.remove('hidden');
+      drawer.hidden = false;
       openBtn.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
-      try {
-        var first = drawer.querySelector('[data-mobile-nav-link]');
-        if (first) first.focus();
-        else if (closeBtn) closeBtn.focus();
-      } catch (e) {}
+      var first = drawer.querySelector('[data-mobile-nav-link]');
+      if (first) first.focus();
     }
     function closeMenu() {
-      drawer.classList.add('hidden');
+      drawer.hidden = true;
       openBtn.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
-      try {
-        openBtn.focus();
-      } catch (e) {}
+      openBtn.focus();
     }
-
     openBtn.addEventListener('click', openMenu);
     closeBtn && closeBtn.addEventListener('click', closeMenu);
     backdrop && backdrop.addEventListener('click', closeMenu);
     drawer.querySelectorAll('[data-mobile-nav-link]').forEach(function (a) {
-      a.addEventListener('click', closeMenu);
+      a.addEventListener('click', function () {
+        drawer.hidden = true;
+        openBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
     });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && !drawer.classList.contains('hidden')) closeMenu();
+      if (e.key === 'Escape' && !drawer.hidden) closeMenu();
+    });
+
+    // Yesil sahne gecince ust bar beyaza doner (sahne DOM'da bu betikten sonra gelir).
+    document.addEventListener('DOMContentLoaded', function () {
+      var head = document.querySelector('[data-u-head]');
+      var hero = document.querySelector('[data-hero]');
+      if (!head || !hero || !head.classList.contains('is-green')) return;
+      if (!('IntersectionObserver' in window)) {
+        head.classList.add('is-solid');
+        return;
+      }
+      new IntersectionObserver(
+        function (entries) {
+          head.classList.toggle('is-solid', !entries[0].isIntersecting);
+        },
+        { rootMargin: '-64px 0px 0px 0px' }
+      ).observe(hero);
     });
   })();
 </script>

@@ -9,29 +9,47 @@ const { title, url } = Astro.props;
 const fullUrl = new URL(url, Astro.site).toString();
 ---
 
-<div class="my-6 flex flex-wrap gap-3">
+<div class="my-6 flex flex-wrap items-center gap-2"><span class="mr-1 text-sm font-medium text-gray-500">Share</span>
   <a
     href={`https://pinterest.com/pin/create/button/?url=${encodeURIComponent(fullUrl)}&description=${encodeURIComponent(title)}`}
     target="_blank"
     rel="noopener noreferrer"
-    class="rounded-lg bg-red-600 px-4 py-2 text-sm text-white transition hover:bg-red-700"
+    class="u-share"
   >
-    📌 Pin It
+    Pinterest
   </a>
   <a
     href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(fullUrl)}`}
     target="_blank"
     rel="noopener noreferrer"
-    class="rounded-lg bg-sky-700 px-4 py-2 text-sm text-white transition hover:bg-sky-800"
+    class="u-share"
   >
-    🐦 Tweet
+    X
   </a>
   <a
     href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(fullUrl)}`}
     target="_blank"
     rel="noopener noreferrer"
-    class="rounded-lg bg-blue-800 px-4 py-2 text-sm text-white transition hover:bg-blue-900"
+    class="u-share"
   >
-    💼 Share
+    LinkedIn
   </a>
 </div>
+
+<style>
+  .u-share {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 0 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--u-line);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--u-ink);
+  }
+  .u-share:hover {
+    border-color: var(--u-green);
+    color: var(--u-green);
+  }
+</style>

@@ -1,17 +1,19 @@
 ---
 /**
- * Store links as plain text (no badge graphics).
+ * Magaza dugmeleri (3.30). Resmi rozet gorseli degil; logo + metin, iki tonda:
+ * `tone="light"` acik zeminde koyu dugme, `tone="green"` yesil zeminde beyaz dugme.
  */
-import { t } from '../i18n/ui';
+import AppleIcon from './AppleIcon.astro';
+import GooglePlayIcon from './GooglePlayIcon.astro';
 
 interface Props {
   class?: string;
-  /** Slightly quieter under a primary CTA */
+  /** Eski cagrilarla uyum icin duruyor; gorunumu etkilemez. */
   emphasis?: 'default' | 'secondary';
+  tone?: 'light' | 'green';
 }
 
-const { class: className, emphasis = 'default' } = Astro.props;
-const u = t();
+const { class: className, tone = 'light' } = Astro.props;
 
 const playStoreUrl =
   import.meta.env.PUBLIC_PLAY_STORE_URL ??
@@ -19,23 +21,67 @@ const playStoreUrl =
 const appStoreUrl =
   import.meta.env.PUBLIC_APP_STORE_URL ??
   'https://apps.apple.com/app/id6758889495';
-
-const playClass =
-  emphasis === 'secondary'
-    ? 'inline-flex min-h-[44px] items-center justify-center rounded-full bg-[#01875f]/15 px-5 py-2.5 text-sm font-bold text-[#016b4c] shadow-sm ring-1 ring-[#01875f]/25 hover:bg-[#01875f]/25 focus:outline-none focus:ring-2 focus:ring-[#01875f]/40 dark:bg-emerald-500/15 dark:text-emerald-300 dark:ring-emerald-500/30 dark:hover:bg-emerald-500/25'
-    : 'inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#01875f]/15 px-6 py-3 text-base font-bold text-[#016b4c] shadow-md ring-1 ring-[#01875f]/30 hover:bg-[#01875f]/25 focus:outline-none focus:ring-2 focus:ring-[#01875f]/40 dark:bg-emerald-500/15 dark:text-emerald-300 dark:ring-emerald-500/35 dark:hover:bg-emerald-500/25';
-
-const appleClass =
-  emphasis === 'secondary'
-    ? 'inline-flex min-h-[44px] items-center justify-center rounded-full bg-gray-900 px-5 py-2.5 text-sm font-bold text-white shadow-sm ring-1 ring-black/10 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-white'
-    : 'inline-flex min-h-[48px] items-center justify-center rounded-full bg-gray-900 px-6 py-3 text-base font-bold text-white shadow-md ring-1 ring-black/10 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-white';
 ---
 
-<div class:list={['flex flex-wrap items-center gap-4', className]}>
-  <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class={playClass}>
-    {u.footer.googlePlay}
+<div class:list={['u-stores', tone === 'green' && 'u-stores--green', className]}>
+  <a href={appStoreUrl} target="_blank" rel="noopener noreferrer" class="u-store">
+    <AppleIcon class="u-store__ic" />
+    <span><small>Download on the</small>App Store</span>
   </a>
-  <a href={appStoreUrl} target="_blank" rel="noopener noreferrer" class={appleClass}>
-    {u.footer.appStore}
+  <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="u-store">
+    <GooglePlayIcon class="u-store__ic" />
+    <span><small>Get it on</small>Google Play</span>
   </a>
 </div>
+
+<style>
+  .u-stores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .u-store {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-height: 54px;
+    padding: 0 1.25rem 0 1rem;
+    border-radius: 14px;
+    background: var(--u-ink);
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.02rem;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    text-decoration: none;
+  }
+  .u-store:hover {
+    background: #1b3d2e;
+  }
+  .u-store small {
+    display: block;
+    font-size: 0.66rem;
+    font-weight: 500;
+    opacity: 0.75;
+    letter-spacing: 0;
+  }
+  .u-store :global(.u-store__ic) {
+    width: 22px;
+    height: 22px;
+    flex: none;
+  }
+  .u-stores--green .u-store {
+    background: #fff;
+    color: var(--u-ink);
+    box-shadow: 0 10px 30px -12px rgba(5, 60, 40, 0.45);
+  }
+  .u-stores--green .u-store:hover {
+    background: #f1faf4;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .u-store:hover {
+      transform: translateY(-1px);
+    }
+  }
+</style>

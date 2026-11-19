@@ -5,14 +5,46 @@ import StoreBadgeRow from './StoreBadgeRow.astro';
 const u = t().appBanner;
 ---
 
-<aside
-  class="my-8 rounded-xl border border-indigo-200 bg-gradient-to-r from-indigo-50 to-cyan-50 p-6 dark:border-indigo-900/60 dark:from-indigo-950/50 dark:to-cyan-950/40"
->
-  <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-gray-100">
-    {u.title}
-  </h3>
-  <p class="mb-4 text-gray-600 dark:text-gray-400">
-    {u.body}
-  </p>
-  <StoreBadgeRow />
+<aside class="u-banner">
+  <img src="/unutma-icon.png" width="56" height="56" alt="" loading="lazy" decoding="async" />
+  <div>
+    <h3>{u.title}</h3>
+    <p>{u.body}</p>
+    <StoreBadgeRow tone="green" />
+  </div>
 </aside>
+
+<style>
+  .u-banner {
+    margin: 3rem 0 2rem;
+    padding: 1.75rem;
+    border-radius: 28px;
+    background: linear-gradient(160deg, #36c77b 0%, #14874f 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+  .u-banner img {
+    border-radius: 22%;
+    box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.35);
+  }
+  .u-banner h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: #fff;
+  }
+  .u-banner p {
+    margin: 0.4rem 0 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    max-width: 34rem;
+  }
+  @media (min-width: 640px) {
+    .u-banner {
+      flex-direction: row;
+      padding: 2rem;
+    }
+  }
+</style>

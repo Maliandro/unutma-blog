@@ -15,63 +15,46 @@ const coverSrc = withBase(pageImage(post.data.image ?? coverForSlug(post.slug)))
 const coverAlt = post.data.imageAlt ?? post.data.title;
 ---
 
-<article
-  class="group flex flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition hover:border-indigo-100 hover:shadow-md"
->
+<article class="group flex flex-col">
   <a
     href={withBase(`/blog/${post.slug}/`)}
-    class="relative aspect-[1200/630] w-full shrink-0 overflow-hidden bg-gray-100"
+    class="relative block aspect-[1200/630] w-full shrink-0 overflow-hidden rounded-2xl bg-mint ring-1 ring-mint-line"
+    tabindex="-1"
+    aria-hidden="true"
   >
     <img
       src={coverSrc}
-      alt={coverAlt}
+      alt=""
       width="1200"
       height="630"
       loading="lazy"
       decoding="async"
-      class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+      class="h-full w-full object-cover transition duration-500 motion-safe:group-hover:scale-[1.02]"
     />
   </a>
-  <div class="flex flex-1 flex-col p-6">
-  <time
-    class="text-xs font-medium uppercase tracking-wide text-gray-500"
-    datetime={date.toISOString()}
-  >
+  <div class="flex flex-1 flex-col pt-5">
+    <time class="text-[0.8rem] font-medium text-gray-500" datetime={date.toISOString()}>
+      {date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+    </time>
+    <h2 class="mt-1.5 text-[1.18rem] font-bold leading-snug tracking-[-0.02em] text-ink">
+      <a href={withBase(`/blog/${post.slug}/`)} class="rounded hover:text-brand">
+        {post.data.title}
+      </a>
+    </h2>
+    <p class="mt-2 flex-1 text-[0.95rem] leading-relaxed text-gray-600 line-clamp-3">{post.data.description}</p>
     {
-      date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      })
+      post.data.tags?.length ? (
+        <div class="mt-4 flex flex-wrap gap-2">
+          {post.data.tags.slice(0, 3).map((tag) => (
+            <a
+              href={withBase(`/blog/tags/${encodeURIComponent(tagSlug(tag))}/`)}
+              class="rounded-full bg-mint px-2.5 py-1 text-xs font-medium text-brand-dark hover:bg-mint-line"
+            >
+              {tag}
+            </a>
+          ))}
+        </div>
+      ) : null
     }
-  </time>
-  <h2
-    class="font-display mt-2 text-xl font-semibold tracking-tight text-gray-900 group-hover:text-brand"
-  >
-    <a href={withBase(`/blog/${post.slug}/`)} class="focus:outline-none focus:ring-2 focus:ring-brand/40 rounded">
-      {post.data.title}
-    </a>
-  </h2>
-  <p class="mt-2 flex-1 text-gray-600 line-clamp-3">{post.data.description}</p>
-  {
-    post.data.tags?.length ? (
-      <div class="mt-4 flex flex-wrap gap-2">
-        {post.data.tags.slice(0, 4).map((tag) => (
-          <a
-            href={withBase(`/blog/tags/${encodeURIComponent(tagSlug(tag))}/`)}
-            class="rounded-full bg-indigo-50 px-2 py-0.5 text-xs text-indigo-700 hover:bg-indigo-100"
-          >
-            {tag}
-          </a>
-        ))}
-      </div>
-    ) : null
-  }
-  <a
-    href={withBase(`/blog/${post.slug}/`)}
-    class="mt-4 inline-flex text-sm font-medium text-brand hover:underline"
-  >
-    Read more →
-  </a>
   </div>
 </article>

@@ -1,234 +1,1313 @@
 ---
+/**
+ * Ana sayfa — 3.30 yeniden tasarim (19 Kas 2026).
+ *
+ * Acilis sahnesi gercek uygulama akisinin kopyasidir (magaza-3.30 ham ekranlari
+ * e-home, a2-ask, a2): yesil asistan ekrani -> cumle yazilir -> "3 ayri kayit
+ * gordum, hepsini kaydedeyim mi?" -> Takvim / Alisveris / Butce kartlari.
+ * Uydurma ozellik YOK. Fiyat yazilmaz (magazada okunur).
+ * Ana vaat (sahibi 16 Kas): telefondan cikmaz / ucak modunda calisir / hesap yok.
+ * Hareket: GSAP (public/vendor/gsap, yerel). prefers-reduced-motion'da sahne
+ * son karede durur, dongu yok.
+ */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SEOHead from '../components/SEOHead.astro';
 import AppSchema from '../components/AppSchema.astro';
 import BlogCard from '../components/BlogCard.astro';
-import NewsletterForm from '../components/NewsletterForm.astro';
 import StoreBadgeRow from '../components/StoreBadgeRow.astro';
 import { withBase } from '../utils/site';
 import { coverForSlug } from '../utils/covers';
-import { getCollection } from 'astro:content';
 import { getLivePosts } from '../utils/posts';
 import { pageImage } from '../utils/webp';
 
 const all = await getLivePosts();
-const sorted = all.sort(
-  (a, b) =>
-    Number(Boolean(b.data.featured)) - Number(Boolean(a.data.featured)) ||
-    b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const sorted = all.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const PINNED_SLUG = 'unutma-app-showcase-complete-guide';
+const pinned = sorted.find((p) => p.slug === PINNED_SLUG) ?? sorted.find((p) => p.data.featured) ?? sorted[0];
+const latest = sorted.filter((p) => p.slug !== pinned?.slug).slice(0, 3);
+const pinnedCover = pinned ? withBase(pageImage(pinned.data.image ?? coverForSlug(pinned.slug))) : '';
 
-// Showcase/katalog yazısı her zaman büyük hero (başa sabit); yoksa featured'a düş.
-const PINNED_HERO_SLUG = 'unutma-app-showcase-complete-guide';
-const hero =
-  sorted.find((p) => p.slug === PINNED_HERO_SLUG) ??
-  sorted.find((p) => p.data.featured) ??
-  sorted[0];
-const rest = sorted.filter((p) => p.slug !== hero?.slug);
-const sideList = rest.slice(0, 5);
-const moreGrid = rest.slice(5, 8);
+const typed = "Zoe's birthday dinner Saturday at 7pm, buy milk and eggs, spent 64 dollars on groceries";
 
-const heroCover = hero
-  ? withBase(pageImage(hero.data.image ?? coverForSlug(hero.slug)))
-  : '';
-const heroCoverAlt = hero?.data.imageAlt ?? hero?.data.title ?? '';
-const fmtDate = (d: Date) =>
-  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+const features = [
+  {
+    img: 'ask-later',
+    w: 720,
+    h: 737,
+    title: 'Tell it once. Ask it later.',
+    body: 'Mention where you parked, a birthday, a gate code. Ask next week and the answer comes from your own notes, with the note it came from.',
+    alt: 'Unutma assistant saving "I parked the car on level B2" as a note, then answering "Where is my car?" with its source.',
+  },
+  {
+    img: 'ask-life',
+    w: 720,
+    h: 1395,
+    title: 'Ask about your own life.',
+    body: 'What did I spend on groceries this month? What is on tomorrow? You get a straight answer and the records behind it.',
+    alt: 'Unutma answering a grocery spending question with a total and two records, and listing tomorrow\'s plans.',
+  },
+  {
+    img: 'asks-first',
+    w: 720,
+    h: 636,
+    title: 'Change it by saying so.',
+    body: 'Move the team meeting to 11. When it is not sure what you meant, it asks before touching anything, and changes can be undone.',
+    alt: 'Unutma moving a team meeting to 11:00 and asking "Did you mean this?" before changing an evening walk.',
+  },
+  {
+    img: 'quick-logs',
+    w: 720,
+    h: 815,
+    title: 'Did I lock the door?',
+    body: 'Log the small things with one tap: door locked, stove off, medicine taken. When the doubt comes back, the time is right there.',
+    alt: 'Unutma Quick Actions list with logged times for locking the door and turning off the stove.',
+  },
+];
+
+const rail = [
+  { img: 'todo', label: 'To-dos' },
+  { img: 'shopping', label: 'Shopping list' },
+  { img: 'economy', label: 'Budget' },
+  { img: 'journal', label: 'Journal and mood' },
+  { img: 'calendar', label: 'Calendar' },
+  { img: 'reminders', label: 'Routines' },
+];
+
+const faqs = [
+  {
+    q: 'Does it need the internet?',
+    a: 'No. The assistant, your lists, reminders, journal and vault run on the phone, including in airplane mode. Typing always works offline. If you speak instead, your phone\'s own speech service turns your voice into text, on the device when your phone supports that language offline.',
+  },
+  {
+    q: 'Do I need an account?',
+    a: 'No. There is no sign-up and no login. Open the app and start. With no account there is no password to leak and no profile to sell.',
+  },
+  {
+    q: 'Where are my notes stored?',
+    a: 'Only on your phone. There is no cloud copy and no server holding your content. The vault and journal are encrypted on the device. You can make an encrypted backup file and keep it wherever you choose.',
+  },
+  {
+    q: 'Is it a chatbot?',
+    a: 'No. It does not chat about the world. It understands sentences about your own day, saves them in the right place, and answers questions about what you saved.',
+  },
+  {
+    q: 'What does it cost?',
+    a: 'Every feature is open for your first 7 days, with no card. After that, adding and editing needs a subscription or a one-time purchase. Everything you saved stays visible and your reminders keep ringing. The price for your country is shown in the App Store and Google Play. No ads, ever.',
+  },
+  {
+    q: 'Which languages does it speak?',
+    a: 'The app is in English, Turkish, German, Spanish, French, Italian, Arabic and Chinese. The assistant understands the first six.',
+  },
+];
 ---
 
-<BaseLayout>
+<BaseLayout heroTone="green">
   <Fragment slot="head">
     <SEOHead
-      title="Unutma: Offline Life Organizer and Guides"
-      description="Practical guides on productivity, privacy-first apps, journaling and routines, from the team behind Unutma, the offline organizer that needs no account."
+      title="Unutma: Life Admin Assistant, Private and Offline"
+      description="Say it once and Unutma files it: reminders, lists, calendar and expenses. Runs on your phone, works in airplane mode, no account needed."
     />
     <AppSchema />
+    <link rel="preload" href={withBase('/vendor/gsap/gsap.min.js')} as="script" />
   </Fragment>
 
-  <section
-    class="relative overflow-hidden border-b border-indigo-100/80 bg-gradient-to-b from-indigo-50/95 via-emerald-50/30 to-white"
-  >
-    <div
-      class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(99,102,241,0.12),transparent)]"
-      aria-hidden="true"
-    />
-    <div class="relative mx-auto max-w-5xl px-4 py-16 md:py-24">
-      <div class="flex flex-col gap-6 sm:flex-row sm:items-start">
-        <img
-          src={withBase('/unutma-icon.png')}
-          width="96"
-          height="96"
-          alt="Unutma"
-          class="h-20 w-20 shrink-0 rounded-[22%] shadow-brand ring-1 ring-black/[0.07] sm:h-24 sm:w-24"
-          decoding="async"
-        />
-        <div class="min-w-0 flex-1">
-          <p class="brand-wordmark brand-wordmark-lg">Unutma</p>
-          <p class="brand-peace mt-2 text-base md:text-lg">
-            Peace of mind, on your phone
-          </p>
-          <h1 class="brand-hero-title mt-5 max-w-3xl text-4xl md:text-5xl lg:text-[3.15rem]">
-            Organize your life, your way
-          </h1>
-          <p class="mt-4 max-w-2xl text-lg font-normal leading-relaxed text-gray-600">
-            Offline-first lists, journal, routines, vault, and more — all on your
-            phone. No account required. This blog shares tips that pair perfectly
-            with a calmer digital life.
-          </p>
-        </div>
-      </div>
-      <div class="mt-8 flex flex-wrap items-center gap-4">
-        <StoreBadgeRow />
-        <a
-          href={withBase('/blog')}
-          class="inline-flex items-center rounded-lg px-4 py-3 font-medium text-brand hover:underline"
-        >
-          Read the blog →
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="mx-auto max-w-6xl px-4 py-16">
-    {
-      hero ? (
-        <div class="grid gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
-          {/* Big featured hero — the showcase / catalog article */}
-          <article class="group">
-            <a
-              href={withBase(`/blog/${hero.slug}/`)}
-              class="relative block aspect-[1200/630] w-full overflow-hidden rounded-2xl border border-gray-100 bg-gray-100 shadow-sm"
-            >
-              <img
-                src={heroCover}
-                alt={heroCoverAlt}
-                width="1200"
-                height="630"
-                decoding="async"
-                class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
-              />
-              <span class="absolute left-4 top-4 rounded-full bg-brand px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white shadow">
-                Featured
-              </span>
-            </a>
-            <time
-              class="mt-5 block text-xs font-medium uppercase tracking-wide text-gray-500"
-              datetime={hero.data.pubDate.toISOString()}
-            >
-              {fmtDate(hero.data.pubDate)}
-            </time>
-            <h2 class="font-display mt-2 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl">
-              <a
-                href={withBase(`/blog/${hero.slug}/`)}
-                class="hover:text-brand focus:outline-none"
-              >
-                {hero.data.title}
-              </a>
-            </h2>
-            <p class="mt-3 max-w-2xl text-lg leading-relaxed text-gray-600">
-              {hero.data.description}
-            </p>
-            <a
-              href={withBase(`/blog/${hero.slug}/`)}
-              class="mt-5 inline-flex items-center rounded-lg bg-brand px-5 py-3 font-semibold text-white shadow-sm transition hover:opacity-90"
-            >
-              See the full app guide →
-            </a>
-          </article>
-
-          {/* Side rail — other articles */}
-          <aside class="lg:border-l lg:border-gray-100 lg:pl-10">
-            <h3 class="section-title text-xl">More articles</h3>
-            <ul class="mt-6 divide-y divide-gray-100">
-              {sideList.map((post) => (
-                <li class="group py-4 first:pt-0">
-                  <a href={withBase(`/blog/${post.slug}/`)} class="flex gap-4">
-                    <img
-                      src={withBase(pageImage(post.data.image ?? coverForSlug(post.slug)))}
-                      alt={post.data.imageAlt ?? post.data.title}
-                      width="120"
-                      height="80"
-                      loading="lazy"
-                      decoding="async"
-                      class="h-16 w-24 shrink-0 rounded-lg border border-gray-100 object-cover"
-                    />
-                    <div class="min-w-0">
-                      <time
-                        class="text-[11px] font-medium uppercase tracking-wide text-gray-400"
-                        datetime={post.data.pubDate.toISOString()}
-                      >
-                        {fmtDate(post.data.pubDate)}
-                      </time>
-                      <h4 class="font-display mt-0.5 text-sm font-semibold leading-snug text-gray-900 line-clamp-2 group-hover:text-brand">
-                        {post.data.title}
-                      </h4>
-                    </div>
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <a
-              href={withBase('/blog')}
-              class="mt-6 inline-flex font-medium text-brand hover:underline"
-            >
-              View all posts →
-            </a>
-          </aside>
-        </div>
-      ) : (
-        <p class="text-gray-500">
-          No posts yet — add Markdown files under{' '}
-          <code class="rounded bg-gray-100 px-1 text-sm">src/content/blog/</code>
-          {' '}or run the Python generator.
+  <!-- 1. Acilis sahnesi -->
+  <section class="hero" data-hero>
+    <div class="hero__in">
+      <div class="hero__copy">
+        <h1 class="hero__h">Say it once. It lands in the right place.</h1>
+        <p class="hero__sub">
+          Unutma is a life admin assistant that lives on your phone. Type or say a sentence and it
+          becomes a reminder, a list item or an expense. Later, ask what is coming up or what you spent.
         </p>
-      )
-    }
+        <StoreBadgeRow tone="green" class="hero__stores" />
+        <ul class="hero__vow" aria-label="What Unutma promises">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5" /><path d="M11 18.5h2" /></svg>
+            Runs on your phone
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15.5v-2l-8-5V3.8a1.5 1.5 0 0 0-3 0v4.7l-8 5v2l8-2.5v5l-2 1.5V21l3.5-1 3.5 1v-1.5l-2-1.5v-5z" /></svg>
+            Works in airplane mode
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" /><path d="M4.5 20.5c1.4-3.6 4.2-5.5 7.5-5.5s6.1 1.9 7.5 5.5M3 3l18 18" /></svg>
+            No account
+          </li>
+        </ul>
+      </div>
 
-    {
-      moreGrid.length ? (
-        <div class="mt-16">
-          <h3 class="section-title text-2xl">Latest articles</h3>
-          <div class="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {moreGrid.map((post) => (
-              <BlogCard post={post} />
-            ))}
+      <div class="hero__stage">
+        <div class="phone" role="img" aria-label="Unutma turning one sentence into a calendar entry, a shopping item and a budget line.">
+          <div class="phone__screen" aria-hidden="true">
+            <!-- Sohbet ekrani (son kare; JS yoksa ve azaltilmis harekette bu gorunur) -->
+            <div class="sc sc-chat" data-chat>
+              <div class="ch-top">
+                <span class="ch-back"></span>
+                <img src={withBase('/unutma-icon.png')} alt="" width="40" height="40" />
+                <div>
+                  <b>Assistant</b>
+                  <small><i></i>Offline, runs on your phone</small>
+                </div>
+              </div>
+              <div class="ch-body">
+                <p class="m-user" data-user>{typed}</p>
+                <div class="m-bot" data-bot>
+                  <p>I see 3 separate entries in this. Save them all?</p>
+                  <ul>
+                    <li>Calendar: Zoe's birthday dinner</li>
+                    <li>Shopping: buy milk and eggs</li>
+                    <li>Budget: groceries, $64</li>
+                  </ul>
+                  <div class="m-bot__btns" data-btns>
+                    <span class="b-save" data-save>Save all</span>
+                    <span class="b-one">Keep as one entry</span>
+                  </div>
+                </div>
+                <div class="m-card" data-card>
+                  <span class="m-card__k"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2" /><path d="M4 10h16M9 3v4M15 3v4" /></svg>Calendar</span>
+                  <b>Zoe's birthday dinner</b>
+                  <span class="m-card__chip">Saturday 7:00 PM</span>
+                  <i class="m-ok" data-ok></i>
+                </div>
+                <div class="m-card" data-card>
+                  <span class="m-card__k"><svg viewBox="0 0 24 24"><path d="M3 4h2.5l2.2 11h10.6L20.5 7H7" /><circle cx="9" cy="19" r="1.4" /><circle cx="17" cy="19" r="1.4" /></svg>Shopping</span>
+                  <b>buy milk and eggs</b>
+                  <i class="m-ok" data-ok></i>
+                </div>
+                <div class="m-card" data-card>
+                  <span class="m-card__k"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2.5" /><path d="M16 12.5h2M3 10h18" /></svg>Budget</span>
+                  <b>groceries · $64</b>
+                  <span class="m-card__chip">Groceries</span>
+                  <i class="m-ok" data-ok></i>
+                </div>
+              </div>
+              <div class="ch-input"><span class="mic"></span>Write or speak: a task, note, expense...<span class="send"></span></div>
+            </div>
+
+            <!-- Yesil asistan ekrani (3.30 tam ekran asistan) -->
+            <div class="sc sc-green" data-green>
+              <div class="g-pill">Today · 3 reminders · 1 birthday</div>
+              <div class="g-orb" data-orb>
+                <span class="g-ring" data-ring></span>
+                <span class="g-ring" data-ring></span>
+                <img src={withBase('/unutma-icon.png')} alt="" width="120" height="120" />
+              </div>
+              <p class="g-say">Say something or ask</p>
+              <div class="g-input" data-ginput>
+                <span class="g-text"><span data-typed></span><span class="g-caret" data-caret></span><span class="g-ph" data-ph>or type</span></span>
+                <span class="g-send" data-send></span>
+              </div>
+              <div class="g-chips">
+                <span>When is Dentist?</span><span>What's on tomorrow?</span><span>Did I lock the door?</span>
+              </div>
+              <div class="g-rec">My records</div>
+            </div>
           </div>
         </div>
-      ) : null
-    }
-  </section>
-
-  <section class="mx-auto max-w-5xl px-4 pb-16">
-    <h2 class="section-title text-3xl md:text-[2rem]">Why Unutma?</h2>
-    <div class="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-      <div class="rounded-xl border border-gray-100 p-6">
-        <h3 class="font-display text-lg font-semibold text-gray-900">Offline-first</h3>
-        <p class="mt-2 text-sm text-gray-600">
-          Core features work without a constant internet connection.
-        </p>
-      </div>
-      <div class="rounded-xl border border-gray-100 p-6">
-        <h3 class="font-display text-lg font-semibold text-gray-900">Private</h3>
-        <p class="mt-2 text-sm text-gray-600">
-          Your notes and lists stay on your device — not on our servers.
-        </p>
-      </div>
-      <div class="rounded-xl border border-gray-100 p-6">
-        <h3 class="font-display text-lg font-semibold text-gray-900">Free to start</h3>
-        <p class="mt-2 text-sm text-gray-600">
-          Get organized without a subscription wall for the essentials.
-        </p>
-      </div>
-      <div class="rounded-xl border border-gray-100 p-6">
-        <h3 class="font-display text-lg font-semibold text-gray-900">Multi-language</h3>
-        <p class="mt-2 text-sm text-gray-600">
-          Use the app in the language that fits your day.
-        </p>
       </div>
     </div>
   </section>
 
-  <section class="mx-auto max-w-5xl px-4 pb-20">
-    <NewsletterForm />
+  <!-- 2. Vaat -->
+  <section class="vow" id="private">
+    <div class="wrap vow__grid">
+      <div class="vow__lead">
+        <h2 class="h2">Your life stays on your phone.</h2>
+        <p class="lead">
+          Unutma was built without a server for your notes. Nothing to sign up for, nothing to sync, nothing on our side to
+          leak.
+        </p>
+        <div class="air" aria-hidden="true">
+          <div class="air__row">
+            <span class="air__ic"><svg viewBox="0 0 24 24"><path d="M21 15.5v-2l-8-5V3.8a1.5 1.5 0 0 0-3 0v4.7l-8 5v2l8-2.5v5l-2 1.5V21l3.5-1 3.5 1v-1.5l-2-1.5v-5z" /></svg></span>
+            Airplane Mode
+            <span class="air__sw"></span>
+          </div>
+          <div class="air__msg">
+            <span class="air__you">Tomorrow 2pm call mom</span>
+            <span class="air__ok"><i></i>Reminder · Tomorrow 2:00 PM</span>
+          </div>
+        </div>
+      </div>
+      <ul class="vow__list">
+        <li>
+          <h3>Works in airplane mode</h3>
+          <p>The assistant runs on the phone itself. Your lists, reminders and answers work with no connection at all.</p>
+        </li>
+        <li>
+          <h3>No account</h3>
+          <p>No sign-up, no login, no email address. You open the app and start.</p>
+        </li>
+        <li>
+          <h3>No cloud copy, no ads</h3>
+          <p>Your vault and journal are encrypted on the device. Backups are files you make and keep where you choose.</p>
+        </li>
+      </ul>
+    </div>
+    <p class="wrap vow__note">
+      Speaking instead of typing? Your phone's own speech service turns your voice into text, on the device when your
+      phone supports that language offline. Typing never needs a connection.
+      <a href={withBase('/privacy')}>Read the privacy policy</a>
+    </p>
   </section>
+
+  <!-- 3. Ozellikler -->
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2 class="h2 how__h">One sentence is enough.</h2>
+      <p class="lead how__lead">
+        No forms, no menus to learn. Write it the way you would say it. Unutma shows you what it understood before it saves.
+      </p>
+    </div>
+    <div class="wrap how__list">
+      {features.map((f, i) => (
+        <article class:list={['feat', i % 2 === 1 && 'feat--flip']}>
+          <div class="feat__txt">
+            <h3>{f.title}</h3>
+            <p>{f.body}</p>
+          </div>
+          <figure class="feat__shot">
+            <img
+              src={withBase(`/img/app/${f.img}.webp`)}
+              alt={f.alt}
+              width={f.w}
+              height={f.h}
+              loading="lazy"
+              decoding="async"
+              data-par
+            />
+          </figure>
+        </article>
+      ))}
+    </div>
+
+    <div class="wrap rail-h">
+      <h3>Everything else, under My records</h3>
+      <p>Plus an encrypted vault, home screen widgets and 12 themes.</p>
+    </div>
+    <div class="rail" role="list">
+      {rail.map((r) => (
+        <figure class="rail__it" role="listitem">
+          <img src={withBase(`/img/app/${r.img}.webp`)} alt={`Unutma ${r.label} screen`} width="480" height="1040" loading="lazy" decoding="async" />
+          <figcaption>{r.label}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </section>
+
+  <!-- 4. SSS -->
+  <section class="faq" id="faq">
+    <div class="wrap faq__grid">
+      <div>
+        <h2 class="h2">Questions people ask first</h2>
+        <p class="lead">More answers, including what Unutma deliberately does not do, are on the <a href={withBase('/faq/')}>FAQ page</a>.</p>
+      </div>
+      <div class="faq__list">
+        {faqs.map((f) => (
+          <details>
+            <summary>{f.q}<span class="faq__pm" aria-hidden="true"></span></summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Blog -->
+  {pinned && (
+    <section class="blog" id="blog">
+      <div class="wrap">
+        <div class="blog__head">
+          <h2 class="h2">From the blog</h2>
+          <a href={withBase('/blog/')} class="blog__all">All articles</a>
+        </div>
+        <a href={withBase(`/blog/${pinned.slug}/`)} class="pin">
+          <img src={pinnedCover} alt="" width="1200" height="630" loading="lazy" decoding="async" />
+          <div class="pin__txt">
+            <span class="pin__tag">The full app guide</span>
+            <h3>{pinned.data.title}</h3>
+            <p>{pinned.data.description}</p>
+          </div>
+        </a>
+        <div class="blog__grid">
+          {latest.map((post) => <BlogCard post={post} />)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- 6. Indir -->
+  <section class="get" id="get">
+    <div class="wrap">
+      <div class="get__box">
+        <img src={withBase('/unutma-icon.png')} width="88" height="88" alt="" loading="lazy" decoding="async" />
+        <h2>Try every feature free for 7 days.</h2>
+        <p>No card and no account. After the trial, everything you saved stays visible and your reminders keep ringing.</p>
+        <StoreBadgeRow tone="green" class="get__stores" />
+        <small>iPhone, iPad and Android. Prices for your country are shown in the store.</small>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline src={withBase('/vendor/gsap/gsap.min.js')} defer></script>
+  <script is:inline src={withBase('/vendor/gsap/ScrollTrigger.min.js')} defer></script>
+  <script is:inline define:vars={{ typed }}>
+    window.addEventListener('DOMContentLoaded', function () {
+      var gsap = window.gsap;
+      if (!gsap) return;
+      var ST = window.ScrollTrigger;
+      if (ST) gsap.registerPlugin(ST);
+      var q = function (s) { return document.querySelector(s); };
+      var qa = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
+      var green = q('[data-green]'), chat = q('[data-chat]'), out = q('[data-typed]'), ph = q('[data-ph]'),
+        caret = q('[data-caret]'), send = q('[data-send]'), user = q('[data-user]'), bot = q('[data-bot]'),
+        btns = q('[data-btns]'), save = q('[data-save]'), cards = qa('[data-card]'), oks = qa('[data-ok]'),
+        rings = qa('[data-ring]'), orb = q('[data-orb]');
+      if (!green || !chat) return;
+
+      var mm = gsap.matchMedia();
+      mm.add(
+        { motion: '(prefers-reduced-motion: no-preference)', calm: '(prefers-reduced-motion: reduce)' },
+        function (ctx) {
+          if (ctx.conditions.calm) {
+            // Sakin: son kare (sohbet + 3 kart) durur, yesil ekran gizli.
+            gsap.set(green, { autoAlpha: 0 });
+            return;
+          }
+
+          // --- Acilis sahnesi: tek, ozenli dongu ---
+          document.documentElement.classList.add('js-hero');
+          var state = { n: 0 };
+          var render = function () {
+            var k = Math.round(state.n);
+            out.textContent = typed.slice(0, k);
+            ph.style.display = k ? 'none' : '';
+          };
+          gsap.set(chat, { autoAlpha: 0 });
+          gsap.set([user, bot], { autoAlpha: 0, y: 14 });
+          gsap.set(cards, { autoAlpha: 0, y: 16 });
+          gsap.set(oks, { scale: 0 });
+          gsap.set(btns, { autoAlpha: 1 });
+
+          var ringTl = gsap.timeline({ repeat: -1 });
+          ringTl.fromTo(rings, { scale: 1, autoAlpha: 0.5 }, { scale: 1.55, autoAlpha: 0, duration: 2.4, ease: 'sine.out', stagger: 1.2 });
+
+          var caretTw = gsap.to(caret, { autoAlpha: 0, duration: 0.45, repeat: -1, yoyo: true, ease: 'steps(1)' });
+
+          var tl = gsap.timeline({ repeat: -1, repeatDelay: 0.4, defaults: { ease: 'power2.out' } });
+          tl.set(state, { n: 0, onComplete: render })
+            .set(green, { autoAlpha: 1, scale: 1 })
+            .set(chat, { autoAlpha: 0 })
+            .set([user, bot], { autoAlpha: 0, y: 14 })
+            .set(cards, { autoAlpha: 0, y: 16 })
+            .set(oks, { scale: 0 })
+            .set(btns, { autoAlpha: 1, height: 'auto' })
+            .set(save, { scale: 1 })
+            .fromTo(orb, { scale: 0.92 }, { scale: 1, duration: 0.9, ease: 'power3.out' })
+            .to(state, { n: typed.length, duration: 3.4, ease: 'none', onUpdate: render }, '+=0.3')
+            .to(send, { scale: 0.8, duration: 0.12, yoyo: true, repeat: 1 }, '+=0.35')
+            .to(green, { autoAlpha: 0, scale: 1.04, duration: 0.5, ease: 'power2.in' })
+            .to(chat, { autoAlpha: 1, duration: 0.35 }, '<0.2')
+            .to(user, { autoAlpha: 1, y: 0, duration: 0.5 })
+            .to(bot, { autoAlpha: 1, y: 0, duration: 0.5 }, '+=0.45')
+            .to(save, { scale: 0.92, duration: 0.14, yoyo: true, repeat: 1 }, '+=1.1')
+            .to(btns, { autoAlpha: 0, height: 0, duration: 0.35, ease: 'power2.inOut' }, '+=0.1')
+            .to(cards, { autoAlpha: 1, y: 0, duration: 0.5, stagger: 0.32 }, '<0.1')
+            .to(oks, { scale: 1, duration: 0.4, ease: 'back.out(2.4)', stagger: 0.32 }, '<0.25')
+            .to(chat, { autoAlpha: 0, duration: 0.5, ease: 'power1.in' }, '+=3.2');
+
+          // Ekrandan cikinca dur, donunce devam (pil ve islemci).
+          if (ST) {
+            ST.create({
+              trigger: '[data-hero]',
+              start: 'top bottom',
+              end: 'bottom top',
+              onToggle: function (self) {
+                [tl, ringTl, caretTw].forEach(function (a) { self.isActive ? a.play() : a.pause(); });
+              },
+            });
+
+            // Ozellik ekranlarinda cok hafif derinlik (yalniz genis ekran).
+            var wide = window.matchMedia('(min-width: 900px)').matches;
+            if (wide) {
+              qa('[data-par]').forEach(function (img) {
+                gsap.fromTo(img, { y: 28 }, {
+                  y: -28, ease: 'none',
+                  scrollTrigger: { trigger: img.parentNode, start: 'top bottom', end: 'bottom top', scrub: 0.6 },
+                });
+              });
+            }
+          }
+          return function () { document.documentElement.classList.remove('js-hero'); gsap.set([green, chat, user, bot, cards, oks, btns], { clearProps: 'all' }); };
+        }
+      );
+    });
+  </script>
 </BaseLayout>
+
+<style>
+  .wrap {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  @media (min-width: 640px) {
+    .wrap {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+  .h2 {
+    font-size: clamp(1.85rem, 5.2vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.06;
+    color: var(--u-ink);
+    text-wrap: balance;
+  }
+  .lead {
+    margin-top: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--u-muted);
+    max-width: 36rem;
+  }
+  .lead a,
+  .vow__note a {
+    color: var(--u-green);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(8, 127, 91, 0.35);
+  }
+
+  /* ---------- 1. Hero ---------- */
+  .hero {
+    position: relative;
+    color: #fff;
+    background:
+      radial-gradient(60% 50% at 78% 38%, rgba(255, 255, 255, 0.16), transparent 70%),
+      linear-gradient(180deg, #3acb7e 0%, #22a964 45%, #0f7d47 100%);
+    overflow: hidden;
+  }
+  .hero__in {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 6.25rem 1rem 0;
+    display: grid;
+    gap: 2.75rem;
+  }
+  .hero__h {
+    font-size: clamp(2.3rem, 8.6vw, 4.6rem);
+    font-weight: 700;
+    letter-spacing: -0.038em;
+    word-spacing: 0.06em;
+    line-height: 1.02;
+    text-wrap: balance;
+    max-width: 11.5em;
+  }
+  .hero__sub {
+    margin-top: 1.25rem;
+    font-size: 1.06rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 31rem;
+  }
+  .hero__copy :global(.hero__stores) {
+    margin-top: 1.75rem;
+  }
+  .hero__vow {
+    margin-top: 1.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.4rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+  }
+  @media (max-width: 639px) {
+    .hero__vow {
+      flex-direction: column;
+    }
+  }
+  .hero__vow li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+  .hero__vow svg,
+  .air__ic svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .hero__stage {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  /* Telefon: gercek ekranin olculeri (1290x2796), icerik cqw ile olceklenir */
+  .phone {
+    width: min(300px, 80vw);
+    aspect-ratio: 1290 / 2796;
+    padding: 9px;
+    margin-bottom: -88px;
+    border-radius: 46px;
+    background: #0d1f17;
+    box-shadow:
+      0 0 0 1.5px rgba(255, 255, 255, 0.18) inset,
+      0 50px 90px -30px rgba(3, 40, 24, 0.65),
+      0 18px 40px -20px rgba(3, 40, 24, 0.5);
+  }
+  .phone__screen {
+    position: relative;
+    height: 100%;
+    border-radius: 38px;
+    overflow: hidden;
+    background: #fff;
+    container-type: inline-size;
+    font-size: 4.1cqw;
+    color: #14251c;
+    text-align: left;
+  }
+  .sc {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .sc-green {
+    background: linear-gradient(180deg, #3dd07e 0%, #27b468 40%, #108047 100%);
+    color: #fff;
+    align-items: center;
+    padding: 13cqw 5cqw 6cqw;
+    will-change: transform, opacity;
+  }
+  .g-pill {
+    align-self: stretch;
+    padding: 2.6cqw 4cqw;
+    border-radius: 99px;
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 3.4cqw;
+    font-weight: 600;
+  }
+  .g-orb {
+    position: relative;
+    margin-top: 24cqw;
+    width: 30cqw;
+    height: 30cqw;
+  }
+  .g-orb img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2.4cqw rgba(255, 255, 255, 0.16), 0 8cqw 14cqw -6cqw rgba(0, 50, 25, 0.6);
+  }
+  .g-ring {
+    position: absolute;
+    inset: -3cqw;
+    border-radius: 50%;
+    border: 0.6cqw solid rgba(255, 255, 255, 0.55);
+    opacity: 0;
+  }
+  .g-say {
+    margin-top: 7cqw;
+    font-size: 5.3cqw;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .g-input {
+    margin-top: auto;
+    align-self: stretch;
+    display: flex;
+    align-items: flex-end;
+    gap: 2cqw;
+    padding: 3cqw 2.4cqw 3cqw 4.4cqw;
+    border-radius: 6cqw;
+    background: rgba(255, 255, 255, 0.18);
+    border: 0.4cqw solid rgba(255, 255, 255, 0.35);
+    font-size: 3.7cqw;
+    line-height: 1.35;
+    min-height: 12cqw;
+  }
+  .g-text {
+    flex: 1;
+    min-width: 0;
+  }
+  .g-ph {
+    opacity: 0.75;
+  }
+  .g-caret {
+    display: inline-block;
+    width: 0.45cqw;
+    height: 4.2cqw;
+    margin: 0 0.3cqw -0.7cqw;
+    background: #fff;
+  }
+  .g-send,
+  .ch-input .send {
+    flex: none;
+    width: 7cqw;
+    height: 7cqw;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.85)
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23108047' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 19V5M6 11l6-6 6 6'/%3E%3C/svg%3E")
+      center / 60% no-repeat;
+  }
+  .g-chips {
+    margin-top: 3.5cqw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2cqw;
+    font-size: 3.1cqw;
+    font-weight: 600;
+  }
+  .g-chips span {
+    padding: 2cqw 3.2cqw;
+    border-radius: 99px;
+    background: rgba(255, 255, 255, 0.16);
+    border: 0.3cqw solid rgba(255, 255, 255, 0.25);
+  }
+  .g-rec {
+    margin-top: 4.5cqw;
+    padding: 2.8cqw 7cqw;
+    border-radius: 99px;
+    background: #fff;
+    color: #0f6b3f;
+    font-weight: 700;
+    font-size: 3.8cqw;
+  }
+
+  .sc-chat {
+    background: #fbfdfc;
+  }
+  .ch-top {
+    display: flex;
+    align-items: center;
+    gap: 2.6cqw;
+    padding: 12cqw 4cqw 3cqw;
+    border-bottom: 0.3cqw solid #e5efe9;
+    background: #fff;
+  }
+  .ch-back {
+    width: 2.6cqw;
+    height: 2.6cqw;
+    border-left: 0.6cqw solid #14251c;
+    border-bottom: 0.6cqw solid #14251c;
+    transform: rotate(45deg);
+    margin: 0 1.5cqw 0 1cqw;
+  }
+  .ch-top img {
+    width: 7cqw;
+    height: 7cqw;
+    border-radius: 50%;
+  }
+  .ch-top b {
+    display: block;
+    font-size: 4.3cqw;
+  }
+  .ch-top small {
+    display: flex;
+    align-items: center;
+    gap: 1.2cqw;
+    font-size: 2.9cqw;
+    color: #53675c;
+  }
+  .ch-top small i {
+    width: 1.8cqw;
+    height: 1.8cqw;
+    border-radius: 50%;
+    background: #22b263;
+  }
+  .ch-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2.6cqw;
+    padding: 5cqw 4cqw 3cqw;
+    overflow: hidden;
+  }
+  .m-user {
+    align-self: flex-end;
+    max-width: 82%;
+    padding: 3cqw 4cqw;
+    border-radius: 4cqw 4cqw 1.2cqw 4cqw;
+    background: #0f7a4a;
+    color: #fff;
+    font-size: 3.4cqw;
+    line-height: 1.35;
+  }
+  .m-bot {
+    max-width: 88%;
+    padding: 3cqw 4cqw;
+    border-radius: 4cqw 4cqw 4cqw 1.2cqw;
+    background: #fff;
+    border: 0.3cqw solid #e2ece6;
+    box-shadow: 0 1cqw 3cqw rgba(15, 42, 31, 0.06);
+    font-size: 3.3cqw;
+    line-height: 1.4;
+  }
+  .m-bot ul {
+    margin-top: 1cqw;
+    list-style: disc;
+    padding-left: 4cqw;
+  }
+  .m-bot__btns {
+    display: flex;
+    gap: 2cqw;
+    padding-top: 2.4cqw;
+    overflow: hidden;
+  }
+  .m-bot__btns span {
+    padding: 1.8cqw 3.4cqw;
+    border-radius: 99px;
+    font-weight: 700;
+    font-size: 3cqw;
+    border: 0.3cqw solid #d8e6dd;
+  }
+  .m-bot__btns .b-save {
+    background: #0f7a4a;
+    border-color: #0f7a4a;
+    color: #fff;
+  }
+  /* Son karede (JS yoksa) dugmeler gizli: kartlar kaydedilmis gorunur */
+  .m-bot__btns {
+    display: none;
+  }
+  :global(html.js-hero) .m-bot__btns {
+    display: flex;
+  }
+  .m-card {
+    position: relative;
+    margin-left: 6cqw;
+    padding: 2.6cqw 4cqw 3cqw;
+    border-radius: 3.4cqw;
+    background: #fff;
+    border: 0.3cqw solid #e2ece6;
+    border-left: 1cqw solid #22a964;
+    box-shadow: 0 1cqw 3cqw rgba(15, 42, 31, 0.05);
+    font-size: 3.5cqw;
+  }
+  .m-card__k {
+    display: flex;
+    align-items: center;
+    gap: 1.4cqw;
+    font-size: 2.6cqw;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #108047;
+    margin-bottom: 1cqw;
+  }
+  .m-card__k svg {
+    width: 3.4cqw;
+    height: 3.4cqw;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .m-card b {
+    display: block;
+    font-weight: 600;
+  }
+  .m-card__chip {
+    display: inline-block;
+    margin-top: 1.6cqw;
+    padding: 1cqw 2.6cqw;
+    border-radius: 99px;
+    border: 0.3cqw solid #d8e6dd;
+    font-size: 2.8cqw;
+    font-weight: 600;
+  }
+  .m-ok {
+    position: absolute;
+    left: -7cqw;
+    top: 50%;
+    margin-top: -2.4cqw;
+    width: 4.8cqw;
+    height: 4.8cqw;
+    border-radius: 50%;
+    background: #dff3e7
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23108047' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E")
+      center / 62% no-repeat;
+  }
+  .ch-input {
+    margin: 0 3cqw 9cqw;
+    display: flex;
+    align-items: center;
+    gap: 2.4cqw;
+    padding: 2.4cqw 2.4cqw 2.4cqw 3.4cqw;
+    border-radius: 99px;
+    background: #fff;
+    border: 0.3cqw solid #dfe9e3;
+    box-shadow: 0 1cqw 4cqw rgba(15, 42, 31, 0.08);
+    font-size: 3.1cqw;
+    color: #6a7d72;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .ch-input .mic {
+    flex: none;
+    width: 2.4cqw;
+    height: 3.6cqw;
+    border-radius: 2cqw;
+    border: 0.5cqw solid #4c6156;
+  }
+  .ch-input .send {
+    margin-left: auto;
+    background-color: #9fd6b8;
+  }
+
+  /* ---------- 2. Vaat ---------- */
+  .vow {
+    padding: 5rem 0 4.5rem;
+    background: #fff;
+  }
+  .vow__grid {
+    display: grid;
+    gap: 3rem;
+  }
+  .air {
+    margin-top: 2.25rem;
+    max-width: 22rem;
+    border-radius: 22px;
+    background: var(--u-mint);
+    padding: 0.5rem;
+    font-size: 0.92rem;
+  }
+  .air__row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.8rem 0.9rem;
+    border-radius: 16px;
+    background: #fff;
+    font-weight: 600;
+    color: var(--u-ink);
+  }
+  .air__ic {
+    display: inline-flex;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #f29d38;
+    color: #fff;
+  }
+  .air__sw {
+    margin-left: auto;
+    width: 46px;
+    height: 28px;
+    border-radius: 99px;
+    background: #2fbf71;
+    position: relative;
+  }
+  .air__sw::after {
+    content: '';
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  .air__msg {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+    padding: 0.9rem 0.6rem 0.6rem;
+  }
+  .air__you {
+    padding: 0.5rem 0.85rem;
+    border-radius: 14px 14px 4px 14px;
+    background: #0f7a4a;
+    color: #fff;
+    font-size: 0.85rem;
+  }
+  .air__ok {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.85rem;
+    border-radius: 14px 14px 14px 4px;
+    background: #fff;
+    color: var(--u-ink);
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .air__ok i {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #22a964
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E")
+      center / 70% no-repeat;
+  }
+  .vow__list {
+    display: grid;
+    gap: 0;
+    align-content: start;
+  }
+  .vow__list li {
+    padding: 1.6rem 0;
+    border-top: 1px solid var(--u-line);
+  }
+  .vow__list li:last-child {
+    border-bottom: 1px solid var(--u-line);
+  }
+  .vow__list h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--u-ink);
+  }
+  .vow__list p {
+    margin-top: 0.4rem;
+    color: var(--u-muted);
+    line-height: 1.6;
+    max-width: 30rem;
+  }
+  .vow__note {
+    margin-top: 2.5rem;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--u-muted);
+  }
+  .vow__note a {
+    display: inline-block;
+    margin-left: 0.25rem;
+  }
+
+  /* ---------- 3. Ozellikler ---------- */
+  .how {
+    padding: 5rem 0 4rem;
+    background: var(--u-mint);
+    overflow: hidden;
+  }
+  .how__list {
+    margin-top: 3.5rem;
+    display: grid;
+    gap: 4.5rem;
+  }
+  .feat {
+    display: grid;
+    gap: 1.75rem;
+    align-items: center;
+  }
+  .feat__txt h3 {
+    font-size: clamp(1.5rem, 4.2vw, 2.15rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+    color: var(--u-ink);
+  }
+  .feat__txt p {
+    margin-top: 0.85rem;
+    font-size: 1.04rem;
+    line-height: 1.65;
+    color: var(--u-muted);
+    max-width: 28rem;
+  }
+  .feat__shot {
+    justify-self: center;
+    width: min(100%, 23rem);
+    border-radius: 28px;
+    background: #fff;
+    padding: 0.6rem;
+    box-shadow: 0 30px 60px -34px rgba(15, 42, 31, 0.4), 0 0 0 1px rgba(15, 42, 31, 0.05);
+    overflow: hidden;
+  }
+  .feat__shot img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    display: block;
+  }
+  .rail-h {
+    margin-top: 5.5rem;
+  }
+  .rail-h h3 {
+    font-size: clamp(1.4rem, 3.6vw, 1.8rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--u-ink);
+  }
+  .rail-h p {
+    margin-top: 0.4rem;
+    color: var(--u-muted);
+  }
+  .rail {
+    margin-top: 1.75rem;
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0.5rem max(1rem, calc((100vw - 72rem) / 2 + 1.5rem)) 1.5rem;
+    scroll-padding: 0 max(1rem, calc((100vw - 72rem) / 2 + 1.5rem));
+    scrollbar-width: thin;
+  }
+  .rail__it {
+    flex: none;
+    width: 11.5rem;
+    scroll-snap-align: start;
+  }
+  .rail__it img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 18px 36px -24px rgba(15, 42, 31, 0.45), 0 0 0 1px rgba(15, 42, 31, 0.06);
+  }
+  .rail__it figcaption {
+    margin-top: 0.7rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--u-ink);
+  }
+
+  /* ---------- 4. SSS ---------- */
+  .faq {
+    padding: 5.5rem 0 3rem;
+  }
+  .faq__grid {
+    display: grid;
+    gap: 2.5rem;
+  }
+  .faq__list details {
+    border-top: 1px solid var(--u-line);
+  }
+  .faq__list details:last-child {
+    border-bottom: 1px solid var(--u-line);
+  }
+  .faq__list summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: var(--u-ink);
+    letter-spacing: -0.01em;
+  }
+  .faq__list summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq__pm {
+    position: relative;
+    flex: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--u-mint);
+  }
+  .faq__pm::before,
+  .faq__pm::after {
+    content: '';
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    top: 13px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--u-green);
+    transition: transform 0.25s ease;
+  }
+  .faq__pm::after {
+    transform: rotate(90deg);
+  }
+  details[open] .faq__pm::after {
+    transform: rotate(0deg);
+  }
+  .faq__list details p {
+    padding: 0 2.5rem 1.4rem 0;
+    line-height: 1.65;
+    color: var(--u-muted);
+  }
+
+  /* ---------- 5. Blog ---------- */
+  .blog {
+    padding: 4rem 0 2rem;
+  }
+  .blog__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .blog__all {
+    font-weight: 600;
+    color: var(--u-green);
+  }
+  .pin {
+    margin-top: 2rem;
+    display: grid;
+    border-radius: 28px;
+    overflow: hidden;
+    background: var(--u-ink);
+    color: #fff;
+  }
+  .pin img {
+    width: 100%;
+    aspect-ratio: 1200 / 630;
+    object-fit: cover;
+  }
+  .pin__txt {
+    padding: 1.5rem 1.5rem 1.75rem;
+  }
+  .pin__tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #8fe3b4;
+  }
+  .pin h3 {
+    margin-top: 0.5rem;
+    font-size: clamp(1.35rem, 3.4vw, 1.9rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+  }
+  .pin p {
+    margin-top: 0.6rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.6;
+  }
+  .pin:hover h3 {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+  .blog__grid {
+    margin-top: 3rem;
+    display: grid;
+    gap: 2.75rem;
+  }
+
+  /* ---------- 6. Indir ---------- */
+  .get {
+    padding: 3rem 0 0;
+  }
+  .get__box {
+    border-radius: 36px;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    color: #fff;
+    background:
+      radial-gradient(50% 60% at 50% 0%, rgba(255, 255, 255, 0.18), transparent 70%),
+      linear-gradient(180deg, #34c578 0%, #0f7d47 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .get__box img {
+    border-radius: 22%;
+    box-shadow: 0 16px 34px -14px rgba(0, 40, 20, 0.6);
+  }
+  .get__box h2 {
+    margin-top: 1.5rem;
+    font-size: clamp(1.75rem, 5vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.08;
+    max-width: 16em;
+    text-wrap: balance;
+  }
+  .get__box p {
+    margin-top: 0.9rem;
+    max-width: 30rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  .get__box :global(.get__stores) {
+    margin-top: 1.75rem;
+    justify-content: center;
+  }
+  .get__box small {
+    margin-top: 1.25rem;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  /* ---------- Genis ekran ---------- */
+  @media (min-width: 900px) {
+    .hero__in {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      align-items: center;
+      padding: 7.5rem 1.5rem 0;
+      min-height: 46rem;
+    }
+    .hero__copy {
+      padding-bottom: 5rem;
+    }
+    .phone {
+      width: 330px;
+      margin-bottom: -120px;
+    }
+    .vow {
+      padding-top: 7rem;
+    }
+    .vow__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+    }
+    .how {
+      padding: 7rem 0 5rem;
+    }
+    .how__list {
+      gap: 6.5rem;
+    }
+    .feat {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+    .feat--flip .feat__txt {
+      order: 2;
+    }
+    .feat__txt {
+      padding-left: 2rem;
+    }
+    .feat--flip .feat__txt {
+      padding-left: 0;
+    }
+    .rail__it {
+      width: 13.5rem;
+    }
+    .faq__grid {
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 5rem;
+    }
+    .pin {
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+    }
+    .pin__txt {
+      padding: 2.5rem;
+    }
+    .blog__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2.25rem;
+    }
+    .get__box {
+      padding: 4.5rem 2rem;
+    }
+  }
+</style>

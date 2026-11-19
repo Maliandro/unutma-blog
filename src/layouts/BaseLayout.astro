@@ -10,9 +10,11 @@ interface Props {
   description?: string;
   /** <html lang>. Blog Ingilizce; cok dilli yasal sayfalar kendi dilini verir. */
   lang?: string;
+  /** Ana sayfa: ust bar yesil sahnenin ustunde saydam baslar. */
+  heroTone?: 'green';
 }
 
-const { title, description, lang = 'en' } = Astro.props;
+const { title, description, lang = 'en', heroTone } = Astro.props;
 const adsenseClient = import.meta.env.PUBLIC_ADSENSE_CLIENT ?? '';
 // Google Search Console dogrulamasi. Iki yol da calisir:
 //   1) Vercel'de PUBLIC_GSC_VERIFICATION env degiskeni (panel gerektirir), ya da
@@ -39,8 +41,7 @@ const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION || GSC_CODE;
     {/* Fontlar kendi alanimizdan (src/styles/fonts.css). Govde + baslik fontu preload: ilk boyamada hazir,
         olculu fallback yuzleri sayesinde swap'ta kayma yok (CLS < 0,1). */}
     <link rel="preload" href={withBase('/fonts/plus-jakarta-sans-normal-latin.woff2')} as="font" type="font/woff2" crossorigin />
-    {/* Basliklar (H1 = cogu sayfada LCP ogesi) Fraunces; preload olmazsa swap LCP'yi ~0,7 sn geciktiriyor. */}
-    <link rel="preload" href={withBase('/fonts/fraunces-normal-latin.woff2')} as="font" type="font/woff2" crossorigin />
+    <meta name="theme-color" content={heroTone === 'green' ? '#1E9E5E' : '#FFFFFF'} />
     {title && !Astro.slots.has('head') && (
       <>
         <title>{title}</title>
@@ -58,9 +59,10 @@ const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION || GSC_CODE;
       )
     }
   </head>
-  <body class="min-h-screen bg-white font-sans text-gray-800 subpixel-antialiased">
-    <Header />
-    <main>
+  <body class="min-h-screen font-sans antialiased">
+    <a href="#main" class="skip-link">Skip to main content</a>
+    <Header tone={heroTone} />
+    <main id="main">
       <slot />
     </main>
     <Footer />

@@ -4,8 +4,32 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --u-ink: #0F2A1F;
+    --u-body: #2E4238;
+    --u-muted: #55695F;
+    --u-green: #087F5B;
+    --u-green-deep: #05553D;
+    --u-leaf: #2FBF71;
+    --u-mint: #EAF5EE;
+    --u-line: #D5E6DB;
+    --u-paper: #FFFFFF;
+    --u-sun: #F5C451;
+  }
+
+  body {
+    background: var(--u-paper);
+    color: var(--u-body);
+    overflow-x: clip;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--u-green);
+    outline-offset: 3px;
+  }
+
   html {
-    @apply scroll-smooth text-gray-800 antialiased dark:text-gray-100;
+    @apply scroll-smooth antialiased;
     font-size: 17px;
     line-height: 1.65;
   }
@@ -35,69 +59,28 @@
     }
   }
   /**
-   * Brand wordmark — gradient fill + soft glow (header & hero).
+   * 3.30 kimligi (19 Kas 2026 yeniden tasarim): Unutma yesili, tek aile (Plus Jakarta Sans),
+   * sakin ve guven veren. Eski indigo gradyanli wordmark kaldirildi.
    */
   .brand-wordmark {
-    font-family: Fraunces, 'Fraunces Fallback', Georgia, serif;
-    font-weight: 600;
-    letter-spacing: -0.03em;
+    font-family: 'Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.035em;
     line-height: 1.1;
-    background: linear-gradient(
-      125deg,
-      #1e1b4b 0%,
-      #4f46e5 28%,
-      #6366f1 52%,
-      #0d6636 100%
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    filter: drop-shadow(0 2px 14px rgba(79, 70, 229, 0.22))
-      drop-shadow(0 1px 2px rgba(255, 255, 255, 0.5));
-  }
-
-  .dark .brand-wordmark {
-    background: linear-gradient(
-      125deg,
-      #c7d2fe 0%,
-      #a5b4fc 30%,
-      #818cf8 55%,
-      #34d399 100%
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    filter: drop-shadow(0 2px 18px rgba(129, 140, 248, 0.35));
+    color: var(--u-ink);
   }
 
   .brand-wordmark-sm {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 
   .brand-wordmark-lg {
     font-size: clamp(2rem, 5vw, 2.75rem);
   }
 
-  /**
-   * “Peace of mind” — editorial italic + depth.
-   */
   .brand-peace {
-    font-family: Fraunces, 'Fraunces Fallback', Georgia, serif;
-    font-style: italic;
     font-weight: 500;
-    font-optical-sizing: auto;
-    letter-spacing: 0.04em;
-    color: #0a5230;
-    text-shadow:
-      0 1px 0 rgba(255, 255, 255, 0.85),
-      0 2px 20px rgba(13, 102, 54, 0.12),
-      0 1px 3px rgba(13, 102, 54, 0.08);
-  }
-
-  .dark .brand-peace {
-    color: #6ee7b7;
-    text-shadow:
-      0 1px 2px rgba(0, 0, 0, 0.45),
-      0 0 24px rgba(16, 185, 129, 0.2);
+    color: var(--u-green);
   }
 
   .brand-peace-muted {
@@ -105,38 +88,21 @@
     opacity: 0.92;
   }
 
-  /** Hero main headline */
+  /** Sayfa basliklari (yazi, SSS, hakkinda) */
   .brand-hero-title {
-    font-family: Fraunces, 'Fraunces Fallback', Georgia, serif;
-    font-weight: 600;
+    font-family: 'Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', system-ui, sans-serif;
+    font-weight: 700;
     letter-spacing: -0.035em;
     line-height: 1.12;
-    color: #111827;
-    text-shadow:
-      0 1px 0 rgba(255, 255, 255, 0.9),
-      0 12px 40px rgba(15, 23, 42, 0.06);
+    color: var(--u-ink);
+    overflow-wrap: break-word;
+    hyphens: manual;
   }
 
-  .dark .brand-hero-title {
-    color: transparent;
-    background: linear-gradient(
-      125deg,
-      #e0e7ff 0%,
-      #a5b4fc 35%,
-      #c7d2fe 65%,
-      #6ee7b7 100%
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    text-shadow: none;
-    filter: drop-shadow(0 2px 20px rgba(99, 102, 241, 0.25));
-  }
-
-  /** Section titles on marketing pages */
   .section-title {
-    font-family: Fraunces, 'Fraunces Fallback', Georgia, serif;
-    font-weight: 600;
-    letter-spacing: -0.025em;
-    @apply text-gray-900 dark:text-gray-50;
+    font-family: 'Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--u-ink);
   }
 }
