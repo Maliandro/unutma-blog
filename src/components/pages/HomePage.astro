@@ -15,6 +15,7 @@ import SEOHead from '../SEOHead.astro';
 import AppSchema from '../AppSchema.astro';
 import BlogCard from '../BlogCard.astro';
 import StoreBadgeRow from '../StoreBadgeRow.astro';
+import AppDemos from '../home/AppDemos.astro';
 import { withBase } from '../../utils/site';
 import { coverForSlug } from '../../utils/covers';
 import { getPostsFor } from '../../utils/posts';
@@ -35,52 +36,9 @@ const pinnedHref = pinned ? postPath(lang, pinned as any) : '';
 const pinnedCover = pinned ? withBase(pageImage(pinned.data.image ?? coverForSlug(pinned.slug))) : '';
 
 const typed = T('typed');
+const voiceSaid = T('voice.said');
 const splitNote = splitLink(T('vow.note'));
 const splitFaq = splitLink(T('faq.lead'));
-
-const features = [
-  {
-    img: 'ask-later',
-    w: 720,
-    h: 737,
-    title: T('feat1.title'),
-    body: T('feat1.body'),
-    alt: T('feat1.alt'),
-  },
-  {
-    img: 'ask-life',
-    w: 720,
-    h: 1395,
-    title: T('feat2.title'),
-    body: T('feat2.body'),
-    alt: T('feat2.alt'),
-  },
-  {
-    img: 'asks-first',
-    w: 720,
-    h: 636,
-    title: T('feat3.title'),
-    body: T('feat3.body'),
-    alt: T('feat3.alt'),
-  },
-  {
-    img: 'quick-logs',
-    w: 720,
-    h: 815,
-    title: T('feat4.title'),
-    body: T('feat4.body'),
-    alt: T('feat4.alt'),
-  },
-];
-
-const rail = [
-  { img: 'todo', label: T('rail.todo') },
-  { img: 'shopping', label: T('rail.shopping') },
-  { img: 'economy', label: T('rail.economy') },
-  { img: 'journal', label: T('rail.journal') },
-  { img: 'calendar', label: T('rail.calendar') },
-  { img: 'reminders', label: T('rail.reminders') },
-];
 
 const faqs = [
   {
@@ -193,6 +151,28 @@ const faqs = [
               <div class="ch-input"><span class="mic"></span>{T('chat.input')}<span class="send"></span></div>
             </div>
 
+            <!-- Sesli komut sonrasi sohbet (2. tur) -->
+            <div class="sc sc-chat sc-chat2" data-chat2>
+              <div class="ch-top">
+                <span class="ch-back"></span>
+                <img src={withBase('/unutma-icon.png')} alt="" width="40" height="40" />
+                <div>
+                  <b>{T('chat.name')}</b>
+                  <small><i></i>{T('chat.status')}</small>
+                </div>
+              </div>
+              <div class="ch-body">
+                <p class="m-user" data-user2><span class="m-mic"></span>{voiceSaid}</p>
+                <div class="m-card" data-card2>
+                  <span class="m-card__k"><svg viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z" /><path d="M10 20.5h4" /></svg>{T('voice.k')}</span>
+                  <b>{T('voice.b')}</b>
+                  <span class="m-card__chip">{T('voice.chip')}</span>
+                  <i class="m-ok" data-ok2></i>
+                </div>
+              </div>
+              <div class="ch-input"><span class="mic"></span>{T('chat.input')}<span class="send"></span></div>
+            </div>
+
             <!-- Yesil asistan ekrani (3.30 tam ekran asistan) -->
             <div class="sc sc-green" data-green>
               <div class="g-pill">{T('green.pill')}</div>
@@ -201,7 +181,10 @@ const faqs = [
                 <span class="g-ring" data-ring></span>
                 <img src={withBase('/unutma-icon.png')} alt="" width="120" height="120" />
               </div>
-              <p class="g-say">{T('green.say')}</p>
+              <div class="g-mid">
+                <p class="g-say" data-say>{T('green.say')}</p>
+                <span class="g-wave" data-wave aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+              </div>
               <div class="g-input" data-ginput>
                 <span class="g-text"><span data-typed></span><span class="g-caret" data-caret></span><span class="g-ph" data-ph>{T('green.ph')}</span></span>
                 <span class="g-send" data-send></span>
@@ -258,49 +241,8 @@ const faqs = [
     </p>
   </section>
 
-  <!-- 3. Ozellikler -->
-  <section class="how" id="how">
-    <div class="wrap">
-      <h2 class="h2 how__h">{T('how.h2')}</h2>
-      <p class="lead how__lead">
-        {T('how.lead')}
-      </p>
-    </div>
-    <div class="wrap how__list">
-      {features.map((f, i) => (
-        <article class:list={['feat', i % 2 === 1 && 'feat--flip']}>
-          <div class="feat__txt">
-            <h3>{f.title}</h3>
-            <p>{f.body}</p>
-          </div>
-          <figure class="feat__shot">
-            <img
-              src={withBase(`/img/app/${f.img}.webp`)}
-              alt={f.alt}
-              width={f.w}
-              height={f.h}
-              loading="lazy"
-              decoding="async"
-              data-par
-            />
-          </figure>
-        </article>
-      ))}
-    </div>
-
-    <div class="wrap rail-h">
-      <h3>{T('rail.h3')}</h3>
-      <p>{T('rail.p')}</p>
-    </div>
-    <div class="rail" role="list">
-      {rail.map((r) => (
-        <figure class="rail__it" role="listitem">
-          <img src={withBase(`/img/app/${r.img}.webp`)} alt={T('rail.alt', { label: r.label })} width="480" height="1040" loading="lazy" decoding="async" />
-          <figcaption>{r.label}</figcaption>
-        </figure>
-      ))}
-    </div>
-  </section>
+  <!-- 3. Ozellikler: uygulamanin ici, hareketli -->
+  <AppDemos lang={lang} />
 
   <!-- 4. SSS -->
   <section class="faq" id="faq">
@@ -358,7 +300,7 @@ const faqs = [
 
   <script is:inline src={withBase('/vendor/gsap/gsap.min.js')} defer></script>
   <script is:inline src={withBase('/vendor/gsap/ScrollTrigger.min.js')} defer></script>
-  <script is:inline define:vars={{ typed }}>
+  <script is:inline define:vars={{ typed, voiceSaid }}>
     window.addEventListener('DOMContentLoaded', function () {
       var gsap = window.gsap;
       if (!gsap) return;
@@ -369,7 +311,9 @@ const faqs = [
       var green = q('[data-green]'), chat = q('[data-chat]'), out = q('[data-typed]'), ph = q('[data-ph]'),
         caret = q('[data-caret]'), send = q('[data-send]'), user = q('[data-user]'), bot = q('[data-bot]'),
         btns = q('[data-btns]'), save = q('[data-save]'), cards = qa('[data-card]'), oks = qa('[data-ok]'),
-        rings = qa('[data-ring]'), orb = q('[data-orb]');
+        rings = qa('[data-ring]'), orb = q('[data-orb]'),
+        chat2 = q('[data-chat2]'), user2 = q('[data-user2]'), card2 = q('[data-card2]'), ok2 = q('[data-ok2]'),
+        say = q('[data-say]'), wave = q('[data-wave]'), bars = qa('[data-wave] i');
       if (!green || !chat) return;
 
       var mm = gsap.matchMedia();
@@ -378,7 +322,7 @@ const faqs = [
         function (ctx) {
           if (ctx.conditions.calm) {
             // Sakin: son kare (sohbet + 3 kart) durur, yesil ekran gizli.
-            gsap.set(green, { autoAlpha: 0 });
+            gsap.set([green, chat2], { autoAlpha: 0 });
             return;
           }
 
@@ -390,12 +334,25 @@ const faqs = [
             out.textContent = typed.slice(0, k);
             ph.style.display = k ? 'none' : '';
           };
-          gsap.set(chat, { autoAlpha: 0 });
-          gsap.set([user, bot], { autoAlpha: 0, y: 14 });
+          gsap.set([chat, chat2], { autoAlpha: 0 });
+          gsap.set([user, bot, user2], { autoAlpha: 0, y: 14 });
+          gsap.set(card2, { autoAlpha: 0, y: 16 });
+          gsap.set(ok2, { scale: 0 });
+          gsap.set(wave, { autoAlpha: 0 });
+          var waveTl = gsap.timeline({ repeat: -1, paused: true });
+          waveTl.to(bars, { scaleY: function (i) { return [0.5, 1, 0.7, 1.15, 0.6, 0.95, 0.45][i]; }, duration: 0.22, ease: 'sine.inOut', stagger: { each: 0.05, yoyo: true, repeat: 1 } })
+            .to(bars, { scaleY: 0.3, duration: 0.2, ease: 'sine.inOut' });
           gsap.set(cards, { autoAlpha: 0, y: 16 });
           gsap.set(oks, { scale: 0 });
           gsap.set(btns, { autoAlpha: 1 });
 
+          var voiceWords = voiceSaid.split(' ');
+          var voiceState = { n: 0 };
+          var renderVoice = function () {
+            var k = Math.round(voiceState.n);
+            out.textContent = voiceWords.slice(0, k).join(' ');
+            ph.style.display = k ? 'none' : '';
+          };
           var ringTl = gsap.timeline({ repeat: -1 });
           ringTl.fromTo(rings, { scale: 1, autoAlpha: 0.5 }, { scale: 1.55, autoAlpha: 0, duration: 2.4, ease: 'sine.out', stagger: 1.2 });
 
@@ -421,7 +378,30 @@ const faqs = [
             .to(btns, { autoAlpha: 0, height: 0, duration: 0.35, ease: 'power2.inOut' }, '+=0.1')
             .to(cards, { autoAlpha: 1, y: 0, duration: 0.5, stagger: 0.32 }, '<0.1')
             .to(oks, { scale: 1, duration: 0.4, ease: 'back.out(2.4)', stagger: 0.32 }, '<0.25')
-            .to(chat, { autoAlpha: 0, duration: 0.5, ease: 'power1.in' }, '+=3.2');
+            .to(chat, { autoAlpha: 0, duration: 0.5, ease: 'power1.in' }, '+=3.2')
+            // 2. tur: konusarak. Yazi kelime kelime gelir, tek hatirlatici olur.
+            .addLabel('voice')
+            .call(function () { state.n = 0; render(); })
+            .set(chat2, { autoAlpha: 0 })
+            .set([user2], { autoAlpha: 0, y: 14 })
+            .set(card2, { autoAlpha: 0, y: 16 })
+            .set(ok2, { scale: 0 })
+            .to(green, { autoAlpha: 1, scale: 1, duration: 0.45 }, 'voice')
+            .to(say, { autoAlpha: 0, duration: 0.25 }, 'voice+=0.5')
+            .to(wave, { autoAlpha: 1, duration: 0.25 }, '<')
+            .call(function () { waveTl.restart(); }, null, '<')
+            .to(orb, { scale: 1.07, duration: 0.5, yoyo: true, repeat: 5, ease: 'sine.inOut' }, '<')
+            .to(voiceState, { n: voiceWords.length, duration: 2.6, ease: 'none', onUpdate: renderVoice }, '<0.3')
+            .call(function () { waveTl.pause(); }, null, '+=0.2')
+            .to(wave, { autoAlpha: 0, duration: 0.25 })
+            .to(say, { autoAlpha: 1, duration: 0.25 }, '<')
+            .to(green, { autoAlpha: 0, scale: 1.04, duration: 0.5, ease: 'power2.in' }, '+=0.3')
+            .to(chat2, { autoAlpha: 1, duration: 0.35 }, '<0.2')
+            .call(function () { voiceState.n = 0; renderVoice(); })
+            .to(user2, { autoAlpha: 1, y: 0, duration: 0.5 })
+            .to(card2, { autoAlpha: 1, y: 0, duration: 0.5 }, '+=0.6')
+            .to(ok2, { scale: 1, duration: 0.4, ease: 'back.out(2.4)' }, '<0.25')
+            .to(chat2, { autoAlpha: 0, duration: 0.5, ease: 'power1.in' }, '+=2.8');
 
           // Ekrandan cikinca dur, donunce devam (pil ve islemci).
           if (ST) {
@@ -431,21 +411,12 @@ const faqs = [
               end: 'bottom top',
               onToggle: function (self) {
                 [tl, ringTl, caretTw].forEach(function (a) { self.isActive ? a.play() : a.pause(); });
+                if (!self.isActive) waveTl.pause();
               },
             });
 
-            // Ozellik ekranlarinda cok hafif derinlik (yalniz genis ekran).
-            var wide = window.matchMedia('(min-width: 900px)').matches;
-            if (wide) {
-              qa('[data-par]').forEach(function (img) {
-                gsap.fromTo(img, { y: 28 }, {
-                  y: -28, ease: 'none',
-                  scrollTrigger: { trigger: img.parentNode, start: 'top bottom', end: 'bottom top', scrub: 0.6 },
-                });
-              });
-            }
           }
-          return function () { document.documentElement.classList.remove('js-hero'); gsap.set([green, chat, user, bot, cards, oks, btns], { clearProps: 'all' }); };
+          return function () { document.documentElement.classList.remove('js-hero'); gsap.set([green, chat, user, bot, cards, oks, btns, chat2, user2, card2, ok2, wave, say], { clearProps: 'all' }); };
         }
       );
     });
@@ -534,8 +505,22 @@ const faqs = [
     color: rgba(255, 255, 255, 0.95);
   }
   @media (max-width: 639px) {
+    /* iPhone: telefon sahnesi ilk ekranda gorunsun diye metin bloku sikisik */
+    .hero__in {
+      padding-top: 5.5rem;
+      gap: 2.25rem;
+    }
+    .hero__sub {
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+    .hero__copy :global(.hero__stores) {
+      margin-top: 1.4rem;
+    }
     .hero__vow {
-      flex-direction: column;
+      margin-top: 1.25rem;
+      gap: 0.5rem 1rem;
+      font-size: 0.84rem;
     }
   }
   .hero__vow li {
@@ -624,8 +609,43 @@ const faqs = [
     border: 0.6cqw solid rgba(255, 255, 255, 0.55);
     opacity: 0;
   }
-  .g-say {
+  .g-mid {
+    display: grid;
+    place-items: center;
     margin-top: 7cqw;
+  }
+  .g-mid > * {
+    grid-area: 1 / 1;
+  }
+  .g-wave {
+    display: flex;
+    align-items: center;
+    gap: 1.8cqw;
+    height: 12cqw;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .g-wave i {
+    width: 2cqw;
+    height: 12cqw;
+    border-radius: 1cqw;
+    background: #fff;
+    transform: scaleY(0.3);
+    will-change: transform;
+  }
+  .sc-chat2 {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .m-mic {
+    display: inline-block;
+    width: 2.2cqw;
+    height: 3.2cqw;
+    margin: 0 1.6cqw -0.4cqw 0;
+    border-radius: 1.4cqw;
+    border: 0.5cqw solid rgba(255, 255, 255, 0.85);
+  }
+  .g-say {
     font-size: 5.3cqw;
     font-weight: 600;
     letter-spacing: -0.01em;
@@ -1000,92 +1020,6 @@ const faqs = [
     margin-left: 0.25rem;
   }
 
-  /* ---------- 3. Ozellikler ---------- */
-  .how {
-    padding: 5rem 0 4rem;
-    background: var(--u-mint);
-    overflow: hidden;
-  }
-  .how__list {
-    margin-top: 3.5rem;
-    display: grid;
-    gap: 4.5rem;
-  }
-  .feat {
-    display: grid;
-    gap: 1.75rem;
-    align-items: center;
-  }
-  .feat__txt h3 {
-    font-size: clamp(1.5rem, 4.2vw, 2.15rem);
-    font-weight: 700;
-    letter-spacing: -0.035em;
-    line-height: 1.1;
-    color: var(--u-ink);
-  }
-  .feat__txt p {
-    margin-top: 0.85rem;
-    font-size: 1.04rem;
-    line-height: 1.65;
-    color: var(--u-muted);
-    max-width: 28rem;
-  }
-  .feat__shot {
-    justify-self: center;
-    width: min(100%, 23rem);
-    border-radius: 28px;
-    background: #fff;
-    padding: 0.6rem;
-    box-shadow: 0 30px 60px -34px rgba(15, 42, 31, 0.4), 0 0 0 1px rgba(15, 42, 31, 0.05);
-    overflow: hidden;
-  }
-  .feat__shot img {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-    display: block;
-  }
-  .rail-h {
-    margin-top: 5.5rem;
-  }
-  .rail-h h3 {
-    font-size: clamp(1.4rem, 3.6vw, 1.8rem);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    color: var(--u-ink);
-  }
-  .rail-h p {
-    margin-top: 0.4rem;
-    color: var(--u-muted);
-  }
-  .rail {
-    margin-top: 1.75rem;
-    display: flex;
-    gap: 1rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding: 0.5rem max(1rem, calc((100vw - 72rem) / 2 + 1.5rem)) 1.5rem;
-    scroll-padding: 0 max(1rem, calc((100vw - 72rem) / 2 + 1.5rem));
-    scrollbar-width: thin;
-  }
-  .rail__it {
-    flex: none;
-    width: 11.5rem;
-    scroll-snap-align: start;
-  }
-  .rail__it img {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 18px 36px -24px rgba(15, 42, 31, 0.45), 0 0 0 1px rgba(15, 42, 31, 0.06);
-  }
-  .rail__it figcaption {
-    margin-top: 0.7rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--u-ink);
-  }
-
   /* ---------- 4. SSS ---------- */
   .faq {
     padding: 5.5rem 0 3rem;
@@ -1274,28 +1208,6 @@ const faqs = [
     .vow__grid {
       grid-template-columns: 1fr 1fr;
       gap: 5rem;
-    }
-    .how {
-      padding: 7rem 0 5rem;
-    }
-    .how__list {
-      gap: 6.5rem;
-    }
-    .feat {
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-    }
-    .feat--flip .feat__txt {
-      order: 2;
-    }
-    .feat__txt {
-      padding-left: 2rem;
-    }
-    .feat--flip .feat__txt {
-      padding-left: 0;
-    }
-    .rail__it {
-      width: 13.5rem;
     }
     .faq__grid {
       grid-template-columns: 0.8fr 1.2fr;

@@ -1,0 +1,1216 @@
+---
+/**
+ * Ana sayfa "Nasil calisir" bolumu — uygulamanin icini gosteren hareketli telefonlar (20 Kas 2026).
+ *
+ * 1-4: canli HTML ekranlar; metinler ve akis magaza-3.30 ham ekranlarinin birebir kopyasi
+ *      (a1-park, a2-ask, a4-ask/a4-move, e-home Hizli Eylemler). Uydurma ozellik YOK.
+ * 5-7: GERCEK 3.30 ekran goruntuleri (public/img/app/v330/{en,tr}) uzerine GSAP katmani.
+ * Hareket yalniz transform/opacity; ekrana girince oynar, cikinca durur.
+ * prefers-reduced-motion: her ekran son karesinde durur (CSS varsayilani = son kare).
+ */
+import { withBase } from '../../utils/site';
+import { makeT, type Lang } from '../../i18n/site';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const T = makeT('src/pages/index.astro', lang);
+const icon = withBase('/unutma-icon.png');
+const shot = (n: string) => withBase(`/img/app/v330/${lang}/${n}.webp`);
+const money = lang === 'tr'
+  ? { total: 3125, r1: '₺1.250', r2: '₺1.875', locale: 'tr-TR', cur: 'TRY' }
+  : { total: 312, r1: '$125', r2: '$187', locale: 'en-US', cur: 'USD' };
+const totalStr = new Intl.NumberFormat(money.locale, { style: 'currency', currency: money.cur, maximumFractionDigits: 0 }).format(money.total);
+
+const records = [
+  { img: 'e-todo', label: T('rail.todo') },
+  { img: 'e-shopping', label: T('rail.shopping') },
+  { img: 'e-calendar', label: T('rail.calendar') },
+  { img: 'e-journal', label: T('rail.journal') },
+];
+---
+
+<section class="how" id="how">
+  <div class="wrap">
+    <h2 class="h2">{T('how.h2')}</h2>
+    <p class="lead">{T('how.lead')}</p>
+  </div>
+
+  <div class="wrap how__list">
+    <!-- 1. Bir kez soyle, sonra sor -->
+    <article class="feat">
+      <div class="feat__txt">
+        <h3>{T('feat1.title')}</h3>
+        <p>{T('feat1.body')}</p>
+      </div>
+      <div class="dev" role="img" aria-label={T('d1.aria')} data-demo="later">
+        <div class="scr" aria-hidden="true">
+          <div class="top"><span class="top__back"></span><img src={icon} alt="" width="40" height="40" loading="lazy" /><div><b>{T('chat.name')}</b><small><i></i>{T('chat.status')}</small></div></div>
+          <div class="body"><div class="feed" data-feed>
+            <p class="u" data-m>{T('d1.u1')}</p>
+            <div class="card" data-m>
+              <span class="k"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z" /><path d="M10 12h5M10 16h5" /></svg>{T('d1.k')}<em>{T('d.fix')}</em></span>
+              <b>{T('d1.u1')}</b>
+              <i class="ok" data-ok></i>
+            </div>
+            <p class="u" data-m>{T('d1.u2')}</p>
+            <div class="b b--ans" data-m>
+              <p>{T('d1.a')}</p>
+              <span class="src__h">{T('d.src')}</span>
+              <span class="src"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z" /></svg><span><b>{T('d1.u1')}</b><small>{T('d1.srcSub')}</small></span></span>
+            </div>
+            </div>
+            <span class="dots" data-dots><i></i><i></i><i></i></span>
+          </div>
+          <div class="in"><span class="in__mic"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3" /><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21" /></svg></span><span class="in__t"><span data-in></span><span class="in__ph" data-ph>{T('d.input')}</span></span><span class="in__send" data-send></span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2. Kendi hayatini sor -->
+    <article class="feat feat--flip">
+      <div class="feat__txt">
+        <h3>{T('feat2.title')}</h3>
+        <p>{T('feat2.body')}</p>
+      </div>
+      <div class="dev" role="img" aria-label={T('d2.aria')} data-demo="life" data-total={money.total} data-locale={money.locale} data-cur={money.cur}>
+        <div class="scr" aria-hidden="true">
+          <div class="top"><span class="top__back"></span><img src={icon} alt="" width="40" height="40" loading="lazy" /><div><b>{T('chat.name')}</b><small><i></i>{T('chat.status')}</small></div></div>
+          <div class="body"><div class="feed" data-feed>
+            <p class="u" data-m>{T('d2.u')}</p>
+            <div class="card card--plain" data-m>
+              <span class="k"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2.5" /><path d="M16 12.5h2M3 10h18" /></svg>{T('d2.k')}<strong data-total-out>{totalStr}</strong></span>
+              <span class="row" data-row><span>{T('d2.r1')}</span><small>{T('d2.r1d')}</small><b>{money.r1}</b></span>
+              <span class="row" data-row><span>{T('d2.r2')}</span><small>{T('d2.r2d')}</small><b>{money.r2}</b></span>
+              <span class="src__h">{T('d.src')}</span>
+              <span class="src" data-row><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2.5" /><path d="M3 10h18" /></svg><span><b>{T('d2.k')}</b><small>{T('d2.srcSub')}</small></span></span>
+            </div>
+            <p class="u" data-m>{T('d2.u2')}</p>
+            <div class="card card--plain" data-m>
+              <span class="k"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2" /><path d="M4 10h16M9 3v4M15 3v4" /></svg>{T('d2.k2')}</span>
+              <span class="row row--t" data-row2><em>{T('d2.t1')}</em><span>{T('d2.e1')}</span></span>
+              <span class="row row--t" data-row2><em>{T('d2.t2')}</em><span>{T('d2.e2')}</span></span>
+              <span class="row row--t" data-row2><em>{T('d2.t3')}</em><span>{T('d2.e3')}</span></span>
+              <span class="row row--t" data-row2><em>{T('d2.t4')}</em><span>{T('d2.e4')}</span></span>
+            </div>
+            </div>
+            <span class="dots" data-dots><i></i><i></i><i></i></span>
+          </div>
+          <div class="in"><span class="in__mic"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3" /><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21" /></svg></span><span class="in__t"><span data-in></span><span class="in__ph" data-ph>{T('d.input')}</span></span><span class="in__send" data-send></span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3. Soyleyerek degistir -->
+    <article class="feat">
+      <div class="feat__txt">
+        <h3>{T('feat3.title')}</h3>
+        <p>{T('feat3.body')}</p>
+      </div>
+      <div class="dev" role="img" aria-label={T('d3.aria')} data-demo="change">
+        <div class="scr" aria-hidden="true">
+          <div class="top"><span class="top__back"></span><img src={icon} alt="" width="40" height="40" loading="lazy" /><div><b>{T('chat.name')}</b><small><i></i>{T('chat.status')}</small></div></div>
+          <div class="body"><div class="feed" data-feed>
+            <p class="u" data-m>{T('d3.u1')}</p>
+            <div class="b b--ok" data-m>
+              <i class="tick"></i>
+              <span>{T('d3.r1a')} → <span class="swap"><s data-old>{T('d3.r1old')}</s><span data-new>{T('d3.r1b')}</span></span></span>
+            </div>
+            <p class="u" data-m>{T('d3.u2')}</p>
+            <div class="swap swap--block" data-m>
+              <div class="b" data-q>
+                <span>{T('d3.q')}</span>
+                <span class="btns"><span class="btn btn--yes" data-yes>{T('d3.yes')}</span><span class="btn">{T('d.fix')}</span></span>
+              </div>
+              <div class="b b--ok b--undo" data-done>
+                <em>{T('d.undo')}</em>
+                <i class="tick"></i>
+                <span>{T('d3.r2')}</span>
+              </div>
+            </div>
+            </div>
+            <span class="dots" data-dots><i></i><i></i><i></i></span>
+          </div>
+          <div class="in"><span class="in__mic"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3" /><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21" /></svg></span><span class="in__t"><span data-in></span><span class="in__ph" data-ph>{T('d.input')}</span></span><span class="in__send" data-send></span></div>
+          <span class="tap" data-tap></span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 4. Hizli Eylemler -->
+    <article class="feat feat--flip">
+      <div class="feat__txt">
+        <h3>{T('feat4.title')}</h3>
+        <p>{T('feat4.body')}</p>
+      </div>
+      <div class="dev" role="img" aria-label={T('d4.aria')} data-demo="quick">
+        <div class="scr scr--home" aria-hidden="true">
+          <div class="app"><img src={icon} alt="" width="40" height="40" loading="lazy" /><b>Unutma</b>
+            <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg>
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="7" /><path d="M12 10v3l2 1.5M5 4 3 6M19 4l2 2" /></svg>
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-2.8 1.2V21a2 2 0 1 1-4 0v-.1A1.7 1.7 0 0 0 7 19.4a1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1A1.7 1.7 0 0 0 1.2 14H1a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 2.6 7a1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1A1.7 1.7 0 0 0 7 2.6 1.7 1.7 0 0 0 10 1.2V1a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 2.6 1.4 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V7a1.7 1.7 0 0 0 1.5 1H23a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z" /></svg>
+          </div>
+          <div class="next"><span class="next__ic"><svg viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z" /><path d="M10 20.5h4" /></svg></span>{T('d4.next')}</div>
+          <div class="next next--today"><span class="next__ic"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2" /><path d="M4 10h16M9 3v4M15 3v4" /></svg></span>{T('d4.today')}<svg class="next__go" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg></div>
+          <div class="qa">
+            <div class="qa__h"><b><svg viewBox="0 0 24 24"><path d="M13 3 5 14h6l-1 7 8-11h-6z" /></svg>{T('d4.h')}</b><em>{T('d4.edit')}</em></div>
+            <small class="qa__sub">{T('d4.sub')}</small>
+            <span class="qi"><span class="qi__ic"><svg viewBox="0 0 24 24"><rect x="6" y="11" width="12" height="9" rx="2" /><path d="M9 11V8a3 3 0 0 1 6 0v3" /></svg></span>{T('d4.i1')}<time>{T('d4.i1t')}</time></span>
+            <span class="qi"><span class="qi__ic"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 5 6.5 5 10a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5.3 1.5 1 2.5 2 2.5 0-3 0-5 1-8z" /></svg></span>{T('d4.i2')}<time>{T('d4.i2t')}</time></span>
+            <span class="qi" data-qi><span class="qi__ic"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="13" rx="2" /><path d="M9 7V5h6v2M12 11v5M9.5 13.5h5" /></svg></span>{T('d4.i3')}<time data-qt>{T('d4.i3t')}</time></span>
+            <span class="qi"><span class="qi__ic"><svg viewBox="0 0 24 24"><path d="M8 4 4 7l2 3 2-1v11h8V9l2 1 2-3-4-3c-.5 1.5-2 2.5-4 2.5S8.5 5.5 8 4z" /></svg></span>{T('d4.i4')}</span>
+            <span class="qi" data-qi><span class="qi__ic"><svg viewBox="0 0 24 24"><path d="M12 3v8M7.5 6.5a7 7 0 1 0 9 0" /></svg></span>{T('d4.i5')}<time data-qt>{T('d4.i5t')}</time></span>
+          </div>
+          <div class="nav">
+            <svg class="on" viewBox="0 0 24 24"><path d="M13 3 5 14h6l-1 7 8-11h-6z" /></svg>
+            <svg viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01" /></svg>
+            <img src={icon} alt="" width="40" height="40" loading="lazy" />
+            <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2.5" /><path d="M16 12.5h2M3 10h18" /></svg>
+            <svg viewBox="0 0 24 24"><path d="M3 5c3-1 6-1 9 1 3-2 6-2 9-1v14c-3-1-6-1-9 1-3-2-6-2-9-1z" /><path d="M12 6v14" /></svg>
+          </div>
+          <span class="tap" data-tap></span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5. Rutinler (gercek ekran) -->
+    <article class="feat">
+      <div class="feat__txt">
+        <h3>{T('feat5.title')}</h3>
+        <p>{T('feat5.body')}</p>
+      </div>
+      <div class="dev" role="img" aria-label={T('d5.aria')} data-demo="routine">
+        <div class="scr scr--shot" aria-hidden="true">
+          <img class="shot" src={shot('e-reminders')} alt="" width="600" height="1300" loading="lazy" decoding="async" data-shot />
+          <span class="chk" data-chk></span>
+          <div class="nt" data-nt>
+            <img src={icon} alt="" width="40" height="40" loading="lazy" />
+            <span><b>{T('d5.app')}</b><span>{T('d5.n')}</span></span>
+            <small>{T('d5.now')}</small>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 6. Ekonomi (gercek ekran) -->
+    <article class="feat feat--flip">
+      <div class="feat__txt">
+        <h3>{T('feat6.title')}</h3>
+        <p>{T('feat6.body')}</p>
+      </div>
+      <div class="dev" role="img" aria-label={T('d6.aria')} data-demo="budget">
+        <div class="scr scr--shot" aria-hidden="true">
+          <img class="shot" src={shot('e-economy')} alt="" width="600" height="1300" loading="lazy" decoding="async" data-shot />
+          <span class="hit" data-hit></span>
+          <span class="drop" data-drop><i></i>{T('d6.chip')}</span>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- 7. Kayitlarim: gercek ekranlar arasinda kaydirma -->
+  <div class="wrap recs">
+    <div class="recs__txt">
+      <h3>{T('rail.h3')}</h3>
+      <p>{T('rail.p')}</p>
+      <div class="recs__tabs" role="tablist" aria-label={T('rail.tabsAria')}>
+        {records.map((r, i) => (
+          <button type="button" role="tab" class="recs__tab" aria-selected={i === 0 ? 'true' : 'false'} data-tab={i}>{r.label}</button>
+        ))}
+      </div>
+    </div>
+    <div class="dev dev--recs" data-recs>
+      <div class="scr">
+        <div class="recs__track" data-track>
+          {records.map((r, i) => (
+            <img src={shot(r.img)} alt={T('rail.phoneAria', { label: r.label })} width="600" height="1300" loading="lazy" decoding="async" aria-hidden={i === 0 ? undefined : 'true'} />
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', function () {
+    var gsap = window.gsap, ST = window.ScrollTrigger;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ---- Kayitlarim sekmeleri: hareket azaltilsa da calisir ---- */
+    var recs = document.querySelector('[data-recs]');
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('[data-tab]'));
+    var track = document.querySelector('[data-track]');
+    var cur = 0, auto = null;
+    function show(i, instant) {
+      cur = (i + tabs.length) % tabs.length;
+      tabs.forEach(function (t, k) { t.setAttribute('aria-selected', k === cur ? 'true' : 'false'); });
+      Array.prototype.forEach.call(track.children, function (im, k) { if (k === cur) im.removeAttribute('aria-hidden'); else im.setAttribute('aria-hidden', 'true'); });
+      if (gsap && !instant && !reduce) gsap.to(track, { xPercent: -100 * cur, duration: 0.7, ease: 'power3.inOut', overwrite: true });
+      else track.style.transform = 'translateX(' + (-100 * cur) + '%)';
+    }
+    tabs.forEach(function (t) {
+      t.addEventListener('click', function () { show(+t.getAttribute('data-tab')); if (auto) auto.restart(true); });
+    });
+
+    if (!gsap || reduce) return;
+    if (ST) gsap.registerPlugin(ST);
+    document.documentElement.classList.add('js-demos');
+
+    function $(root, s) { return root.querySelector(s); }
+    function $$(root, s) { return Array.prototype.slice.call(root.querySelectorAll(s)); }
+
+    // Giris kutusuna yazi yaz, gonder; kutu bosalir.
+    function typeIn(tl, root, text, dur) {
+      var out = $(root, '[data-in]'), ph = $(root, '[data-ph]'), send = $(root, '[data-send]');
+      var st = { n: 0 };
+      tl.set(st, { n: 0 })
+        .call(function () { ph.style.display = 'none'; })
+        .to(st, { n: text.length, duration: dur, ease: 'none', onUpdate: function () { out.textContent = text.slice(0, Math.round(st.n)); } })
+        .to(send, { scale: 0.78, duration: 0.12, yoyo: true, repeat: 1 }, '+=0.25')
+        .call(function () { out.textContent = ''; ph.style.display = ''; });
+      return tl;
+    }
+    // Sohbet akisi: yeni oge alta gelsin diye akis (transform ile) yukari kayar.
+    function shift(el) {
+      var f = el.closest('[data-feed]');
+      return f.offsetHeight - (el.offsetTop + el.offsetHeight);
+    }
+    function pop(tl, el, pos) {
+      var f = el.closest('[data-feed]');
+      if (f) tl.to(f, { y: function () { return shift(el); }, duration: 0.45, ease: 'power2.out' }, pos);
+      return tl.fromTo(el, { autoAlpha: 0, y: 14, scale: 0.96 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.45, ease: 'back.out(1.6)', immediateRender: false }, f ? '<' : pos);
+    }
+    function thinking(tl, root) {
+      var d = $(root, '[data-dots]'), f = $(root, '[data-feed]');
+      tl.to(f, { y: function () { return (gsap.getProperty(f, 'y') || 0) - d.offsetHeight - 6; }, duration: 0.3 })
+        .to(d, { autoAlpha: 1, duration: 0.2 }, '<0.1').to($$(d, 'i'), { y: -3, duration: 0.25, stagger: 0.12, yoyo: true, repeat: 3, ease: 'sine.inOut' }, '<').to(d, { autoAlpha: 0, duration: 0.15 });
+      return tl;
+    }
+    function reset(tl, root) {
+      tl.to($(root, '.body'), { autoAlpha: 0, duration: 0.45, ease: 'power1.in' }, '+=2.6').set($(root, '.body'), { autoAlpha: 1 });
+    }
+    function tapAt(tl, root, target, pos) {
+      var tap = $(root, '[data-tap]'), scr = $(root, '.scr');
+      tl.call(function () {
+        var a = scr.getBoundingClientRect(), b = target.getBoundingClientRect();
+        gsap.set(tap, { x: b.left - a.left + b.width / 2, y: b.top - a.top + b.height / 2 });
+      }, null, pos)
+        .fromTo(tap, { autoAlpha: 0, scale: 1.6 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: 'power2.out', immediateRender: false })
+        .to(target, { scale: 0.93, duration: 0.1, yoyo: true, repeat: 1 })
+        .to(tap, { autoAlpha: 0, scale: 1.8, duration: 0.35 });
+      return tl;
+    }
+
+    var builders = {
+      later: function (root) {
+        var m = $$(root, '[data-m]'), ok = $(root, '[data-ok]');
+        gsap.set(m, { autoAlpha: 0 }); gsap.set(ok, { scale: 0 });
+        var tl = gsap.timeline({ paused: true, repeat: -1, repeatDelay: 0.6, defaults: { ease: 'power2.out' } });
+        tl.set(m, { autoAlpha: 0 }).set(ok, { scale: 0 }).set($(root, '[data-feed]'), { y: function () { return shift(m[0]); } });
+        typeIn(tl, root, m[0].textContent, 1.3);
+        pop(tl, m[0]); pop(tl, m[1], '+=0.35');
+        tl.to(ok, { scale: 1, duration: 0.4, ease: 'back.out(2.6)' }, '-=0.1');
+        typeIn(tl, root, m[2].textContent, 0.8);
+        pop(tl, m[2]); thinking(tl, root); pop(tl, m[3]);
+        reset(tl, root);
+        return tl;
+      },
+      life: function (root) {
+        var m = $$(root, '[data-m]'), rows = $$(root, '[data-row]'), rows2 = $$(root, '[data-row2]');
+        var out = $(root, '[data-total-out]'), total = +root.getAttribute('data-total');
+        var fmt = new Intl.NumberFormat(root.getAttribute('data-locale'), { style: 'currency', currency: root.getAttribute('data-cur'), maximumFractionDigits: 0 });
+        var st = { v: 0 };
+        gsap.set(m, { autoAlpha: 0 });
+        var tl = gsap.timeline({ paused: true, repeat: -1, repeatDelay: 0.6, defaults: { ease: 'power2.out' } });
+        tl.set(m, { autoAlpha: 0 }).set(st, { v: 0 }).set($(root, '[data-feed]'), { y: function () { return shift(m[0]); } });
+        typeIn(tl, root, m[0].textContent, 1.6);
+        pop(tl, m[0]); thinking(tl, root); pop(tl, m[1]);
+        tl.from(rows, { autoAlpha: 0, x: -10, duration: 0.35, stagger: 0.18, immediateRender: false }, '<0.15')
+          .to(st, { v: total, duration: 1.1, ease: 'power2.out', onUpdate: function () { out.textContent = fmt.format(Math.round(st.v)); } }, '<');
+        typeIn(tl, root, m[2].textContent, 0.8);
+        pop(tl, m[2]); thinking(tl, root); pop(tl, m[3]);
+        tl.from(rows2, { autoAlpha: 0, x: -10, duration: 0.3, stagger: 0.14, immediateRender: false }, '<0.15');
+        reset(tl, root);
+        return tl;
+      },
+      change: function (root) {
+        var m = $$(root, '[data-m]'), oldT = $(root, '[data-old]'), newT = $(root, '[data-new]');
+        var q = $(root, '[data-q]'), done = $(root, '[data-done]'), yes = $(root, '[data-yes]');
+        gsap.set(m, { autoAlpha: 0 });
+        var tl = gsap.timeline({ paused: true, repeat: -1, repeatDelay: 0.6, defaults: { ease: 'power2.out' } });
+        tl.set(m, { autoAlpha: 0 }).set($(root, '[data-feed]'), { y: function () { return shift(m[0]); } }).set(oldT, { autoAlpha: 1 }).set(newT, { autoAlpha: 0 }).set(q, { autoAlpha: 1 }).set(done, { autoAlpha: 0 });
+        typeIn(tl, root, m[0].textContent, 1.2);
+        pop(tl, m[0]); thinking(tl, root); pop(tl, m[1]);
+        tl.to(oldT, { autoAlpha: 0, y: -6, duration: 0.3 }, '+=0.5').fromTo(newT, { autoAlpha: 0, y: 6 }, { autoAlpha: 1, y: 0, duration: 0.35, immediateRender: false }, '<0.1');
+        typeIn(tl, root, m[2].textContent, 0.7);
+        pop(tl, m[2]); thinking(tl, root); pop(tl, m[3]);
+        tapAt(tl, root, yes, '+=0.9');
+        tl.to(q, { autoAlpha: 0, duration: 0.25 }).fromTo(done, { autoAlpha: 0, y: 6 }, { autoAlpha: 1, y: 0, duration: 0.35, immediateRender: false }, '<');
+        reset(tl, root);
+        return tl;
+      },
+      quick: function (root) {
+        var items = $$(root, '[data-qi]'), times = $$(root, '[data-qt]');
+        gsap.set(times, { autoAlpha: 0 });
+        var tl = gsap.timeline({ paused: true, repeat: -1, repeatDelay: 1, defaults: { ease: 'power2.out' } });
+        tl.set(times, { autoAlpha: 0 }).set(items, { backgroundColor: '#ffffff' });
+        items.forEach(function (it, k) {
+          tapAt(tl, root, it, k ? '+=0.9' : '+=0.6');
+          tl.to(it, { backgroundColor: '#dff3e7', duration: 0.2 }, '<')
+            .fromTo(times[k], { autoAlpha: 0, x: 8 }, { autoAlpha: 1, x: 0, duration: 0.35, immediateRender: false }, '<')
+            .to(it, { backgroundColor: '#ffffff', duration: 0.8 }, '+=0.6');
+        });
+        tl.to(times, { autoAlpha: 0, duration: 0.4 }, '+=2.2');
+        return tl;
+      },
+      routine: function (root) {
+        var nt = $(root, '[data-nt]'), chk = $(root, '[data-chk]');
+        gsap.set(nt, { yPercent: -160, autoAlpha: 0 }); gsap.set(chk, { scale: 0 });
+        var tl = gsap.timeline({ paused: true, repeat: -1, repeatDelay: 0.8, defaults: { ease: 'power3.out' } });
+        tl.set(chk, { scale: 0 })
+          .fromTo(nt, { yPercent: -160, autoAlpha: 0 }, { yPercent: 0, autoAlpha: 1, duration: 0.6, immediateRender: false }, 0.6)
+          .to(nt, { scale: 0.97, duration: 0.12, yoyo: true, repeat: 1 }, '+=1.6')
+          .to(nt, { yPercent: -160, autoAlpha: 0, duration: 0.45, ease: 'power2.in' })
+          .to(chk, { scale: 1, duration: 0.45, ease: 'back.out(2.2)' }, '+=0.2')
+          .to(chk, { scale: 0, duration: 0.3, ease: 'power1.in' }, '+=2.6');
+        return tl;
+      },
+      budget: function (root) {
+        var drop = $(root, '[data-drop]'), hit = $(root, '[data-hit]');
+        gsap.set(drop, { autoAlpha: 0, y: -40 }); gsap.set(hit, { autoAlpha: 0 });
+        var tl = gsap.timeline({ paused: true, repeat: -1, repeatDelay: 1, defaults: { ease: 'power2.out' } });
+        tl.fromTo(drop, { autoAlpha: 0, y: -40, scale: 1 }, { autoAlpha: 1, y: 0, duration: 0.5, immediateRender: false }, 0.6)
+          .to(drop, { y: '+=' + 0, duration: 0.6 })
+          .to(drop, { yPercent: 230, scale: 0.6, autoAlpha: 0, duration: 0.55, ease: 'power2.in' })
+          .fromTo(hit, { autoAlpha: 0, scale: 0.9 }, { autoAlpha: 1, scale: 1.04, duration: 0.3, immediateRender: false }, '-=0.1')
+          .to(hit, { autoAlpha: 0, scale: 1.12, duration: 0.7, ease: 'power1.out' }, '+=0.2');
+        return tl;
+      },
+    };
+
+    $$(document, '[data-demo]').forEach(function (root) {
+      var b = builders[root.getAttribute('data-demo')];
+      if (!b) return;
+      var tl = b(root);
+      if (ST) {
+        ST.create({
+          trigger: root, start: 'top 85%', end: 'bottom 10%',
+          onToggle: function (self) { self.isActive ? tl.play() : tl.pause(); },
+        });
+      } else tl.play();
+    });
+
+    // Kayitlarim: ekrandayken kendiliginden kaydir.
+    if (recs && track) {
+      auto = gsap.delayedCall(2.8, function step() { show(cur + 1); auto.restart(true); }).pause();
+      if (ST) ST.create({ trigger: recs, start: 'top 85%', end: 'bottom 10%', onToggle: function (self) { self.isActive ? auto.restart(true) : auto.pause(); } });
+    }
+  });
+</script>
+
+<style>
+  .wrap {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  @media (min-width: 640px) {
+    .wrap {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+  .h2 {
+    font-size: clamp(1.85rem, 5.2vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.06;
+    color: var(--u-ink);
+    text-wrap: balance;
+  }
+  .lead {
+    margin-top: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--u-muted);
+    max-width: 36rem;
+  }
+  .how {
+    padding: 5rem 0 4.5rem;
+    background: var(--u-mint);
+    overflow: hidden;
+  }
+  .how__list {
+    margin-top: 3.5rem;
+    display: grid;
+    gap: 4.75rem;
+  }
+  .feat {
+    display: grid;
+    gap: 1.9rem;
+    align-items: center;
+  }
+  .feat__txt h3,
+  .recs__txt h3 {
+    font-size: clamp(1.5rem, 4.2vw, 2.15rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+    color: var(--u-ink);
+    text-wrap: balance;
+  }
+  .feat__txt p,
+  .recs__txt p {
+    margin-top: 0.85rem;
+    font-size: 1.04rem;
+    line-height: 1.65;
+    color: var(--u-muted);
+    max-width: 28rem;
+  }
+
+  /* ---------- Telefon cercevesi ---------- */
+  .dev {
+    justify-self: center;
+    width: min(300px, 78vw);
+    aspect-ratio: 1290 / 2796;
+    padding: 8px;
+    border-radius: 42px;
+    background: #0d1f17;
+    box-shadow:
+      0 0 0 1.5px rgba(255, 255, 255, 0.12) inset,
+      0 40px 70px -34px rgba(15, 42, 31, 0.55),
+      0 14px 30px -18px rgba(15, 42, 31, 0.35);
+  }
+  .scr {
+    position: relative;
+    height: 100%;
+    border-radius: 34px;
+    overflow: hidden;
+    background: #f6faf8;
+    container-type: inline-size;
+    display: flex;
+    flex-direction: column;
+    color: #14251c;
+    text-align: left;
+    font-size: 3.6cqw;
+    line-height: 1.35;
+  }
+  svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* Sohbet ust cubugu */
+  .top {
+    display: flex;
+    align-items: center;
+    gap: 2.4cqw;
+    padding: 11cqw 4cqw 3cqw;
+    background: #fff;
+    border-bottom: 0.3cqw solid #e5efe9;
+  }
+  .top__back {
+    width: 2.4cqw;
+    height: 2.4cqw;
+    border-left: 0.6cqw solid #14251c;
+    border-bottom: 0.6cqw solid #14251c;
+    transform: rotate(45deg);
+    margin: 0 1.2cqw 0 1cqw;
+  }
+  .top img {
+    width: 6.6cqw;
+    height: 6.6cqw;
+    border-radius: 50%;
+  }
+  .top b {
+    display: block;
+    font-size: 4.1cqw;
+  }
+  .top small {
+    display: flex;
+    align-items: center;
+    gap: 1.2cqw;
+    font-size: 3.14cqw;
+    color: #53675c;
+  }
+  .top small i {
+    width: 1.7cqw;
+    height: 1.7cqw;
+    border-radius: 50%;
+    background: #22b263;
+  }
+
+  /* Mesajlar: son kare yerlesimi sabit, ogeler yerinde belirir */
+  .body {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 2.4cqw;
+    padding: 3cqw 3.6cqw 3cqw;
+    overflow: hidden;
+  }
+  .feed {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4cqw;
+    will-change: transform;
+  }
+  .u {
+    align-self: flex-end;
+    max-width: 80%;
+    padding: 2.6cqw 3.6cqw;
+    border-radius: 4cqw 4cqw 1.2cqw 4cqw;
+    background: #0f7a4a;
+    color: #fff;
+    font-size: 3.7cqw;
+    transform-origin: 100% 100%;
+  }
+  .b {
+    align-self: flex-start;
+    max-width: 88%;
+    padding: 2.8cqw 3.6cqw;
+    border-radius: 4cqw 4cqw 4cqw 1.2cqw;
+    background: #fff;
+    border: 0.3cqw solid #e2ece6;
+    box-shadow: 0 1cqw 3cqw rgba(15, 42, 31, 0.06);
+    font-size: 3.58cqw;
+    transform-origin: 0 100%;
+  }
+  .b--ans {
+    background: #e3f1e8;
+    border-color: #c9e2d3;
+  }
+  .b--ok {
+    display: flex;
+    gap: 1.8cqw;
+    align-items: flex-start;
+  }
+  .tick {
+    flex: none;
+    width: 3.6cqw;
+    height: 3.6cqw;
+    margin-top: 0.2cqw;
+    border-radius: 50%;
+    background: #22a964
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E")
+      center / 72% no-repeat;
+  }
+  .b--undo {
+    flex-wrap: wrap;
+  }
+  .b--undo em {
+    flex-basis: 100%;
+    text-align: right;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3.14cqw;
+    color: #0f7a4a;
+  }
+  .swap {
+    display: inline-grid;
+  }
+  .swap > * {
+    grid-area: 1 / 1;
+  }
+  .swap--block {
+    display: grid;
+    align-self: flex-start;
+    max-width: 88%;
+  }
+  .swap--block > .b {
+    max-width: none;
+  }
+  .swap s {
+    color: #7b8d83;
+  }
+  :global(html.js-demos) .swap [data-new],
+  :global(html.js-demos) [data-done] {
+    visibility: hidden;
+  }
+  :global(html:not(.js-demos)) .swap [data-old],
+  :global(html:not(.js-demos)) [data-q] {
+    visibility: hidden;
+  }
+  .btns {
+    display: flex;
+    gap: 2cqw;
+    margin-top: 2.2cqw;
+  }
+  .btn {
+    padding: 1.6cqw 4cqw;
+    border-radius: 99px;
+    border: 0.3cqw solid #d8e6dd;
+    font-weight: 700;
+    font-size: 3.36cqw;
+    background: #fff;
+  }
+  .btn--yes {
+    background: #0f7a4a;
+    border-color: #0f7a4a;
+    color: #fff;
+  }
+
+  .card {
+    position: relative;
+    margin-left: 5.5cqw;
+    padding: 2.6cqw 3.6cqw 3cqw;
+    border-radius: 3.4cqw;
+    background: #fff;
+    border: 0.3cqw solid #e2ece6;
+    border-left: 1cqw solid #22a964;
+    box-shadow: 0 1cqw 3cqw rgba(15, 42, 31, 0.05);
+    font-size: 3.4cqw;
+  }
+  .card--plain {
+    margin-left: 0;
+    margin-right: 4cqw;
+    border-left-width: 0.3cqw;
+    border-color: #cfe3d7;
+  }
+  .card b {
+    display: block;
+    font-weight: 600;
+  }
+  .k {
+    display: flex;
+    align-items: center;
+    gap: 1.4cqw;
+    margin-bottom: 1.2cqw;
+    font-size: 2.91cqw;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #108047;
+  }
+  .k svg {
+    width: 3.4cqw;
+    height: 3.4cqw;
+  }
+  .k em,
+  .k strong {
+    margin-left: auto;
+    font-style: normal;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .k em {
+    font-size: 3.25cqw;
+  }
+  .k strong {
+    font-size: 3.4cqw;
+    color: #14251c;
+  }
+  .ok {
+    position: absolute;
+    left: -6.6cqw;
+    top: 50%;
+    margin-top: -2.3cqw;
+    width: 4.6cqw;
+    height: 4.6cqw;
+    border-radius: 50%;
+    background: #dff3e7
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23108047' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E")
+      center / 62% no-repeat;
+  }
+  .row {
+    display: flex;
+    align-items: baseline;
+    gap: 1.6cqw;
+    padding: 1.5cqw 0;
+    border-bottom: 0.3cqw solid #edf3ef;
+    font-size: 3.47cqw;
+  }
+  .row span {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .row small {
+    color: #6a7d72;
+    font-size: 3.14cqw;
+  }
+  .row b {
+    display: inline;
+  }
+  .row--t em {
+    flex: none;
+    min-width: 13cqw;
+    font-style: normal;
+    font-weight: 700;
+    color: #108047;
+  }
+  .row:last-of-type {
+    border-bottom: 0;
+  }
+  .src__h {
+    display: block;
+    margin-top: 1.6cqw;
+    font-size: 2.69cqw;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #6a7d72;
+  }
+  .src {
+    display: flex;
+    align-items: center;
+    gap: 2cqw;
+    margin-top: 1cqw;
+    font-size: 3.36cqw;
+  }
+  .src svg {
+    flex: none;
+    width: 3.6cqw;
+    height: 3.6cqw;
+    color: #53675c;
+  }
+  .src small {
+    display: block;
+    font-size: 2.91cqw;
+    color: #6a7d72;
+  }
+  .b--ans p {
+    font-size: 3.7cqw;
+  }
+  .dots {
+    position: absolute;
+    left: 4cqw;
+    bottom: 3cqw;
+    display: flex;
+    gap: 1cqw;
+    padding: 2.2cqw 3cqw;
+    border-radius: 99px;
+    background: #fff;
+    border: 0.3cqw solid #e2ece6;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .dots i {
+    width: 1.4cqw;
+    height: 1.4cqw;
+    border-radius: 50%;
+    background: #8aa597;
+  }
+
+  /* Giris kutusu */
+  .in {
+    margin: 0 3cqw 7cqw;
+    display: flex;
+    align-items: center;
+    gap: 2.2cqw;
+    padding: 2.2cqw 2.2cqw 2.2cqw 3cqw;
+    border-radius: 99px;
+    background: #fff;
+    border: 0.3cqw solid #dfe9e3;
+    box-shadow: 0 1cqw 4cqw rgba(15, 42, 31, 0.08);
+    font-size: 3.36cqw;
+    color: #14251c;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .in__mic {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 6.6cqw;
+    height: 6.6cqw;
+    border-radius: 50%;
+    background: #f0f4f2;
+    color: #33473c;
+  }
+  .in__mic svg {
+    width: 3.6cqw;
+    height: 3.6cqw;
+  }
+  .in__t {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .in__ph {
+    color: #6a7d72;
+  }
+  .in__send {
+    flex: none;
+    width: 6.6cqw;
+    height: 6.6cqw;
+    border-radius: 50%;
+    background: #9fd6b8
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 19V5M6 11l6-6 6 6'/%3E%3C/svg%3E")
+      center / 58% no-repeat;
+  }
+
+  /* Dokunma isareti */
+  .tap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 11cqw;
+    height: 11cqw;
+    margin: -5.5cqw 0 0 -5.5cqw;
+    border-radius: 50%;
+    background: rgba(15, 42, 31, 0.18);
+    border: 0.6cqw solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 1cqw 3cqw rgba(15, 42, 31, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  /* Ana ekran: Hizli Eylemler */
+  .scr--home {
+    background: #f3f8f5;
+  }
+  .app {
+    display: flex;
+    align-items: center;
+    gap: 2cqw;
+    padding: 11cqw 4.5cqw 3cqw;
+    background: #fff;
+    font-size: 4.4cqw;
+  }
+  .app img {
+    width: 6.6cqw;
+    height: 6.6cqw;
+    border-radius: 1.6cqw;
+  }
+  .app b {
+    flex: 1;
+  }
+  .app svg {
+    width: 5cqw;
+    height: 5cqw;
+    margin-left: 2.4cqw;
+    color: #33473c;
+    stroke-width: 1.8;
+  }
+  .next {
+    display: flex;
+    align-items: center;
+    gap: 2.4cqw;
+    margin: 3.4cqw 3.6cqw 0;
+    padding: 3cqw 3.4cqw;
+    border-radius: 3.4cqw;
+    background: #fff;
+    border: 0.3cqw solid #f1d3d3;
+    border-left: 1cqw solid #e05a5a;
+    font-size: 3.47cqw;
+    font-weight: 600;
+  }
+  .next__ic {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 6.6cqw;
+    height: 6.6cqw;
+    border-radius: 1.8cqw;
+    background: #fde9e9;
+    color: #d04848;
+  }
+  .next__ic svg {
+    width: 3.8cqw;
+    height: 3.8cqw;
+  }
+  .next--today {
+    margin-top: 2.4cqw;
+    border-color: #d5e8dc;
+    border-left-color: #22a964;
+  }
+  .next--today .next__ic {
+    background: #e3f3ea;
+    color: #108047;
+  }
+  .next__go {
+    margin-left: auto;
+    width: 4.4cqw;
+    height: 4.4cqw;
+    color: #108047;
+  }
+  .qa {
+    margin: 3cqw 3.6cqw 0;
+    padding: 3.6cqw 3.2cqw;
+    border-radius: 4cqw;
+    background: #fff;
+    border: 0.3cqw solid #e2ece6;
+    display: flex;
+    flex-direction: column;
+    gap: 2.2cqw;
+  }
+  .qa__h {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 4.0cqw;
+  }
+  .qa__h b {
+    display: flex;
+    align-items: center;
+    gap: 1.4cqw;
+  }
+  .qa__h svg {
+    width: 4cqw;
+    height: 4cqw;
+    color: #108047;
+  }
+  .qa__h em {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3.36cqw;
+    color: #108047;
+  }
+  .qa__sub {
+    margin-top: -1.2cqw;
+    margin-bottom: 0.6cqw;
+    font-size: 3.14cqw;
+    color: #6a7d72;
+  }
+  .qi {
+    display: flex;
+    align-items: center;
+    gap: 2.6cqw;
+    padding: 2.9cqw 3cqw 2.9cqw 2.4cqw;
+    border-radius: 3cqw;
+    border: 0.3cqw solid #e2ece6;
+    background: #fff;
+    font-size: 3.5cqw;
+    font-weight: 500;
+  }
+  .qi__ic {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 7cqw;
+    height: 7cqw;
+    border-radius: 50%;
+    background: #e3f3ea;
+    color: #108047;
+  }
+  .qi__ic svg {
+    width: 3.8cqw;
+    height: 3.8cqw;
+  }
+  .qi time {
+    margin-left: auto;
+    font-size: 3.14cqw;
+    color: #53675c;
+  }
+  .nav {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2cqw 3cqw 6cqw;
+    background: #fff;
+    border-top: 0.3cqw solid #e5efe9;
+  }
+  .nav svg {
+    width: 5.6cqw;
+    height: 5.6cqw;
+    color: #6f857a;
+    stroke-width: 1.7;
+  }
+  .nav svg.on {
+    color: #108047;
+  }
+  .nav img {
+    width: 13cqw;
+    height: 13cqw;
+    margin-top: -7cqw;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1.6cqw #e3f3ea, 0 2cqw 4cqw rgba(15, 42, 31, 0.25);
+  }
+
+  /* Gercek ekran goruntuleri */
+  .scr--shot {
+    background: #f6faf8;
+  }
+  .shot {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+  .nt {
+    position: absolute;
+    left: 3.5cqw;
+    right: 3.5cqw;
+    top: 3.5cqw;
+    display: flex;
+    align-items: center;
+    gap: 2.6cqw;
+    padding: 3cqw 3.4cqw;
+    border-radius: 5cqw;
+    background: rgba(250, 252, 251, 0.94);
+    box-shadow: 0 3cqw 8cqw -2cqw rgba(15, 42, 31, 0.35), 0 0 0 0.3cqw rgba(15, 42, 31, 0.06);
+    font-size: 3.58cqw;
+    z-index: 2;
+  }
+  .nt img {
+    flex: none;
+    width: 8cqw;
+    height: 8cqw;
+    border-radius: 2cqw;
+  }
+  .nt > span {
+    flex: 1;
+    min-width: 0;
+  }
+  .nt b {
+    display: block;
+    font-size: 3.58cqw;
+  }
+  .nt span span {
+    display: block;
+  }
+  .nt small {
+    align-self: flex-start;
+    font-size: 2.91cqw;
+    color: #6a7d72;
+  }
+  :global(html.js-demos) .nt {
+    visibility: hidden;
+  }
+  .chk {
+    position: absolute;
+    left: 7cqw;
+    top: 25.8%;
+    width: 11cqw;
+    height: 11cqw;
+    border-radius: 50%;
+    background: #22a964
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E")
+      center / 62% no-repeat;
+    box-shadow: 0 0 0 1cqw #fff;
+  }
+  .hit {
+    position: absolute;
+    left: 35.6%;
+    width: 28.6%;
+    top: 29.4%;
+    height: 8.5%;
+    border-radius: 3.6cqw;
+    border: 0.8cqw solid #e05a5a;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .drop {
+    position: absolute;
+    left: 50%;
+    top: 21%;
+    display: flex;
+    align-items: center;
+    gap: 1.6cqw;
+    padding: 2cqw 3.6cqw;
+    margin-left: -20cqw;
+    width: 40cqw;
+    justify-content: center;
+    border-radius: 99px;
+    background: #0f7a4a;
+    color: #fff;
+    font-size: 3.58cqw;
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: 0 2cqw 5cqw rgba(15, 42, 31, 0.3);
+  }
+  .drop i {
+    width: 2.4cqw;
+    height: 2.4cqw;
+    border-radius: 50%;
+    background: #fff;
+  }
+  :global(html:not(.js-demos)) .drop {
+    display: none;
+  }
+
+  /* Kayitlarim */
+  .recs {
+    margin-top: 6rem;
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+  .recs__tabs {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .recs__tab {
+    padding: 0.55rem 1rem;
+    border-radius: 99px;
+    border: 1px solid var(--u-line);
+    background: #fff;
+    color: var(--u-ink);
+    font-weight: 600;
+    font-size: 0.92rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .recs__tab[aria-selected='true'] {
+    background: var(--u-green);
+    border-color: var(--u-green);
+    color: #fff;
+  }
+  .recs__tab:focus-visible {
+    outline: 2px solid var(--u-green);
+    outline-offset: 2px;
+  }
+  .dev--recs .scr {
+    display: block;
+  }
+  .recs__track {
+    display: flex;
+    height: 100%;
+    will-change: transform;
+  }
+  .recs__track img {
+    flex: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  @media (min-width: 900px) {
+    .how {
+      padding: 7rem 0 6rem;
+    }
+    .how__list {
+      gap: 6.5rem;
+    }
+    .feat,
+    .recs {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+    .feat__txt,
+    .recs__txt {
+      padding-left: 2rem;
+    }
+    .feat--flip .feat__txt {
+      order: 2;
+      padding-left: 0;
+    }
+    .dev {
+      width: 340px;
+    }
+    .recs {
+      margin-top: 8rem;
+    }
+  }
+</style>

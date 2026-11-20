@@ -325,7 +325,7 @@
   },
   "src/pages/index.astro#typed (demo cümlesi)": {
     "en": "Zoe's birthday dinner Saturday at 7pm, buy milk and eggs, spent 64 dollars on groceries",
-    "tr": "Cumartesi akşam 7'de doğum günü yemeği, süt ve yumurta al, markete 64 dolar harcadım"
+    "tr": "Cumartesi akşam 7'de doğum günü yemeği, süt ve yumurta al, markete 640 lira harcadım"
   },
   "src/pages/index.astro#feat1.title": {
     "en": "Tell it once. Ask it later.",
@@ -385,7 +385,7 @@
   },
   "src/pages/index.astro#rail.economy": {
     "en": "Budget",
-    "tr": "Bütçe"
+    "tr": "Ekonomi"
   },
   "src/pages/index.astro#rail.journal": {
     "en": "Journal and mood",
@@ -501,7 +501,7 @@
   },
   "src/pages/index.astro#chat.li3": {
     "en": "Budget: groceries, $64",
-    "tr": "Bütçe: market, 64 $"
+    "tr": "Ekonomi: market, ₺640"
   },
   "src/pages/index.astro#chat.btnSave": {
     "en": "Save all",
@@ -533,11 +533,11 @@
   },
   "src/pages/index.astro#card3.k": {
     "en": "Budget",
-    "tr": "Bütçe"
+    "tr": "Ekonomi"
   },
   "src/pages/index.astro#card3.b": {
     "en": "groceries · $64",
-    "tr": "market · 64 $"
+    "tr": "market · ₺640"
   },
   "src/pages/index.astro#card3.chip": {
     "en": "Groceries",
@@ -934,5 +934,297 @@
   "src/components/SupportPage.astro#(TR zaten var)": {
     "en": "TR: src/components/SupportPage.astro içinde lang=\"tr\" metinleri ve /support/tr/ sayfası hazır.",
     "tr": "ÇEVRİLMEDİ — zaten var. Not: \"SSS (İngilizce)\" ve blog bağlantıları sonunda \"(İngilizce)\" yazıyor; TR yazılar yayına girince bu etiketler TR başlıklara ve /tr adreslerine çevrilmeli."
+  },
+  "src/pages/index.astro#voice.said": {
+    "en": "Remind me to call mom tomorrow at 2pm",
+    "tr": "Yarın saat 14'te annemi aramayı hatırlat"
+  },
+  "src/pages/index.astro#voice.k": {
+    "en": "Reminder",
+    "tr": "Hatırlatıcı"
+  },
+  "src/pages/index.astro#voice.b": {
+    "en": "Call mom",
+    "tr": "Annemi ara"
+  },
+  "src/pages/index.astro#voice.chip": {
+    "en": "Tomorrow 2:00 PM",
+    "tr": "Yarın 14:00"
+  },
+  "src/pages/index.astro#voice.aria": {
+    "en": "Speaking to the assistant",
+    "tr": "Asistana konuşuluyor"
+  },
+  "src/pages/index.astro#d.src": {
+    "en": "Source",
+    "tr": "Kaynak"
+  },
+  "src/pages/index.astro#d.fix": {
+    "en": "Fix",
+    "tr": "Düzelt"
+  },
+  "src/pages/index.astro#d.undo": {
+    "en": "Undo",
+    "tr": "Geri Al"
+  },
+  "src/pages/index.astro#d.input": {
+    "en": "Write or speak: a task, note, expense...",
+    "tr": "Yaz ya da söyle: görev, not, harcama..."
+  },
+  "src/pages/index.astro#d1.u1": {
+    "en": "I parked the car on level B2",
+    "tr": "Arabayı B2 katına park ettim"
+  },
+  "src/pages/index.astro#d1.k": {
+    "en": "Note",
+    "tr": "Not"
+  },
+  "src/pages/index.astro#d1.u2": {
+    "en": "Where is my car?",
+    "tr": "Arabam nerede?"
+  },
+  "src/pages/index.astro#d1.a": {
+    "en": "You parked the car on level B2.",
+    "tr": "Arabayı B2 katına park ettin."
+  },
+  "src/pages/index.astro#d1.srcSub": {
+    "en": "Note · Today",
+    "tr": "Not · Bugün"
+  },
+  "src/pages/index.astro#d1.aria": {
+    "en": "Unutma saving a parking note, then answering \"Where is my car?\" from that note.",
+    "tr": "Unutma bir park notunu kaydediyor, ardından \"Arabam nerede?\" sorusunu o nottan yanıtlıyor."
+  },
+  "src/pages/index.astro#d2.u": {
+    "en": "How much did I spend on groceries this month?",
+    "tr": "Bu ay markete ne kadar harcadım?"
+  },
+  "src/pages/index.astro#d2.k": {
+    "en": "Groceries · This month",
+    "tr": "Market · Bu ay"
+  },
+  "src/pages/index.astro#d2.r1": {
+    "en": "Weekly farmers market",
+    "tr": "Semt pazarı"
+  },
+  "src/pages/index.astro#d2.r1d": {
+    "en": "Nov 14",
+    "tr": "14 Kas"
+  },
+  "src/pages/index.astro#d2.r2": {
+    "en": "Groceries",
+    "tr": "Market"
+  },
+  "src/pages/index.astro#d2.r2d": {
+    "en": "Nov 7",
+    "tr": "7 Kas"
+  },
+  "src/pages/index.astro#d2.srcSub": {
+    "en": "Budget · 2 records",
+    "tr": "Ekonomi · 2 kayıt"
+  },
+  "src/pages/index.astro#d2.u2": {
+    "en": "What's on tomorrow?",
+    "tr": "Yarın ne var?"
+  },
+  "src/pages/index.astro#d2.k2": {
+    "en": "Tomorrow",
+    "tr": "Yarın"
+  },
+  "src/pages/index.astro#d2.t1": {
+    "en": "8:00 AM",
+    "tr": "08:00"
+  },
+  "src/pages/index.astro#d2.e1": {
+    "en": "Take morning meds",
+    "tr": "Sabah ilacını al"
+  },
+  "src/pages/index.astro#d2.t2": {
+    "en": "10:00 AM",
+    "tr": "10:00"
+  },
+  "src/pages/index.astro#d2.e2": {
+    "en": "Team meeting",
+    "tr": "Ekip toplantısı"
+  },
+  "src/pages/index.astro#d2.t3": {
+    "en": "6:30 PM",
+    "tr": "18:30"
+  },
+  "src/pages/index.astro#d2.e3": {
+    "en": "Evening walk",
+    "tr": "Akşam yürüyüşü"
+  },
+  "src/pages/index.astro#d2.t4": {
+    "en": "10:30 PM",
+    "tr": "22:30"
+  },
+  "src/pages/index.astro#d2.e4": {
+    "en": "Lock the door",
+    "tr": "Kapıyı kilitle"
+  },
+  "src/pages/index.astro#d2.aria": {
+    "en": "Unutma answering a grocery spending question with a total and its records, then listing tomorrow.",
+    "tr": "Unutma market harcaması sorusunu toplam ve kayıtlarıyla yanıtlıyor, ardından yarını listeliyor."
+  },
+  "src/pages/index.astro#d3.u1": {
+    "en": "Move the team meeting to 11",
+    "tr": "Ekip toplantısını 11'e al"
+  },
+  "src/pages/index.astro#d3.r1a": {
+    "en": "\"Team meeting\"",
+    "tr": "\"Ekip toplantısı\""
+  },
+  "src/pages/index.astro#d3.r1old": {
+    "en": "10:00 AM",
+    "tr": "10:00"
+  },
+  "src/pages/index.astro#d3.r1b": {
+    "en": "Mon, Nov 16 11:00 AM",
+    "tr": "16 Kasım Pzt 11:00"
+  },
+  "src/pages/index.astro#d3.u2": {
+    "en": "walk 19:30",
+    "tr": "yürüyüş 19:30"
+  },
+  "src/pages/index.astro#d3.q": {
+    "en": "Did you mean this? \"Evening walk\" → 7:30 PM",
+    "tr": "Bunu mu demek istedin? \"Akşam yürüyüşü\" → 19:30"
+  },
+  "src/pages/index.astro#d3.yes": {
+    "en": "Yes",
+    "tr": "Evet"
+  },
+  "src/pages/index.astro#d3.r2": {
+    "en": "\"Evening walk\" → 7:30 PM",
+    "tr": "\"Akşam yürüyüşü\" → 19:30"
+  },
+  "src/pages/index.astro#d3.aria": {
+    "en": "Unutma moving a meeting to 11:00, then asking \"Did you mean this?\" before changing an evening walk.",
+    "tr": "Unutma bir toplantıyı 11:00'e alıyor, akşam yürüyüşünü değiştirmeden önce \"Bunu mu demek istedin?\" diye soruyor."
+  },
+  "src/pages/index.astro#d4.h": {
+    "en": "Quick Actions",
+    "tr": "Hızlı Eylemler"
+  },
+  "src/pages/index.astro#d4.sub": {
+    "en": "Log with one tap",
+    "tr": "Tek dokunuşla kaydet"
+  },
+  "src/pages/index.astro#d4.edit": {
+    "en": "Edit",
+    "tr": "Düzenle"
+  },
+  "src/pages/index.astro#d4.i1": {
+    "en": "Locked the door",
+    "tr": "Kapıyı kilitledim"
+  },
+  "src/pages/index.astro#d4.i1t": {
+    "en": "4:56 AM",
+    "tr": "05:13"
+  },
+  "src/pages/index.astro#d4.i2": {
+    "en": "Turned off the stove",
+    "tr": "Ocağı kapattım"
+  },
+  "src/pages/index.astro#d4.i2t": {
+    "en": "10:13 AM",
+    "tr": "10:30"
+  },
+  "src/pages/index.astro#d4.i3": {
+    "en": "Took medicine",
+    "tr": "İlaç aldım"
+  },
+  "src/pages/index.astro#d4.i3t": {
+    "en": "9:41 PM",
+    "tr": "21:41"
+  },
+  "src/pages/index.astro#d4.i4": {
+    "en": "Unplugged the iron",
+    "tr": "Ütüyü fişten çektim"
+  },
+  "src/pages/index.astro#d4.i5": {
+    "en": "Turned off the plugs",
+    "tr": "Prizleri kapattım"
+  },
+  "src/pages/index.astro#d4.i5t": {
+    "en": "9:42 PM",
+    "tr": "21:42"
+  },
+  "src/pages/index.astro#d4.next": {
+    "en": "Next: Lock the door · 10:30 PM",
+    "tr": "Sırada: Kapıyı kilitle · 22:30"
+  },
+  "src/pages/index.astro#d4.aria": {
+    "en": "Unutma Quick Actions: one tap logs \"Took medicine\" with the time.",
+    "tr": "Unutma Hızlı Eylemler: tek dokunuş \"İlaç aldım\" kaydını saatiyle tutuyor."
+  },
+  "src/pages/index.astro#feat5.title": {
+    "en": "Routines that ring on time.",
+    "tr": "Rutinler saatinde çalar."
+  },
+  "src/pages/index.astro#feat5.body": {
+    "en": "Morning meds at 8, water on weekdays, tomorrow's plan at 9 pm. Set them once and Unutma reminds you. You can also add any of them to your phone's alarm.",
+    "tr": "Sabah 8'de ilaç, hafta içi su, akşam 9'da yarının planı. Bir kez kurun, Unutma size hatırlatsın. İsterseniz telefonun alarmına da ekleyin."
+  },
+  "src/pages/index.astro#d5.app": {
+    "en": "Unutma",
+    "tr": "Unutma"
+  },
+  "src/pages/index.astro#d5.now": {
+    "en": "now",
+    "tr": "şimdi"
+  },
+  "src/pages/index.astro#d5.n": {
+    "en": "Take morning meds · 08:00",
+    "tr": "Sabah ilacını al · 08:00"
+  },
+  "src/pages/index.astro#d5.aria": {
+    "en": "The real Unutma Reminders screen with morning, weekday and evening routines.",
+    "tr": "Unutma'nın gerçek Hatırlatıcılar ekranı: sabah, hafta içi ve akşam rutinleri."
+  },
+  "src/pages/index.astro#feat6.title": {
+    "en": "See where the money went.",
+    "tr": "Para nereye gitti, görün."
+  },
+  "src/pages/index.astro#feat6.body": {
+    "en": "Say \"spent 64 dollars on groceries\" and it lands in Budget. Income, expenses and what is left, month by month, with a six-month trend.",
+    "tr": "\"Markete 640 lira harcadım\" deyin, Ekonomi'ye düşsün. Gelir, gider ve kalan para ay ay önünüzde, altı aylık eğilimiyle."
+  },
+  "src/pages/index.astro#d6.chip": {
+    "en": "groceries · $64",
+    "tr": "market · ₺640"
+  },
+  "src/pages/index.astro#d6.aria": {
+    "en": "The real Unutma Budget screen with income, expenses, balance and a six-month trend.",
+    "tr": "Unutma'nın gerçek Ekonomi ekranı: gelir, gider, bakiye ve altı aylık eğilim."
+  },
+  "src/pages/index.astro#rail.tabsAria": {
+    "en": "Choose a screen",
+    "tr": "Ekran seçin"
+  },
+  "src/pages/index.astro#rail.phoneAria": {
+    "en": "Real Unutma screens: {label}",
+    "tr": "Unutma'nın gerçek ekranları: {label}"
+  },
+  "src/components/Footer.astro#col.more": {
+    "en": "More from Meyade Games Studio",
+    "tr": "Meyade Games Studio’nun diğer uygulamaları"
+  },
+  "src/components/Footer.astro#col.moreAria": {
+    "en": "Other apps from the studio",
+    "tr": "Stüdyonun diğer uygulamaları"
+  },
+  "src/components/Footer.astro#link.studio": {
+    "en": "Meyade Games Studio",
+    "tr": "Meyade Games Studio"
+  },
+  "src/components/Footer.astro#link.mobies": {
+    "en": "Mobies",
+    "tr": "Mobies"
+  },
+  "src/pages/index.astro#d4.today": {
+    "en": "Today: Dentist",
+    "tr": "Bugün: Diş hekimi"
   }
 }

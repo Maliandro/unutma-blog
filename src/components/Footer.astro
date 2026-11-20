@@ -46,6 +46,12 @@ const appStoreUrl =
       <a href="https://www.youtube.com/channel/UCrQXJXpD_ixGkfGQgouqVww" target="_blank" rel="noopener noreferrer me">YouTube</a>
       <a href="https://www.facebook.com/1169165316276395" target="_blank" rel="noopener noreferrer me">Facebook</a>
     </nav>
+
+    <nav class="u-foot__col" aria-label={T('col.moreAria')}>
+      <p class="u-foot__h">{T('col.more')}</p>
+      <a href={tr ? 'https://meyadestudio.com/tr/' : 'https://meyadestudio.com/'}>{T('link.studio')}</a>
+      <a href={`https://mobies.meyadestudio.com/?lang=${tr ? 'tr' : 'en'}`}>{T('link.mobies')}</a>
+    </nav>
   </div>
 
   <div class="u-foot__base">
@@ -121,7 +127,7 @@ const appStoreUrl =
   }
   @media (min-width: 860px) {
     .u-foot__in {
-      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr 1.25fr;
     }
     .u-foot__brand {
       grid-column: auto;
