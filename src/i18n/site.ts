@@ -4,6 +4,7 @@
  */
 import dict from './arayuz.json';
 import slugRaw from './slug-haritasi.json';
+import etiketRaw from './etiket-haritasi.json';
 
 export type Lang = 'en' | 'tr';
 
@@ -11,6 +12,32 @@ export const SLUG_EN_TR = slugRaw as Record<string, string>;
 export const SLUG_TR_EN: Record<string, string> = Object.fromEntries(
   Object.entries(SLUG_EN_TR).map(([en, tr]) => [tr, en]),
 );
+
+/** Etiket karsiliklari (kucuk harf EN etiket -> TR etiket); yazi ciftlerinin etiket sirasindan uretilir. */
+export const TAG_EN_TR = etiketRaw as Record<string, string>;
+export const TAG_TR_EN: Record<string, string> = Object.fromEntries(
+  Object.entries(TAG_EN_TR).map(([en, tr]) => [tr, en]),
+);
+const decodeSeg = (x: string) => {
+  try {
+    return decodeURIComponent(x).toLowerCase();
+  } catch {
+    return x.toLowerCase();
+  }
+};
+/** Etiket sayfasinin karsi dildeki adresi; haritada yoksa null. */
+function tagCounterpart(p: string): string | null {
+  let m: RegExpMatchArray | null;
+  if ((m = p.match(/^\/blog\/tags\/([^/]+)\/$/))) {
+    const tr = TAG_EN_TR[decodeSeg(m[1])];
+    return tr ? `/tr/blog/etiket/${encodeURIComponent(tr)}/` : null;
+  }
+  if ((m = p.match(/^\/tr\/blog\/etiket\/([^/]+)\/$/))) {
+    const en = TAG_TR_EN[decodeSeg(m[1])];
+    return en ? `/blog/tags/${encodeURIComponent(en)}/` : null;
+  }
+  return null;
+}
 
 export const OG_LOCALES: Record<Lang, string> = { en: 'en_US', tr: 'tr_TR' };
 export const DATE_LOCALES: Record<Lang, string> = { en: 'en-US', tr: 'tr-TR' };
@@ -76,7 +103,7 @@ export function counterpart(pathname: string, target: Lang): string | null {
   let m: RegExpMatchArray | null;
   if (cur === 'en') {
     if ((m = p.match(/^\/blog\/page\/(\d+)\/$/))) return `/tr/blog/sayfa/${m[1]}/`;
-    if (/^\/blog\/tags\/[^/]+\/$/.test(p)) return '/tr/blog/';
+    if (/^\/blog\/tags\/[^/]+\/$/.test(p)) return tagCounterpart(p) ?? '/tr/blog/';
     if ((m = p.match(/^\/blog\/([^/]+)\/$/))) {
       const tr = SLUG_EN_TR[m[1]];
       return tr ? `/tr/blog/${tr}/` : null;
@@ -86,7 +113,7 @@ export function counterpart(pathname: string, target: Lang): string | null {
     return null;
   }
   if ((m = p.match(/^\/tr\/blog\/sayfa\/(\d+)\/$/))) return `/blog/page/${m[1]}/`;
-  if (/^\/tr\/blog\/etiket\/[^/]+\/$/.test(p)) return '/blog/';
+  if (/^\/tr\/blog\/etiket\/[^/]+\/$/.test(p)) return tagCounterpart(p) ?? '/blog/';
   if ((m = p.match(/^\/tr\/blog\/([^/]+)\/$/))) {
     const en = SLUG_TR_EN[m[1]];
     return en ? `/blog/${en}/` : null;
@@ -94,12 +121,12 @@ export function counterpart(pathname: string, target: Lang): string | null {
   return null;
 }
 
-/** hreflang cifti: yalnizca iki dilde de karsiligi olan sayfalarda; etiket sayfalari haric. */
+/** hreflang cifti: yalnizca iki dilde de karsiligi olan sayfalarda; etiket sayfalari yalniz haritada varsa. */
 export function hreflangPair(pathname: string): { en: string; tr: string } | null {
   const p = norm(pathname);
-  if (/^\/(tr\/)?blog\/(tags|etiket)\//.test(p)) return null;
+  const isTag = /^\/(tr\/)?blog\/(tags|etiket)\//.test(p);
   const lang = pageLang(p);
-  const other = counterpart(p, lang === 'en' ? 'tr' : 'en');
+  const other = isTag ? tagCounterpart(p) : counterpart(p, lang === 'en' ? 'tr' : 'en');
   if (!other) return null;
   return lang === 'en' ? { en: p, tr: other } : { en: other, tr: p };
 }

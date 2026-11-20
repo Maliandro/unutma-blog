@@ -8,6 +8,10 @@ import { rehypeImageAttrs, rehypeUnpublishedLinks, rehypeTrLinks } from './src/p
 const SLUGS = JSON.parse(fs.readFileSync(new URL('./src/i18n/slug-haritasi.json', import.meta.url), 'utf8'));
 const TR_BY_EN = SLUGS;
 const EN_BY_TR = Object.fromEntries(Object.entries(SLUGS).map(([en, tr]) => [tr, en]));
+// Etiket sayfalari: EN etiket <-> TR etiket (src/i18n/etiket-haritasi.json).
+const TAGS = JSON.parse(fs.readFileSync(new URL('./src/i18n/etiket-haritasi.json', import.meta.url), 'utf8'));
+const TAG_EN_BY_TR = Object.fromEntries(Object.entries(TAGS).map(([en, tr]) => [tr, en]));
+const dec = (x) => { try { return decodeURIComponent(x).toLowerCase(); } catch { return x.toLowerCase(); } };
 const STATIC = [['/', '/tr/'], ['/blog/', '/tr/blog/'], ['/faq/', '/tr/sss/'], ['/about/', '/tr/hakkinda/'], ['/support/', '/support/tr/'], ['/privacy/', '/privacy/tr/'], ['/terms/', '/terms/tr/']];
 function trAlternate(p) {
   for (const [en, tr] of STATIC) if (p === en || p === tr) return { en, tr };
@@ -16,6 +20,8 @@ function trAlternate(p) {
   if ((m = p.match(/^\/tr\/blog\/sayfa\/(\d+)\/$/))) return { en: `/blog/page/${m[1]}/`, tr: p };
   if ((m = p.match(/^\/blog\/([^/]+)\/$/)) && TR_BY_EN[m[1]] && m[1] !== 'page' && m[1] !== 'tags') return { en: p, tr: `/tr/blog/${TR_BY_EN[m[1]]}/` };
   if ((m = p.match(/^\/tr\/blog\/([^/]+)\/$/)) && EN_BY_TR[m[1]]) return { en: `/blog/${EN_BY_TR[m[1]]}/`, tr: p };
+  if ((m = p.match(/^\/blog\/tags\/([^/]+)\/$/)) && TAGS[dec(m[1])]) return { en: p, tr: `/tr/blog/etiket/${encodeURIComponent(TAGS[dec(m[1])])}/` };
+  if ((m = p.match(/^\/tr\/blog\/etiket\/([^/]+)\/$/)) && TAG_EN_BY_TR[dec(m[1])]) return { en: `/blog/tags/${encodeURIComponent(TAG_EN_BY_TR[dec(m[1])])}/`, tr: p };
   return null;
 }
 const blogDir = fileURLToPath(new URL('./src/content/blog', import.meta.url));
