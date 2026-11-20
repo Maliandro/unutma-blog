@@ -13,23 +13,23 @@ Unutma, telefonunuzda yaşayan bir kişisel asistan. Bir cümle yazarsınız ya 
 
 ## Nasıl bir şey
 
-- *"Perşembe saat 15'te diş hekimi"* derseniz bitiş tarihi ve hatırlatıcısı olan bir yapılacak olur.
+- *"Perşembe saat 15'te diş hekimi"* derseniz takviminize Perşembe 15:00 için bir kayıt düşer, hatırlatıcısıyla birlikte.
 - *"Süt ve ekmek al"* derseniz alışveriş listenize iki madde düşer.
-- *"Benzine 40 harcadım"* derseniz, siz onayladıktan sonra bütçenize bir harcama yazılır.
+- *"Benzine 40 harcadım"* derseniz bütçenize bir harcama olarak yazılır.
 - *"Bu hafta neler var?"* diye sorarsanız kendi kayıtlarınızdan yanıt alırsınız.
 
-Unutma bir cümlenin nereye ait olduğundan emin değilse size sorar. Kaydettiği her şeyi de geri alabilirsiniz.
+Unutma bir cümlenin nereye ait olduğundan emin değilse size sorar. Kaydettiği her şeyi geri de alabilirsiniz.
 
 ## Değişmeyen dört şey
 
-- **İnternetsiz çalışır.** Kayıtlarınız da asistanın cümleyi anlaması da telefonda olur.
+- **İnternetsiz çalışır.** Kayıtlarınız telefonda durur, asistan cümlenizi de telefonda anlar.
 - **Hesap yok.** Üye olacağınız bir yer yok.
 - **Bulut yok.** Kaydettikleriniz cihazınızda kalır.
 - **Reklam yok.**
 
 ## Bu blogda neler var
 
-İki tür yazı. Bir kısmı uygulamayı anlatıyor: kısa hali için [Unutma ile tanışın](/blog/unutma-app-showcase-complete-guide/), her ekranı görmek için [tüm özellikler rehberi](/blog/unutma-app-complete-feature-guide/) ile başlayın. Diğerleri unutmamak, rutinler, günlük tutmak ve para üzerine pratik yazılar; uygulamayı hiç kurmasanız da işinize yarar.
+Burada iki tür yazı bulacaksınız. Bir kısmı uygulamayı anlatıyor: kısa hali için [Unutma ile tanışın](/blog/unutma-app-showcase-complete-guide/), her ekranı görmek için [tüm özellikler rehberi](/blog/unutma-app-complete-feature-guide/) ile başlayın. Diğerleri unutmamak, rutinler, günlük tutmak ve para üzerine pratik yazılar; uygulamayı hiç kurmasanız da işinize yarar.
 
 ## Sesli komutlar hakkında küçük bir not
 

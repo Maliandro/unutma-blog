@@ -10,26 +10,26 @@ imageAlt: "Unutma main screen with next plan, today’s items and quick actions"
 
 Unutma is a personal assistant on your phone. You type a sentence or say it, and it saves it in the right place. This guide walks through everything in the app: first the assistant, then each screen it saves to, and finally the promises that hold it all together.
 
-If you are new, read the first section and stop there. That is enough to start. If you are curious, read on like a map of the whole house.
+If you are new, read the first section and stop there. That is enough to start. If you are curious, read on; the rest is a map of the whole app.
 
 ## The assistant: the way in
 
-Open the assistant, then type or tap the microphone and speak. One plain sentence is enough.
+When you open Unutma, the assistant is the first thing you see. Type, or tap the microphone and speak; one plain sentence is enough.
 
 **It saves.** A sentence becomes the right kind of record:
 
 | You type or say | Where it goes |
 |---|---|
-| Dentist Thursday at 3pm | A to-do due Thursday, with a reminder at 3:00 PM |
+| Dentist Thursday at 3pm | A calendar entry for Thursday at 3:00 PM, with a reminder |
 | Buy milk and bread | Two items on the shopping list |
-| Spent 40 on gas | An expense in the budget, after you confirm |
+| Spent 40 on gas | An expense in the budget |
 | Water the plants every other day | A routine that repeats every 2 days |
-| Mom's birthday is May 3rd | A date that repeats every year |
+| Mom's birthday is May 3rd | A date it remembers, coming back every year |
 | Wifi password is hunter22 | The encrypted vault, hidden in the chat |
 
 **It answers.** Ask about your own records: *"What's on this week?"*, *"How much did I spend this month?"*, *"How much is left in my budget?"*
 
-**It changes things.** It can edit a record you already have, open a screen (*"open my budget"*), or switch a setting such as the dark theme.
+**It changes things.** It can edit a record you already have, open a screen (*"open my budget"*), or change a setting, such as switching to the dark theme.
 
 **It is careful.** You always see where a sentence was saved. If it is not sure, it shows you the options and asks. Every save can be undone, and when you correct it, it remembers your choice for similar sentences.
 
@@ -39,17 +39,18 @@ More detail: [how the voice feature works](/blog/unutma-voice-commands-hands-fre
 
 ---
 
-## The five tabs behind it
+## My records: the four tabs behind it
 
-Everything the assistant saves lands on a screen you can also open and use by hand. The main part of the app is five tabs. Swipe sideways or use the bottom bar:
+Everything the assistant saves lands on a screen you can also open and use by hand. Tap **My records** at the bottom of the assistant screen, or swipe up, and four tabs open. Swipe sideways or use the bottom bar to move between them:
 
 | Tab | What it holds |
 | --- | --- |
 | **Actions** | One-tap records of things you did today |
-| **Lists** | To-dos, shopping and wishes |
-| **Vault** | Passwords and sensitive information, locked |
-| **Economy** | Income, spending and budgets |
+| **Lists** | To-dos, shopping, wishlist and notes |
+| **Budget** | Income, spending and budgets |
 | **Journal** | Your day, in words and mood |
+
+The **Vault** and **Reminders** are not tabs; they open from the lock and clock icons in the top bar.
 
 ---
 
@@ -57,19 +58,20 @@ Everything the assistant saves lands on a screen you can also open and use by ha
 
 The **Actions** screen holds buttons you define yourself: *locked the door, took my medicine, watered the plants, went for a walk.* Tap one and Unutma records it with the time.
 
-It is for the small things you keep re-checking. Later you look instead of wondering. If you keep it up, you also see your streaks and an activity calendar of the past weeks.
+It is for the small things you keep re-checking. Later you look instead of wondering. If you keep it up, you also see your streak: how many days in a row you have kept going.
 
 **To use it well:** add 3 to 7 actions that matter to you, not a generic list. More in [quick actions, streaks and statistics](/blog/unutma-quick-actions-streaks-heatmap-statistics/).
 
 ---
 
-## Lists: to-dos, shopping and wishes
+## Lists: to-dos, shopping, wishlist and notes
 
-One tab, three lists:
+One tab, four sections:
 
-1. **To-dos**: tasks, with a due date and a reminder when you want one.
+1. **To-Do**: tasks, with a due date and a reminder when you want one.
 2. **Shopping**: what to buy, kept apart from your tasks.
-3. **Wishes**: things you would like later, apart from what is urgent.
+3. **Wishlist**: things you would like later, apart from what is urgent.
+4. **Notes**: quick thoughts that are not a task yet. An idea, a name, where you parked.
 
 You can keep them by hand, or just tell the assistant *"add eggs"* and let it choose the list. More in [how the three lists work together](/blog/unutma-lists-todo-shopping-wishlist-workflow/).
 
@@ -77,7 +79,7 @@ You can keep them by hand, or just tell the assistant *"add eggs"* and let it ch
 
 ## Vault: passwords and sensitive information
 
-The **Vault** is where passwords, card details and other private information live. It is encrypted on the phone and opens with Face ID, fingerprint or your PIN.
+The **Vault** is where passwords, bank and ID details and other private information live. You reach it from the lock icon in the top bar. It is encrypted on the phone and opens with Face ID, fingerprint or your PIN.
 
 When you tell the assistant something like *"wifi password is ..."*, it goes straight to the Vault and is hidden in the chat.
 
@@ -85,9 +87,9 @@ When you tell the assistant something like *"wifi password is ..."*, it goes str
 
 ---
 
-## Economy: where the money went
+## Budget: where the money went
 
-In **Economy** you record income and spending by category, set a monthly budget per category, and add bills and installments so you are reminded before they are due. If you want, you can also list your assets.
+In **Budget** you record income and spending by category, set a budget per category, and add bills and installments so you get a reminder for their payment days. If you want, you can also list your assets.
 
 The quickest way to keep it up is one sentence per purchase: *"spent 12 on lunch"*. Then ask *"how much did I spend this month?"* whenever you want the picture.
 
@@ -103,9 +105,8 @@ One line a day is enough. You can say it instead of typing it. More in [journali
 
 ---
 
-## Notes, calendar, reminders and routines
+## Calendar, reminders and routines
 
-- **Notes**: quick thoughts that are not a task yet. An idea, a name, where you parked.
 - **Calendar**: events on the dates you choose, with a notification if you want one.
 - **Reminders and routines**: things that repeat, such as *every other day* or *on the 15th of every month*.
 
@@ -115,11 +116,11 @@ More in [routines, calendar and widgets](/blog/unutma-routines-calendar-widgets-
 
 ## The extras
 
-These are optional. The app works fine without them.
+These are optional; the app works fine without them. Games and summaries live under **Extra features** in Settings.
 
 - **Statistics and summaries**: your activity over weeks, plus weekly and monthly recaps.
 - **Themes**: 12 color themes, light and dark among them, and adjustable text size.
-- **Home screen widget**: your quick actions without opening the app.
+- **Home screen widget**: one tap from your phone's home screen to speak to the assistant.
 - **Small games**: five short games for a break.
 - **Backup and export**: an encrypted backup file you make yourself, to keep a copy or to move to a new phone.
 
@@ -129,7 +130,7 @@ More in [themes, games, languages and backup](/blog/unutma-themes-games-language
 
 ## The four promises
 
-- **It works without internet.** Your records and the assistant's understanding both live on the phone.
+- **It works without internet.** Your records stay on the phone, and the assistant understands your sentence on the phone too.
 - **No account.** There is no sign-up screen.
 - **No cloud.** What you save stays on your device. A backup is a file you make and keep yourself.
 - **No ads.**
@@ -138,7 +139,7 @@ More in [themes, games, languages and backup](/blog/unutma-themes-games-language
 
 ## What it costs
 
-Every feature is open for the first 7 days. After that, adding new records needs a subscription. What you have already saved stays visible; nothing is deleted.
+Every feature is open for the first 7 days. After that, adding or editing records and using the assistant need a subscription. What you have already saved stays visible and nothing is deleted; reminders you have set keep going off.
 
 ---
 
@@ -162,7 +163,7 @@ Unutma works offline and never sends your entries anywhere. When you say somethi
 - Unutma is a **personal assistant**: type or say a sentence and it saves it in the right place.
 - It also **answers questions** about your own records and can **edit** them.
 - When it is not sure, **it asks**, and every save can be undone.
-- Behind it are **five tabs** (Actions, Lists, Vault, Economy, Journal) plus Notes, Calendar, reminders and routines.
+- Behind it are the four tabs in **My records** (Actions, Lists, Budget, Journal), plus the Vault, Calendar, Reminders and routines.
 - It **works without internet**, with **no account, no cloud and no ads**.
 
 **Which part would you like us to explain in more depth next?** Tell us; we read what you send.

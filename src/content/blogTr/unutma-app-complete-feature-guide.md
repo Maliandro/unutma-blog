@@ -11,46 +11,47 @@ imageAlt: "Unutma ana ekranı: sıradaki plan, bugünün maddeleri ve hızlı ey
 
 Unutma, telefonunuzdaki kişisel asistan. Bir cümle yazarsınız ya da söylersiniz, o da doğru yere kaydeder. Bu rehber uygulamadaki her şeyi sırayla anlatıyor: önce asistan, sonra kayıtların düştüğü ekranlar, en sonda da hepsini bir arada tutan sözler.
 
-Yeniyseniz ilk bölümü okuyup bırakın; başlamak için yeter. Meraklıysanız bir evin haritası gibi sonuna kadar okuyun.
+Yeniyseniz ilk bölümü okuyup bırakın; başlamak için yeter. Meraklıysanız sonuna kadar okuyun; geri kalanı uygulamanın haritası gibidir.
 
-## Asistan: içeri giden yol
+## Asistan: giriş kapısı
 
-Asistanı açın; yazın ya da mikrofona dokunup konuşun. Düz bir cümle yeter.
+Unutma'yı açtığınızda asistan karşınızdadır. Yazın ya da mikrofona dokunup konuşun; düz bir cümle yeter.
 
 **Kaydeder.** Cümle doğru türde bir kayda dönüşür:
 
 | Siz yazarsınız ya da söylersiniz | Nereye gider |
 |---|---|
-| Perşembe saat 15'te diş hekimi | Perşembe günü bitişli bir yapılacak, hatırlatıcı 15:00'te |
+| Perşembe saat 15'te diş hekimi | Takvimde Perşembe 15:00 için bir kayıt, hatırlatıcısıyla |
 | Süt ve ekmek al | Alışveriş listesine iki madde |
-| Benzine 40 harcadım | Siz onayladıktan sonra bütçeye bir harcama |
+| Benzine 40 harcadım | Bütçeye bir harcama |
 | Bitkileri gün aşırı sula | Her 2 günde bir tekrarlanan bir rutin |
-| Annemin doğum günü 3 Mayıs | Her yıl tekrarlanan bir tarih |
+| Annemin doğum günü 3 Mayıs | Her yıl dönen bir tarih olarak hatırlanır |
 | Wifi parolası hunter22 | Şifreli Kasa; sohbette gizlenir |
 
 **Yanıtlar.** Kendi kayıtlarınızı sorun: *"Bu hafta neler var?"*, *"Bu ay ne kadar harcadım?"*, *"Bütçemde ne kadar kaldı?"*
 
-**Değiştirir.** Var olan bir kaydı düzenleyebilir, bir ekran açabilir (*"bütçemi aç"*) ya da koyu tema gibi bir ayarı değiştirebilir.
+**Değiştirir.** Var olan bir kaydı düzenleyebilir, bir ekran açabilir (*"bütçemi aç"*) ya da koyu temaya geçmek gibi bir ayarı değiştirebilir.
 
 **Dikkatlidir.** Cümlenizin nereye kaydedildiğini her zaman görürsünüz. Emin değilse seçenekleri gösterir ve sorar. Her kayıt geri alınabilir; onu düzelttiğinizde benzer cümleler için seçiminizi hatırlar.
 
-Bilmeniz gereken iki sınır var. Asistan bir sohbet robotu değil: genel bilgi sorularını yanıtlamaz, sizin yerinize metin yazmaz. Ve altı dil anlar: Türkçe, İngilizce, Almanca, İspanyolca, Fransızca ve İtalyanca.
+Bilmeniz gereken iki sınır var. Birincisi, asistan bir sohbet robotu değil: genel bilgi sorularını yanıtlamaz, sizin yerinize metin yazmaz. İkincisi, altı dil anlar: Türkçe, İngilizce, Almanca, İspanyolca, Fransızca ve İtalyanca.
 
-Ayrıntısı için: [ses özelliği nasıl çalışır](/blog/unutma-voice-commands-hands-free-organizing/) ve ölçülen doğrulukla birlikte [asistan yapay zekâ modeli olmadan nasıl yapıldı](/blog/a-phone-assistant-without-an-llm/).
+Ayrıntısı için: [ses özelliği nasıl çalışır](/blog/unutma-voice-commands-hands-free-organizing/) ve ölçülen doğrulukla birlikte [asistan büyük dil modeli olmadan nasıl yapıldı](/blog/a-phone-assistant-without-an-llm/).
 
 ---
 
-## Arkadaki beş sekme
+## Kayıtlarım: arkadaki dört sekme
 
-Asistanın kaydettiği her şey, sizin de açıp elle kullanabileceğiniz bir ekrana düşer. Uygulamanın ana kısmı beş sekmedir. Yana kaydırın ya da alt çubuğu kullanın:
+Asistanın kaydettiği her şey, sizin de açıp elle kullanabileceğiniz bir ekrana düşer. Asistan ekranının altındaki **Kayıtlarım** düğmesine dokunun ya da yukarı kaydırın; dört sekme açılır. Aralarında yana kaydırarak ya da alt çubukla geçersiniz:
 
 | Sekme | İçinde ne var |
 | --- | --- |
 | **Eylemler** | Bugün yaptıklarınızın tek dokunuşluk kayıtları |
-| **Listeler** | Yapılacaklar, alışveriş ve istekler |
-| **Kasa** | Parolalar ve hassas bilgiler, kilit altında |
+| **Listeler** | Yapılacaklar, alışveriş, istekler ve notlar |
 | **Ekonomi** | Gelir, harcama ve bütçe |
 | **Günlük** | Gününüz; sözlerle ve ruh haliyle |
+
+**Kasa** ve **Hatırlatıcılar** sekme değildir; üst çubuktaki kilit ve saat simgelerinden açılır.
 
 ---
 
@@ -58,27 +59,28 @@ Asistanın kaydettiği her şey, sizin de açıp elle kullanabileceğiniz bir ek
 
 **Eylemler** ekranında kendi tanımladığınız düğmeler durur: *kapıyı kilitledim, ilacımı aldım, çiçekleri suladım, yürüyüşe çıktım.* Birine dokunursunuz, Unutma saatiyle kaydeder.
 
-Dönüp dönüp kontrol ettiğiniz küçük şeyler içindir. Sonra merak etmek yerine bakarsınız. Sürdürdükçe serilerinizi ve geçen haftaların etkinlik takvimini de görürsünüz.
+Dönüp dönüp kontrol ettiğiniz küçük şeyler içindir. Sonra merak etmek yerine bakarsınız. Sürdürdükçe kaç gündür devam ettiğinizi, yani serinizi de görürsünüz.
 
 **İyi kullanmak için:** hazır bir liste değil, sizin için önemli olan 3 ila 7 eylem ekleyin. Devamı: [hızlı eylemler, seriler ve istatistikler](/blog/unutma-quick-actions-streaks-heatmap-statistics/).
 
 ---
 
-## Listeler: yapılacaklar, alışveriş ve istekler
+## Listeler: yapılacaklar, alışveriş, istekler ve notlar
 
-Tek sekme, üç liste:
+Tek sekme, dört bölüm:
 
 1. **Yapılacaklar**: görevler; isterseniz bitiş tarihi ve hatırlatıcıyla.
 2. **Alışveriş**: alınacaklar; görevlerinizden ayrı durur.
 3. **İstekler**: ileride istediğiniz şeyler; acil olanlardan ayrı durur.
+4. **Notlar**: henüz görev olmamış hızlı düşünceler. Bir fikir, bir isim, arabayı nereye park ettiğiniz.
 
-Elle de tutabilirsiniz, asistana *"yumurta ekle"* deyip listeyi ona da bırakabilirsiniz. Devamı: [üç liste birlikte nasıl çalışır](/blog/unutma-lists-todo-shopping-wishlist-workflow/).
+Listeleri elle tutabilir ya da asistana *"yumurta ekle"* deyip doğru listeyi ona seçtirebilirsiniz. Devamı: [üç liste birlikte nasıl çalışır](/blog/unutma-lists-todo-shopping-wishlist-workflow/).
 
 ---
 
 ## Kasa: parolalar ve hassas bilgiler
 
-**Kasa**; parolaların, kart bilgilerinin ve diğer özel bilgilerin durduğu yerdir. Telefonda şifreli tutulur; Face ID, parmak izi ya da PIN ile açılır.
+**Kasa**; parolaların, banka ve kimlik bilgilerinin ve diğer özel bilgilerin durduğu yerdir. Ona üst çubuktaki kilit simgesinden ulaşırsınız. Telefonda şifreli tutulur; Face ID, parmak izi ya da PIN ile açılır.
 
 Asistana *"wifi parolası ..."* gibi bir şey söylediğinizde kayıt doğrudan Kasa'ya gider ve sohbette gizlenir.
 
@@ -88,9 +90,9 @@ Asistana *"wifi parolası ..."* gibi bir şey söylediğinizde kayıt doğrudan 
 
 ## Ekonomi: para nereye gitti
 
-**Ekonomi**'de gelir ve harcamalarınızı kategorileriyle kaydeder, kategori başına aylık bütçe belirler, fatura ve taksitlerinizi ekleyip vadesinden önce hatırlatma alırsınız. İsterseniz varlıklarınızı da yazabilirsiniz.
+**Ekonomi**'de gelir ve harcamalarınızı kategorileriyle kaydeder, kategori başına bütçe belirler, fatura ve taksitlerinizi ekleyip ödeme günleri için hatırlatma alırsınız. İsterseniz varlıklarınızı da yazabilirsiniz.
 
-Sürdürmenin en kolay yolu her harcama için tek cümle: *"öğle yemeğine 120 harcadım"*. Sonra büyük resmi görmek istediğinizde *"bu ay ne kadar harcadım?"* diye sorarsınız.
+Sürdürmenin en kolay yolu her harcama için tek cümle: *"öğle yemeğine 120 harcadım"*. Büyük resmi görmek istediğinizde de *"bu ay ne kadar harcadım?"* diye sorarsınız.
 
 **İyi kullanmak için:** önce tek bir alışkanlık seçin; örneğin bir hafta boyunca her harcamayı kaydetmek. Devamı: [harcamalar, bütçeler ve varlıklar](/blog/unutma-economy-expenses-budgets-assets/).
 
@@ -104,9 +106,8 @@ Günde tek satır yeter. Yazmak yerine söyleyebilirsiniz. Devamı: [ruh hali ve
 
 ---
 
-## Notlar, takvim, hatırlatıcılar ve rutinler
+## Takvim, hatırlatıcılar ve rutinler
 
-- **Notlar**: henüz görev olmamış hızlı düşünceler. Bir fikir, bir isim, arabayı nereye park ettiğiniz.
 - **Takvim**: seçtiğiniz tarihlerdeki etkinlikler; isterseniz bildirimle.
 - **Hatırlatıcılar ve rutinler**: tekrarlayan işler; *gün aşırı* ya da *her ayın 15'inde* gibi.
 
@@ -114,15 +115,15 @@ Devamı: [rutinler, takvim ve widget'lar](/blog/unutma-routines-calendar-widgets
 
 ---
 
-## Ek özellikler
+## Ekstralar
 
-Bunlar isteğe bağlıdır. Uygulama onlarsız da işini görür.
+Bunlar isteğe bağlıdır; uygulama onlarsız da işini görür. Oyunlar ve özetler Ayarlar'daki **Ek özellikler** bölümünde durur.
 
 - **İstatistikler ve özetler**: haftalar içindeki etkinliğiniz, haftalık ve aylık özetler.
 - **Temalar**: açık ve koyu dahil 12 renk teması, ayarlanabilir yazı boyutu.
-- **Ana ekran widget'ı**: uygulamayı açmadan hızlı eylemleriniz.
+- **Ana ekran widget'ı**: telefonun ana ekranından tek dokunuşla asistana söyleyin.
 - **Küçük oyunlar**: mola için beş kısa oyun.
-- **Yedek ve dışa aktarma**: kendi aldığınız şifreli bir yedek dosyası; kopya saklamak ya da yeni telefona geçmek için.
+- **Yedek ve dışa aktarma**: kendi aldığınız, şifreli bir yedek dosyası; kopya saklamak ya da yeni telefona geçmek için.
 
 Devamı: [temalar, oyunlar, diller ve yedekleme](/blog/unutma-themes-games-languages-backup/).
 
@@ -130,7 +131,7 @@ Devamı: [temalar, oyunlar, diller ve yedekleme](/blog/unutma-themes-games-langu
 
 ## Dört söz
 
-- **İnternetsiz çalışır.** Kayıtlarınız da asistanın cümleyi anlaması da telefonda durur.
+- **İnternetsiz çalışır.** Kayıtlarınız telefonda durur, asistan cümlenizi de telefonda anlar.
 - **Hesap yok.** Üyelik ekranı yok.
 - **Bulut yok.** Kaydettikleriniz cihazınızda kalır. Yedek, sizin alıp sizin sakladığınız bir dosyadır.
 - **Reklam yok.**
@@ -139,7 +140,7 @@ Devamı: [temalar, oyunlar, diller ve yedekleme](/blog/unutma-themes-games-langu
 
 ## Ücreti
 
-İlk 7 gün her özellik açıktır. Sonrasında yeni kayıt eklemek için abonelik gerekir. O güne kadar kaydettikleriniz görünür kalır; hiçbir şey silinmez.
+İlk 7 gün her özellik açıktır. Sonrasında yeni kayıt eklemek, kayıtları düzenlemek ve asistanı kullanmak için abonelik gerekir. O güne kadar kaydettikleriniz görünür kalır, hiçbir şey silinmez; kurduğunuz hatırlatıcılar da çalmaya devam eder.
 
 ---
 
@@ -163,7 +164,7 @@ Unutma internetsiz çalışır ve kayıtlarınızı hiçbir yere göndermez. Bir
 - Unutma bir **kişisel asistan**: bir cümle yazın ya da söyleyin, doğru yere kaydetsin.
 - Kendi kayıtlarınız hakkındaki **soruları yanıtlar** ve kayıtları **düzenleyebilir**.
 - Emin değilse **sorar**; her kayıt geri alınabilir.
-- Arkasında **beş sekme** (Eylemler, Listeler, Kasa, Ekonomi, Günlük) ile Notlar, Takvim, hatırlatıcılar ve rutinler var.
+- Arkasında **Kayıtlarım**'daki dört sekme (Eylemler, Listeler, Ekonomi, Günlük) ile Kasa, Takvim, Hatırlatıcılar ve rutinler var.
 - **İnternetsiz çalışır**; **hesap yok, bulut yok, reklam yok**.
 
 **Sırada hangi bölümü daha ayrıntılı anlatmamızı istersiniz?** Bize yazın; gönderdiklerinizi okuyoruz.

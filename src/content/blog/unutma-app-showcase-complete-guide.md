@@ -12,7 +12,7 @@ draft: false
 
 Something comes to mind while you are busy with something else. *The dentist on Thursday. Milk. The money you just spent on gas.*
 
-Most apps ask you a question before they let you save it: which app, which list, which category? By the time you have answered, the thought is half gone.
+Most organizer apps want a decision before they let you save it: which screen, which list, which category? By the time you have decided, the thought is half gone.
 
 **Unutma works the other way round.** You type the sentence, or say it, and Unutma finds the place for it.
 
@@ -26,11 +26,11 @@ You can open any of those screens and use them directly. The assistant is the sh
 
 | You type or say | Unutma does |
 |---|---|
-| Dentist Thursday at 3pm | A to-do due Thursday, with a reminder at 3:00 PM |
+| Dentist Thursday at 3pm | A calendar entry for Thursday at 3:00 PM, with a reminder |
 | Buy milk and bread | Two items on your shopping list |
-| Spent 40 on gas | An expense of 40, and it asks you to confirm before saving |
+| Spent 40 on gas | An expense of 40 in your budget |
 | Water the plants every other day | A routine that repeats every 2 days |
-| Mom's birthday is May 3rd | A date that repeats every year |
+| Mom's birthday is May 3rd | A date it keeps in mind, coming back every year |
 | Wifi password is hunter22 | Straight into the encrypted vault, hidden in the chat |
 
 You did not pick a screen or a category. You said what was on your mind, and it went where you would have put it yourself.
@@ -39,7 +39,7 @@ You did not pick a screen or a category. You said what was on your mind, and it 
 
 The assistant also answers questions about your own records: *"What's on this week?"* or *"How much did I spend this month?"* The answers come from what you saved, nothing else.
 
-It can change a record you already have, open a screen for you (*"open my budget"*), or switch a setting such as the dark theme.
+The assistant can also change a record you already have, open a screen for you (*"open my budget"*), or change a setting, such as switching to the dark theme.
 
 ## When it is not sure, it asks
 
@@ -60,11 +60,11 @@ The assistant understands six languages: English, Turkish, German, Spanish, Fren
 
 ## Speaking instead of typing
 
-Tap the microphone and say the sentence. Unutma does the same thing with it as with a typed one. See [how the voice feature works](/blog/unutma-voice-commands-hands-free-organizing/) for examples.
+Tap the microphone and say the sentence. A spoken sentence is handled exactly like a typed one. See [how the voice feature works](/blog/unutma-voice-commands-hands-free-organizing/) for examples.
 
 ## Four promises that stay
 
-- **It works without internet.** Your records and the assistant's understanding both live on the phone. Put it in airplane mode and it still saves the sentence you type.
+- **It works without internet.** Your records stay on the phone, and the assistant understands your sentence on the phone too. Turn on airplane mode and it still saves the sentence you type.
 - **No account.** There is no sign-up screen.
 - **No cloud.** What you save stays on your device. If you want a copy, you make a backup file and decide where to keep it.
 - **No ads.**
@@ -79,7 +79,7 @@ Some things are quicker with one tap. **Quick Actions** are buttons for the smal
 
 ## What it costs
 
-Every feature is open for the first 7 days. After that, adding new records needs a subscription. What you have already saved stays visible; nothing is deleted.
+Every feature is open for the first 7 days. After that, adding or editing records and using the assistant need a subscription. What you have already saved stays visible and nothing is deleted; reminders you have set keep going off.
 
 ## A simple first week
 
@@ -89,7 +89,7 @@ Do not try to organize your whole life on day one.
 2. Build a shopping list by saying what you need.
 3. Record your spending for a few days, one sentence each.
 4. Add two or three Quick Actions for the things you re-check.
-5. At the end of the week, ask: *"What's on this week?"*
+5. At the end of the week, ask: *"How much did I spend this month?"*
 
 Then ask yourself one question: *Did I have to hold less in my head?* That is the real test.
 

@@ -1,6 +1,6 @@
 ---
 title: "Welcome to Unutma, Your Personal Assistant"
-description: "Unutma is a personal assistant on your phone: type or say a sentence and it saves it in the right place. No internet, no account, no cloud, no ads."
+description: "Unutma is a personal assistant on your phone: type or say a sentence and it saves it in the right place. Works offline, with no account, no cloud and no ads."
 pubDate: 2026-03-15
 tags: ["Unutma", "productivity", "privacy"]
 draft: false
@@ -12,23 +12,23 @@ Unutma is a personal assistant that lives on your phone. You type a sentence, or
 
 ## What that looks like
 
-- *"Dentist Thursday at 3pm"* becomes a to-do with a due date and a reminder.
+- *"Dentist Thursday at 3pm"* goes on your calendar for Thursday at 3:00 PM, with a reminder.
 - *"Buy milk and bread"* becomes two items on your shopping list.
-- *"Spent 40 on gas"* becomes an expense in your budget, after you confirm it.
+- *"Spent 40 on gas"* is saved as an expense in your budget.
 - *"What's on this week?"* gets an answer from your own records.
 
-When Unutma is not sure where a sentence belongs, it asks you. And whatever it saves, you can undo.
+When Unutma is not sure where a sentence belongs, it asks you. And you can undo anything it saves.
 
 ## Four things that do not change
 
-- **It works without internet.** Your records and the assistant's understanding both run on the phone.
+- **It works without internet.** Your records stay on the phone, and the assistant understands your sentence on the phone too.
 - **No account.** There is nothing to sign up for.
 - **No cloud.** What you save stays on your device.
 - **No ads.**
 
 ## What you will find on this blog
 
-Two kinds of posts. Some explain the app itself: start with [meet Unutma](/blog/unutma-app-showcase-complete-guide/) for the short version, or the [full feature guide](/blog/unutma-app-complete-feature-guide/) for every screen. The others are practical articles on remembering things, routines, journaling and money, and they are useful even if you never install the app.
+You will find two kinds of posts here. Some explain the app itself: start with [meet Unutma](/blog/unutma-app-showcase-complete-guide/) for the short version, or the [full feature guide](/blog/unutma-app-complete-feature-guide/) for every screen. The others are practical articles on remembering things, routines, journaling and money, and they are useful even if you never install the app.
 
 ## A short note on voice commands
 
