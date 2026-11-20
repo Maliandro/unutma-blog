@@ -1,0 +1,162 @@
+---
+/**
+ * Gercek 3.30 ekran goruntulerinden olusan hareketli telefon ekrani.
+ * Her katman = gercek bir ekran (public/img/app/v330/{lang}/{img}.webp).
+ * Mesaj ve kartlar ayni goruntunun dilimleridir (clip-path); sirayla belirir.
+ * Boylece metin, simge, yerlesim, renk ve yazi boyutu gercek ekranla BIREBIR aynidir.
+ * Olculer src/data/demo-ekranlar.json (gercek PNG'den piksel analiziyle uretildi).
+ * Hareket: public/js/gercek-telefon.js. JS yoksa / hareket azaltildiysa: "final" katman tam haliyle durur.
+ */
+import data from '../../data/demo-ekranlar.json';
+import { withBase } from '../../utils/site';
+import type { Lang } from '../../i18n/site';
+
+interface Props {
+  lang: Lang;
+  layers: string[];
+  final: string;
+  steps: unknown[];
+  label: string;
+  radius?: string;
+}
+const { lang, layers, final, steps, label, radius = '34px' } = Astro.props;
+const D = (data as any)[lang];
+const pct = (v: number) => `${+(v * 100).toFixed(4)}%`;
+const src = (img: string) => withBase(`/img/app/v330/${lang}/${img}.webp`);
+---
+
+<div class="rp" role="img" aria-label={label} data-rp data-steps={JSON.stringify(steps)} style={`--rp-r:${radius}`}>
+  <div class="rp__scr" aria-hidden="true">
+    {layers.map((id) => {
+      const L = D[id];
+      const hasBox = L.bands && L.hb !== undefined;
+      const boxH = hasBox ? L.ib - L.hb : 1;
+      return (
+        <div class:list={['rp__ly', id === final && 'is-final']} data-ly={id} data-kind={L.kind} data-hb={L.hb} data-ib={L.ib}>
+          <img class="rp__base" src={src(L.img)} alt="" width="720" height="1561" loading="lazy" decoding="async" />
+          {hasBox && (
+            <div class="rp__box" style={`top:${pct(L.hb)};height:${pct(boxH)};background:${L.bg}`}>
+              <div class="rp__feed" data-feed>
+                {L.bands.map((b: number[]) => (
+                  <img
+                    class="rp__band"
+                    data-band
+                    data-y1={b[1]}
+                    src={src(L.img)}
+                    alt=""
+                    width="720"
+                    height="1561"
+                    loading="lazy"
+                    decoding="async"
+                    style={`top:${pct(-L.hb / boxH)};height:${pct(1 / boxH)};clip-path:inset(${pct(b[0])} 0 ${pct(1 - b[1])} 0)`}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+          {L.input && (
+            <span
+              class="rp__in"
+              data-in
+              style={`left:${pct(L.input.r[0])};top:${pct(L.input.r[1])};width:${pct(L.input.r[2] - L.input.r[0])};height:${pct(L.input.r[3] - L.input.r[1])};background:${L.input.cover};color:${L.input.color};font-size:${+(Math.min(L.input.size, 0.0335) * 106).toFixed(3)}cqw`}
+            ><span data-typed></span></span>
+          )}
+          {L.masks && L.masks.map((m: any) => (
+            <span class="rp__mask" data-mask data-tx={m.tap[0]} data-ty={m.tap[1]} style={`left:${pct(m.r[0])};top:${pct(m.r[1])};width:${pct(m.r[2] - m.r[0])};height:${pct(m.r[3] - m.r[1])};background:${L.maskColor}`}></span>
+          ))}
+          {L.orb && (
+            <img class="rp__orb" data-orb src={src(L.img)} alt="" width="720" height="1561" loading="lazy" decoding="async" style={`clip-path:circle(${pct(L.orb[2])} at ${pct(L.orb[0])} ${pct(L.orb[1])});transform-origin:${pct(L.orb[0])} ${pct(L.orb[1])}`} />
+          )}
+          {L.tap && <span hidden data-tapxy={`${L.tap[0]},${L.tap[1]}`}></span>}
+        </div>
+      );
+    })}
+    <span class="rp__tap" data-tap></span>
+  </div>
+</div>
+
+<style>
+  .rp__scr {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1290 / 2796;
+    border-radius: var(--rp-r);
+    overflow: hidden;
+    background: #f8faf8;
+    container-type: inline-size;
+  }
+  .rp__ly {
+    position: absolute;
+    inset: 0;
+    visibility: hidden;
+  }
+  .rp__ly.is-final {
+    visibility: visible;
+  }
+  :global(html.js-rp) .rp__ly.is-final {
+    visibility: hidden;
+  }
+  .rp__base,
+  .rp__band,
+  .rp__orb {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    display: block;
+  }
+  .rp__base,
+  .rp__orb {
+    top: 0;
+    height: 100%;
+  }
+  .rp__box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+  }
+  .rp__feed {
+    position: absolute;
+    inset: 0;
+    will-change: transform;
+  }
+  .rp__band {
+    will-change: transform, opacity;
+  }
+  .rp__in {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: Roboto, 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .rp__in.is-long {
+    justify-content: flex-end;
+  }
+  .rp__mask,
+  .rp__orb {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .rp__tap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 11cqw;
+    height: 11cqw;
+    margin: -5.5cqw 0 0 -5.5cqw;
+    border-radius: 50%;
+    background: rgba(15, 42, 31, 0.2);
+    border: 0.6cqw solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 1cqw 3cqw rgba(15, 42, 31, 0.28);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 3;
+  }
+</style>

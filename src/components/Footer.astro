@@ -30,6 +30,7 @@ const appStoreUrl =
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer">Google Play</a>
       <a href={withBase(tr ? '/tr/sss/' : '/faq/')}>{T('link.faq')}</a>
       <a href={withBase(tr ? '/support/tr/' : '/support/')}>{T('link.support')}</a>
+      <a href="mailto:unutma.app1.0@gmail.com" class="u-foot__mail">unutma.app1.0@gmail.com</a>
     </nav>
 
     <nav class="u-foot__col" aria-label={T('col.siteAria')}>
@@ -56,7 +57,7 @@ const appStoreUrl =
 
   <div class="u-foot__base">
     <p>{T('copyright', { year })}</p>
-    <a href="https://meyadestudio.com/#digital" class="u-foot__studio">
+    <a href={tr ? 'https://meyadestudio.com/tr/' : 'https://meyadestudio.com/'} class="u-foot__studio">
       <Fragment set:html={T('madeBy')} />
     </a>
   </div>
@@ -120,6 +121,9 @@ const appStoreUrl =
     gap: 0.75rem 2rem;
     justify-content: space-between;
     font-size: 0.8rem;
+  }
+  .u-foot__mail {
+    overflow-wrap: anywhere;
   }
   .u-foot__studio strong {
     color: #fff;

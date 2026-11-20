@@ -16,6 +16,8 @@ import AppSchema from '../AppSchema.astro';
 import BlogCard from '../BlogCard.astro';
 import StoreBadgeRow from '../StoreBadgeRow.astro';
 import AppDemos from '../home/AppDemos.astro';
+import RealPhone from '../home/RealPhone.astro';
+import { DEMO_TX } from '../home/demo-metinleri';
 import { withBase } from '../../utils/site';
 import { coverForSlug } from '../../utils/covers';
 import { getPostsFor } from '../../utils/posts';
@@ -35,8 +37,19 @@ const latest = sorted.filter((p) => p.slug !== pinned?.slug).slice(0, 3);
 const pinnedHref = pinned ? postPath(lang, pinned as any) : '';
 const pinnedCover = pinned ? withBase(pageImage(pinned.data.image ?? coverForSlug(pinned.slug))) : '';
 
-const typed = T('typed');
-const voiceSaid = T('voice.said');
+// Acilis sahnesi: gercek ana ekran (e-home) -> yazinca sohbet (a2-ask, a2);
+// ikinci turda kure "dinler" -> soylenen cumle (a1-bday). Hepsi gercek 3.30 ekranlari.
+const heroLayers = ['home', 'a2-ask', 'a2', 'a1-bday'];
+const heroSteps: unknown[] = [
+  ['show', 'home'], ['wait', 1], ['type', 'home', DEMO_TX[lang].hero, 3.2],
+  ['xfade', 'home', 'a2-ask', 0], ['band', 'a2-ask', 0], ['band', 'a2-ask', 1], ['wait', 1.3],
+  ...(lang === 'en'
+    ? [['tap', 'a2-ask'], ['xfade', 'a2-ask', 'a2', 2]]
+    : [['xfade', 'a2-ask', 'a2', 1], ['band', 'a2', 1], ['wait', 1]]),
+  ['band', 'a2', 2], ['band', 'a2', 3], ['band', 'a2', 4], ['wait', 3.2],
+  ['xfade', 'a2', 'home', 0], ['wait', 0.5], ['pulse', 'home', 2.6],
+  ['xfade', 'home', 'a1-bday', 0], ['band', 'a1-bday', 0], ['band', 'a1-bday', 1], ['wait', 3], ['out'],
+];
 const splitNote = splitLink(T('vow.note'));
 const splitFaq = splitLink(T('faq.lead'));
 
@@ -104,97 +117,8 @@ const faqs = [
       </div>
 
       <div class="hero__stage">
-        <div class="phone" role="img" aria-label={T('phone.aria')}>
-          <div class="phone__screen" aria-hidden="true">
-            <!-- Sohbet ekrani (son kare; JS yoksa ve azaltilmis harekette bu gorunur) -->
-            <div class="sc sc-chat" data-chat>
-              <div class="ch-top">
-                <span class="ch-back"></span>
-                <img src={withBase('/unutma-icon.png')} alt="" width="40" height="40" />
-                <div>
-                  <b>{T('chat.name')}</b>
-                  <small><i></i>{T('chat.status')}</small>
-                </div>
-              </div>
-              <div class="ch-body">
-                <p class="m-user" data-user>{typed}</p>
-                <div class="m-bot" data-bot>
-                  <p>{T('chat.bot')}</p>
-                  <ul>
-                    <li>{T('chat.li1')}</li>
-                    <li>{T('chat.li2')}</li>
-                    <li>{T('chat.li3')}</li>
-                  </ul>
-                  <div class="m-bot__btns" data-btns>
-                    <span class="b-save" data-save>{T('chat.btnSave')}</span>
-                    <span class="b-one">{T('chat.btnOne')}</span>
-                  </div>
-                </div>
-                <div class="m-card" data-card>
-                  <span class="m-card__k"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2" /><path d="M4 10h16M9 3v4M15 3v4" /></svg>{T('card1.k')}</span>
-                  <b>{T('card1.b')}</b>
-                  <span class="m-card__chip">{T('card1.chip')}</span>
-                  <i class="m-ok" data-ok></i>
-                </div>
-                <div class="m-card" data-card>
-                  <span class="m-card__k"><svg viewBox="0 0 24 24"><path d="M3 4h2.5l2.2 11h10.6L20.5 7H7" /><circle cx="9" cy="19" r="1.4" /><circle cx="17" cy="19" r="1.4" /></svg>{T('card2.k')}</span>
-                  <b>{T('card2.b')}</b>
-                  <i class="m-ok" data-ok></i>
-                </div>
-                <div class="m-card" data-card>
-                  <span class="m-card__k"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2.5" /><path d="M16 12.5h2M3 10h18" /></svg>{T('card3.k')}</span>
-                  <b>{T('card3.b')}</b>
-                  <span class="m-card__chip">{T('card3.chip')}</span>
-                  <i class="m-ok" data-ok></i>
-                </div>
-              </div>
-              <div class="ch-input"><span class="mic"></span>{T('chat.input')}<span class="send"></span></div>
-            </div>
-
-            <!-- Sesli komut sonrasi sohbet (2. tur) -->
-            <div class="sc sc-chat sc-chat2" data-chat2>
-              <div class="ch-top">
-                <span class="ch-back"></span>
-                <img src={withBase('/unutma-icon.png')} alt="" width="40" height="40" />
-                <div>
-                  <b>{T('chat.name')}</b>
-                  <small><i></i>{T('chat.status')}</small>
-                </div>
-              </div>
-              <div class="ch-body">
-                <p class="m-user" data-user2><span class="m-mic"></span>{voiceSaid}</p>
-                <div class="m-card" data-card2>
-                  <span class="m-card__k"><svg viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z" /><path d="M10 20.5h4" /></svg>{T('voice.k')}</span>
-                  <b>{T('voice.b')}</b>
-                  <span class="m-card__chip">{T('voice.chip')}</span>
-                  <i class="m-ok" data-ok2></i>
-                </div>
-              </div>
-              <div class="ch-input"><span class="mic"></span>{T('chat.input')}<span class="send"></span></div>
-            </div>
-
-            <!-- Yesil asistan ekrani (3.30 tam ekran asistan) -->
-            <div class="sc sc-green" data-green>
-              <div class="g-pill">{T('green.pill')}</div>
-              <div class="g-orb" data-orb>
-                <span class="g-ring" data-ring></span>
-                <span class="g-ring" data-ring></span>
-                <img src={withBase('/unutma-icon.png')} alt="" width="120" height="120" />
-              </div>
-              <div class="g-mid">
-                <p class="g-say" data-say>{T('green.say')}</p>
-                <span class="g-wave" data-wave aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-              </div>
-              <div class="g-input" data-ginput>
-                <span class="g-text"><span data-typed></span><span class="g-caret" data-caret></span><span class="g-ph" data-ph>{T('green.ph')}</span></span>
-                <span class="g-send" data-send></span>
-              </div>
-              <div class="g-chips">
-                <span>{T('green.chip1')}</span><span>{T('green.chip2')}</span><span>{T('green.chip3')}</span>
-              </div>
-              <div class="g-rec">{T('green.rec')}</div>
-            </div>
-          </div>
+        <div class="phone">
+          <RealPhone lang={lang} layers={heroLayers} final="a2" steps={heroSteps} label={T('phone.aria')} radius="38px" />
         </div>
       </div>
     </div>
@@ -300,127 +224,7 @@ const faqs = [
 
   <script is:inline src={withBase('/vendor/gsap/gsap.min.js')} defer></script>
   <script is:inline src={withBase('/vendor/gsap/ScrollTrigger.min.js')} defer></script>
-  <script is:inline define:vars={{ typed, voiceSaid }}>
-    window.addEventListener('DOMContentLoaded', function () {
-      var gsap = window.gsap;
-      if (!gsap) return;
-      var ST = window.ScrollTrigger;
-      if (ST) gsap.registerPlugin(ST);
-      var q = function (s) { return document.querySelector(s); };
-      var qa = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
-      var green = q('[data-green]'), chat = q('[data-chat]'), out = q('[data-typed]'), ph = q('[data-ph]'),
-        caret = q('[data-caret]'), send = q('[data-send]'), user = q('[data-user]'), bot = q('[data-bot]'),
-        btns = q('[data-btns]'), save = q('[data-save]'), cards = qa('[data-card]'), oks = qa('[data-ok]'),
-        rings = qa('[data-ring]'), orb = q('[data-orb]'),
-        chat2 = q('[data-chat2]'), user2 = q('[data-user2]'), card2 = q('[data-card2]'), ok2 = q('[data-ok2]'),
-        say = q('[data-say]'), wave = q('[data-wave]'), bars = qa('[data-wave] i');
-      if (!green || !chat) return;
-
-      var mm = gsap.matchMedia();
-      mm.add(
-        { motion: '(prefers-reduced-motion: no-preference)', calm: '(prefers-reduced-motion: reduce)' },
-        function (ctx) {
-          if (ctx.conditions.calm) {
-            // Sakin: son kare (sohbet + 3 kart) durur, yesil ekran gizli.
-            gsap.set([green, chat2], { autoAlpha: 0 });
-            return;
-          }
-
-          // --- Acilis sahnesi: tek, ozenli dongu ---
-          document.documentElement.classList.add('js-hero');
-          var state = { n: 0 };
-          var render = function () {
-            var k = Math.round(state.n);
-            out.textContent = typed.slice(0, k);
-            ph.style.display = k ? 'none' : '';
-          };
-          gsap.set([chat, chat2], { autoAlpha: 0 });
-          gsap.set([user, bot, user2], { autoAlpha: 0, y: 14 });
-          gsap.set(card2, { autoAlpha: 0, y: 16 });
-          gsap.set(ok2, { scale: 0 });
-          gsap.set(wave, { autoAlpha: 0 });
-          var waveTl = gsap.timeline({ repeat: -1, paused: true });
-          waveTl.to(bars, { scaleY: function (i) { return [0.5, 1, 0.7, 1.15, 0.6, 0.95, 0.45][i]; }, duration: 0.22, ease: 'sine.inOut', stagger: { each: 0.05, yoyo: true, repeat: 1 } })
-            .to(bars, { scaleY: 0.3, duration: 0.2, ease: 'sine.inOut' });
-          gsap.set(cards, { autoAlpha: 0, y: 16 });
-          gsap.set(oks, { scale: 0 });
-          gsap.set(btns, { autoAlpha: 1 });
-
-          var voiceWords = voiceSaid.split(' ');
-          var voiceState = { n: 0 };
-          var renderVoice = function () {
-            var k = Math.round(voiceState.n);
-            out.textContent = voiceWords.slice(0, k).join(' ');
-            ph.style.display = k ? 'none' : '';
-          };
-          var ringTl = gsap.timeline({ repeat: -1 });
-          ringTl.fromTo(rings, { scale: 1, autoAlpha: 0.5 }, { scale: 1.55, autoAlpha: 0, duration: 2.4, ease: 'sine.out', stagger: 1.2 });
-
-          var caretTw = gsap.to(caret, { autoAlpha: 0, duration: 0.45, repeat: -1, yoyo: true, ease: 'steps(1)' });
-
-          var tl = gsap.timeline({ repeat: -1, repeatDelay: 0.4, defaults: { ease: 'power2.out' } });
-          tl.set(state, { n: 0, onComplete: render })
-            .set(green, { autoAlpha: 1, scale: 1 })
-            .set(chat, { autoAlpha: 0 })
-            .set([user, bot], { autoAlpha: 0, y: 14 })
-            .set(cards, { autoAlpha: 0, y: 16 })
-            .set(oks, { scale: 0 })
-            .set(btns, { autoAlpha: 1, height: 'auto' })
-            .set(save, { scale: 1 })
-            .fromTo(orb, { scale: 0.92 }, { scale: 1, duration: 0.9, ease: 'power3.out' })
-            .to(state, { n: typed.length, duration: 3.4, ease: 'none', onUpdate: render }, '+=0.3')
-            .to(send, { scale: 0.8, duration: 0.12, yoyo: true, repeat: 1 }, '+=0.35')
-            .to(green, { autoAlpha: 0, scale: 1.04, duration: 0.5, ease: 'power2.in' })
-            .to(chat, { autoAlpha: 1, duration: 0.35 }, '<0.2')
-            .to(user, { autoAlpha: 1, y: 0, duration: 0.5 })
-            .to(bot, { autoAlpha: 1, y: 0, duration: 0.5 }, '+=0.45')
-            .to(save, { scale: 0.92, duration: 0.14, yoyo: true, repeat: 1 }, '+=1.1')
-            .to(btns, { autoAlpha: 0, height: 0, duration: 0.35, ease: 'power2.inOut' }, '+=0.1')
-            .to(cards, { autoAlpha: 1, y: 0, duration: 0.5, stagger: 0.32 }, '<0.1')
-            .to(oks, { scale: 1, duration: 0.4, ease: 'back.out(2.4)', stagger: 0.32 }, '<0.25')
-            .to(chat, { autoAlpha: 0, duration: 0.5, ease: 'power1.in' }, '+=3.2')
-            // 2. tur: konusarak. Yazi kelime kelime gelir, tek hatirlatici olur.
-            .addLabel('voice')
-            .call(function () { state.n = 0; render(); })
-            .set(chat2, { autoAlpha: 0 })
-            .set([user2], { autoAlpha: 0, y: 14 })
-            .set(card2, { autoAlpha: 0, y: 16 })
-            .set(ok2, { scale: 0 })
-            .to(green, { autoAlpha: 1, scale: 1, duration: 0.45 }, 'voice')
-            .to(say, { autoAlpha: 0, duration: 0.25 }, 'voice+=0.5')
-            .to(wave, { autoAlpha: 1, duration: 0.25 }, '<')
-            .call(function () { waveTl.restart(); }, null, '<')
-            .to(orb, { scale: 1.07, duration: 0.5, yoyo: true, repeat: 5, ease: 'sine.inOut' }, '<')
-            .to(voiceState, { n: voiceWords.length, duration: 2.6, ease: 'none', onUpdate: renderVoice }, '<0.3')
-            .call(function () { waveTl.pause(); }, null, '+=0.2')
-            .to(wave, { autoAlpha: 0, duration: 0.25 })
-            .to(say, { autoAlpha: 1, duration: 0.25 }, '<')
-            .to(green, { autoAlpha: 0, scale: 1.04, duration: 0.5, ease: 'power2.in' }, '+=0.3')
-            .to(chat2, { autoAlpha: 1, duration: 0.35 }, '<0.2')
-            .call(function () { voiceState.n = 0; renderVoice(); })
-            .to(user2, { autoAlpha: 1, y: 0, duration: 0.5 })
-            .to(card2, { autoAlpha: 1, y: 0, duration: 0.5 }, '+=0.6')
-            .to(ok2, { scale: 1, duration: 0.4, ease: 'back.out(2.4)' }, '<0.25')
-            .to(chat2, { autoAlpha: 0, duration: 0.5, ease: 'power1.in' }, '+=2.8');
-
-          // Ekrandan cikinca dur, donunce devam (pil ve islemci).
-          if (ST) {
-            ST.create({
-              trigger: '[data-hero]',
-              start: 'top bottom',
-              end: 'bottom top',
-              onToggle: function (self) {
-                [tl, ringTl, caretTw].forEach(function (a) { self.isActive ? a.play() : a.pause(); });
-                if (!self.isActive) waveTl.pause();
-              },
-            });
-
-          }
-          return function () { document.documentElement.classList.remove('js-hero'); gsap.set([green, chat, user, bot, cards, oks, btns, chat2, user2, card2, ok2, wave, say], { clearProps: 'all' }); };
-        }
-      );
-    });
-  </script>
+  <script is:inline src={withBase('/js/gercek-telefon.js')} defer></script>
 </BaseLayout>
 
 <style>
@@ -546,8 +350,7 @@ const faqs = [
 
   /* Telefon: gercek ekranin olculeri (1290x2796), icerik cqw ile olceklenir */
   .phone {
-    width: min(300px, 80vw);
-    aspect-ratio: 1290 / 2796;
+    width: min(320px, 82vw);
     padding: 9px;
     margin-bottom: -88px;
     border-radius: 46px;
@@ -557,344 +360,6 @@ const faqs = [
       0 50px 90px -30px rgba(3, 40, 24, 0.65),
       0 18px 40px -20px rgba(3, 40, 24, 0.5);
   }
-  .phone__screen {
-    position: relative;
-    height: 100%;
-    border-radius: 38px;
-    overflow: hidden;
-    background: #fff;
-    container-type: inline-size;
-    font-size: 4.1cqw;
-    color: #14251c;
-    text-align: left;
-  }
-  .sc {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-  }
-  .sc-green {
-    background: linear-gradient(180deg, #3dd07e 0%, #27b468 40%, #108047 100%);
-    color: #fff;
-    align-items: center;
-    padding: 13cqw 5cqw 6cqw;
-    will-change: transform, opacity;
-  }
-  .g-pill {
-    align-self: stretch;
-    padding: 2.6cqw 4cqw;
-    border-radius: 99px;
-    background: rgba(255, 255, 255, 0.2);
-    font-size: 3.4cqw;
-    font-weight: 600;
-  }
-  .g-orb {
-    position: relative;
-    margin-top: 24cqw;
-    width: 30cqw;
-    height: 30cqw;
-  }
-  .g-orb img {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    box-shadow: 0 0 0 2.4cqw rgba(255, 255, 255, 0.16), 0 8cqw 14cqw -6cqw rgba(0, 50, 25, 0.6);
-  }
-  .g-ring {
-    position: absolute;
-    inset: -3cqw;
-    border-radius: 50%;
-    border: 0.6cqw solid rgba(255, 255, 255, 0.55);
-    opacity: 0;
-  }
-  .g-mid {
-    display: grid;
-    place-items: center;
-    margin-top: 7cqw;
-  }
-  .g-mid > * {
-    grid-area: 1 / 1;
-  }
-  .g-wave {
-    display: flex;
-    align-items: center;
-    gap: 1.8cqw;
-    height: 12cqw;
-    opacity: 0;
-    visibility: hidden;
-  }
-  .g-wave i {
-    width: 2cqw;
-    height: 12cqw;
-    border-radius: 1cqw;
-    background: #fff;
-    transform: scaleY(0.3);
-    will-change: transform;
-  }
-  .sc-chat2 {
-    opacity: 0;
-    visibility: hidden;
-  }
-  .m-mic {
-    display: inline-block;
-    width: 2.2cqw;
-    height: 3.2cqw;
-    margin: 0 1.6cqw -0.4cqw 0;
-    border-radius: 1.4cqw;
-    border: 0.5cqw solid rgba(255, 255, 255, 0.85);
-  }
-  .g-say {
-    font-size: 5.3cqw;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-  }
-  .g-input {
-    margin-top: auto;
-    align-self: stretch;
-    display: flex;
-    align-items: flex-end;
-    gap: 2cqw;
-    padding: 3cqw 2.4cqw 3cqw 4.4cqw;
-    border-radius: 6cqw;
-    background: rgba(255, 255, 255, 0.18);
-    border: 0.4cqw solid rgba(255, 255, 255, 0.35);
-    font-size: 3.7cqw;
-    line-height: 1.35;
-    min-height: 12cqw;
-  }
-  .g-text {
-    flex: 1;
-    min-width: 0;
-  }
-  .g-ph {
-    opacity: 0.75;
-  }
-  .g-caret {
-    display: inline-block;
-    width: 0.45cqw;
-    height: 4.2cqw;
-    margin: 0 0.3cqw -0.7cqw;
-    background: #fff;
-  }
-  .g-send,
-  .ch-input .send {
-    flex: none;
-    width: 7cqw;
-    height: 7cqw;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.85)
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23108047' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 19V5M6 11l6-6 6 6'/%3E%3C/svg%3E")
-      center / 60% no-repeat;
-  }
-  .g-chips {
-    margin-top: 3.5cqw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2cqw;
-    font-size: 3.1cqw;
-    font-weight: 600;
-  }
-  .g-chips span {
-    padding: 2cqw 3.2cqw;
-    border-radius: 99px;
-    background: rgba(255, 255, 255, 0.16);
-    border: 0.3cqw solid rgba(255, 255, 255, 0.25);
-  }
-  .g-rec {
-    margin-top: 4.5cqw;
-    padding: 2.8cqw 7cqw;
-    border-radius: 99px;
-    background: #fff;
-    color: #0f6b3f;
-    font-weight: 700;
-    font-size: 3.8cqw;
-  }
-
-  .sc-chat {
-    background: #fbfdfc;
-  }
-  .ch-top {
-    display: flex;
-    align-items: center;
-    gap: 2.6cqw;
-    padding: 12cqw 4cqw 3cqw;
-    border-bottom: 0.3cqw solid #e5efe9;
-    background: #fff;
-  }
-  .ch-back {
-    width: 2.6cqw;
-    height: 2.6cqw;
-    border-left: 0.6cqw solid #14251c;
-    border-bottom: 0.6cqw solid #14251c;
-    transform: rotate(45deg);
-    margin: 0 1.5cqw 0 1cqw;
-  }
-  .ch-top img {
-    width: 7cqw;
-    height: 7cqw;
-    border-radius: 50%;
-  }
-  .ch-top b {
-    display: block;
-    font-size: 4.3cqw;
-  }
-  .ch-top small {
-    display: flex;
-    align-items: center;
-    gap: 1.2cqw;
-    font-size: 2.9cqw;
-    color: #53675c;
-  }
-  .ch-top small i {
-    width: 1.8cqw;
-    height: 1.8cqw;
-    border-radius: 50%;
-    background: #22b263;
-  }
-  .ch-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 2.6cqw;
-    padding: 5cqw 4cqw 3cqw;
-    overflow: hidden;
-  }
-  .m-user {
-    align-self: flex-end;
-    max-width: 82%;
-    padding: 3cqw 4cqw;
-    border-radius: 4cqw 4cqw 1.2cqw 4cqw;
-    background: #0f7a4a;
-    color: #fff;
-    font-size: 3.4cqw;
-    line-height: 1.35;
-  }
-  .m-bot {
-    max-width: 88%;
-    padding: 3cqw 4cqw;
-    border-radius: 4cqw 4cqw 4cqw 1.2cqw;
-    background: #fff;
-    border: 0.3cqw solid #e2ece6;
-    box-shadow: 0 1cqw 3cqw rgba(15, 42, 31, 0.06);
-    font-size: 3.3cqw;
-    line-height: 1.4;
-  }
-  .m-bot ul {
-    margin-top: 1cqw;
-    list-style: disc;
-    padding-left: 4cqw;
-  }
-  .m-bot__btns {
-    display: flex;
-    gap: 2cqw;
-    padding-top: 2.4cqw;
-    overflow: hidden;
-  }
-  .m-bot__btns span {
-    padding: 1.8cqw 3.4cqw;
-    border-radius: 99px;
-    font-weight: 700;
-    font-size: 3cqw;
-    border: 0.3cqw solid #d8e6dd;
-  }
-  .m-bot__btns .b-save {
-    background: #0f7a4a;
-    border-color: #0f7a4a;
-    color: #fff;
-  }
-  /* Son karede (JS yoksa) dugmeler gizli: kartlar kaydedilmis gorunur */
-  .m-bot__btns {
-    display: none;
-  }
-  :global(html.js-hero) .m-bot__btns {
-    display: flex;
-  }
-  .m-card {
-    position: relative;
-    margin-left: 6cqw;
-    padding: 2.6cqw 4cqw 3cqw;
-    border-radius: 3.4cqw;
-    background: #fff;
-    border: 0.3cqw solid #e2ece6;
-    border-left: 1cqw solid #22a964;
-    box-shadow: 0 1cqw 3cqw rgba(15, 42, 31, 0.05);
-    font-size: 3.5cqw;
-  }
-  .m-card__k {
-    display: flex;
-    align-items: center;
-    gap: 1.4cqw;
-    font-size: 2.6cqw;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #108047;
-    margin-bottom: 1cqw;
-  }
-  .m-card__k svg {
-    width: 3.4cqw;
-    height: 3.4cqw;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-  .m-card b {
-    display: block;
-    font-weight: 600;
-  }
-  .m-card__chip {
-    display: inline-block;
-    margin-top: 1.6cqw;
-    padding: 1cqw 2.6cqw;
-    border-radius: 99px;
-    border: 0.3cqw solid #d8e6dd;
-    font-size: 2.8cqw;
-    font-weight: 600;
-  }
-  .m-ok {
-    position: absolute;
-    left: -7cqw;
-    top: 50%;
-    margin-top: -2.4cqw;
-    width: 4.8cqw;
-    height: 4.8cqw;
-    border-radius: 50%;
-    background: #dff3e7
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23108047' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E")
-      center / 62% no-repeat;
-  }
-  .ch-input {
-    margin: 0 3cqw 9cqw;
-    display: flex;
-    align-items: center;
-    gap: 2.4cqw;
-    padding: 2.4cqw 2.4cqw 2.4cqw 3.4cqw;
-    border-radius: 99px;
-    background: #fff;
-    border: 0.3cqw solid #dfe9e3;
-    box-shadow: 0 1cqw 4cqw rgba(15, 42, 31, 0.08);
-    font-size: 3.1cqw;
-    color: #6a7d72;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-  .ch-input .mic {
-    flex: none;
-    width: 2.4cqw;
-    height: 3.6cqw;
-    border-radius: 2cqw;
-    border: 0.5cqw solid #4c6156;
-  }
-  .ch-input .send {
-    margin-left: auto;
-    background-color: #9fd6b8;
-  }
-
   /* ---------- 2. Vaat ---------- */
   .vow {
     padding: 5rem 0 4.5rem;
@@ -1199,7 +664,7 @@ const faqs = [
       padding-bottom: 5rem;
     }
     .phone {
-      width: 330px;
+      width: 370px;
       margin-bottom: -120px;
     }
     .vow {
