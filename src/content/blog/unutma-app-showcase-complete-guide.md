@@ -1,6 +1,6 @@
 ---
-title: "Unutma App Showcase: The Private Life Organizer Built for Real People"
-description: "See every major Unutma feature in one detailed visual guide: quick actions, routines, notes, lists, privacy, offline use, and Premium."
+title: "Meet Unutma: Your Offline Personal Assistant"
+description: "Type or say one sentence and Unutma saves it as a to-do, a shopping item, an expense or a note. It works offline, with no account, no cloud and no ads."
 pubDate: 2026-06-26
 updatedDate: 2026-10-16
 tags: ["Unutma", "productivity", "privacy", "app guide"]
@@ -10,133 +10,98 @@ featured: true
 draft: false
 ---
 
-Most productivity apps ask you to become a different person.
+Something comes to mind while you are busy with something else. *The dentist on Thursday. Milk. The money you just spent on gas.*
 
-They want perfect projects, clean folders, weekly reviews, account sync, workspaces, dashboards, and a dozen decisions before you can record the simplest thing: *I locked the door. I paid that bill. I need to remember this.*
+Most apps ask you a question before they let you save it: which app, which list, which category? By the time you have answered, the thought is half gone.
 
-**Unutma is built for the life you actually have.** The busy one. The private one. The one where your brain is full, your day is moving, and you need a calm place to put the small but important things before they disappear.
+**Unutma works the other way round.** You type the sentence, or say it, and Unutma finds the place for it.
 
 ## What Unutma is
 
-Unutma is a private, offline-first life organizer for the things that are too important to trust to memory and too personal to scatter across random cloud tools.
+Unutma is a personal assistant on your phone. Behind the assistant there is a full set of everyday tools: a to-do list, shopping and wish lists, a calendar, reminders and routines, notes, a budget, a journal and an encrypted vault.
 
-It brings together:
+You can open any of those screens and use them directly. The assistant is the short way in.
 
-- **Quick Actions** for one-tap “I did it” logs
-- **Routines and reminders** for repeatable life maintenance
-- **Notes** for thoughts you need to catch immediately
-- **Lists** for tasks, shopping, and wishes
-- **Journal** for reflection and mood
-- **Economy** for simple personal budget tracking
-- **Vault** for sensitive information
-- **Offline-first privacy** so your personal data stays on your device
+## One sentence, the right place
 
-It is not trying to turn your life into a spreadsheet. It is trying to give your mind somewhere safe to exhale.
+| You type or say | Unutma does |
+|---|---|
+| Dentist Thursday at 3pm | A to-do due Thursday, with a reminder at 3:00 PM |
+| Buy milk and bread | Two items on your shopping list |
+| Spent 40 on gas | An expense of 40, and it asks you to confirm before saving |
+| Water the plants every other day | A routine that repeats every 2 days |
+| Mom's birthday is May 3rd | A date that repeats every year |
+| Wifi password is hunter22 | Straight into the encrypted vault, hidden in the chat |
 
-## The feeling Unutma is designed to remove
+You did not pick a screen or a category. You said what was on your mind, and it went where you would have put it yourself.
 
-You know that tiny mental loop:
+## You can ask it, too
 
-*Did I do it? Did I forget? Should I check again? Where did I write that down?*
+The assistant also answers questions about your own records: *"What's on this week?"* or *"How much did I spend this month?"* The answers come from what you saved, nothing else.
 
-That loop is exhausting because it is not one big problem. It is hundreds of small open tabs in your head.
+It can change a record you already have, open a screen for you (*"open my budget"*), or switch a setting such as the dark theme.
 
-Unutma closes those tabs with small, fast confirmations. You tap once. The action is logged. Your future self can check it later. No drama. No account setup. No complicated system to maintain.
+## When it is not sure, it asks
 
-## Quick Actions: proof for your future self
+No assistant gets every sentence right, and this one does not pretend to. So it is built to be careful:
 
-Quick Actions are for the repeatable things you want to stop re-checking.
+- You always see where your sentence was saved.
+- When a sentence could belong in more than one place, it shows you the options and lets you choose.
+- Every save can be undone, and you can tell it when something landed in the wrong place.
+- When you correct it, it remembers your choice for similar sentences. That memory stays on the phone too.
 
-Locked the door. Took medicine. Fed the pet. Sent the document. Paid the bill. Turned off the stove. Checked the bag.
+If you want the measured accuracy and how it works inside, read [how the assistant was built without an LLM](/blog/a-phone-assistant-without-an-llm/).
 
-Instead of asking your memory to hold the answer, Unutma lets you create a log in one tap.
+## What it is not
 
-This is powerful because it respects how people actually forget. You do not always need a future task. Sometimes you need proof that the thing already happened.
+Unutma is not a chatbot. It does not answer general knowledge questions or write emails for you. Its job is narrower: put your sentence in the right place in your own organizer, and find it again when you ask.
 
-## Routines and reminders without pressure
+The assistant understands six languages: English, Turkish, German, Spanish, French and Italian.
 
-Unutma helps you keep recurring life tasks visible: daily checks, weekly resets, bills, habits, health routines, and small maintenance rituals.
+## Speaking instead of typing
 
-The point is not to shame you into consistency. The point is to make consistency easier to return to.
+Tap the microphone and say the sentence. Unutma does the same thing with it as with a typed one. See [how the voice feature works](/blog/unutma-voice-commands-hands-free-organizing/) for examples.
 
-Real life is messy. Good tools should help you recover quickly, not make you feel like you failed because Tuesday got weird.
+## Four promises that stay
 
-## Notes that catch thoughts before they vanish
+- **It works without internet.** Your records and the assistant's understanding both live on the phone. Put it in airplane mode and it still saves the sentence you type.
+- **No account.** There is no sign-up screen.
+- **No cloud.** What you save stays on your device. If you want a copy, you make a backup file and decide where to keep it.
+- **No ads.**
 
-Some thoughts do not belong in a formal task list yet.
+The vault and the journal are encrypted on the phone, and the vault opens with Face ID, fingerprint or your PIN.
 
-A sentence. A name. A parking spot. A gift idea. A phrase you want to remember. A thing you cannot process right now but do not want to lose.
+For a side-by-side view, see our [notes app with no account](/blog/notes-app-no-account-offline/) comparison and our [to-do list app with no account](/blog/todo-list-app-no-account-offline/) guide.
 
-Unutma gives those thoughts a quiet place to land. You can sort later. The first win is capture.
+## Not everything needs a sentence
 
-The mic next to every field helps here too — say the thought instead of typing it, and Unutma decides on its own whether it's a note, a task, an expense, or a line in today's journal. See [how the voice feature works](/blog/unutma-voice-commands-hands-free-organizing/).
+Some things are quicker with one tap. **Quick Actions** are buttons for the small things you keep re-checking: *locked the door, took my medicine, fed the cat.* Tap once and Unutma records it with the time, so later you can look instead of wondering.
 
-## Lists for the practical side of life
+## What it costs
 
-Unutma includes lists for tasks, shopping, and wishes because everyday organization is not one category.
+Every feature is open for the first 7 days. After that, adding new records needs a subscription. What you have already saved stays visible; nothing is deleted.
 
-Tasks are obligations. Shopping is logistical. Wishes are desire, inspiration, and future plans. Keeping them separate makes the app feel lighter and easier to scan.
+## A simple first week
 
-That separation matters. A grocery item should not sit beside a private dream. A bill reminder should not bury a book you want to read. Unutma gives each kind of thought the right container.
+Do not try to organize your whole life on day one.
 
-## Privacy: the feature you feel every day
+1. Type or say three things that are on your mind right now.
+2. Build a shopping list by saying what you need.
+3. Record your spending for a few days, one sentence each.
+4. Add two or three Quick Actions for the things you re-check.
+5. At the end of the week, ask: *"What's on this week?"*
 
-Unutma is built around a simple promise: your personal organization should not require handing your life to a server.
+Then ask yourself one question: *Did I have to hold less in my head?* That is the real test.
 
-Your notes, lists, routines, journal content, and sensitive data are stored locally on your device. The app is designed for offline use, and it does not need an account for your core personal content. For a side-by-side view, see our honest [notes app with no account](/blog/notes-app-no-account-offline/) comparison and our [to-do list app with no account](/blog/todo-list-app-no-account-offline/) guide.
+## A short note on voice commands
 
-That changes the emotional texture of the app. You can write more honestly. You can store more practically. You can use it for small private details without wondering who else is part of the loop.
-
-## Why Premium exists
-
-The free experience is designed to let you start calmly. Premium is for people who want Unutma as their full personal system: more capacity, deeper features, and the confidence that the app can keep growing without selling attention or personal data.
-
-Premium supports:
-
-- Full access across vault, journal, economy, lists, and advanced workflows
-- A private, offline-first product model
-- Continued improvements to the app
-- A calmer alternative to ad-driven productivity tools
-
-The best products do not pressure you with panic. They show you the value, then let you choose. Unutma’s trial is built around that idea: try the full app, feel whether it lowers your mental load, then decide.
-
-## Who Unutma is for
-
-Unutma is for people who:
-
-- Re-check small things because memory feels unreliable
-- Want a private place for notes, lists, routines, and sensitive info
-- Prefer practical tools over complex productivity theater
-- Like the idea of organizing life without creating another online account
-- Need something fast enough to use while life is happening
-
-It is especially useful if you have ever opened a task app, stared at five empty fields, and closed it because the tool felt heavier than the thought.
-
-## A simple 7-day way to try Unutma
-
-For the first week, do not try to organize your entire life.
-
-Try this instead:
-
-1. Add five Quick Actions you often re-check.
-2. Add one routine you genuinely want to repeat.
-3. Use Notes as your fast capture inbox.
-4. Make one shopping or task list.
-5. Add one honest journal entry.
-6. Put one sensitive item in Vault only if it feels useful.
-7. At the end of the week, ask: *Did my mind feel a little quieter?*
-
-That is the real test.
+Unutma works offline and never sends your entries anywhere. When you say something out loud, though, it is your phone's own speech recognition that turns your voice into text, not Unutma. On some phone models or settings, that feature may connect to the internet on its own to do this. That comes from your phone, not from Unutma, and not every phone works this way. If you prefer no internet use at all, you can simply type instead; Unutma works the same way either way.
 
 ## Download Unutma
 
 Unutma is available on iPhone and Android.
 
-If you want one private place for the small things that keep pulling on your attention, start here:
-
 - [Download on Google Play](https://play.google.com/store/apps/details?id=com.mehmet.unutma)
 - [Download on the App Store](https://apps.apple.com/app/id6758889495)
 
-You do not need to become perfectly organized today. You just need one place you trust enough to start.
-
-**Unutma is that place.**
+For every screen in detail, continue with the [full feature guide](/blog/unutma-app-complete-feature-guide/).

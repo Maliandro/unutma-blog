@@ -1,6 +1,6 @@
 ---
-title: "Welcome to the Unutma Blog"
-description: "Why we started this blog, what you will find here, and how it connects to the Unutma app — offline, private organization."
+title: "Welcome to Unutma, Your Personal Assistant"
+description: "Unutma is a personal assistant on your phone: type or say a sentence and it saves it in the right place. No internet, no account, no cloud, no ads."
 pubDate: 2026-03-15
 tags: ["Unutma", "productivity", "privacy"]
 draft: false
@@ -8,22 +8,34 @@ image: /blog/covers/v3/welcome-to-unutma-blog.jpg
 imageAlt: "Unutma home screen"
 ---
 
-## What you will find here
+Unutma is a personal assistant that lives on your phone. You type a sentence, or say it, and Unutma saves it in the right place. You do not have to choose a screen, a list or a category first.
 
-This space is for **practical articles** on productivity, journaling, building routines, and keeping your digital life calmer. We care about **privacy-first** tools and habits that work offline or with minimal cloud dependency.
+## What that looks like
 
-## How this relates to Unutma
+- *"Dentist Thursday at 3pm"* becomes a to-do with a due date and a reminder.
+- *"Buy milk and bread"* becomes two items on your shopping list.
+- *"Spent 40 on gas"* becomes an expense in your budget, after you confirm it.
+- *"What's on this week?"* gets an answer from your own records.
 
-Unutma is an app for lists, notes, routines, a vault, and more — with your data **on your device**. We will mention Unutma when it naturally fits; you can ignore it and still take value from the guides.
+When Unutma is not sure where a sentence belongs, it asks you. And whatever it saves, you can undo.
 
-## What is next
+## Four things that do not change
+
+- **It works without internet.** Your records and the assistant's understanding both run on the phone.
+- **No account.** There is nothing to sign up for.
+- **No cloud.** What you save stays on your device.
+- **No ads.**
+
+## What you will find on this blog
+
+Two kinds of posts. Some explain the app itself: start with [meet Unutma](/blog/unutma-app-showcase-complete-guide/) for the short version, or the [full feature guide](/blog/unutma-app-complete-feature-guide/) for every screen. The others are practical articles on remembering things, routines, journaling and money, and they are useful even if you never install the app.
+
+## A short note on voice commands
+
+Unutma works offline and never sends your entries anywhere. When you say something out loud, though, it is your phone's own speech recognition that turns your voice into text, not Unutma. On some phone models or settings, that feature may connect to the internet on its own to do this. That comes from your phone, not from Unutma, and not every phone works this way. If you prefer no internet use at all, you can simply type instead; Unutma works the same way either way.
+
+## Where to go next
 
 Browse the [blog index](/blog/), read [about us](/about/), and when you are ready, try Unutma on [Google Play](https://play.google.com/store/apps/details?id=com.mehmet.unutma) or the [App Store](https://apps.apple.com/app/id6758889495).
 
-### Quick tips
-
-- Start with one habit, not ten.
-- Prefer apps that do not require an account for your private notes.
-- Batch similar tasks to reduce context switching.
-
-What topic should we cover next? Share feedback via your favorite social channel from any post.
+If there is a topic you would like us to cover, tell us through whichever channel you prefer. We read what you send.

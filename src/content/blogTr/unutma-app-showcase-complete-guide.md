@@ -1,6 +1,6 @@
 ---
-title: "Unutma Tanıtımı: Gerçek İnsanlar İçin Özel Hayat Düzenleyici"
-description: "Unutma'nın bütün önemli özelliklerini tek ayrıntılı rehberde görün: hızlı eylemler, rutinler, notlar, listeler, gizlilik, çevrimdışı kullanım ve Premium."
+title: "Unutma ile Tanışın: İnternetsiz Kişisel Asistan"
+description: "Bir cümle yazın ya da söyleyin; Unutma onu yapılacak, alışveriş, harcama ya da not olarak kaydetsin. İnternetsiz çalışır; hesap, bulut ve reklam yok."
 trSlug: unutma-tanitim-rehberi
 pubDate: 2026-06-26
 updatedDate: 2026-10-16
@@ -11,133 +11,98 @@ featured: true
 draft: false
 ---
 
-Çoğu verimlilik uygulaması sizden başka biri olmanızı ister.
+Başka bir işle uğraşırken aklınıza bir şey gelir. *Perşembe günü diş hekimi. Süt. Az önce benzine verdiğiniz para.*
 
-Mükemmel projeler, düzenli klasörler, haftalık gözden geçirmeler, hesap eşitleme, çalışma alanları, panolar ve en basit şeyi kaydetmeden önce bir düzine karar isterler: *Kapıyı kilitledim. O faturayı ödedim. Bunu hatırlamam gerek.*
+Çoğu uygulama kaydetmeden önce size soru sorar: hangi uygulama, hangi liste, hangi kategori? Siz yanıtlayana kadar düşüncenin yarısı gitmiştir.
 
-**Unutma, gerçekte yaşadığınız hayat için yapıldı.** Yoğun olan. Özel olan. Kafanızın dolu olduğu, gününüzün aktığı ve küçük ama önemli şeyleri kaybolmadan önce koyacak sakin bir yere ihtiyaç duyduğunuz olan.
+**Unutma tersinden çalışır.** Cümleyi yazarsınız ya da söylersiniz, yerini Unutma bulur.
 
 ## Unutma nedir
 
-Unutma, hafızaya bırakılamayacak kadar önemli ve rastgele bulut araçlarına dağıtılamayacak kadar kişisel şeyler için özel, önce çevrimdışı çalışan bir hayat düzenleyicidir.
+Unutma, telefonunuzdaki kişisel asistan. Asistanın arkasında gündelik hayatın araçları durur: yapılacaklar listesi, alışveriş ve istek listeleri, takvim, hatırlatıcılar ve rutinler, notlar, bütçe, günlük ve şifreli bir Kasa.
 
-Şunları bir araya getirir:
+Bu ekranların her birini açıp doğrudan kullanabilirsiniz. Asistan oraya giden kısa yoldur.
 
-- Tek dokunuşluk "yaptım" kayıtları için **Hızlı Eylemler**
-- Tekrarlanabilir hayat bakımı için **rutinler ve hatırlatıcılar**
-- Anında yakalamanız gereken düşünceler için **Notlar**
-- Görevler, alışveriş ve istekler için **Listeler**
-- Yansıtma ve ruh hali için **Günlük**
-- Basit kişisel bütçe takibi için **Ekonomi**
-- Hassas bilgiler için **Kasa**
-- Kişisel verilerinizin cihazınızda kalması için **önce çevrimdışı gizlilik**
+## Tek cümle, doğru yer
 
-Hayatınızı bir tabloya çevirmeye çalışmıyor. Zihninize nefes vereceği güvenli bir yer sunmaya çalışıyor.
+| Siz yazarsınız ya da söylersiniz | Unutma ne yapar |
+|---|---|
+| Perşembe saat 15'te diş hekimi | Perşembe günü bitişli bir yapılacak, hatırlatıcı 15:00'te |
+| Süt ve ekmek al | Alışveriş listenize iki madde |
+| Benzine 40 harcadım | 40'lık bir harcama; kaydetmeden önce onayınızı ister |
+| Bitkileri gün aşırı sula | Her 2 günde bir tekrarlanan bir rutin |
+| Annemin doğum günü 3 Mayıs | Her yıl tekrarlanan bir tarih |
+| Wifi parolası hunter22 | Doğrudan şifreli Kasa'ya; sohbette gizlenir |
 
-## Unutma'nın ortadan kaldırmak için tasarlandığı his
+Ekran seçmediniz, kategori belirlemediniz. Aklınızdakini söylediniz, o da sizin koyacağınız yere gitti.
 
-O küçük zihinsel döngüyü biliyorsunuz:
+## Sorabilirsiniz de
 
-*Yaptım mı? Unuttum mu? Tekrar baksam mı? Bunu nereye yazmıştım?*
+Asistan kendi kayıtlarınız hakkındaki soruları da yanıtlar: *"Bu hafta neler var?"* ya da *"Bu ay ne kadar harcadım?"* Yanıt yalnızca sizin kaydettiklerinizden gelir.
 
-Bu döngü yorucu, çünkü tek büyük bir sorun değil. Kafanızda yüzlerce küçük açık sekme.
+Var olan bir kaydı değiştirebilir, sizin için bir ekran açabilir (*"bütçemi aç"*) ya da koyu tema gibi bir ayarı değiştirebilir.
 
-Unutma bu sekmeleri küçük, hızlı onaylarla kapatır. Bir kez dokunursunuz. Eylem kaydedilir. Gelecekteki siz sonra kontrol edebilir. Drama yok. Hesap kurulumu yok. Sürdürülecek karmaşık bir sistem yok.
+## Emin değilse sorar
 
-## Hızlı Eylemler: gelecekteki siz için kanıt
+Hiçbir asistan her cümleyi doğru anlamaz; Unutma da anlıyormuş gibi yapmaz. Bu yüzden dikkatli davranacak biçimde kuruldu:
 
-Hızlı Eylemler, yeniden kontrol etmeyi bırakmak istediğiniz tekrarlanabilir şeyler içindir.
+- Cümlenizin nereye kaydedildiğini her zaman görürsünüz.
+- Bir cümle birden fazla yere ait olabiliyorsa seçenekleri gösterir, kararı size bırakır.
+- Her kayıt geri alınabilir; bir şey yanlış yere düştüyse bunu ona söyleyebilirsiniz.
+- Onu düzelttiğinizde benzer cümleler için seçiminizi hatırlar. Bu hafıza da telefonda kalır.
 
-Kapıyı kilitledim. İlacımı aldım. Evcil hayvanı besledim. Belgeyi gönderdim. Faturayı ödedim. Ocağı kapattım. Çantayı kontrol ettim.
+Ölçülen doğruluk ve içeride nasıl çalıştığı için [asistanın yapay zekâ modeli olmadan nasıl yapıldığını](/blog/a-phone-assistant-without-an-llm/) okuyun.
 
-Yanıtı hafızanızın tutmasını beklemek yerine Unutma tek dokunuşla bir kayıt oluşturmanıza izin verir.
+## Ne değildir
 
-Bu güçlü, çünkü insanların gerçekte nasıl unuttuğuna saygı duyar. Her zaman gelecekte bir göreve ihtiyacınız yoktur. Bazen işin zaten olduğuna dair kanıta ihtiyaç duyarsınız.
+Unutma bir sohbet robotu değil. Genel bilgi sorularını yanıtlamaz, sizin yerinize e-posta yazmaz. İşi daha dar: cümlenizi kendi düzeninizde doğru yere koymak ve sorduğunuzda geri bulmak.
 
-## Baskısız rutinler ve hatırlatıcılar
+Asistan altı dil anlar: Türkçe, İngilizce, Almanca, İspanyolca, Fransızca ve İtalyanca.
 
-Unutma, tekrarlayan hayat işlerini görünür tutmanıza yardım eder: günlük kontroller, haftalık sıfırlamalar, faturalar, alışkanlıklar, sağlık rutinleri ve küçük bakım ritüelleri.
+## Yazmak yerine söylemek
 
-Amaç sizi düzenliliğe utandırarak zorlamak değil. Amaç düzenliliğe geri dönmeyi kolaylaştırmak.
+Mikrofona dokunun ve cümleyi söyleyin. Unutma, yazdığınız cümleye ne yapıyorsa ona da aynısını yapar. Örnekler için [ses özelliğinin nasıl çalıştığına](/blog/unutma-voice-commands-hands-free-organizing/) bakın.
 
-Gerçek hayat dağınık. İyi araçlar çabuk toparlanmanıza yardım etmeli; salı tuhaf geçti diye başarısız hissettirmemeli.
+## Değişmeyen dört söz
 
-## Düşünceler kaybolmadan yakalayan Notlar
+- **İnternetsiz çalışır.** Kayıtlarınız da asistanın cümleyi anlaması da telefonda durur. Uçak modunu açın, yazdığınız cümleyi yine kaydeder.
+- **Hesap yok.** Üyelik ekranı yok.
+- **Bulut yok.** Kaydettikleriniz cihazınızda kalır. Kopyasını isterseniz bir yedek dosyası alırsınız, nerede duracağına siz karar verirsiniz.
+- **Reklam yok.**
 
-Bazı düşünceler henüz resmî bir görev listesine ait değildir.
+Kasa ve günlük telefonda şifreli tutulur; Kasa Face ID, parmak izi ya da PIN ile açılır.
 
-Bir cümle. Bir isim. Bir park yeri. Bir hediye fikri. Hatırlamak istediğiniz bir söz. Şu an işleyemediğiniz ama kaybetmek istemediğiniz bir şey.
+Yan yana bir karşılaştırma için [hesapsız not uygulaması](/blog/notes-app-no-account-offline/) yazımıza ve [hesapsız yapılacaklar listesi uygulaması](/blog/todo-list-app-no-account-offline/) rehberimize bakın.
 
-Unutma o düşüncelere sessiz bir iniş yeri verir. Sonra ayıklayabilirsiniz. İlk kazanım yakalamak.
+## Her şey cümle gerektirmez
 
-Her alanın yanındaki mikrofon da burada yardımcı olur: düşünceyi yazmak yerine söyleyin; Unutma bunun bir not mu, bir görev mi, bir harcama mı yoksa bugünün günlüğünde bir satır mı olduğuna kendisi karar verir. [Ses özelliğinin nasıl çalıştığına](/blog/unutma-voice-commands-hands-free-organizing/) bakın.
+Bazı şeyler tek dokunuşla daha hızlıdır. **Hızlı Eylemler**, dönüp dönüp kontrol ettiğiniz küçük şeyler için düğmelerdir: *kapıyı kilitledim, ilacımı aldım, kediyi besledim.* Bir kez dokunursunuz, Unutma saatiyle kaydeder; sonra merak etmek yerine bakarsınız.
 
-## Hayatın pratik tarafı için listeler
+## Ücreti
 
-Unutma görevler, alışveriş ve istekler için listeler içerir, çünkü gündelik düzen tek bir kategori değildir.
+İlk 7 gün her özellik açıktır. Sonrasında yeni kayıt eklemek için abonelik gerekir. O güne kadar kaydettikleriniz görünür kalır; hiçbir şey silinmez.
 
-Görevler yükümlülüktür. Alışveriş lojistiktir. İstekler arzu, ilham ve gelecek planlarıdır. Bunları ayrı tutmak uygulamayı daha hafif ve taranması daha kolay hissettirir.
+## Basit bir ilk hafta
 
-Bu ayrım önemli. Bir market maddesi özel bir hayalin yanında durmamalı. Bir fatura hatırlatıcısı okumak istediğiniz bir kitabı gömmemeli. Unutma her düşünce türüne doğru kabı verir.
+İlk gün bütün hayatınızı düzenlemeye çalışmayın.
 
-## Gizlilik: her gün hissettiğiniz özellik
+1. Şu an aklınızda olan üç şeyi yazın ya da söyleyin.
+2. İhtiyaçlarınızı söyleyerek bir alışveriş listesi oluşturun.
+3. Birkaç gün harcamalarınızı kaydedin; her biri tek cümle.
+4. Dönüp kontrol ettiğiniz şeyler için iki üç Hızlı Eylem ekleyin.
+5. Haftanın sonunda sorun: *"Bu hafta neler var?"*
 
-Unutma basit bir söz etrafında kurulu: kişisel düzeniniz, hayatınızı bir sunucuya teslim etmeyi gerektirmemeli.
+Sonra kendinize tek bir soru sorun: *Aklımda daha az şey tutmak zorunda kaldım mı?* Gerçek test bu.
 
-Notlarınız, listeleriniz, rutinleriniz, günlük içeriğiniz ve hassas verileriniz cihazınızda yerel olarak saklanır. Uygulama çevrimdışı kullanım için tasarlandı ve temel kişisel içeriğiniz için hesap gerektirmez. Yan yana bir görünüm için dürüst [hesapsız not uygulaması](/blog/notes-app-no-account-offline/) karşılaştırmamıza ve [hesapsız yapılacaklar listesi uygulaması](/blog/todo-list-app-no-account-offline/) rehberimize bakın.
+## Sesli komutlar hakkında küçük bir not
 
-Bu, uygulamanın duygusal dokusunu değiştirir. Daha dürüst yazabilirsiniz. Daha pratik saklayabilirsiniz. Döngüde başka kimin olduğunu merak etmeden küçük özel ayrıntılar için kullanabilirsiniz.
-
-## Premium neden var
-
-Ücretsiz deneyim sakince başlamanız için tasarlandı. Premium, Unutma'yı tam kişisel sistemi olarak isteyenler için: daha fazla kapasite, daha derin özellikler ve uygulamanın dikkatinizi ya da kişisel verilerinizi satmadan büyümeye devam edebileceği güven.
-
-Premium şunları destekler:
-
-- Kasa, günlük, ekonomi, listeler ve gelişmiş iş akışlarında tam erişim
-- Özel, önce çevrimdışı bir ürün modeli
-- Uygulamada süren iyileştirmeler
-- Reklam güdümlü verimlilik araçlarına daha sakin bir alternatif
-
-En iyi ürünler sizi panikle sıkıştırmaz. Değeri gösterir, sonra seçmenize izin verir. Unutma'nın denemesi bu fikir etrafında kuruldu: uygulamanın tamamını deneyin, zihinsel yükünüzü azaltıp azaltmadığını hissedin, sonra karar verin.
-
-## Unutma kimler için
-
-Unutma şu kişiler için:
-
-- Hafıza güvenilmez geldiği için küçük şeyleri yeniden kontrol edenler
-- Notlar, listeler, rutinler ve hassas bilgiler için özel bir yer isteyenler
-- Karmaşık verimlilik tiyatrosu yerine pratik araçları tercih edenler
-- Başka bir çevrimiçi hesap oluşturmadan hayatı düzenleme fikrini sevenler
-- Hayat devam ederken kullanılacak kadar hızlı bir şeye ihtiyaç duyanlar
-
-Bir görev uygulaması açıp beş boş alana bakıp, araç düşünceden ağır geldiği için kapatmışsanız özellikle işe yarar.
-
-## Unutma'yı denemenin basit 7 günlük yolu
-
-İlk hafta bütün hayatınızı düzenlemeye çalışmayın.
-
-Bunun yerine şunu deneyin:
-
-1. Sık sık yeniden kontrol ettiğiniz beş Hızlı Eylem ekleyin.
-2. Gerçekten tekrarlamak istediğiniz bir rutin ekleyin.
-3. Notlar'ı hızlı kayıt gelen kutunuz olarak kullanın.
-4. Bir alışveriş ya da görev listesi yapın.
-5. Dürüst bir günlük kaydı ekleyin.
-6. Kasa'ya yalnızca yararlı hissediyorsa hassas bir şey koyun.
-7. Haftanın sonunda sorun: *Zihnim biraz daha sakin hissetti mi?*
-
-Gerçek test bu.
+Unutma internetsiz çalışır ve kayıtlarınızı hiçbir yere göndermez. Bir şeyi sesle söylediğinizde ise sesinizi yazıya çeviren, Unutma değil telefonunuzun kendi konuşma tanıma özelliğidir. Bazı telefon modellerinde ya da ayarlarında bu özellik, sesi yazıya çevirmek için kendiliğinden internete bağlanabilir. Bu durum Unutma'dan değil telefonunuzdan kaynaklanır ve her telefonda böyle değildir. Hiç internet kullanılmasın isterseniz, aynı şeyi yazarak da yapabilirsiniz; Unutma iki yolla da aynı şekilde çalışır.
 
 ## Unutma'yı indirin
 
 Unutma iPhone ve Android'de mevcut.
 
-Dikkatinizi çekip duran küçük şeyler için tek bir özel yer istiyorsanız buradan başlayın:
-
 - [Google Play'den indirin](https://play.google.com/store/apps/details?id=com.mehmet.unutma)
 - [App Store'dan indirin](https://apps.apple.com/app/id6758889495)
 
-Bugün mükemmel düzenli olmanıza gerek yok. Başlayacak kadar güvendiğiniz tek bir yere ihtiyacınız var.
-
-**Unutma o yer.**
+Her ekranı ayrıntısıyla görmek için [tüm özellikler rehberi](/blog/unutma-app-complete-feature-guide/) ile devam edin.
