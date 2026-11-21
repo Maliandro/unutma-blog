@@ -1,6 +1,6 @@
 ---
 title: "I built a phone assistant that files your sentences without an LLM"
-description: "How one typed or spoken sentence becomes a task, expense, routine or vault entry on the phone, using rules and a 41 KB classifier, with honest accuracy numbers."
+description: "How one typed or spoken sentence becomes a task, expense, routine or vault entry on the phone, using rules and a 41 KB classifier, and asks before it saves when it is not sure."
 seoTitle: "Phone Assistant Without an LLM: How It Works"
 keyword: "phone assistant without an LLM"
 pubDate: 2026-09-23
@@ -47,17 +47,11 @@ The classifier never writes content. It only picks a box, and the rules for that
 
 When you pick a place, the phone stores that sentence's embedding (384 numbers, not the text) with your choice, and similar sentences go there next time. Vault entries are excluded, and so is the backup.
 
-## Honest numbers
+## How I check it
 
-I measure on held-out sets that the rules and the model never saw during tuning. The last one has 1,595 sentences across the six languages, many of them deliberately messy or with two intents in one sentence. It was opened once, after the thresholds were frozen. The figures below are as of 18 September 2026, the date of that measurement.
+I test on held-out sentence sets that the rules and the model never saw during tuning. They cover the six languages, and many sentences are deliberately messy or hold two intents at once. The last set was opened once, after the thresholds were frozen.
 
-| Measure | Rules only | Rules + model |
-|---|---|---|
-| Right place on the first try | 50.2% | 63.9% |
-| Right place shown to you (incl. the suggestion) | – | 67.4% |
-| Saved in the wrong place without asking | 49.8% | 19.9% |
-
-It is not at 90%, and I don't think the current approach gets there. The number I care about most is the last row. A wrong guess you are asked about costs one tap. A wrong guess saved silently is how you miss the dentist.
+I don't publish an accuracy percentage, and I don't think the current approach is perfect. The measure I care about most is how often a wrong guess gets saved silently. A wrong guess you are asked about costs one tap. A wrong guess saved without asking is how you miss the dentist. So when the assistant is not sure, it asks, and it shows you the entry before it saves.
 
 One caveat: the test sentences were written for testing, independently of the rules. They are not real user sentences, because the app has no telemetry and I can't see what anyone types. If you try it and it gets something wrong, telling me is the only way I find out.
 
@@ -81,7 +75,7 @@ No. The rules, the embedding model and the classifier all run on the phone, and 
 
 ### How accurate is it?
 
-As of 18 September 2026, on a sealed test set of 1,595 sentences, it put 63.9% in the right place on the first try (rules alone: 50.2%). Counting the suggestion it shows you, 67.4%. It saved 19.9% in the wrong place without asking. The test sentences were written for testing, not taken from real users.
+I don't publish a percentage. It is not perfect. When it is not sure where a sentence belongs, it asks before saving and shows you the top places it could go, and every saved entry has undo and a "wrong place?" chip. The rules and the classifier run on the phone, and I test them on sentence sets written for testing, not taken from real users.
 
 ### Which languages does the assistant understand?
 
@@ -97,6 +91,6 @@ With AES-256, the [Advanced Encryption Standard published by NIST](https://csrc.
 
 ## Try it
 
-Unutma is on the [App Store](https://apps.apple.com/app/id6758889495) and [Google Play](https://play.google.com/store/apps/details?id=com.mehmet.unutma). The on-device model ships in the iPhone version today (3.16); the Android update with the same engine follows shortly. Every feature is free for 7 days, then it's a subscription; your records stay on your phone either way.
+Unutma is on the [App Store](https://apps.apple.com/app/id6758889495) and [Google Play](https://play.google.com/store/apps/details?id=com.mehmet.unutma). The on-device model ships in the iPhone version today (3.16); the Android update with the same engine follows shortly. Every feature is free for 7 days, then adding and editing needs Premium; your records stay on your phone either way.
 
 If it files something in the wrong place, I'd genuinely like to know the sentence. That's the whole point of this post.

@@ -23,12 +23,12 @@ The left column describes what the large, account-based note apps typically offe
 | **Account needed** | Yes. Notes are saved to your online account | No. There is no sign-up screen: no name, no email, no profile |
 | **Where your notes live** | The provider's servers, synced to your devices | Only on your phone. We have no server to send them to |
 | **Works offline** | Usually on the phone app, often with limits on a computer or in a browser | Yes, all of it, the built-in assistant included. It works in airplane mode |
-| **Sync across devices** | ✅ Yes, that is the main reason to have an account | ❌ No sync. You move data with a backup file (Premium) |
+| **Sync across devices** | ✅ Yes, that is the main reason to have an account | ❌ No sync. You move data with a backup file |
 | **Use it on a computer** | ✅ Usually, through a website or desktop app | ❌ No. It is a phone and tablet app only |
 | **Live shared lists** | ✅ Often, by inviting other accounts | ❌ No. You can send a one-off copy of a to-do or shopping list as a file, but it does not update live |
 | **Reminders** | Timed reminders, and in some apps location-based ones | Timed reminders and routines (weekly, monthly, every few days). **No location reminders** |
 | **Voice** | Many offer voice memos with transcription | Say a sentence and it goes to the right place: calendar, list, budget, routine |
-| **Price** | Many have a free tier, paid for by the account and the ecosystem around it | Free with limits. Premium is monthly, yearly or a one-time lifetime purchase, with a 7-day free trial |
+| **Price** | Many have a free tier, paid for by the account and the ecosystem around it | Free for 7 days with everything unlocked. After that, adding and editing needs Premium: monthly, yearly or a one-time lifetime purchase |
 
 **Cloud note apps win** on sync, computer access, live sharing, location reminders and, often, price. **Unutma wins** if you don't want an account, want your records stored only on your phone, need everything to work offline, or want one sentence to be sorted into the right place.
 
@@ -39,7 +39,7 @@ Stay with an account-based app if any of these are true:
 - **You write notes on a laptop.** Unutma has no web or desktop version.
 - **You share a grocery list with your partner** and want to see items checked off live. Unutma cannot do that.
 - **You want a reminder when you arrive somewhere.** Unutma has no location reminders.
-- **You want to pay nothing, ever, with no limits on note count.** Unutma's free plan has limits (details below).
+- **You want to pay nothing, ever.** After the 7-day trial, Unutma asks for Premium to add or edit anything (details below).
 
 None of those is a small thing, and we would rather you choose the right tool than switch and feel let down.
 
@@ -64,16 +64,16 @@ Most note apps are a single board of notes. Unutma has more sections, each with 
 
 You can also type or say one sentence, like "Dentist Thursday at 3, buy milk, spent 25 at the store", and Unutma splits it into an appointment, a list item and an expense. It shows you each one before saving. [Here is how the voice feature works](/blog/unutma-voice-commands-hands-free-organizing/), and here is how [a phone assistant without an LLM](/blog/a-phone-assistant-without-an-llm/) does the sorting.
 
-## What is free and what is Premium (exact numbers)
+## What is free and what is Premium
 
-Unutma's free plan has limits, and you should know them before switching:
+The first 7 days are a full trial: every feature is unlocked, and no card is asked for. Here is what changes after that:
 
-- **Unlimited for free:** the assistant, quick actions, the shopping list and the budget.
-- **Free up to a cap:** 25 open to-dos, 25 notes, 3 routines or reminders, 3 Vault entries, 10 wishlist items, and 10 journal entries per month.
-- **Premium:** removes those caps and adds the backup file for moving to a new phone, plus CSV and PDF export, statistics and the mini games. Plain data export (JSON) is free.
-- **Your data is never deleted or hidden** if you stay on the free plan or your trial ends.
+- **Adding and editing needs Premium.** After day 7, new entries and edits in every section (notes, lists, reminders, routines, the assistant) ask for Premium.
+- **Your old entries stay.** Everything you already wrote stays visible on your phone, and nothing is deleted or hidden.
+- **Reminders keep ringing.** Reminders you already set still go off.
+- **Premium comes in three forms:** monthly, yearly, or a one-time lifetime purchase.
 
-Every feature is unlocked for the first 7 days, so you can test it properly before deciding.
+So this is a trial, not a permanent free tier. If you only want to read old notes, that keeps working. If you want to keep writing, you need Premium.
 
 ## Moving from a cloud note app: a 15-minute plan
 
@@ -120,7 +120,7 @@ There are no ads. Usage statistics stay off unless you turn them on yourself.
 
 ### What happens to my notes if I don't pay after the trial?
 
-Nothing is deleted or hidden. Everything you already wrote stays on your phone and stays readable on the free plan.
+Nothing is deleted or hidden. Everything you already wrote stays on your phone and stays readable, and reminders you already set keep ringing. Adding new entries and editing existing ones needs Premium (monthly, yearly or one-time lifetime).
 
 ## Bottom line
 
