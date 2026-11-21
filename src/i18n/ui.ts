@@ -198,7 +198,7 @@ const ui: UIStrings = {
     direct: 'Direct URL:',
     h2web: 'This website (blog)',
     pWeb:
-      'This site is a static marketing blog: your host (for example Vercel) may keep ordinary server or CDN logs. We do not run ads in the Unutma app, and this blog does not show third-party ad banners unless we explicitly enable that later and update this notice.',
+      'This site is a static marketing blog: your host (Cloudflare) may keep ordinary server or CDN logs. We do not run ads in the Unutma app, and this blog does not show third-party ad banners unless we explicitly enable that later and update this notice. We count visits with Cloudflare Web Analytics, which uses no cookies and does not identify or track you; it shows only totals such as page views, referring sites and countries.',
     h2contact: 'Contact (app policy)',
     pContact:
       'For questions about the policy published on Google Sites, use the contact channel listed there — for example',

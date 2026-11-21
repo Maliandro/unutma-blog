@@ -85,26 +85,26 @@ export const CONTACT_EMAIL = 'unutma.app1.0@gmail.com';
 export const BLOG_PRIVACY_NOTICE: Record<LegalLang, { title: string; text: string }> = {
   en: {
     title: 'This website (blog)',
-    text: 'This site is a static marketing blog: your host (for example Vercel) may keep ordinary server or CDN logs. We do not run ads in the Unutma app, and this blog does not show third-party ad banners unless we explicitly enable that later and update this notice.',
+    text: 'This site is a static marketing blog: your host (Cloudflare) may keep ordinary server or CDN logs. We do not run ads in the Unutma app, and this blog does not show third-party ad banners unless we explicitly enable that later and update this notice. We count visits with Cloudflare Web Analytics, which uses no cookies and does not identify or track you; it shows only totals such as page views, referring sites and countries.',
   },
   tr: {
     title: 'Bu web sitesi (blog)',
-    text: 'Bu site statik bir tanıtım blogudur; barındırma sağlayıcınız (ör. Vercel) olağan sunucu veya CDN günlükleri tutabilir. Unutma uygulamasında reklam göstermiyoruz; bu blogda da aksi belirtilmedikçe üçüncü taraf reklam banner’ları yoktur.',
+    text: 'Bu site statik bir tanıtım blogudur; barındırma sağlayıcınız (Cloudflare) olağan sunucu veya CDN günlükleri tutabilir. Unutma uygulamasında reklam göstermiyoruz; bu blogda da aksi belirtilmedikçe üçüncü taraf reklam banner’ları yoktur. Ziyaretleri Cloudflare Web Analytics ile sayıyoruz; çerez kullanmaz, sizi tanımaz ve izlemez, yalnız sayfa görüntüleme, gelinen site ve ülke gibi toplamları gösterir.',
   },
   de: {
     title: 'Diese Website (Blog)',
-    text: 'Diese Seite ist ein statischer Marketing-Blog: Ihr Hoster (z. B. Vercel) kann übliche Server- oder CDN-Logs speichern. In der Unutma-App schalten wir keine Werbung; dieser Blog zeigt keine Drittanbieter-Werbebanner, sofern wir das nicht ausdrücklich später aktivieren und diesen Hinweis aktualisieren.',
+    text: 'Diese Seite ist ein statischer Marketing-Blog: Ihr Hoster (Cloudflare) kann übliche Server- oder CDN-Logs speichern. In der Unutma-App schalten wir keine Werbung; dieser Blog zeigt keine Drittanbieter-Werbebanner, sofern wir das nicht ausdrücklich später aktivieren und diesen Hinweis aktualisieren. Besuche zählen wir mit Cloudflare Web Analytics: ohne Cookies und ohne Sie zu identifizieren oder zu verfolgen; wir sehen nur Summen wie Seitenaufrufe, verweisende Seiten und Länder.',
   },
   es: {
     title: 'Este sitio web (blog)',
-    text: 'Este sitio es un blog de marketing estático: su proveedor de alojamiento (p. ej. Vercel) puede conservar registros habituales del servidor o CDN. No mostramos anuncios en la app Unutma, y este blog no muestra banners de terceros salvo que lo activemos explícitamente más adelante y actualicemos este aviso.',
+    text: 'Este sitio es un blog de marketing estático: su proveedor de alojamiento (Cloudflare) puede conservar registros habituales del servidor o CDN. No mostramos anuncios en la app Unutma, y este blog no muestra banners de terceros salvo que lo activemos explícitamente más adelante y actualicemos este aviso. Contamos las visitas con Cloudflare Web Analytics, que no usa cookies ni le identifica o rastrea; solo muestra totales como páginas vistas, sitios de procedencia y países.',
   },
   fr: {
     title: 'Ce site web (blog)',
-    text: 'Ce site est un blog marketing statique : votre hébergeur (par ex. Vercel) peut conserver des journaux serveur ou CDN ordinaires. Nous n’affichons pas de publicité dans l’app Unutma, et ce blog n’affiche pas de bannières tierces sauf activation explicite ultérieure avec mise à jour de cet avis.',
+    text: 'Ce site est un blog marketing statique : votre hébergeur (Cloudflare) peut conserver des journaux serveur ou CDN ordinaires. Nous n’affichons pas de publicité dans l’app Unutma, et ce blog n’affiche pas de bannières tierces sauf activation explicite ultérieure avec mise à jour de cet avis. Nous comptons les visites avec Cloudflare Web Analytics, sans cookies et sans vous identifier ni vous suivre ; nous ne voyons que des totaux comme les pages vues, les sites référents et les pays.',
   },
   it: {
     title: 'Questo sito web (blog)',
-    text: 'Questo sito è un blog marketing statico: il provider di hosting (es. Vercel) può conservare log server o CDN ordinari. Non mostriamo annunci nell’app Unutma, e questo blog non mostra banner di terze parti salvo abilitazione esplicita in seguito con aggiornamento di questo avviso.',
+    text: 'Questo sito è un blog marketing statico: il provider di hosting (Cloudflare) può conservare log server o CDN ordinari. Non mostriamo annunci nell’app Unutma, e questo blog non mostra banner di terze parti salvo abilitazione esplicita in seguito con aggiornamento di questo avviso. Contiamo le visite con Cloudflare Web Analytics, che non usa cookie e non ti identifica né ti traccia; mostra solo totali come pagine viste, siti di provenienza e paesi.',
   },
 };
