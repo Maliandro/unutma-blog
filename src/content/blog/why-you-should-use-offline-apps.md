@@ -1,8 +1,8 @@
 ---
-title: "Apps That Work Offline: A 5-Step Phone Test"
-description: "Many apps that work offline only do so until they need to sync. Run this 5-step airplane mode and restart test, and see which features truly work offline."
+title: "Apps That Work Offline and Online: 5-Step Test"
+description: "Many apps work offline only until they need to sync. Run this 5-step airplane mode and restart test, then see which features truly work offline and online."
 pubDate: 2026-08-16
-updatedDate: 2026-10-16
+updatedDate: 2026-11-21
 keyword: "apps that work offline"
 tags: ["unutma", "offline", "privacy"]
 image: /blog/covers/v3/why-you-should-use-offline-apps.jpg
