@@ -43,6 +43,50 @@
   ],
   "redirects": [
     {
+      "source": "/privacy",
+      "has": [
+        {
+          "type": "host",
+          "value": "unutma-blog.vercel.app"
+        }
+      ],
+      "destination": "https://unutma.meyadestudio.com/privacy/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy/:lang(de|en|es|fr|it|tr)",
+      "has": [
+        {
+          "type": "host",
+          "value": "unutma-blog.vercel.app"
+        }
+      ],
+      "destination": "https://unutma.meyadestudio.com/privacy/:lang/",
+      "permanent": true
+    },
+    {
+      "source": "/terms",
+      "has": [
+        {
+          "type": "host",
+          "value": "unutma-blog.vercel.app"
+        }
+      ],
+      "destination": "https://unutma.meyadestudio.com/terms/",
+      "permanent": true
+    },
+    {
+      "source": "/terms/:lang(de|en|es|fr|it|tr)",
+      "has": [
+        {
+          "type": "host",
+          "value": "unutma-blog.vercel.app"
+        }
+      ],
+      "destination": "https://unutma.meyadestudio.com/terms/:lang/",
+      "permanent": true
+    },
+    {
       "source": "/blog/unutma-vs-todoist-2026",
       "has": [
         {
