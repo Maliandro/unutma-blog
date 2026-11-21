@@ -3,6 +3,7 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import { fileURLToPath } from 'node:url';
 import fs from 'node:fs';
+import { isLive, readFrontmatter } from './src/utils/publish-state.mjs';
 import { rehypeImageAttrs, rehypeUnpublishedLinks, rehypeTrLinks } from './src/plugins/rehype-blog.mjs';
 
 const SLUGS = JSON.parse(fs.readFileSync(new URL('./src/i18n/slug-haritasi.json', import.meta.url), 'utf8'));
@@ -25,6 +26,21 @@ function trAlternate(p) {
   return null;
 }
 const blogDir = fileURLToPath(new URL('./src/content/blog', import.meta.url));
+// 1-2 yazili etiket sayfalari noindex (BlogTagPage.astro); sitemap'e de girmez.
+const TAG_COUNT = {};
+for (const f of fs.readdirSync(blogDir).filter((x) => x.endsWith('.md'))) {
+  const t = fs.readFileSync(`${blogDir}/${f}`, 'utf8');
+  if (!isLive(readFrontmatter(t))) continue;
+  const m = t.match(/^tags:\s*\[([^\]]*)\]/m);
+  for (const x of (m ? m[1] : '').split(',')) { const k = x.replace(/["']/g, '').trim().toLowerCase(); if (k) TAG_COUNT[k] = (TAG_COUNT[k] || 0) + 1; }
+}
+const isThinTag = (page) => {
+  let m = page.match(/^\/blog\/tags\/([^/]+)\/$/);
+  if (m) return (TAG_COUNT[dec(m[1])] ?? 0) < 3;
+  m = page.match(/^\/tr\/blog\/etiket\/([^/]+)\/$/);
+  if (m) return (TAG_COUNT[TAG_EN_BY_TR[dec(m[1])] ?? ''] ?? 0) < 3;
+  return false;
+};
 const publicDir = fileURLToPath(new URL('./public', import.meta.url));
 
 /**
@@ -57,7 +73,7 @@ export default defineConfig({
     // /gorev noindex bir kopru sayfasi: sitemap'e girerse GSC "Submitted URL
     // marked noindex" hatasi uretir (bu proje bununla bir kez yandi).
     sitemap({
-      filter: (page) => !page.includes('/gorev') && !/\/(tr\/)?404\/?$/.test(page),
+      filter: (page) => !page.includes('/gorev') && !/\/(tr\/)?404\/?$/.test(page) && !isThinTag(new URL(page).pathname),
       // EN <-> TR karsiliklari (slug haritasi) sitemap'te de bildirilir.
       serialize(item) {
         const u = new URL(item.url);
