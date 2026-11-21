@@ -73,6 +73,7 @@ export const KAPAKLAR = {
   'weekly-planning-tips': { shot: 'a3', title: 'A 20-minute weekly review', chip: 'Planning', theme: 'leaf', y: 0.4, zoom: 1.3, tilt: 3, alt: 'Unutma showing what is on the calendar tomorrow' },
   'why-you-should-use-offline-apps': { shot: 'kontrol/03-koyu-asistan', title: 'Apps that work offline: a 5-step test', chip: 'Offline', theme: 'mint', y: 0.6, zoom: 1.25, tilt: -3, alt: 'Unutma assistant in dark mode, running offline on the phone' },
   'welcome-to-unutma-blog': { shot: 'e-home', title: 'Welcome to the Unutma blog', chip: 'Unutma', theme: 'mint', y: 0.0, zoom: 1.0, tilt: 3, alt: 'Unutma home screen' },
+  'offline-personal-assistant-app-no-cloud-no-account': { shot: 'a2-ask', title: 'Tell it once. Ask it later. Offline.', chip: 'Offline · No cloud', theme: 'leaf', y: 0.5, zoom: 1.2, tilt: 3, alt: 'Unutma assistant answering a question about saved plans, working offline on the phone' },
   // Site geneli varsayilan paylasim gorseli (ana sayfa, SSS, hakkinda...)
   'site-default': { shot: 'a2', title: 'Write one sentence. Unutma files it.', chip: 'Offline · No account', theme: 'brand', y: 0.12, zoom: 1.15, tilt: -3, alt: 'Unutma' },
 };

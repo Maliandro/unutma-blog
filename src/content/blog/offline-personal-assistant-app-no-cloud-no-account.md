@@ -2,12 +2,12 @@
 title: "Offline Personal Assistant App: No Cloud, No Account"
 description: "An offline personal assistant app that works in airplane mode: tell it once, ask it later, with no cloud and no account. Includes a 6-question test for any app."
 seoTitle: "Offline Personal Assistant App, No Account"
-pubDate: 2026-11-24
+pubDate: 2026-11-21
 keyword: "offline personal assistant app"
 tags: ["Unutma", "assistant", "privacy", "offline", "on-device"]
-image: /blog/covers/v3/a-phone-assistant-without-an-llm.jpg
+image: /blog/covers/v3/offline-personal-assistant-app-no-cloud-no-account.jpg
 imageAlt: "Unutma assistant splitting one sentence into a calendar entry, a shopping item and a budget expense"
-draft: true
+draft: false
 ---
 
 An offline personal assistant app should do one thing well: you tell it something once, and it answers when you ask later, with no signal, no cloud and no account. Unutma works that way. You type or say a sentence like "dentist Thursday at 3pm", it saves it in the right place on your phone, and you can ask "what's on this week?" in airplane mode.
