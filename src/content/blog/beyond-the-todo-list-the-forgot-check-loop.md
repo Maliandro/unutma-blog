@@ -1,5 +1,5 @@
 ---
-title: "Beyond the todo list: the 'did I do it?' loop (and a calmer way out)"
+title: "Beyond the To-Do List: The 'Did I Do It?' Loop"
 description: "Why checklist apps still leave you anxious, how a one-tap log changes the mental game, and what to look for in a privacy-first organizer — with Unutma as the practical example."
 pubDate: 2026-05-17
 updatedDate: 2026-10-16

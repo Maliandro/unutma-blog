@@ -1,5 +1,5 @@
 ---
-title: "Journaling in Unutma: Mood, Memory, and Showing Up Without Performance"
+title: "Private Journal App: Mood, Memory, Voice"
 description: "How Unutma’s Journal blends mood tracking with writing — including voice-friendly capture — so reflection stays private, small, and sustainable."
 pubDate: 2026-04-06
 updatedDate: 2026-10-16

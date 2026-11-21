@@ -1,5 +1,5 @@
 ---
-title: "Talk to Unutma: The Voice Feature Most Organizer Apps Don't Have"
+title: "Talk to Unutma: Hands-Free Voice Organizer"
 description: "Unutma doesn't just transcribe your voice — it understands it. Say a task, an expense, or 'open my calendar' and watch it go straight to the right place, hands-free."
 pubDate: 2026-07-25
 updatedDate: 2026-10-16
