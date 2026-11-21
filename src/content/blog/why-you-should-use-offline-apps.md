@@ -72,6 +72,8 @@ It suits people who keep private things on their phone and would rather not crea
 
 If that is you, a few guides go further: how to [keep personal data on your phone](/blog/keep-your-data-safe-on-your-phone/) without making it fragile, and how a [reminders app that works offline](/blog/unutma-routines-calendar-widgets-time/) schedules its notifications. For the specific worry of "did I switch the stove off?", see [how to stop forgetting things](/blog/how-to-stop-forgetting-things/). Passwords are a separate case, covered in our [offline password vault app](/blog/unutma-vault-passwords-face-id-privacy/) guide. A broader checklist for your device is in the UK NCSC's [device security guidance](https://www.ncsc.gov.uk/collection/device-security-guidance). If the real problem is that your life is spread across too many apps, start with [how to organize your life](/blog/how-to-organize-your-life/).
 
+If you want one place for reminders, lists and spending rather than a single-purpose app, read what to look for in an [offline personal assistant app](/blog/offline-personal-assistant-app-no-cloud-no-account/) that needs no cloud and no account.
+
 ## Frequently asked questions
 
 ### How can I tell if an app works offline before installing it?

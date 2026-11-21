@@ -90,6 +90,8 @@ Unutma does not import notes from other apps automatically, and we don't want yo
 With no account and no cloud, nobody can restore your data if you lose your phone. That includes us. That is the cost of the privacy, and it is why the backup file matters. If you switch, read [how to move your Unutma data to a new phone](/blog/move-unutma-to-a-new-phone/) once, so you know where that file lives.
 The UK National Cyber Security Centre gives the same advice for any phone: [back up your most important data](https://www.ncsc.gov.uk/collection/top-tips-for-staying-secure-online/always-back-up-your-most-important-data) and keep a copy somewhere other than the device.
 
+If you want more than notes, with questions you can ask later about your plans and spending, see our guide to an [offline personal assistant app](/blog/offline-personal-assistant-app-no-cloud-no-account/).
+
 ## Frequently asked questions
 
 ### Does Google Keep work offline?

@@ -94,7 +94,7 @@ Yes. Unutma has no sign-up screen and no server that receives your records. You 
 
 Typed sentences and questions work, because the rules, the embedding model and the classifier run on the phone. Voice input depends on your phone's speech recognition, which may need a connection.
 
-### Is it a chatbot like ChatGPT?
+### Is it an AI chatbot?
 
 No. It files sentences and answers questions about your own records. It does not write free text, and nothing you type is sent to a language model.
 

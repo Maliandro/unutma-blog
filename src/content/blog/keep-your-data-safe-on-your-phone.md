@@ -78,6 +78,8 @@ That is all. You do not need a new security routine, just one evening and a remi
 
 If you are still choosing apps, start with our test for [apps that work offline](/blog/why-you-should-use-offline-apps/). For private writing, see how the [private journal app with mood tracking](/blog/unutma-journal-mood-voice-reflection/) handles encryption. For money records kept off the cloud, see the [expense tracker without bank linking](/blog/unutma-economy-expenses-budgets-assets/). And before you switch phones, read [how to move your data to a new phone](/blog/move-unutma-to-a-new-phone/). If your private records are scattered across many apps, our guide on [how to organize your life](/blog/how-to-organize-your-life/) starts with a simple inventory.
 
+The same rule applies to assistants: an [offline personal assistant app](/blog/offline-personal-assistant-app-no-cloud-no-account/) keeps what you tell it on the phone, with no cloud copy.
+
 ## Frequently asked questions
 
 ### Is it safer to keep personal data on your phone than in the cloud?

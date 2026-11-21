@@ -67,6 +67,8 @@ One caveat: the test sentences were written for testing, independently of the ru
 - The vault and the journal are encrypted at rest (AES-256, key kept in the phone's secure storage).
 - Voice input uses the phone's own speech recognition. It runs on the device when the phone supports it; otherwise the OS may use its network service. The app tells you once when that happens.
 
+For the user side of this design, including a six-question test you can run on any assistant, read our guide to an [offline personal assistant app](/blog/offline-personal-assistant-app-no-cloud-no-account/).
+
 ## Frequently asked questions
 
 ### Does Unutma use a large language model?

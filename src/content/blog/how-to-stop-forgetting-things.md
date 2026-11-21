@@ -83,6 +83,8 @@ Occasional forgetting is part of normal life. If forgetting is getting worse, af
 
 For the one-tap log in more depth, see [Unutma's "did I lock the door" quick actions](/blog/unutma-quick-actions-streaks-heatmap-statistics/). For medication and other repeats, read our guide to a [reminders app that works offline](/blog/unutma-routines-calendar-widgets-time/). To make the daily review stick, see [how to build habits that stick](/blog/how-to-build-habits-that-stick/). If your notes and lists are scattered across many apps, start with [how to organize your life](/blog/how-to-organize-your-life/). And for keeping the "later" list tidy, see [to-do, shopping and wishlist in one app](/blog/unutma-lists-todo-shopping-wishlist-workflow/). If you would rather everything worked with no signal, our test for [apps that work offline](/blog/why-you-should-use-offline-apps/) takes five minutes. For planning ahead, there is research on if-then plans in [Frontiers in Psychology](https://pmc.ncbi.nlm.nih.gov/articles/PMC8149892/) that suggests a modest benefit from deciding in advance what you will do in a given situation.
 
+If you would rather say a thing once and ask about it later, an [offline personal assistant app](/blog/offline-personal-assistant-app-no-cloud-no-account/) can hold it for you without an account.
+
 ## Frequently asked questions
 
 ### Why do I forget if I locked the door?
