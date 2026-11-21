@@ -193,7 +193,11 @@ if (fs.existsSync(distDir)) {
     const isPage = /<title>/.test(html);
     const noindex = /name="robots" content="[^"]*noindex/.test(html);
     // Marka: script/stil dahil her şey taranır (JSON-LD de yayındır).
-    const brands = [...new Set([...html.matchAll(brandRe)].map((m) => m[1]))];
+    // İSTİSNA (sahibi 21 Kas 2026: "Geçebilir"): yalnız notes-app-no-account-offline yazısında "Google Keep"
+    // geçebilir; bu yazının başlığı ("Does Google Keep Work Offline?") listelerde/ilgili yazılarda da görünebilir.
+    let taranan = html.split('Does Google Keep Work Offline').join('').split('Google Keep works offline on mobile but needs a Google account').join('');
+    if (rel.startsWith('blog/notes-app-no-account-offline/') || rel.startsWith('tr/blog/notes-app-no-account-offline/')) taranan = taranan.split('Google Keep').join('');
+    const brands = [...new Set([...taranan.matchAll(brandRe)].map((m) => m[1]))];
     if (brands.length) error(`${rel}: rakip marka adı geçiyor: ${brands.join(', ')}`);
     if (!isPage) continue;
     const h1 = (html.match(/<h1[\s>]/g) || []).length;

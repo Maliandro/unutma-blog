@@ -1,8 +1,8 @@
 ---
-title: "Notes App With No Account That Works Offline"
-description: "Want a notes app with no account that keeps everything on your phone? An honest table versus typical cloud note apps, including where cloud apps still win."
+title: "Does Google Keep Work Offline? No-Account Option"
+description: "Google Keep works offline on mobile but needs a Google account. See a notes app with no account and no cloud that works offline, with an honest table."
 pubDate: 2026-10-10
-updatedDate: 2026-10-16
+updatedDate: 2026-11-21
 keyword: "notes app with no account"
 tags: ["Unutma", "notes app", "privacy", "offline", "comparison"]
 image: /blog/covers/v3/notes-app-no-account-offline.jpg
@@ -91,6 +91,10 @@ With no account and no cloud, nobody can restore your data if you lose your phon
 The UK National Cyber Security Centre gives the same advice for any phone: [back up your most important data](https://www.ncsc.gov.uk/collection/top-tips-for-staying-secure-online/always-back-up-your-most-important-data) and keep a copy somewhere other than the device.
 
 ## Frequently asked questions
+
+### Does Google Keep work offline?
+
+Yes, on a phone. The Google Keep app on Android and iPhone lets you read and edit notes without a connection and syncs them when you are back online. It still needs a Google account, and your notes are stored in Google's cloud. If you want notes that never leave your phone and no account at all, that is the gap Unutma fills: it works offline, with no cloud.
 
 ### Do I need an account to use Unutma?
 
